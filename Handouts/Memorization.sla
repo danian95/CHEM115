@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SCRIBUSUTF8NEW Version="1.5.6.1">
-    <DOCUMENT ANZPAGES="1" PAGEWIDTH="612" PAGEHEIGHT="792" BORDERLEFT="40" BORDERRIGHT="40" BORDERTOP="40" BORDERBOTTOM="40" PRESET="0" BleedTop="0" BleedLeft="0" BleedRight="0" BleedBottom="0" ORIENTATION="0" PAGESIZE="Letter" FIRSTNUM="1" BOOK="0" AUTOSPALTEN="1" ABSTSPALTEN="11" UNITS="2" DFONT="Arial Regular" DSIZE="12" DCOL="1" DGAP="0" TabFill="" TabWidth="36" TextDistLeft="0" TextDistRight="0" TextDistBottom="0" TextDistTop="0" AUTHOR="" COMMENTS="" KEYWORDS="" PUBLISHER="" DOCDATE="" DOCTYPE="" DOCFORMAT="" DOCIDENT="" DOCSOURCE="" DOCLANGINFO="" DOCRELATION="" DOCCOVER="" DOCRIGHTS="" DOCCONTRIB="" TITLE="" SUBJECT="" VHOCH="33" VHOCHSC="66" VTIEF="33" VTIEFSC="66" VKAPIT="75" BASEGRID="14.4" BASEO="0" AUTOL="100" UnderlinePos="-1" UnderlineWidth="-1" StrikeThruPos="-1" StrikeThruWidth="-1" GROUPC="1" HCMS="0" DPSo="0" DPSFo="0" DPuse="0" DPgam="0" DPbla="1" DPPr="ISO Coated v2 300% (basICColor)" DPIn="sRGB display profile (ICC v2.2)" DPInCMYK="ISO Coated v2 300% (basICColor)" DPIn2="sRGB display profile (ICC v2.2)" DPIn3="ISO Coated v2 300% (basICColor)" DISc="1" DIIm="0" ALAYER="0" LANGUAGE="en_US" AUTOMATIC="1" AUTOCHECK="0" GUIDELOCK="0" SnapToGuides="0" SnapToGrid="0" SnapToElement="0" MINGRID="20" MAJGRID="100" SHOWGRID="0" SHOWGUIDES="1" showcolborders="1" SHOWFRAME="1" SHOWControl="0" SHOWLAYERM="0" SHOWMARGIN="1" SHOWBASE="0" SHOWPICT="1" SHOWLINK="0" rulerMode="1" showrulers="1" showBleed="1" rulerXoffset="0" rulerYoffset="0" GuideRad="10" GRAB="4" POLYC="4" POLYF="0.5" POLYR="0" POLYIR="0" POLYCUR="0" POLYOCUR="0" POLYS="0" arcStartAngle="30" arcSweepAngle="300" spiralStartAngle="0" spiralEndAngle="1080" spiralFactor="1.2" AutoSave="1" AutoSaveTime="600000" AutoSaveCount="1" AutoSaveKeep="0" AUtoSaveInDocDir="1" AutoSaveDir="" ScratchBottom="20" ScratchLeft="100" ScratchRight="100" ScratchTop="20" GapHorizontal="0" GapVertical="40" StartArrow="0" EndArrow="0" PEN="Black" BRUSH="None" PENLINE="Black" PENTEXT="Black" StrokeText="Black" TextBackGround="None" TextLineColor="None" TextBackGroundShade="100" TextLineShade="100" TextPenShade="100" TextStrokeShade="100" STIL="1" STILLINE="1" WIDTH="1" WIDTHLINE="1" PENSHADE="100" LINESHADE="100" BRUSHSHADE="100" CPICT="None" PICTSHADE="100" CSPICT="None" PICTSSHADE="100" PICTSCX="1" PICTSCY="1" PSCALE="1" PASPECT="1" EmbeddedPath="0" HalfRes="1" dispX="10" dispY="10" constrain="15" MINORC="#00ff00" MAJORC="#00ff00" GuideC="#000080" BaseC="#c0c0c0" renderStack="2 0 4 1 3" GridType="0" PAGEC="#ffffff" MARGC="#0000ff" RANDF="0" currentProfile="PDF 1.4" calligraphicPenFillColor="Black" calligraphicPenLineColor="Black" calligraphicPenFillColorShade="100" calligraphicPenLineColorShade="100" calligraphicPenLineWidth="1" calligraphicPenAngle="0" calligraphicPenWidth="10" calligraphicPenStyle="1">
+    <DOCUMENT ANZPAGES="1" PAGEWIDTH="612" PAGEHEIGHT="792" BORDERLEFT="40" BORDERRIGHT="40" BORDERTOP="40" BORDERBOTTOM="40" PRESET="0" BleedTop="0" BleedLeft="0" BleedRight="0" BleedBottom="0" ORIENTATION="0" PAGESIZE="Letter" FIRSTNUM="1" BOOK="0" AUTOSPALTEN="1" ABSTSPALTEN="11" UNITS="2" DFONT="Arial Regular" DSIZE="12" DCOL="1" DGAP="0" TabFill="" TabWidth="36" TextDistLeft="0" TextDistRight="0" TextDistBottom="0" TextDistTop="0" AUTHOR="" COMMENTS="" KEYWORDS="" PUBLISHER="" DOCDATE="" DOCTYPE="" DOCFORMAT="" DOCIDENT="" DOCSOURCE="" DOCLANGINFO="" DOCRELATION="" DOCCOVER="" DOCRIGHTS="" DOCCONTRIB="" TITLE="" SUBJECT="" VHOCH="33" VHOCHSC="66" VTIEF="33" VTIEFSC="66" VKAPIT="75" BASEGRID="14.4" BASEO="0" AUTOL="100" UnderlinePos="-1" UnderlineWidth="-1" StrikeThruPos="-1" StrikeThruWidth="-1" GROUPC="2" HCMS="0" DPSo="0" DPSFo="0" DPuse="0" DPgam="0" DPbla="1" DPPr="ISO Coated v2 300% (basICColor)" DPIn="sRGB display profile (ICC v2.2)" DPInCMYK="ISO Coated v2 300% (basICColor)" DPIn2="sRGB display profile (ICC v2.2)" DPIn3="ISO Coated v2 300% (basICColor)" DISc="1" DIIm="0" ALAYER="0" LANGUAGE="en_US" AUTOMATIC="1" AUTOCHECK="0" GUIDELOCK="0" SnapToGuides="0" SnapToGrid="0" SnapToElement="1" MINGRID="20" MAJGRID="100" SHOWGRID="0" SHOWGUIDES="1" showcolborders="1" SHOWFRAME="1" SHOWControl="0" SHOWLAYERM="0" SHOWMARGIN="1" SHOWBASE="0" SHOWPICT="1" SHOWLINK="0" rulerMode="1" showrulers="1" showBleed="1" rulerXoffset="-32.1739130434783" rulerYoffset="191.304347826087" GuideRad="10" GRAB="4" POLYC="4" POLYF="0.5" POLYR="0" POLYIR="0" POLYCUR="0" POLYOCUR="0" POLYS="0" arcStartAngle="30" arcSweepAngle="300" spiralStartAngle="0" spiralEndAngle="1080" spiralFactor="1.2" AutoSave="1" AutoSaveTime="600000" AutoSaveCount="1" AutoSaveKeep="0" AUtoSaveInDocDir="1" AutoSaveDir="" ScratchBottom="20" ScratchLeft="100" ScratchRight="100" ScratchTop="20" GapHorizontal="0" GapVertical="40" StartArrow="0" EndArrow="0" PEN="Black" BRUSH="None" PENLINE="Black" PENTEXT="Black" StrokeText="Black" TextBackGround="None" TextLineColor="None" TextBackGroundShade="100" TextLineShade="100" TextPenShade="100" TextStrokeShade="100" STIL="1" STILLINE="1" WIDTH="1" WIDTHLINE="1" PENSHADE="100" LINESHADE="100" BRUSHSHADE="100" CPICT="None" PICTSHADE="100" CSPICT="None" PICTSSHADE="100" PICTSCX="1" PICTSCY="1" PSCALE="1" PASPECT="1" EmbeddedPath="0" HalfRes="1" dispX="10" dispY="10" constrain="15" MINORC="#00ff00" MAJORC="#00ff00" GuideC="#000080" BaseC="#c0c0c0" renderStack="2 0 4 1 3" GridType="0" PAGEC="#ffffff" MARGC="#0000ff" RANDF="0" currentProfile="PDF 1.4" calligraphicPenFillColor="Black" calligraphicPenLineColor="Black" calligraphicPenFillColorShade="100" calligraphicPenLineColorShade="100" calligraphicPenLineWidth="1" calligraphicPenAngle="0" calligraphicPenWidth="10" calligraphicPenStyle="1">
         <CheckProfile Name="PDF 1.3" ignoreErrors="0" autoCheck="1" checkGlyphs="1" checkOrphans="1" checkOverflow="1" checkPictures="1" checkPartFilledImageFrames="0" checkResolution="1" checkTransparency="1" minResolution="144" maxResolution="2400" checkAnnotations="0" checkRasterPDF="1" checkForGIF="1" ignoreOffLayers="0" checkNotCMYKOrSpot="0" checkDeviceColorsAndOutputIntent="0" checkFontNotEmbedded="1" checkFontIsOpenType="1" checkAppliedMasterDifferentSide="1" checkEmptyTextFrames="1"/>
         <CheckProfile Name="PDF 1.4" ignoreErrors="0" autoCheck="1" checkGlyphs="1" checkOrphans="1" checkOverflow="1" checkPictures="1" checkPartFilledImageFrames="0" checkResolution="1" checkTransparency="0" minResolution="144" maxResolution="2400" checkAnnotations="0" checkRasterPDF="1" checkForGIF="1" ignoreOffLayers="0" checkNotCMYKOrSpot="0" checkDeviceColorsAndOutputIntent="0" checkFontNotEmbedded="1" checkFontIsOpenType="1" checkAppliedMasterDifferentSide="1" checkEmptyTextFrames="1"/>
         <CheckProfile Name="PDF 1.5" ignoreErrors="0" autoCheck="1" checkGlyphs="1" checkOrphans="1" checkOverflow="1" checkPictures="1" checkPartFilledImageFrames="0" checkResolution="1" checkTransparency="0" minResolution="144" maxResolution="2400" checkAnnotations="0" checkRasterPDF="1" checkForGIF="1" ignoreOffLayers="0" checkNotCMYKOrSpot="0" checkDeviceColorsAndOutputIntent="0" checkFontNotEmbedded="1" checkFontIsOpenType="1" checkAppliedMasterDifferentSide="1" checkEmptyTextFrames="1"/>
@@ -88,7 +88,7 @@
         </Sections>
         <MASTERPAGE PAGEXPOS="100" PAGEYPOS="20" PAGEWIDTH="612" PAGEHEIGHT="792" BORDERLEFT="40" BORDERRIGHT="40" BORDERTOP="40" BORDERBOTTOM="40" NUM="0" NAM="Normal" MNAM="" Size="Letter" Orientation="0" LEFT="0" PRESET="0" VerticalGuides="" HorizontalGuides="" AGhorizontalAutoGap="0" AGverticalAutoGap="0" AGhorizontalAutoCount="0" AGverticalAutoCount="0" AGhorizontalAutoRefer="0" AGverticalAutoRefer="0" AGSelection="0 0 0 0" pageEffectDuration="1" pageViewDuration="1" effectType="0" Dm="0" M="0" Di="0"/>
         <PAGE PAGEXPOS="100" PAGEYPOS="20" PAGEWIDTH="612" PAGEHEIGHT="792" BORDERLEFT="40" BORDERRIGHT="40" BORDERTOP="40" BORDERBOTTOM="40" NUM="0" NAM="" MNAM="Normal" Size="Letter" Orientation="0" LEFT="0" PRESET="0" VerticalGuides="" HorizontalGuides="" AGhorizontalAutoGap="0" AGverticalAutoGap="0" AGhorizontalAutoCount="0" AGverticalAutoCount="0" AGhorizontalAutoRefer="0" AGverticalAutoRefer="0" AGSelection="0 0 0 0" pageEffectDuration="1" pageViewDuration="1" effectType="0" Dm="0" M="0" Di="0"/>
-        <PAGEOBJECT XPOS="146.434782608696" YPOS="114.260869565218" OwnPage="0" ItemID="1994628811" PTYPE="4" WIDTH="233.217391304348" HEIGHT="104.869565217391" FRTYPE="0" CLIPEDIT="0" PWIDTH="1" PLINEART="1" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" LOCALROT="0" PICART="1" SCALETYPE="1" RATIO="1" COLUMNS="1" COLGAP="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" VAlign="0" FLOP="0" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" path="M0 0 L233.217 0 L233.217 104.87 L0 104.87 L0 0 Z" copath="M0 0 L233.217 0 L233.217 104.87 L0 104.87 L0 0 Z" gXpos="146.434782608696" gYpos="114.260869565218" gWidth="0" gHeight="0" LAYER="0" NEXTITEM="-1" BACKITEM="-1">
+        <PAGEOBJECT XPOS="140" YPOS="69.260869565218" OwnPage="0" ItemID="1273911734" PTYPE="4" WIDTH="233.217391304348" HEIGHT="104.869565217391" FRTYPE="0" CLIPEDIT="0" PWIDTH="1" PLINEART="1" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" LOCALROT="0" PICART="1" SCALETYPE="1" RATIO="1" COLUMNS="1" COLGAP="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" VAlign="0" FLOP="0" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" path="M0 0 L233.217 0 L233.217 104.87 L0 104.87 L0 0 Z" copath="M0 0 L233.217 0 L233.217 104.87 L0 104.87 L0 0 Z" gXpos="140" gYpos="69.260869565218" gWidth="0" gHeight="0" LAYER="0" NEXTITEM="-1" BACKITEM="-1">
             <StoryText>
                 <DefaultStyle/>
                 <ITEXT FONT="Arial Bold" CH="Quantity"/>
@@ -156,7 +156,7 @@
                 </trail>
             </StoryText>
         </PAGEOBJECT>
-        <PAGEOBJECT XPOS="409.434782608696" YPOS="115.260869565217" OwnPage="0" ItemID="2005387707" PTYPE="4" WIDTH="204.130434782609" HEIGHT="153.173913043478" FRTYPE="0" CLIPEDIT="0" PWIDTH="1" PLINEART="1" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" LOCALROT="0" PICART="1" SCALETYPE="1" RATIO="1" COLUMNS="1" COLGAP="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" VAlign="0" FLOP="0" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" path="M0 0 L204.13 0 L204.13 153.174 L0 153.174 L0 0 Z" copath="M0 0 L204.13 0 L204.13 153.174 L0 153.174 L0 0 Z" gXpos="409.434782608696" gYpos="115.260869565218" gWidth="0" gHeight="0" LAYER="0" NEXTITEM="-1" BACKITEM="-1">
+        <PAGEOBJECT XPOS="382.434782608696" YPOS="69.260869565218" OwnPage="0" ItemID="1273889238" PTYPE="4" WIDTH="204.130434782609" HEIGHT="153.173913043478" FRTYPE="0" CLIPEDIT="0" PWIDTH="1" PLINEART="1" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" LOCALROT="0" PICART="1" SCALETYPE="1" RATIO="1" COLUMNS="1" COLGAP="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" VAlign="0" FLOP="0" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" path="M0 0 L204.13 0 L204.13 153.174 L0 153.174 L0 0 Z" copath="M0 0 L204.13 0 L204.13 153.174 L0 153.174 L0 0 Z" gXpos="382.434782608696" gYpos="69.260869565219" gWidth="0" gHeight="0" LAYER="0" NEXTITEM="-1" BACKITEM="-1">
             <StoryText>
                 <DefaultStyle/>
                 <ITEXT FONT="Arial Bold" CH="Prefix"/>
@@ -260,22 +260,22 @@
                 </trail>
             </StoryText>
         </PAGEOBJECT>
-        <PAGEOBJECT XPOS="165.130434782609" YPOS="288.782608695652" OwnPage="0" ItemID="2004297835" PTYPE="4" WIDTH="273.130434782609" HEIGHT="77.4782608695652" FRTYPE="0" CLIPEDIT="0" PWIDTH="1" PLINEART="1" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" LOCALROT="0" PICART="1" SCALETYPE="1" RATIO="1" COLUMNS="1" COLGAP="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" VAlign="0" FLOP="0" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" path="M0 0 L273.13 0 L273.13 77.4783 L0 77.4783 L0 0 Z" copath="M0 0 L273.13 0 L273.13 77.4783 L0 77.4783 L0 0 Z" gXpos="165.130434782609" gYpos="288.782608695652" gWidth="0" gHeight="0" LAYER="0" NEXTITEM="-1" BACKITEM="-1">
+        <PAGEOBJECT XPOS="265.130434782609" YPOS="285.203093045584" OwnPage="0" ItemID="1273962054" PTYPE="4" WIDTH="197.478260869565" HEIGHT="77.4782608695652" FRTYPE="0" CLIPEDIT="0" PWIDTH="1" PLINEART="1" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" LOCALROT="0" PICART="1" SCALETYPE="1" RATIO="1" COLUMNS="1" COLGAP="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" VAlign="0" FLOP="0" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" path="M0 0 L197.478 0 L197.478 77.4783 L0 77.4783 L0 0 Z" copath="M0 0 L197.478 0 L197.478 77.4783 L0 77.4783 L0 0 Z" gXpos="265.130434782609" gYpos="285.203093045584" gWidth="0" gHeight="0" LAYER="0" NEXTITEM="-1" BACKITEM="-1">
             <StoryText>
                 <DefaultStyle/>
                 <tab/>
-                <ITEXT CH="Approx."/>
-                <tab/>
-                <ITEXT CH="Relative"/>
+                <ITEXT FONT="Arial Bold" CH="Approx."/>
+                <tab FONT="Arial Bold"/>
+                <ITEXT FONT="Arial Bold" CH="Relative"/>
                 <para>
                     <Tabs Type="0" Pos="65.7391304347826" Fill=""/>
                     <Tabs Type="0" Pos="144.782608695652" Fill=""/>
                     <Tabs Type="0" Pos="154.173913043478" Fill=""/>
                 </para>
-                <tab/>
-                <ITEXT CH="Mass (amu)"/>
-                <tab/>
-                <ITEXT CH="Charge"/>
+                <tab FONT="Arial Bold"/>
+                <ITEXT FONT="Arial Bold" CH="Mass (amu)"/>
+                <tab FONT="Arial Bold"/>
+                <ITEXT FONT="Arial Bold" CH="Charge"/>
                 <para>
                     <Tabs Type="0" Pos="65.7391304347826" Fill=""/>
                     <Tabs Type="0" Pos="144.782608695652" Fill=""/>
@@ -308,12 +308,431 @@
                 <tab/>
                 <ITEXT CH="0"/>
                 <tab/>
+                <ITEXT FONT="Arial Regular" CH="–"/>
                 <tab/>
                 <ITEXT CH="1"/>
                 <trail>
                     <Tabs Type="0" Pos="65.7391304347826" Fill=""/>
                     <Tabs Type="0" Pos="144.782608695652" Fill=""/>
                     <Tabs Type="0" Pos="154.173913043478" Fill=""/>
+                </trail>
+            </StoryText>
+        </PAGEOBJECT>
+        <PAGEOBJECT XPOS="510.627329192547" YPOS="230.912995158438" OwnPage="0" ItemID="1278720438" PTYPE="12" WIDTH="124.180124223603" HEIGHT="186.058456643857" FRTYPE="0" CLIPEDIT="0" ANNAME="Group1" groupWidth="124.180124223603" groupHeight="186.058456643857" groupClips="1" path="M0 0 L124.18 0 L124.18 186.058 L0 186.058 L0 0 Z" copath="M0 0 L124.18 0 L124.18 186.058 L0 186.058 L0 0 Z" gXpos="510.627329192547" gYpos="230.912995158438" gWidth="0" gHeight="0" LAYER="0">
+            <PAGEOBJECT XPOS="458.791304347826" YPOS="327" OwnPage="0" ItemID="1283526342" PTYPE="4" WIDTH="66.3652173913043" HEIGHT="182.304347826087" FRTYPE="0" CLIPEDIT="0" PWIDTH="1" PLINEART="1" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" LOCALROT="0" PICART="1" SCALETYPE="1" RATIO="1" COLUMNS="1" COLGAP="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" VAlign="0" FLOP="0" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" path="M0 0 L66.3652 0 L66.3652 182.304 L0 182.304 L0 0 Z" copath="M0 0 L66.3652 0 L66.3652 182.304 L0 182.304 L0 0 Z" gXpos="30.1267080745342" gYpos="3.05777651963331" gWidth="124.180124223603" gHeight="186.058456643857" LAYER="0" NEXTITEM="-1" BACKITEM="-1">
+                <StoryText>
+                    <DefaultStyle/>
+                    <ITEXT CH="gamma"/>
+                    <para ALIGN="1" LINESP="28"/>
+                    <ITEXT CH="x ray"/>
+                    <para ALIGN="1" LINESP="28"/>
+                    <ITEXT CH="UV"/>
+                    <para ALIGN="1" LINESP="28"/>
+                    <ITEXT CH="visible"/>
+                    <para ALIGN="1" LINESP="28"/>
+                    <ITEXT CH="IR"/>
+                    <para ALIGN="1" LINESP="28"/>
+                    <ITEXT CH="microwave"/>
+                    <para ALIGN="1" LINESP="28"/>
+                    <ITEXT CH="radio"/>
+                    <trail ALIGN="1" LINESP="28"/>
+                </StoryText>
+            </PAGEOBJECT>
+            <PAGEOBJECT XPOS="446.878260869565" YPOS="331.731723480367" OwnPage="0" ItemID="1332229382" PTYPE="5" WIDTH="176.809372856442" HEIGHT="1" FRTYPE="0" CLIPEDIT="0" ROT="90" PWIDTH="3.6" SHADE="0" PCOLOR2="Black" PLINEART="1" path="" startArrowIndex="8" startArrowScale="75" gXpos="18.2136645962732" gYpos="7.78949999999998" gWidth="124.180124223603" gHeight="186.058456643857" LAYER="0"/>
+            <PAGEOBJECT XPOS="535.282947297786" YPOS="502.211180124224" OwnPage="0" ItemID="1287919910" PTYPE="5" WIDTH="176.211180124224" HEIGHT="1" FRTYPE="0" CLIPEDIT="0" ROT="270" PWIDTH="3.6" SHADE="0" PCOLOR2="Black" PLINEART="1" path="" startArrowIndex="8" startArrowScale="75" gXpos="106.618351024494" gYpos="178.268956643857" gWidth="124.180124223603" gHeight="186.058456643857" LAYER="0"/>
+            <PAGEOBJECT XPOS="428.664596273292" YPOS="406.524844720497" OwnPage="0" ItemID="1333388694" PTYPE="4" WIDTH="11.1801242236025" HEIGHT="11.6273291925466" FRTYPE="0" CLIPEDIT="0" PWIDTH="1" PLINEART="1" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" LOCALROT="0" PICART="1" SCALETYPE="1" RATIO="1" COLUMNS="1" COLGAP="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" VAlign="0" FLOP="0" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" path="M0 0 L11.1801 0 L11.1801 11.6273 L0 11.6273 L0 0 Z" copath="M0 0 L11.1801 0 L11.1801 11.6273 L0 11.6273 L0 0 Z" gXpos="0" gYpos="82.5826212401302" gWidth="124.180124223603" gHeight="186.058456643857" LAYER="0" NEXTITEM="-1" BACKITEM="-1">
+                <StoryText>
+                    <DefaultStyle/>
+                    <ITEXT CH="E"/>
+                    <trail/>
+                </StoryText>
+            </PAGEOBJECT>
+            <PAGEOBJECT XPOS="541.664596273292" YPOS="406.524844720497" OwnPage="0" ItemID="1309537782" PTYPE="4" WIDTH="11.1801242236025" HEIGHT="11.6273291925466" FRTYPE="0" CLIPEDIT="0" PWIDTH="1" PLINEART="1" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" LOCALROT="0" PICART="1" SCALETYPE="1" RATIO="1" COLUMNS="1" COLGAP="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" VAlign="0" FLOP="0" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" path="M0 0 L11.1801 0 L11.1801 11.6273 L0 11.6273 L0 0 Z" copath="M0 0 L11.1801 0 L11.1801 11.6273 L0 11.6273 L0 0 Z" gXpos="113" gYpos="82.5826212401302" gWidth="124.180124223603" gHeight="186.058456643857" LAYER="0" NEXTITEM="-1" BACKITEM="-1">
+                <StoryText>
+                    <DefaultStyle/>
+                    <ITEXT FONT="Arial Regular" CH="λ"/>
+                    <trail/>
+                </StoryText>
+            </PAGEOBJECT>
+        </PAGEOBJECT>
+        <PAGEOBJECT XPOS="146.913043478261" YPOS="183.869565217391" OwnPage="0" ItemID="1280998982" PTYPE="4" WIDTH="126.913043478261" HEIGHT="63.304347826087" FRTYPE="0" CLIPEDIT="0" PWIDTH="1" PLINEART="1" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" LOCALROT="0" PICART="1" SCALETYPE="1" RATIO="1" COLUMNS="1" COLGAP="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" VAlign="0" FLOP="0" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" path="M0 0 L126.913 0 L126.913 63.3043 L0 63.3043 L0 0 Z" copath="M0 0 L126.913 0 L126.913 63.3043 L0 63.3043 L0 0 Z" gXpos="146.913043478261" gYpos="183.869565217391" gWidth="0" gHeight="0" LAYER="0" NEXTITEM="-1" BACKITEM="-1">
+            <StoryText>
+                <DefaultStyle/>
+                <ITEXT FONT="Arial Italic" CH="n"/>
+                <tab/>
+                <ITEXT CH="="/>
+                <tab/>
+                <ITEXT CH="1, 2, 3, ..."/>
+                <para>
+                    <Tabs Type="0" Pos="22.4347826086957" Fill=""/>
+                    <Tabs Type="0" Pos="42.2608695652174" Fill=""/>
+                </para>
+                <ITEXT CH="ℓ "/>
+                <tab/>
+                <ITEXT CH="="/>
+                <tab/>
+                <ITEXT CH="0, ... , "/>
+                <ITEXT FONT="Arial Italic" CH="n"/>
+                <ITEXT CH=" - 1"/>
+                <para>
+                    <Tabs Type="0" Pos="22.43478261" Fill=""/>
+                    <Tabs Type="0" Pos="42.26086957" Fill=""/>
+                </para>
+                <ITEXT FONT="Arial Italic" CH="m"/>
+                <ITEXT FEATURES="inherit subscript" CH="ℓ"/>
+                <ITEXT CH=" "/>
+                <tab/>
+                <ITEXT CH="="/>
+                <tab FONT="Arial Regular"/>
+                <ITEXT FONT="Arial Regular" CH="−"/>
+                <ITEXT CH="ℓ, ... , +ℓ "/>
+                <para>
+                    <Tabs Type="0" Pos="22.43478261" Fill=""/>
+                    <Tabs Type="0" Pos="42.26086957" Fill=""/>
+                </para>
+                <ITEXT FONT="Arial Italic" CH="m"/>
+                <ITEXT FEATURES="inherit subscript" CH="s"/>
+                <tab/>
+                <ITEXT CH="="/>
+                <tab/>
+                <ITEXT CH="+"/>
+                <ITEXT FONT="Arial Regular" CH="½"/>
+                <ITEXT CH=", "/>
+                <ITEXT FONT="Arial Regular" CH="−½"/>
+                <trail>
+                    <Tabs Type="0" Pos="22.43478261" Fill=""/>
+                    <Tabs Type="0" Pos="42.26086957" Fill=""/>
+                </trail>
+            </StoryText>
+        </PAGEOBJECT>
+        <PAGEOBJECT XPOS="145.913043478261" YPOS="251.869565217391" OwnPage="0" ItemID="1265798486" PTYPE="4" WIDTH="110.434782608696" HEIGHT="80.0869565217395" FRTYPE="0" CLIPEDIT="0" PWIDTH="1" PLINEART="1" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" LOCALROT="0" PICART="1" SCALETYPE="1" RATIO="1" COLUMNS="1" COLGAP="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" VAlign="0" FLOP="0" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" path="M0 0 L110.435 0 L110.435 80.087 L0 80.087 L0 0 Z" copath="M0 0 L110.435 0 L110.435 80.087 L0 80.087 L0 0 Z" gXpos="145.913043478261" gYpos="251.869565217391" gWidth="0" gHeight="0" LAYER="0" NEXTITEM="-1" BACKITEM="-1">
+            <StoryText>
+                <DefaultStyle/>
+                <ITEXT CH="ℓ"/>
+                <tab/>
+                <ITEXT CH="Letter"/>
+                <tab/>
+                <ITEXT CH="Shape"/>
+                <para>
+                    <Tabs Type="0" Pos="22.43478261" Fill=""/>
+                    <Tabs Type="0" Pos="42.26086957" Fill=""/>
+                </para>
+                <ITEXT CH="0"/>
+                <tab/>
+                <ITEXT FONT="Arial Italic" CH="s"/>
+                <tab/>
+                <para/>
+                <ITEXT CH="1"/>
+                <tab/>
+                <ITEXT FONT="Arial Italic" CH="p"/>
+                <tab/>
+                <para/>
+                <ITEXT CH="2"/>
+                <tab/>
+                <ITEXT FONT="Arial Italic" CH="d"/>
+                <tab/>
+                <para/>
+                <ITEXT CH="3"/>
+                <tab/>
+                <ITEXT FONT="Arial Italic" CH="f"/>
+                <tab/>
+                <trail/>
+            </StoryText>
+        </PAGEOBJECT>
+        <PAGEOBJECT XPOS="146.913043478261" YPOS="449.000680124224" OwnPage="0" ItemID="1284007846" PTYPE="4" WIDTH="464.847826086956" HEIGHT="40.1732329192547" FRTYPE="0" CLIPEDIT="0" PWIDTH="1" PLINEART="1" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" LOCALROT="0" PICART="1" SCALETYPE="1" RATIO="1" COLUMNS="1" COLGAP="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" VAlign="0" FLOP="0" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" path="M0 0 L464.848 0 L464.848 40.1732 L0 40.1732 L0 0 Z" copath="M0 0 L464.848 0 L464.848 40.1732 L0 40.1732 L0 0 Z" gXpos="146.913043478261" gYpos="449.000680124224" gWidth="0" gHeight="0" LAYER="0" NEXTITEM="-1" BACKITEM="-1">
+            <StoryText>
+                <DefaultStyle/>
+                <ITEXT CH="Ionic"/>
+                <tab/>
+                <ITEXT CH="Cation  (charge)"/>
+                <tab/>
+                <ITEXT CH="Anion [-ide]"/>
+                <tab/>
+                <ITEXT CH="Prefix + Hydrate"/>
+                <para>
+                    <Tabs Type="0" Pos="67.8260869565217" Fill=""/>
+                    <Tabs Type="0" Pos="212.847826086956" Fill=""/>
+                    <Tabs Type="0" Pos="374.586956521739" Fill=""/>
+                </para>
+                <ITEXT CH="Covalent"/>
+                <tab/>
+                <ITEXT CH="Prefix + Electropositive"/>
+                <tab/>
+                <ITEXT CH="Prefix + Electronegative"/>
+                <trail>
+                    <Tabs Type="0" Pos="67.8260869565217" Fill=""/>
+                    <Tabs Type="0" Pos="212.847826086956" Fill=""/>
+                    <Tabs Type="0" Pos="374.586956521739" Fill=""/>
+                </trail>
+            </StoryText>
+        </PAGEOBJECT>
+        <PAGEOBJECT XPOS="146.913043478261" YPOS="508.173913043478" OwnPage="0" ItemID="1306262966" PTYPE="4" WIDTH="84.2608695652178" HEIGHT="147.391304347826" FRTYPE="0" CLIPEDIT="0" PWIDTH="1" PLINEART="1" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" LOCALROT="0" PICART="1" SCALETYPE="1" RATIO="1" COLUMNS="1" COLGAP="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" VAlign="0" FLOP="0" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" path="M0 0 L84.2609 0 L84.2609 147.391 L0 147.391 L0 0 Z" copath="M0 0 L84.2609 0 L84.2609 147.391 L0 147.391 L0 0 Z" gXpos="146.913043478261" gYpos="508.173913043478" gWidth="0" gHeight="0" LAYER="0" NEXTITEM="-1" BACKITEM="-1">
+            <StoryText>
+                <DefaultStyle/>
+                <ITEXT CH="1"/>
+                <tab/>
+                <ITEXT CH="mono-"/>
+                <para/>
+                <ITEXT CH="2"/>
+                <tab/>
+                <ITEXT CH="di-"/>
+                <para/>
+                <ITEXT CH="3"/>
+                <tab/>
+                <ITEXT CH="tri-"/>
+                <para/>
+                <ITEXT CH="4"/>
+                <tab/>
+                <ITEXT CH="tetra-"/>
+                <para/>
+                <ITEXT CH="5"/>
+                <tab/>
+                <ITEXT CH="penta-"/>
+                <breakline/>
+                <ITEXT CH="6"/>
+                <tab/>
+                <ITEXT CH="hexa-"/>
+                <para/>
+                <ITEXT CH="7"/>
+                <tab/>
+                <ITEXT CH="hepta-"/>
+                <para/>
+                <ITEXT CH="8"/>
+                <tab/>
+                <ITEXT CH="octa-"/>
+                <para/>
+                <ITEXT CH="9"/>
+                <tab/>
+                <ITEXT CH="nona-"/>
+                <para/>
+                <ITEXT CH="10"/>
+                <tab/>
+                <ITEXT CH="deca-"/>
+                <trail/>
+            </StoryText>
+        </PAGEOBJECT>
+        <PAGEOBJECT XPOS="484.500000000001" YPOS="424.985750061059" OwnPage="0" ItemID="1358522198" PTYPE="4" WIDTH="178.434782608696" HEIGHT="344.869565217391" FRTYPE="0" CLIPEDIT="0" PWIDTH="1" PLINEART="1" LOCALSCX="1" LOCALSCY="1" LOCALX="0" LOCALY="0" LOCALROT="0" PICART="1" SCALETYPE="1" RATIO="1" COLUMNS="1" COLGAP="0" AUTOTEXT="0" EXTRA="0" TEXTRA="0" BEXTRA="0" REXTRA="0" VAlign="0" FLOP="0" PLTSHOW="0" BASEOF="0" textPathType="0" textPathFlipped="0" path="M0 0 L178.435 0 L178.435 344.87 L0 344.87 L0 0 Z" copath="M0 0 L178.435 0 L178.435 344.87 L0 344.87 L0 0 Z" gXpos="484.500000000001" gYpos="424.985750061059" gWidth="0" gHeight="0" LAYER="0" NEXTITEM="-1" BACKITEM="-1">
+            <StoryText>
+                <DefaultStyle/>
+                <ITEXT CH="Acetate"/>
+                <tab/>
+                <ITEXT CH="C"/>
+                <ITEXT FEATURES="inherit subscript" CH="2"/>
+                <ITEXT CH="H"/>
+                <ITEXT FEATURES="inherit subscript" CH="3"/>
+                <ITEXT CH="O"/>
+                <ITEXT FEATURES="inherit subscript" CH="2"/>
+                <ITEXT FONT="Arial Regular" FEATURES="inherit superscript" CH="−"/>
+                <para>
+                    <Tabs Type="0" Pos="131.4782609" Fill=""/>
+                    <Tabs Type="0" Pos="136.173913" Fill=""/>
+                </para>
+                <ITEXT CH="Carbonate"/>
+                <tab/>
+                <ITEXT CH="CO"/>
+                <ITEXT FEATURES="inherit subscript" CH="3"/>
+                <ITEXT FEATURES="inherit superscript" CH="2"/>
+                <ITEXT FONT="Arial Regular" FEATURES="inherit superscript" CH="−"/>
+                <para>
+                    <Tabs Type="0" Pos="131.4782609" Fill=""/>
+                    <Tabs Type="0" Pos="136.173913" Fill=""/>
+                </para>
+                <ITEXT CH="Hydrogen carbonate"/>
+                <tab/>
+                <ITEXT CH="HCO"/>
+                <ITEXT FEATURES="inherit subscript" CH="3"/>
+                <ITEXT FONT="Arial Regular" FEATURES="inherit superscript" CH="−"/>
+                <para>
+                    <Tabs Type="0" Pos="131.4782609" Fill=""/>
+                    <Tabs Type="0" Pos="136.173913" Fill=""/>
+                </para>
+                <ITEXT CH="Hydroxide"/>
+                <tab/>
+                <ITEXT CH="OH"/>
+                <ITEXT FONT="Arial Regular" FEATURES="inherit superscript" CH="−"/>
+                <para>
+                    <Tabs Type="0" Pos="131.4782609" Fill=""/>
+                    <Tabs Type="0" Pos="136.173913" Fill=""/>
+                </para>
+                <ITEXT CH="Nitrite"/>
+                <tab/>
+                <ITEXT CH="NO"/>
+                <ITEXT FEATURES="inherit subscript" CH="2"/>
+                <ITEXT FONT="Arial Regular" FEATURES="inherit superscript" CH="−"/>
+                <para>
+                    <Tabs Type="0" Pos="131.4782609" Fill=""/>
+                    <Tabs Type="0" Pos="136.173913" Fill=""/>
+                </para>
+                <ITEXT CH="Nitrate"/>
+                <tab/>
+                <ITEXT CH="NO"/>
+                <ITEXT FEATURES="inherit subscript" CH="3"/>
+                <ITEXT FONT="Arial Regular" FEATURES="inherit superscript" CH="−"/>
+                <para>
+                    <Tabs Type="0" Pos="131.4782609" Fill=""/>
+                    <Tabs Type="0" Pos="136.173913" Fill=""/>
+                </para>
+                <ITEXT CH="Chromate"/>
+                <tab/>
+                <ITEXT CH="CrO"/>
+                <ITEXT FEATURES="inherit subscript" CH="4"/>
+                <ITEXT FEATURES="inherit superscript" CH="2"/>
+                <ITEXT FONT="Arial Regular" FEATURES="inherit superscript" CH="−"/>
+                <para>
+                    <Tabs Type="0" Pos="131.4782609" Fill=""/>
+                    <Tabs Type="0" Pos="136.173913" Fill=""/>
+                </para>
+                <ITEXT CH="Dichromate"/>
+                <tab/>
+                <ITEXT CH="Cr"/>
+                <ITEXT FEATURES="inherit subscript" CH="2"/>
+                <ITEXT CH="O"/>
+                <ITEXT FEATURES="inherit subscript" CH="7"/>
+                <ITEXT FEATURES="inherit superscript" CH="2"/>
+                <ITEXT FONT="Arial Regular" FEATURES="inherit superscript" CH="−"/>
+                <para>
+                    <Tabs Type="0" Pos="131.4782609" Fill=""/>
+                    <Tabs Type="0" Pos="136.173913" Fill=""/>
+                </para>
+                <ITEXT CH="Phosphate"/>
+                <tab/>
+                <ITEXT CH="PO"/>
+                <ITEXT FEATURES="inherit subscript" CH="4"/>
+                <ITEXT FEATURES="inherit superscript" CH="3"/>
+                <ITEXT FONT="Arial Regular" FEATURES="inherit superscript" CH="−"/>
+                <para>
+                    <Tabs Type="0" Pos="131.478260869565" Fill=""/>
+                    <Tabs Type="0" Pos="136.173913043478" Fill=""/>
+                </para>
+                <ITEXT CH="Hydrogen phosphate"/>
+                <tab/>
+                <ITEXT CH="HPO"/>
+                <ITEXT FEATURES="inherit subscript" CH="4"/>
+                <ITEXT FEATURES="inherit superscript" CH="2"/>
+                <ITEXT FONT="Arial Regular" FEATURES="inherit superscript" CH="−"/>
+                <para>
+                    <Tabs Type="0" Pos="131.4782609" Fill=""/>
+                    <Tabs Type="0" Pos="136.173913" Fill=""/>
+                </para>
+                <ITEXT CH="Dihydrogen phosphate"/>
+                <tab/>
+                <ITEXT CH="H"/>
+                <ITEXT FEATURES="inherit subscript" CH="2"/>
+                <ITEXT CH="PO"/>
+                <ITEXT FEATURES="inherit subscript" CH="4"/>
+                <ITEXT FONT="Arial Regular" FEATURES="inherit superscript" CH="−"/>
+                <para>
+                    <Tabs Type="0" Pos="131.4782609" Fill=""/>
+                    <Tabs Type="0" Pos="136.173913" Fill=""/>
+                </para>
+                <ITEXT CH="Ammonium"/>
+                <tab/>
+                <ITEXT CH="NH"/>
+                <ITEXT FEATURES="inherit subscript" CH="4"/>
+                <ITEXT FEATURES="inherit superscript" CH="+"/>
+                <para>
+                    <Tabs Type="0" Pos="131.478260869565" Fill=""/>
+                    <Tabs Type="0" Pos="136.173913043478" Fill=""/>
+                </para>
+                <ITEXT CH="Hypochlorite"/>
+                <tab/>
+                <ITEXT CH="ClO"/>
+                <ITEXT FONT="Arial Regular" FEATURES="inherit superscript" CH="−"/>
+                <para>
+                    <Tabs Type="0" Pos="131.4782609" Fill=""/>
+                    <Tabs Type="0" Pos="136.173913" Fill=""/>
+                </para>
+                <ITEXT CH="Chlorite"/>
+                <tab/>
+                <ITEXT CH="ClO"/>
+                <ITEXT FEATURES="inherit subscript" CH="2"/>
+                <ITEXT FONT="Arial Regular" FEATURES="inherit superscript" CH="−"/>
+                <para>
+                    <Tabs Type="0" Pos="131.4782609" Fill=""/>
+                    <Tabs Type="0" Pos="136.173913" Fill=""/>
+                </para>
+                <ITEXT CH="Chlorate"/>
+                <tab/>
+                <ITEXT CH="ClO"/>
+                <ITEXT FEATURES="inherit subscript" CH="3"/>
+                <ITEXT FONT="Arial Regular" FEATURES="inherit superscript" CH="−"/>
+                <para>
+                    <Tabs Type="0" Pos="131.4782609" Fill=""/>
+                    <Tabs Type="0" Pos="136.173913" Fill=""/>
+                </para>
+                <ITEXT CH="Perchlorate"/>
+                <tab/>
+                <ITEXT CH="ClO"/>
+                <ITEXT FEATURES="inherit subscript" CH="4"/>
+                <ITEXT FONT="Arial Regular" FEATURES="inherit superscript" CH="−"/>
+                <para>
+                    <Tabs Type="0" Pos="131.4782609" Fill=""/>
+                    <Tabs Type="0" Pos="136.173913" Fill=""/>
+                </para>
+                <ITEXT CH="Permanganate"/>
+                <tab/>
+                <ITEXT CH="MnO"/>
+                <ITEXT FEATURES="inherit subscript" CH="4"/>
+                <ITEXT FONT="Arial Regular" FEATURES="inherit superscript" CH="−"/>
+                <para>
+                    <Tabs Type="0" Pos="131.4782609" Fill=""/>
+                    <Tabs Type="0" Pos="136.173913" Fill=""/>
+                </para>
+                <ITEXT CH="Sulfite"/>
+                <tab/>
+                <ITEXT CH="SO"/>
+                <ITEXT FEATURES="inherit subscript" CH="3"/>
+                <ITEXT FEATURES="inherit superscript" CH="2"/>
+                <ITEXT FONT="Arial Regular" FEATURES="inherit superscript" CH="−"/>
+                <para>
+                    <Tabs Type="0" Pos="131.4782609" Fill=""/>
+                    <Tabs Type="0" Pos="136.173913" Fill=""/>
+                </para>
+                <ITEXT CH="Hydrogen sulfite"/>
+                <tab/>
+                <ITEXT CH="HSO"/>
+                <ITEXT FEATURES="inherit superscript" CH="3"/>
+                <ITEXT FONT="Arial Regular" FEATURES="inherit superscript" CH="−"/>
+                <para>
+                    <Tabs Type="0" Pos="131.4782609" Fill=""/>
+                    <Tabs Type="0" Pos="136.173913" Fill=""/>
+                </para>
+                <ITEXT CH="Sulfate"/>
+                <tab/>
+                <ITEXT CH="SO"/>
+                <ITEXT FEATURES="inherit subscript" CH="4"/>
+                <ITEXT FEATURES="inherit superscript" CH="2"/>
+                <ITEXT FONT="Arial Regular" FEATURES="inherit superscript" CH="−"/>
+                <para>
+                    <Tabs Type="0" Pos="131.4782609" Fill=""/>
+                    <Tabs Type="0" Pos="136.173913" Fill=""/>
+                </para>
+                <ITEXT CH="Hydrogen sulfate"/>
+                <tab/>
+                <ITEXT CH="HSO"/>
+                <ITEXT FEATURES="inherit subscript" CH="4"/>
+                <ITEXT FONT="Arial Regular" FEATURES="inherit superscript" CH="−"/>
+                <para>
+                    <Tabs Type="0" Pos="131.4782609" Fill=""/>
+                    <Tabs Type="0" Pos="136.173913" Fill=""/>
+                </para>
+                <ITEXT CH="Cyanide"/>
+                <tab/>
+                <ITEXT CH="CN"/>
+                <ITEXT FONT="Arial Regular" FEATURES="inherit superscript" CH="−"/>
+                <para>
+                    <Tabs Type="0" Pos="131.4782609" Fill=""/>
+                    <Tabs Type="0" Pos="136.173913" Fill=""/>
+                </para>
+                <ITEXT CH="Peroxide"/>
+                <tab/>
+                <ITEXT CH="O"/>
+                <ITEXT FEATURES="inherit subscript" CH="2"/>
+                <ITEXT FEATURES="inherit superscript" CH="2"/>
+                <ITEXT FONT="Arial Regular" FEATURES="inherit superscript" CH="−"/>
+                <trail>
+                    <Tabs Type="0" Pos="131.4782609" Fill=""/>
+                    <Tabs Type="0" Pos="136.173913" Fill=""/>
                 </trail>
             </StoryText>
         </PAGEOBJECT>
