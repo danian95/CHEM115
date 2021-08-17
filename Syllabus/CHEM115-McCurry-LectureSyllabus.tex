@@ -1,0 +1,446 @@
+% !TeX program = lualatex
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{bucolors}
+\usepackage[colorlinks=true,allcolors=black,urlcolor=bugold]{hyperref}
+\usepackage{mathtools}
+\usepackage{mdframed}
+\usepackage{titling}
+\usepackage{newtxtext}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage[english]{babel}
+\usepackage[sf,bf]{titlesec}
+\usepackage{enumitem}
+\usepackage[margin=1in,letterpaper]{geometry}
+\usepackage{multicol}
+
+\title{Chemistry for the Sciences 1}
+\author{Dr.\ Daniel A.\ McCurry}
+\date{Fall 2021}
+
+\newcommand{\classnum}{CHEM115}
+
+\pagestyle{fancy}
+\lhead{}
+\chead{}
+\rhead{}
+\lfoot{\footnotesize\sffamily McCurry --- \classnum\ --- FA21}
+\cfoot{}
+\rfoot{\footnotesize\sffamily\thepage~of~\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\pretitle{\noindent\color{bumaroon}
+	\sffamily\bfseries\Large
+	\classnum\newline
+	\LARGE\expandafter\MakeUppercase\expandafter}
+\posttitle{\par\medskip}
+\preauthor{\noindent\sffamily}
+\postauthor{ --- }
+\predate{\sffamily}
+\postdate{}
+
+\setlength{\droptitle}{-2em}
+
+\setcounter{secnumdepth}{0}
+\setlist[description]{font=\sffamily\bfseries}
+\urlstyle{same}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{fancy}
+
+\noindent
+\begin{tabularx}{\linewidth} {@{\qquad}>{\bfseries\sffamily}r
+	>{\raggedright\arraybackslash}X@{\qquad}}
+	\toprule
+	Lecture: & MWF, 12:00 pm -- 12:50 pm \\
+			    & HSC G42 \\ \\
+        Instructor: & Dr.\ Daniel A. McCurry\\
+		    & 	Assistant Professor of Chemistry\\
+		    & 	HSC 240\\
+		    & 	(570) 389-5320\\
+		    & 	\href{mailto:dmccurry@bloomu.edu}{\nolinkurl{dmccurry@bloomu.edu}}\\
+		    & 	\href{https://bloomu.starfishsolutions.com/starfish-ops/dl/instructor/serviceCatalog.html?bookmark=connection/20001}{HuskySuccess
+		     	Profile} \\ \\
+	Office Hours: & \begin{minipage}[t]{\linewidth}
+		\begin{tabular}[t] {@{}lr@{\,--\,}l@{~@~}l}
+			Mon./Tues.  & 4:00 & 6:00\,p.m. & Andruss Library\\
+			Fri. & 9:00 & 10:00\,a.m. & HSC 240\\
+				\end{tabular}
+			\end{minipage} \\
+		      &   In-Person or via Zoom Meeting ID
+                          ``\href{https://bloomu.zoom.us/my/dmccurry}{dmccurry}''\\
+                      &    \href{https://bloomu.starfishsolutions.com/starfish-ops/dl/instructor/serviceCatalog.html?bookmark=connection/20001/schedule}{Schedule
+		      an Appointment} (not required) \\ \\
+        Text: & Tro, N.J. \textit{Chemistry: Structure and Properties},
+	2\textsuperscript{nd} Ed. Pearson: Hoboken, NJ, 2018. \\ 
+	      & \footnotesize Used in both CHEM115 and CHEM116. This course is
+	      participating in inclusive access, so you should have day-1 access
+	      to the online version of the text. You may purchase a hard copy
+	      for an additional fee or opt out entirely. See BOLT for details.
+	      \\ \\
+	Lab Text: & Faculty of the Department of Chemistry and
+	Biochemistry. \textit{Laboratory Exercises for Chemistry for
+			      the Sciences 1}, Fall 2021 Ed. \\
+	       	      & \footnotesize Available for purchase during the first
+		      week of laboratory. \\ \\
+	Materials: & Scientific or graphing calculator (simpler calculators
+	are not appropriate). \\
+		   & Scrap paper and a pen or pencil to work through problems.
+		   \\
+	\bottomrule
+\end{tabularx}
+
+\section{Course Description}
+First course in chemistry for all physical and biological science majors.
+Introduces and develops qualitative and quantitative concepts in chemistry
+essential for further study in chemistry and application to other science
+disciplines. Topics include the elements' atomic and periodic properties,
+chemical compound types and properties, chemical reaction types, chemical
+stoichiometry, molecular geometry determination and relation to properties,
+physical properties of states of matter, qualitative acid-base behavior, and
+inter-particle forces. Three hours lecture per week plus three hours per week
+laboratory. Successful completion of the course earns 1 GEP toward Goal 3 ---
+Analytical and Quantitative Skills and 3 GEPs toward Goal 5 --- Natural
+Sciences.
+
+
+\subsection{Learning Objectives}
+We're going to cover a \emph{lot} this semester. You may even wonder if you will
+ever use this material in the future. My goal is to not \emph{specifically}
+ensure that you have \emph{memorized} all of the material. Rather, you are
+expected to be able to:
+\begin{itemize}[noitemsep]
+	\item Identify the importance of chemicals and chemistry in everyday
+		living.
+	\item Identify the fundamental concepts of chemistry.
+	\item Solve problems using chemical principles and mathematical
+		analysis.
+	\item Identify the properties of matter and the changes that matter
+		undergoes, using logic and chemical principles.
+\end{itemize}
+Your ability to meet these objectives will be assessed through regular written
+evaluations. In preparing for such exams and quizzes, it is therefore imperative
+that you understand the \emph{why} and \emph{how} moreso than memorizing the
+straight facts covered in the text or examples we try out in lecture.
+Approaching the course in this manner will help you develop a skillset
+applicable to your specific field of study in the future.
+
+\subsection{Course Community and Communication}
+\emph{Your active involvement in the course is important for your success!}
+Throughout the semester, I will encourage active participation both during and
+outside of lecture. In order to facilitate some community-building, we will be
+using the Discussion Boards on BOLT extensively. If you have a question with an
+answer that could benefit the class as a whole, please post your question to the
+Discussion Board, rather than sending an individual email to directly to me. I
+would also be happy to help organize study groups if you are interested. Please
+let me know if you would like to chat with other classmates and I will put you
+in touch. Learning occurs best when it is driven by your own motivation and
+curiosity, not by passively absorbing information I share in a brief 50-minute
+period!
+
+All course announcements will be delivered on the BOLT course page. It is your
+responsibility to regularly check BOLT. I will \emph{not} send out email
+announcements, so BOLT is the \emph{only} location you will need to check for
+all important course information --- in my experience, a single location for all
+information significantly decreases any confusion. If you would like push
+notifications on your phone when announcements are posted, please download the
+\href{https://documentation.brightspace.com/EN/brightspace/requirements/all/pulse.htm}{Brightspace
+Pulse} app.
+
+\section{Evaluations and Grading}
+Unfortunately, we do need to include a metric for assessing your understanding
+of the material. This course will be operating on a 100\,\% scale according to
+the tables below. Note that there will be 7 homeworks worth 20\,points each and
+14 quizzes worth 5\,points each. The sum of the total will be divided by 200,
+allowing a little wiggle room for ``off'' quiz days --- we all have them!
+
+\begin{multicols}{2}
+	\subsection{Point Distribution}
+	\begin{tabular} {l r<{\,\%}}
+		Exams & 40 \\
+		Homework and Quizzes & 15 \\
+		Final Exam & 25 \\
+		Laboratory & 20 \\ \midrule
+		& 100 \\
+	\end{tabular}
+
+	\subsection{Grade Assignment}%
+	\begin{tabular} {r@{\,--\,}l<{\,\%} l@{\hspace{0.5in}}r@{\,--\,}l<{\,\%} l}
+		\multicolumn{3}{c}{} & 75 & 77 & C+ \\
+		91 & 97 & A  & 71 & 74 & C  \\
+		88 & 90 & A- & 68 & 70 & C- \\
+		\multicolumn{6}{c}{} \\
+		85 & 87 & B+ & 65 & 67 & D+ \\
+		81 & 84 & B  & 60 & 64 & D  \\
+		78 & 80 & B- & 0  & 59 & F
+	\end{tabular}
+\end{multicols}
+
+\section{Graded Items}
+\begin{description}
+	\item[Exams:] There will be three (3) 50 minute exams held during our
+		regularly scheduled lecture time. Tardiness will not extend your
+		exam time. If accommodations must be made, it is your
+		responsibility to alert the instructor at least 72 hours
+		\emph{before} the exam.
+	\item[Quizzes:] There will be a total of fourteen (14) quizzes
+		administered in lecture at least once \emph{every} week. Most
+		quizzes will be open note, but the instructor reserves the right
+		to declare a quiz close book.
+	\item[Homework:] There will be seven (7) homework assignments on BOLT
+		generally due on Wednesdays. These are also found under the
+		Assessments > Quizzes section on BOLT. You will have 10 attempts
+		to complete each homework, with the highest grade being taken
+		for final grade calculation. On each subsequent attempt, you
+		will only need to answer the questions you missed for credit.
+		The homework is designed to aid your learning, so use it as a
+		chance to test your knowledge before exams. Unless certain
+		questions require attention, the homeworks will not be hand
+		graded. It is imperative that you follow the instructions
+		carefully so BOLT does not score your answers incorrectly.
+	\item[Laboratory:] Laboratory attendance is mandatory. See the lab
+		syllabus for lab policies and specifics on how the labs will be
+		graded. Your laboratory grade is determined solely by your
+		laboratory instructor. In cases where I (Dr.\ McCurry) am not
+		your laboratory instructor, \emph{I will have no ability to
+		modify or adjust items graded by your laboratory instructor}.
+	\item[Final Exam:] There will be one (1) \emph{comprehensive} 110 minute
+		final exam during the final exam week. This will be a
+		standardized exam designed by the American Chemical Society in
+		order to ensure that you have learned the competencies expected
+		for a first-term undergraduate introductory chemistry course. In
+		general, the national average for this exam hovers around
+		50\,\% --- you are \emph{not} expected to know everything on
+		this exam! Your final grade will be adjusted to account for
+		topics that were emphasized a bit differently in our lecture.
+		Furthermore, each of the 50-minute exams throughout the semester
+		will have a small multiple choice portion to prepare you for
+		this final, all multiple choice examination.
+%	\item[Textbook Problems:] Homework problems are designed to help you
+%		keep current with the material.  Assigned problems in the
+%		textbook will \emph{usually} not be collected, but specific
+%		questions may require answer submissions on BOLT (generally 1-2
+%		per chapter). Please note that the problems are useful only if
+%		you conscientiously work on them.
+\end{description}
+
+\subsection{Grading Errors}
+Did I make a mistake? Let me know within 72 hours from the return of the graded
+item so that I may re-grade it. \emph{The entire item will be re-graded}. This
+timeline is necessary so I don't get a pile of re-grades during the last week of
+class. You have until 4:30\,p.m.\ on the day of the final exam to bring clerical
+errors (e.g., I typed a grade incorrectly into BOLT) to my attention.
+
+\section{Important Dates}\label{importantdates}
+\begin{center}
+	\begin{tabular} {l l l}
+		September 6  & Monday    & Labor Day (No Class) \\
+		September 17 & Friday    & Exam 1 \\
+		October 15   & Friday    & Exam 2 \\
+		November 12  & Friday    & Exam 3 \\
+		November 24  & Wednesday & Thanksgiving Recess (No Class) \\
+		November 26  & Friday    & Thanksgiving Recess (No Class) \\
+		December 3   & Friday    & Last Day of Class \\
+		December 8   & Friday    & Final Examination (12:30 --
+		2:30\,p.m.)
+	\end{tabular}
+\end{center}
+
+Please note, if you are unable to take an examination or quiz at
+its scheduled time due to some unavoidable circumstance, you are obligated to
+provide a documented valid excuse to your instructor. \emph{Failure to provide a
+valid excuse on these terms will result in a score of zero for the quiz or
+exam.}
+
+	\begin{center}
+		\renewcommand\arraystretch{1.25}
+\begin{tabularx}{\linewidth} {X X}
+	\toprule
+	\bfseries Valid Excuse & \bfseries Time Frame to Provide Documentation
+	\\ \midrule
+	Personal illness or accident, illness or accident of a dependent child,
+	or death or critical illness of an immediate family member &
+	48\,hr after the missed graded event \\
+	Participation in a university-sponsored activity &
+	48\,hr in advance of the missed graded event \\
+	Military duty & As soon as possible \\
+	Religious observance & The second Friday of the semester \\
+	Others, as merited on a case-by-case basis & 48\,hr after the
+	missed graded event \\
+	\bottomrule
+\end{tabularx}
+\end{center}
+
+Immediate technical issues, such as BOLT being inaccessible, can be submitted to
+\url{https://helpdesk.bloomu.edu}. At the bottom of the form, you must include
+my email address (dmccurry@bloomu.edu) in the ``Additional Email Notifications''
+to alert me that you are taking steps to resolve the issue.
+
+\section{Policies and Expectations}
+In order to maintain an atmosphere that is conducive to learning, all members
+of the class are expected to demonstrate common courtesy during the lecture,
+including but not exclusively:
+\begin{enumerate}
+	\item \textbf{Be on time for class.} In the rare instances where
+		arriving late is unavoidable, enter quietly. Make sure your
+		microphone is muted.
+	\item \textbf{Once in class, stay for the duration.} If you know you
+		need to leave early, please make me aware of your plans before
+		class begins.
+	\item \textbf{Be courteous with others on Zoom.} Allow others to finish
+		speaking before unmuting yourself. If you have a question or
+		would like me to repeat something, just use the raise your hand
+		button in the participants list. (Do feel free to stop me if
+		it's clear I didn't notice!)
+	\item \textbf{Do not participate in activities not pertinent to the
+		class.} Please focus your attention to the Zoom meeting.
+	\item \textbf{Academic dishonesty is not tolerated.} All work in this
+		course must be your own; on group projects your individual
+		contribution to the project must be evident. You will be
+		assigned a grade of ``F'' for the course if found violating the
+		Academic Integrity policy (PRP 3512).  See me if you are unclear
+		about what I consider to be dishonest.
+%	\item \textbf{Be on time for class.} If you are unavoidably late, enter
+%		the room quietly and quickly choose a seat.  Tardiness will not
+%		extend your exam or quiz time. We will not return to missed
+%		quizzes.
+%	\item \textbf{Once in class, stay for the duration.} If you must leave
+%		early, give me advance warning. If you become ill during an exam
+%		or quiz, the missed graded event policy will take effect with
+%		the consent of the professor. In either case, you will not be
+%		allowed to return that day. Take care of your personal needs
+%		\emph{before class}.
+%	\item \textbf{Participate in in-class exercises.} Participation in class
+%		is expected. You will be called upon at random and are advised
+%		to be prepared.  The best learning occurs in an active
+%		environment where everyone participates.
+%	\item \textbf{Read the textbook before lecture.} You are \emph{required}
+%		to read the textbook prior to coming to lecture.  You do not
+%		need to understand everything on the first perusal. Many of your
+%		questions will probably be answered by the lecture or as you
+%		work the problems.
+%	\item \textbf{Turn off communications devices.} This includes but is not
+%		limited to: cell phones, personal entertainment devices (iPod,
+%		MP3, etc.), or anything else that will disturb your professor or
+%		classmates. Students with special circumstances need to speak
+%		with me right away.
+%	\item \textbf{No chit-chat or unnecessary noise during lecture.} Stay
+%		focused on the lecture materials. Please review
+%		\href{https://intranet.bloomu.edu/policies_procedures}{PRP
+%		3881 --- Student Disruptive Behavior Policy}.
+\end{enumerate}
+
+\section{Academic Dishonesty}
+\emph{Academic dishonesty is not tolerated.} If you are unclear about what is
+dishonest, please see the
+\href{https://intranet.bloomu.edu/documents/student/Pilot.pdf}{Pilot} or
+\href{https://intranet.bloomu.edu/policies_procedures/3512}{PRP 3512 --
+	Academic Integrity Policy} for clarification. If you are unsure about
+	my specific instructions, ask me.
+
+\begin{mdframed}
+	\centering\bfseries The minimum penalty for academic dishonesty is a
+	course assignment of ``F'' for \emph{all} students involved.
+\end{mdframed}
+
+\section{Class Cancellation}
+If class is canceled on the day of an exam, it will be administered the next
+time class meets.  If class is canceled the period before an exam, it will
+still be administered on its scheduled day. If compression (see
+\href{https://intranet.bloomu.edu/policies_procedures/5205}{PRP 5205 Severe
+Weather Policy}) occurs on an exam day, the exam will be held as scheduled (with
+grading adjusted to allow for the shortened time period).
+
+\section{Fire Alarms}
+In the event of a building evacuation, calmly and quickly leave the building via
+the nearest exit. In the event of an evacuation during laboratory, ensure all
+hot plates or other possible hazards are turned off and unplugged prior to
+leaving. Your instructor will point exits out the first week of class.  Gather
+with your class on the quad lawn in front of Bakeless.  Do not re-enter the
+building for any reason. Do not gather around the exits. Do not enter a
+building that has an alarm sounding. There is one, and only one, drill the first
+week of the semester. There are \emph{no} random drills.
+
+%\subsection{From G38}
+%\begin{enumerate}[noitemsep]
+%	\item Use the door to the front right of the lecture hall and proceed up
+%		the staircase to the exit door.
+%	\item Proceed behind Sutliff to the sidewalk near Centennial
+%		to the quad traveling in front of McCormick to the mustering
+%		point near Bakeless
+%\end{enumerate}
+%
+%Treat fire drills as though they are real, evacuate to the lawn
+%in front of Bakeless, and all of us get out of the habit of
+%standing anywhere near Hartline Science Center.
+
+\section{Last Day to Withdraw}
+The Registrar has set the last day of class as the withdrawal deadline.
+Students are encouraged to review the latest withdrawal
+(\href{https://intranet.bloomu.edu/policies_procedures/3462}{PRP 3462 Undergraduate
+Course Withdrawal}) and course repeat
+(\href{https://intranet.bloomu.edu/policies_procedures/3452}{PRP 3452 Course
+Repeat}) policies of the
+University prior to that date as there are strict limits on the number of
+repeats one can have. 
+
+\begin{mdframed}
+	\centering
+	All policies, rules, and procedures (PRP) are available at
+	\url{https://www.bloomu.edu/policies_procedures}
+\end{mdframed}
+
+\section{Accommodations}
+Bloomsburg University provides reasonable accommodations to students who have
+documented disabilities. If you have a documented disability that requires
+academic accommodations and are not registered with 
+\href{https://intranet.bloomu.edu/disabilities}{University Disability Services},
+Office, please contact this office as soon as possible to establish your
+eligibility. Please also provide documentation to Dr.\ McCurry as promptly as
+possible.
+
+%\section{How to Succeed in CHEM115}
+%\begin{enumerate}
+%	\item Read the textbook materials \emph{before class}
+%	\item Attend lecture
+%	\item Work on the assigned problems in each chapter
+%	\item Create an \emph{equally contributing} study group that
+%		\emph{actually} studies/works problems
+%	\item Synthesize your own questions and answer them
+%	\item Use lab to connect lecture topics to the real world
+%\end{enumerate}
+%
+%Do not get behind! If you are not doing as well as you should, be sure to see
+%your professor as soon as possible. If you cannot make it to any of my listed
+%office hours, please contact me in person, or by phone, or by email to schedule
+%an appointment. I will respond to emails as promptly as possible.
+
+\vfill
+
+\begin{mdframed}
+	\noindent
+	The materials contained in this syllabus, in the lab manual, and the
+	BOLT webpage for this course are intended only for those registered for
+	the above course/semester. These materials cannot be used without the
+	expressed written consent of Dr. McCurry. Any use of these materials
+	outside the intended purpose of this course is considered Copyright
+	Infringement and will be dealt with according the Academic Integrity
+	Policy.  
+
+	\noindent
+	The source code for some material has been licensed under the Creative
+	Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC
+	BY-NC-SA 4.0) license to provide you with an opportunity to view the
+	original source materials and contribute to the content. If you would
+	like to view the material and suggest improvements, please visit
+	\url{https://git.damccurry.com/dan/CHEM115}. Ask Dr.\ McCurry for an
+	account!
+\end{mdframed}
+
+\end{document}

@@ -1,0 +1,167 @@
+\documentclass[10pt,letterpaper,landscape]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{termcal}
+\usepackage{palatino}
+\usepackage{fontawesome}
+\usepackage{fancyhdr}
+\usepackage{titling}
+\usepackage{lastpage}
+\usepackage{datatool}
+\usepackage{ifthen}
+\usepackage{enumitem}
+
+\setlist{nosep,wide=0.5em}
+\newenvironment{details}{\begin{footnotesize}\begin{itemize}}{\end{itemize}\end{footnotesize}}
+
+\newcounter{examnumber}
+\newcounter{quiznumber}
+\newcounter{labnumber}
+\newcounter{labdaynumber}
+\newcounter{weekcounter}
+\newcommand{\exam}{%
+	%\ifthenelse{%
+	%	\isodd{%
+	%		\theweekcounter%
+	%	}%
+	%}%
+	%{}%
+	%{%
+	%	\stepcounter{examnumber}\faShield~\textbf{Quest \arabic{examnumber}}
+	%}%
+	\stepcounter{examnumber}\textbf{\faEdit~Exam~\arabic{examnumber}}%
+}
+\newcounter{homeworknumber}
+\newcommand{\hw}{%
+	\ifthenelse{\isodd{\theweekcounter}}{}{\stepcounter{homeworknumber} \faCalculator~\textbf{HW Set \arabic{homeworknumber} Due}}
+}
+
+\title{Chemistry for the Sciences 1 Semester Schedule}
+\newcommand{\semester}{FA21}
+\author{McCurry}
+
+% Turn off 1st, 2nd, 3rd, etc.
+\renewcommand{\calprintdate}{%
+	\ifnewmonth\framebox{\monthname\ \arabic{date}}%
+	\else \arabic{date}\fi
+}
+
+\lhead{\sffamily \thetitle}
+\chead{}
+\rhead{\sffamily \semester\ --- \theauthor}
+\lfoot{\sffamily\footnotesize\em Exam dates are set. All other material subject
+to change.}
+\cfoot{}
+\rfoot{\sffamily\thepage\ of \pageref{LastPage}}
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+\pagestyle{fancy}
+
+\begin{document}
+
+\begin{calendar}{8/23/21}{16}
+	%\setlength{\calboxdepth}{4em}
+
+	% Description of the Week
+	\calday[Monday]{\classday\stepcounter{weekcounter}}
+	\skipday
+	%\calday[Tuesday]{\noclassday}%\weeklytext{\stepcounter{labnumber}
+	%\faFlask{} Expt~\arabic{labnumber} \\[1em] }}
+	%\calday[Tuesday]{\noclassday}
+	\calday[Wednesday]{\classday\weeklytext{\hw}}
+	\skipday
+	%\calday[Thursday]{\noclassday}
+	\calday[Friday]{\classday}%\weeklytext{\exam}}
+	%\weeklytext{\stepcounter{quiznumber}
+	%\emph{Quiz~\arabic{quiznumber}}}}
+	\skipday\skipday
+
+	% Holidays
+	\options{9/6/21}{\noclassday\weeklytext{}} % Labor Day
+	\caltext{9/6/21}{\em Labor Day --- No Class}
+	\options{11/24/21}{\noclassday\weeklytext{}\stepcounter{weekcounter}} % Thanksgiving
+	\caltext{11/24/21}{\em Thanksgiving Recess --- No Class}
+	\options{11/26/21}{\noclassday\weeklytext{}} % Thanksgiving
+	\caltext{11/26/21}{\em Thanksgiving Recess --- No Class}
+
+	% Final Exam
+	\options{12/6/21}{\noclassday\weeklytext{}}
+	\options{12/8/21}{\noclassday\weeklytext{}}
+	\options{12/10/21}{\noclassday\weeklytext{}}
+	\caltext{12/8/21}{\faEdit~\textbf{Final Exam} \\
+		\hspace{1em} 12:30 -- 2:30 pm}
+	%\caltext{4/28/20}{\faFlask~\textbf{Lab Final}}
+
+	% Topics
+	\caltexton{1}{Essentials \begin{details} \item Scientific Notation \end{details}}
+	\caltextnext{Essentials \begin{details} \item Fundamental Units \item Derived Units \end{details}}
+	\caltextnext{Essentials \begin{details} \item Reliability of Measurements \item Problem Solving \end{details}}
+	\caltextnext{Atoms \begin{details} \item Substances and Compounds \item Atoms: The Building Blocks of Matter \end{details}}
+	\caltextnext{Atoms \begin{details} \item Describing Atoms \end{details}}
+	\caltextnext{Atoms \begin{details} \item The Mole Concept \end{details}}
+	\caltextnext{Quantum Mechanics \begin{details} \item The Nature of
+	Light \end{details}}
+	\caltextnext{Quantum Mechanics \begin{details} \item The Nature of Light
+	(cont'd) \item The Quantum Nature of the Atom \end{details}}
+	\caltextnext{Quantum Mechanics \begin{details} \item The Quantum Nature
+	of the Atom (cont'd) \item Uncertainty \end{details}}
+	\caltextnext{Quantum Mechanics \begin{details} \item Uncertainty
+(cont'd) \end{details}}%\\[1em] Periodic Properties}
+	\caltextnext{\exam}
+	\caltextnext{Elements and Periodic Properties \begin{details} \item
+	Organizing and Classifying Elements \end{details}}
+	\caltextnext{Elements and Periodic Properties \begin{details} \item
+		Higher-Level Electron Configuations \end{details}}
+		\caltextnext{Elements and Periodic Properties \begin{details}
+	\item Periodic Trends \end{details}}
+	\caltextnext{Elements and Periodic Properties \begin{details}
+	\item Periodic Trends \end{details}
+	Molecules \& Compounds
+\begin{details} \item Concept of Bonding \item Representing Ionic Compounds
+\end{details}}
+\caltextnext{Molecules \& Compounds \begin{details} \item Representing Ionic
+Compounds \end{details}}
+\caltextnext{Molecules \& Compounds \begin{details} \item Representing Covalent
+Compounds \end{details}}
+\caltextnext{Molecules \& Compounds \begin{details} \item Representing Covalent
+Compounds \end{details}}% \\[1em] \hw}
+\caltextnext{Molecules \& Compounds \begin{details} \item Compound Stoichiometry
+\end{details}}
+\caltextnext{Molecules \& Compounds \begin{details} \item Compound Stoichiometry
+\end{details}}
+\caltextnext{Chemical Bonding I \begin{details} \item Polarity and Formal Charge
+\end{details}}
+\caltextnext{Chemical Bonding I \begin{details} \item Resonance and Exceptions to
+the Octet Rule \item Covalent Bond Strength \end{details}}
+	\caltextnext{\exam}
+\caltextnext{Chemical Bonding I \begin{details} \item VSEPR \end{details}}
+%	\caltextnext{Chemical Bonding}
+	\caltextnext{Chemical Bonding II}
+	\caltextnext{Chemical Bonding II}
+	\caltextnext{Chemical Bonding II}
+	\caltextnext{Chemical Reactions}% \\[1em] \hw}
+	\caltextnext{Chemical Reactions}
+	\caltextnext{Chemical Reactions}
+	\caltextnext{Chemical Reactions}
+	\caltextnext{Aqueous Reactions}
+	%\caltextnext{\exam}
+	\caltextnext{Aqueous Reactions}
+\caltextnext{Aqueous Reactions}% \\[1em] \hw}
+	\caltextnext{\exam}
+	\caltextnext{Aqueous Reactions}
+	\caltextnext{Thermo}
+	\caltextnext{Thermo}
+	\caltextnext{Thermo}
+	\caltextnext{Thermo}
+\caltextnext{Gas Laws}% \\[1em] \hw}
+	\caltextnext{Gas Laws}
+%	\caltextnext{\exam}
+	\caltextnext{Gas Laws}
+	\caltextnext{Gas Laws}
+%	\caltextnext{Intermolecular Forces}
+%	\caltextnext{Intermolecular Forces}% \\[1em] \hw}
+%	\caltextnext{Intermolecular Forces}
+
+\end{calendar}
+
+\end{document}
