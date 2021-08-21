@@ -36,7 +36,7 @@
 	\ifthenelse{\isodd{\theweekcounter}}{}{\stepcounter{homeworknumber} \faCalculator~\textbf{HW Set \arabic{homeworknumber} Due}}
 }
 
-\title{Chemistry for the Sciences 1 Semester Schedule}
+\title{Chemistry for the Sciences 1 Lecture Schedule}
 \newcommand{\semester}{FA21}
 \author{McCurry}
 
@@ -48,7 +48,7 @@
 
 \lhead{\sffamily \thetitle}
 \chead{}
-\rhead{\sffamily \semester\ --- \theauthor}
+\rhead{\sffamily \semester\ --- CHEM115 --- \theauthor}
 \lfoot{\sffamily\footnotesize\em Exam dates are set. All other material subject
 to change.}
 \cfoot{}
@@ -60,7 +60,7 @@ to change.}
 \begin{document}
 
 \begin{calendar}{8/23/21}{16}
-	%\setlength{\calboxdepth}{4em}
+	\setlength{\calboxdepth}{4em}
 
 	% Description of the Week
 	\calday[Monday]{\classday\stepcounter{weekcounter}}
@@ -93,74 +93,48 @@ to change.}
 	%\caltext{4/28/20}{\faFlask~\textbf{Lab Final}}
 
 	% Topics
-	\caltexton{1}{Essentials \begin{details} \item Scientific Notation \end{details}}
-	\caltextnext{Essentials \begin{details} \item Fundamental Units \item Derived Units \end{details}}
-	\caltextnext{Essentials \begin{details} \item Reliability of Measurements \item Problem Solving \end{details}}
-	\caltextnext{Atoms \begin{details} \item Substances and Compounds \item Atoms: The Building Blocks of Matter \end{details}}
-	\caltextnext{Atoms \begin{details} \item Describing Atoms \end{details}}
-	\caltextnext{Atoms \begin{details} \item The Mole Concept \end{details}}
-	\caltextnext{Quantum Mechanics \begin{details} \item The Nature of
-	Light \end{details}}
-	\caltextnext{Quantum Mechanics \begin{details} \item The Nature of Light
-	(cont'd) \item The Quantum Nature of the Atom \end{details}}
-	\caltextnext{Quantum Mechanics \begin{details} \item The Quantum Nature
-	of the Atom (cont'd) \item Uncertainty \end{details}}
-	\caltextnext{Quantum Mechanics \begin{details} \item Uncertainty
-(cont'd) \end{details}}%\\[1em] Periodic Properties}
+	\caltexton{1}{E: Essentials}
+	\caltextnext{E: Essentials}
+	\caltextnext{1: Atoms}
+	\caltextnext{1: Atoms}
+	\caltextnext{1: Atoms}
+	\caltextnext{2: Quantum Mechanics}
+	\caltextnext{2: Quantum Mechanics}
+	\caltextnext{2: Quantum Mechanics}
+	\caltextnext{2: Quantum Mechanics}
+	\caltextnext{3: Elements and Periodic Properties}
 	\caltextnext{\exam}
-	\caltextnext{Elements and Periodic Properties \begin{details} \item
-	Organizing and Classifying Elements \end{details}}
-	\caltextnext{Elements and Periodic Properties \begin{details} \item
-		Higher-Level Electron Configuations \end{details}}
-		\caltextnext{Elements and Periodic Properties \begin{details}
-	\item Periodic Trends \end{details}}
-	\caltextnext{Elements and Periodic Properties \begin{details}
-	\item Periodic Trends \end{details}
-	Molecules \& Compounds
-\begin{details} \item Concept of Bonding \item Representing Ionic Compounds
-\end{details}}
-\caltextnext{Molecules \& Compounds \begin{details} \item Representing Ionic
-Compounds \end{details}}
-\caltextnext{Molecules \& Compounds \begin{details} \item Representing Covalent
-Compounds \end{details}}
-\caltextnext{Molecules \& Compounds \begin{details} \item Representing Covalent
-Compounds \end{details}}% \\[1em] \hw}
-\caltextnext{Molecules \& Compounds \begin{details} \item Compound Stoichiometry
-\end{details}}
-\caltextnext{Molecules \& Compounds \begin{details} \item Compound Stoichiometry
-\end{details}}
-\caltextnext{Chemical Bonding I \begin{details} \item Polarity and Formal Charge
-\end{details}}
-\caltextnext{Chemical Bonding I \begin{details} \item Resonance and Exceptions to
-the Octet Rule \item Covalent Bond Strength \end{details}}
+	\caltextnext{3: Elements and Periodic Properties}
+	\caltextnext{3: Elements and Periodic Properties}
+	\caltextnext{3: Elements and Periodic Properties}
+	\caltextnext{4: Molecules \& Compounds}
+	\caltextnext{4: Molecules \& Compounds}
+	\caltextnext{4: Molecules \& Compounds}
+	\caltextnext{4: Molecules \& Compounds}
+	\caltextnext{4: Molecules \& Compounds}
+	\caltextnext{5: Chemical Bonding I}
+	\caltextnext{5: Chemical Bonding I}
+	\caltextnext{5: Chemical Bonding I}
 	\caltextnext{\exam}
-\caltextnext{Chemical Bonding I \begin{details} \item VSEPR \end{details}}
-%	\caltextnext{Chemical Bonding}
-	\caltextnext{Chemical Bonding II}
-	\caltextnext{Chemical Bonding II}
-	\caltextnext{Chemical Bonding II}
-	\caltextnext{Chemical Reactions}% \\[1em] \hw}
-	\caltextnext{Chemical Reactions}
-	\caltextnext{Chemical Reactions}
-	\caltextnext{Chemical Reactions}
-	\caltextnext{Aqueous Reactions}
-	%\caltextnext{\exam}
-	\caltextnext{Aqueous Reactions}
-\caltextnext{Aqueous Reactions}% \\[1em] \hw}
+	\caltextnext{6: Chemical Bonding II}
+	\caltextnext{6: Chemical Bonding II}
+	\caltextnext{6: Chemical Bonding II}
+	\caltextnext{7: Chemical Reactions}
+	\caltextnext{7: Chemical Reactions}
+	\caltextnext{7: Chemical Reactions}
+	\caltextnext{7: Chemical Reactions}
+	\caltextnext{8: Aqueous Reactions}
+	\caltextnext{8: Aqueous Reactions}
+	\caltextnext{8: Aqueous Reactions}% \\[1em] \hw}
+	\caltextnext{9: Thermo}
 	\caltextnext{\exam}
-	\caltextnext{Aqueous Reactions}
-	\caltextnext{Thermo}
-	\caltextnext{Thermo}
-	\caltextnext{Thermo}
-	\caltextnext{Thermo}
-\caltextnext{Gas Laws}% \\[1em] \hw}
-	\caltextnext{Gas Laws}
-%	\caltextnext{\exam}
-	\caltextnext{Gas Laws}
-	\caltextnext{Gas Laws}
-%	\caltextnext{Intermolecular Forces}
-%	\caltextnext{Intermolecular Forces}% \\[1em] \hw}
-%	\caltextnext{Intermolecular Forces}
+	\caltextnext{9: Thermo}
+	\caltextnext{9: Thermo}
+	\caltextnext{9: Thermo}
+	\caltextnext{10: Gas Laws}% \\[1em] \hw}
+	\caltextnext{10: Gas Laws}
+	\caltextnext{10: Gas Laws}
+	\caltextnext{10: Gas Laws}
 
 \end{calendar}
 
