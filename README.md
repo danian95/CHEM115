@@ -1,3 +1,2 @@
-# CourseSkeleton
-
-Folder structure and templates for course development
+# CHEM115
+Handouts and notes for CHEM115
