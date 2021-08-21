@@ -1,0 +1,1289 @@
+% !TEX program = xelatex
+%\documentclass[notes=onlyslideswithnotes,notes=hide]{beamer}
+%\documentclass[notes=only]{beamer}
+%\documentclass[notes=hide]{beamer}
+%\documentclass[notes=show]{beamer}
+\documentclass[11pt,letterpaper]{article}
+\usepackage{beamerarticle}
+
+\usepackage{genchem}
+\usepackage{lecture}
+\usepackage{multicol}
+\usepackage{elements}
+\usepackage{collcell}
+\usetikzlibrary{tikzmark}
+\usepackage{tabularx}
+
+\renewcommand*\printangularmomentum[1]{#1}
+
+\title{Introduction to Solutions and Aqueous Reactions}
+\subtitle{Chapter 8}
+\institute[CHEM115 Bloomsburg University]{CHEM115 --- Chemistry for the Sciences I \\ Bloomsburg University}
+\author{D.A. McCurry}
+\date{Spring 2020}
+
+\begin{document}
+
+\maketitle
+\mode<article>{\thispagestyle{fancy}}
+
+\frame{\section{Solutions}
+	\begin{learningobjectives}
+	\item Explain the components of a solution.
+	\item Predict whether a solution will form or not depending on the
+		structure of the solvent and solute.
+	\item Quantify the amount of solute present in a solution even when the
+		amount of solvent changes.
+	\end{learningobjectives}
+}
+
+\vspace{\stretch{-1}}
+
+\begin{frame}{Solution Terminology}
+	\begin{columns}
+		\column{0.6\textwidth}
+		\begin{block}{Solution}
+			A homogeneous mixture of two (or more) substances.
+			\begin{description}
+				\item[Solvent:] The major component of the mixture.
+				\item[Solute:] The minor component of the mixture.
+			\end{description}
+		\end{block}
+		An \alert{aqueous solution} is one in which water acts as the
+		solvent.
+		\begin{reactions*}
+			NaNO3\sld{} &->[ H2O ] NaNO3\aq{} \\
+			CuSO4\sld{} &->[ H2O ] CuSO4\aq{}
+		\end{reactions*}
+		\column{0.4\textwidth}
+		\begin{center}
+			\includegraphics[scale=0.45]{Borland-Solute-Solvent.jpg}
+		\end{center}
+	\end{columns}
+
+
+%	\pause
+%
+%	How do we \alert{quantify} the amount of \ch{NaNO3} or \ch{CuSO4}
+%	\alert{dissolved} in the solvent?
+\end{frame}
+
+\begin{frame}{Some Notes on Solutes}
+	\begin{columns}
+		\column{0.5\textwidth}
+		\begin{itemize}
+			\item Solutes spread \alert{evenly} throughout the
+				solution.
+			\item They cannot be separated by filtration.
+			\item They \alert{can} be separated by evaporation.
+			\item Solutes are not visible (homogeneous mixture), but
+				can give color to a solution.
+		\end{itemize}
+		\column{0.5\textwidth}
+		\begin{center}
+			\includegraphics[scale=0.4]{Borland-Solutes.jpg}
+		\end{center}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{``Like Dissolves Like''}
+	Two substances form a solution when there is an attraction between the
+	particles of the solute and solvent.
+
+	\begin{center}
+		\begin{tabular} {l l}
+			\toprule
+			\multicolumn{2}{c}{\bfseries Solutions Will
+			Form} \\ \midrule
+			\bfseries Solute & \bfseries Solvent \\ \midrule
+			Polar & Polar \\
+			Nonpolar & Nonpolar \\
+			\bottomrule
+		\end{tabular}
+		\qquad
+		\begin{tabular} {l l}
+			\toprule
+			\multicolumn{2}{c}{\bfseries Solutions Will
+			Not Form} \\ \midrule
+			\bfseries Solute & \bfseries Solvent \\ \midrule
+			Polar & Nonpolar \\
+			Nonpolar & Polar \\
+			\bottomrule
+		\end{tabular}
+	\end{center}
+
+	\begin{itemize}
+		\item \alert{Polar} solvents (such as water) dissolve
+			\alert{polar} solutes (such as sugar) and/or \alert{ionic}
+			solutes (such as \ch{NaCl}).
+		\item \alert{Nonpolar} solvents (such as hexane, \ch{C6H14})
+			dissolve \alert{nonpolar} solutes (such as oil or
+			grease).
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Quantifying Solution Concentrations}
+	\begin{columns}
+		\column{0.375\linewidth}
+		The \alert{concentration} of a solution refers to the amount of solute
+		contained within
+		a specific amount of solvent.
+	
+		\bigskip
+	
+		A common measure of concentration is \alert{molarity}.
+		\column{0.525\linewidth}
+		\begin{center}
+			\includegraphics[scale=0.3]{08_02_Figure.jpg}
+		\end{center}
+	\end{columns}
+
+	\bigskip
+
+	\begin{equation*}
+		\text{molarity (\si{\Molar})} = \frac{\text{amount of solute (in
+		\si{\mole})}}{\text{volume of solution (in \si{\liter})}}
+	\end{equation*}
+\end{frame}
+
+\begin{frame}[t]{Calculating Molarity 1}
+	If we dissolve \SI{0.522}{\gram}~\ch{NaCl} in
+	\SI{100.0}{\milli\liter}~\ch{H2O}, what is the molarity of the resulting
+	solution?
+
+	\vspace{10em}
+
+	\note{
+		\begin{align*}
+			\frac{\SI{0.522}{\gram}}{\SI{100.0}{\milli\liter}}
+			\times \frac{\SI{1}{\mole}}{\SI{58.44}{\gram}} \times
+			\frac{\SI{1000}{\milli\liter}}{\SI{1}{\liter}} &=
+			\SI{0.089322382}{\Molar} \\
+			&= \boxed{\SI{0.0893}{\Molar}}
+		\end{align*}
+		}
+\end{frame}
+
+\begin{frame}[t]{Calculating Molarity 2}
+	How many grams of \ch{AlCl3} are needed to prepare
+	\SI{125}{\milli\liter} of a \SI{0.150}{\Molar} solution?
+
+	\vspace{10em}
+
+	\note{
+		We need to first figure out how many moles are needed, then
+		convert to grams.
+		\begin{align*}
+			\SI{125}{\milli\liter} \times
+			\frac{\SI{1}{\liter}}{\SI{1000}{\milli\liter}} \times
+			\frac{\SI{0.150}{\mole}}{\SI{1}{\liter}} \times
+			\frac{\SI{133.332}{\gram}}{\SI{1}{\mole}} &=
+			\SI{2.499975}{\gram} \\
+			&= \boxed{\SI{2.50}{\gram}~\ch{AlCl3}}
+		\end{align*}
+		}
+\end{frame}
+
+\begin{frame}[t]{Practical Laboratory Skills}
+	How do we prepare \SI{1.00}{\liter} of \SI{1.0}{\Molar} \ch{NaCl}?
+
+	\note{
+		\begin{enumerate}
+			\item Weigh appropriate amount:
+				\begin{align*}
+					\SI{1.0}{\Molar}~\ch{NaCl} \times
+					\SI{1.00}{\liter} \times
+					\frac{\SI{58.44}{\gram}}{\SI{1}{\mole}}
+					&= \SI{58.44}{\gram} \\
+					&= \boxed{\SI{58}{\gram}~\ch{NaCl}}
+				\end{align*}
+			\item Add water up to \SI{1.0} liter mark on volumetric
+				flask.
+		\end{enumerate}
+		}
+\end{frame}
+
+\begin{onyourown}
+	If a solution is \SI{0.100}{\Molar}, how many moles of \ch{KBr} are
+	contained within \SI{25.00}{\milli\liter}?
+\end{onyourown}
+
+\begin{onyourown}
+	How many milliliters of \SI{2.00}{\Molar} \ch{HNO3} contain
+	\SI{24.0}{\gram} of \ch{HNO3}?
+\end{onyourown}
+
+\clearpage
+
+\begin{frame}{Diluting Solutions}
+	\only<1>{%
+		In a \alert{dilution},
+		\begin{itemize}
+			\item solvent is added.
+			\item volume increases.
+			\item concentration of solute \alert{decreases}.
+		\end{itemize}
+		
+		\bigskip
+		
+		\begin{center}
+			\includegraphics[scale=0.4]{Borland-dilution.jpg}
+		\end{center}
+	}
+
+	\only<2->{%
+		\begin{block}{Key Point}
+			In both the initial and diluted solution, the moles of solute
+			are the \alert{same}!
+		\end{block}
+	
+		This allows us to use the following equation:
+		\begin{align*}
+			M_1V_1 &= M_2V_2
+			\shortintertext{because}
+			\frac{\si{\mole}_1}{\si{\liter}} \times \si{\liter}_1 &=
+			\frac{\si{\mole}_2}{\si{\liter}} \times \si{\liter}_2 \\
+			\si{\mole}_1 &= \si{\mole}_2
+			\uncover<3>{\intertext{But this actually applies to \alert{any} units of
+			concentration or volume, so}
+			C_1V_1 &= C_2V_2}
+		\end{align*}
+	}
+\end{frame}
+
+\begin{frame}{Guide to Calculating Dilution Quantities}
+	\begin{enumerate}
+		\item Prepare a table of the concentrations and volumes of
+			the solutions.
+		\item Rearrange the dilution expression ($C_1V_1 = C_2V_2$) to
+			solve for the unknown quantity.
+		\item Substitute the known quantities into the dilution
+			expression and calculate.
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}[t]{Dilution Calculations 1}
+	What is the final volume (in \si{\milli\liter}) of
+	\SI{15.0}{\milli\liter} of a \SI{1.80}{\Molar}~\ch{KOH} stock solution
+	diluted to give a \SI{0.300}{\Molar} solution?
+
+	\note{
+		\begin{tabular} {L S[table-format=2.3] s}
+			C_\text{stock} & 1.80 & \Molar \\
+			C_\text{dilute} & 0.300 & \Molar \\
+			V_\text{stock} & 15.0 & \milli\liter
+		\end{tabular}
+			
+		\begin{align*}
+			C_1V_1 &= C_2V_2 \\
+			C_\text{stock}V_\text{stock} &=
+			C_\text{dilute}V_\text{dilute} \\
+			V_\text{dilute} &= \frac{C_\text{stock}V_\text{stock}}{
+				C_\text{dilute}} \\
+			&=
+			\frac{(\SI{1.80}{\Molar})(\SI{15.0}{\milli\liter})}{\SI{0.300}{\Molar}}
+			\\
+			&= \boxed{\SI{90.0}{\milli\liter}}
+		\end{align*}
+		}
+\end{frame}
+
+\begin{frame}[t]{Dilution Calculations 2}
+	What volume of stock \SI{1.00}{\Molar} \ch{HCl} is needed to prepare
+	\SI{25}{\milli\liter} of a \SI{0.010}{\Molar} solution?
+
+	\note{
+		\begin{tabular} {L S[table-format=2.3] s}
+			C_\text{stock} & 1.00 & \Molar \\
+			C_\text{dilute} & 0.010 & \Molar \\
+			V_\text{dilute} & 25.0 & \milli\liter
+		\end{tabular}
+			
+		\begin{align*}
+			C_1V_1 &= C_2V_2 \\
+			C_\text{stock}V_\text{stock} &=
+			C_\text{dilute}V_\text{dilute} \\
+			V_\text{stock} &= \frac{C_\text{dilute}V_\text{dilute}}{
+				C_\text{stock}} \\
+			&=
+			\frac{(\SI{0.010}{\Molar})(\SI{25.0}{\milli\liter})}{\SI{1.00}{\Molar}}
+			\\
+			&= \boxed{\SI{0.25}{\milli\liter}}
+		\end{align*}
+		}
+\end{frame}
+
+\begin{onyourown}
+	What is the concentration of a \SI{40.0}{\milli\liter} solution of
+	\ch{FeCl3} prepared from \SI{1.00}{\milli\liter} of a \SI{0.250}{\Molar}
+	stock solution?
+\end{onyourown}
+
+\clearpage
+
+\frame{\section{Predicting Reaction Products}
+	\begin{learningobjectives}
+	\item Use stoichiometry to determine the amount of products that will be
+		produced or the amount of reactants required.
+	\item Predict the solubility of a resulting product based on solubility
+		rules.
+	\item Identify common acids and bases in order to determine the product
+		of a neutralization reaction.
+	\item Identify when a product will be in a different state (gas).
+	\item Follow the transfer of electrons in oxidation-reduction reactions.
+	\end{learningobjectives}
+}
+
+\vspace{\stretch{-1}}
+
+\begin{frame}[t]{Solution Stoichiometry}
+	Consider one of the reactions from the Ionic Species Solubility Lab:
+	\begin{reaction*}
+		3 Ba(NO3)2\aq{} + 2 Na3PO4\aq{} -> Ba3(PO4)2\sld{} + 6
+		NaNO3\aq{}
+	\end{reaction*}
+
+	\begin{overprint}
+		\onslide<1-3>
+		Did \alert{all} of the \ch{Ba(NO3)2} and \ch{Na3PO4} react?
+		\begin{itemize}[<+(1)->]
+			\item We would need \alert{exactly} the correct amount of
+				\ch{Ba(NO3)2} and \ch{Na3PO4}.
+			\item What is the correct amount?
+		\end{itemize}
+
+		\onslide<4->
+	
+		What volume (in \si{\milli\liter}) of a \SI{0.200}{\Molar} \ch{Na3PO4} solution
+		is required to completely react with \SI{10.00}{\milli\liter} of a
+		\SI{0.025}{\Molar} solution of \ch{Ba(NO3)2}?
+	
+		\vfill
+
+		\note<1>{\footnotesize
+			\begin{enumerate}
+				\item How much \ch{Na3PO4} reacts with \ch{Ba(NO3)2}?
+					\boxed{\frac{\SI{2}{\mole}~\ch{Na3PO4}}{\SI{3}{\mole}~\ch{Ba(NO3)2}}}
+				\item How many moles of \ch{Ba(NO3)2} do we have?
+					\begin{align*}
+						\frac{\SI{0.025}{\mole}}{\SI{1}{\liter}}
+						\times \SI{10.00}{\milli\liter} \times
+						\frac{\SI{1}{\liter}}{\SI{1000}{\milli\liter}}
+						&= \SI{0.00025}{\mole}~\ch{Ba(NO3)2}
+					\end{align*}
+				\item How many moles of \ch{Na3PO4} do we need?
+					\begin{align*}
+						\SI{0.00025}{\mole}~\ch{Ba(NO3)2} \times
+						\frac{\SI{2}{\mole}~\ch{Na3PO4}}{\SI{3}{\mole}~\ch{Ba(NO3)2}}
+						&= \SI{0.0001666667}{\mole}~\ch{Na3PO4}
+					\end{align*}
+				\item How many \si{\milli\liter} \ch{Na3PO4} solution do
+					we need?
+					\begin{align*}
+						\SI{0.0001666667}{\mole}~\ch{Na3PO4}
+						\times
+						\frac{\SI{1}{\liter}}{\SI{0.200}{\mole}~\ch{Na3PO4}}
+						\times
+						\frac{\SI{1000}{\milli\liter}}{\SI{1}{\liter}}
+						&= \SI{0.8333333}{\milli\liter} \\
+						&= \boxed{\SI{0.83}{\milli\liter}}
+					\end{align*}
+			\end{enumerate}
+			}
+	\end{overprint}
+\end{frame}
+
+\clearpage
+
+\begin{onyourown}
+	If \SI{22.8}{\milli\liter} of \SI{0.100}{\Molar}~\ch{MgCl2} is needed to
+	completely react with \SI{15.0}{\milli\liter} of \ch{AgNO3} solution,
+	what is the molarity of the \ch{AgNO3} solution?
+	\begin{reaction*}
+		MgCl2\aq{} + 2 AgNO3\aq{} -> 2 AgCl\sld{} + Mg(NO3)2\aq{}
+	\end{reaction*}
+\end{onyourown}
+
+\begin{frame}{Why do some compounds dissolve?}
+	Recall ``Like Dissolves Like''\ldots
+	\begin{itemize}[<+(1)->]
+		\item The \alert{solvent-solute} interactions are able to
+			overcome the \alert{solute-solute} interactions.
+			\begin{center}
+				\includegraphics[scale=0.15,trim={0 0 0
+				80pt},clip]{08_05_Figure.jpg}
+			\end{center}
+		\item Solvent-solute interactions can only overcome
+			solute-solute interactions if there is a \alert{strong
+			attraction} between the solvent and the solute.
+			\begin{center}
+				\includegraphics[scale=0.2,trim={0 0 0
+				70pt},clip]{08_07_Figure.jpg}
+			\end{center}
+	\end{itemize}
+\end{frame}
+
+\vspace{\stretch{-1}}
+
+\clearpage
+
+\begin{frame}
+	\begin{center}
+		\mode<presentation>{\includegraphics[scale=0.5]{08_08_Figure.jpg}}
+		\mode<article>{\includegraphics[scale=0.3]{08_08_Figure.jpg}}
+	\end{center}
+\end{frame}
+
+\vspace{\stretch{-1}}
+
+\begin{frame}{What compounds don't dissolve?}
+	\begin{center}
+		\begin{tabularx}{\linewidth} {@{}l X}
+			\toprule
+		\bfseries Generally \underline{Soluble} & \bfseries Exceptions
+		\\ \midrule
+		\ch{Li+}, \ch{Na+}, \ch{K+}, and \ch{NH4+} & None \\
+		\ch{NO3-} and \ch{C2H3O2-} & None \\
+		\ch{Cl-}, \ch{Br-}, and \ch{I-} & \ch{Ag+}, \ch{Hg2^{2+}},
+		\ch{Pb^{2+}} \\
+		\ch{SO4^{2-}} & \ch{Sr^{2+}}, \ch{Ba^{2+}}, \ch{Pb^{2+}},
+		\ch{Ag+}, \ch{Ca^{2+}} \\
+		\\
+		\bfseries Generally \underline{Insoluble} & \bfseries Exceptions
+		\\ \midrule
+		\ch{OH-} & \ch{Ca^{2+}}, \ch{Sr^{2+}}, and \ch{Ba^{2+}} are
+		\alert{slightly} soluble \\
+		& \ch{Li+}, \ch{Na+}, \ch{K+}, and \ch{NH4+} are soluble \\
+		\ch{S^{2-}} & \ch{Li+}, \ch{Na+}, \ch{K+}, \ch{NH4+},
+		\ch{Ca^{2+}}, \ch{Sr^{2+}}, and \ch{Ba^{2+}} \\
+		\ch{CO3^{2-}} and \ch{PO4^{3-}} & \ch{Li+}, \ch{Na+}, \ch{K+},
+		and \ch{NH4+} \\
+		\bottomrule
+	\end{tabularx}
+	\end{center}
+\end{frame}
+
+\begin{frame}{Precipitation Reactions}
+	\begin{quote}
+		A reaction in which a solid forms upon the mixing of two
+		solutions.
+	\end{quote}
+	\begin{reaction*}
+		!(soluble)( 3 Ba(NO3)2\aq{} ) + !(soluble)( 2 Na3PO4\aq{} ) ->
+		!(\alert{insoluble})( Ba3(PO4)2\sld{} ) + !(soluble)( 6
+		NaNO3\aq{} )
+	\end{reaction*}
+
+	\begin{itemize}
+		\item The \alert{insoluble} product is known as the
+			\alert{precipitate}.
+		\item In some reactions, we can form multiple precipitates.
+		\item Only ions that combine to form a precipitate are actually
+			participating in the reaction --- the others are
+			considered \alert{spectator} ions.
+	\end{itemize}
+\end{frame}
+
+%\mode<article>{
+%\pagebreak
+%
+%\begin{framed}
+%	\centering
+%	\sffamily\bfseries\scshape\large
+%	Exam IV Material Begins
+%\end{framed}}
+
+\begin{frame}{What about the compounds that do dissolve?}
+	\begin{block}{Electrolytes}
+		Substances that dissolve in water to form solutions that conduct
+		electricity. The dissolved ions are \alert{charge carriers}.
+	\end{block}
+
+	\begin{itemize}[<+(1)->]
+		\item \alert{Strong} electrolytes conduct electricity \alert{very
+			well}.
+			\begin{reaction*}
+				!( table~salt )( NaCl\sld{} ) -> Na^{+}\aq{} +
+				Cl^{-}\aq{}
+			\end{reaction*}
+		\item \alert{Weak} electrolytes conduct electricity
+			\alert{poorly}.
+			\begin{reaction*}
+				!( acetic~acid )( HC2H3O2\aq{} ) <=> H^{+}\aq{}
+				+ C2H3O2^{-}\aq{}
+			\end{reaction*}
+		\item \alert{Nonelectrolytes} do not conduct electricity.
+			\begin{reaction*}
+				!( sugar )( C12H22O11\sld{} ) ->
+				C12H22O11\aq{}
+			\end{reaction*}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\centering
+	\includegraphics[scale=0.45]{08_12_Figure.jpg}
+\end{frame}
+
+\begin{frame}{Classification of Some Common Substances}
+	\centering
+	\small
+	\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash\hsize=0.875\hsize\linewidth=\hsize}X
+				     >{\hsize=0.875\hsize\linewidth=\hsize}X
+			     >{\hsize=1.25\hsize\linewidth=\hsize}X}
+		\toprule
+		\bfseries Strong Electrolytes & \bfseries Weak
+		Electrolytes & \bfseries Nonelectrolytes \\
+		\midrule
+		HCl, HBr, HI & \ch{CH3CO2H} & \ch{H2O} \\
+		\ch{HClO4} & HF & \ch{CH3OH} (methyl~alcohol) \\
+		\ch{HNO3} & HCN & \ch{C2H5OH} (ethyl~alcohol) \\
+		\ch{H2SO4} & & \ch{C12H22O11} (sucrose) \\
+		\ch{KBr} & & Most compounds of \\
+		NaCl & & \hspace{1em}carbon \\
+		NaOH, KOH & & \hspace{1em}(organic compounds)\\
+		Other soluble ionic compounds \\
+		\bottomrule
+	\end{tabularx}
+\end{frame}
+
+\begin{frame}[t]{Writing Electrolyte Dissociation Reactions}
+	Complete each of the following equations:
+
+	\vspace{1em}
+
+	\begin{enumerate}
+		\item \ch{CaCl2\sld{} ->[ H2O ]}
+			\note[item]{\ch{CaCl2\sld{} ->[ H2O ] Ca^{2+}\aq{} + 2
+			Cl^{-}\aq{}}}
+			\vspace{2em}
+		\item \ch{K3PO4\sld{} ->[ H2O ]}
+			\note[item]{\ch{K3PO4\sld{} ->[ H2O ] 3
+			K^{+}\aq{} + PO4^{3-}\aq{}}}
+			\vspace{2em}
+		\item \ch{HF\aq{} ->[ H2O ]}
+			\note[item]{\ch{HF\aq{} <=>[ H2O ] H^{+}\aq{} +
+			F^{-}\aq{}}}
+			\vspace{2em}
+		\item \ch{C2H5OH\aq{} ->[ H2O ]}
+			\note[item]{\ch{C2H5OH\aq{} -/>[ H2O ]}}
+			\vspace{2em}
+	\end{enumerate}
+\end{frame}
+
+\begin{onyourown}[0em]
+	Complete each of the following equations:
+
+	\vspace{1em}
+
+	\begin{enumerate}
+		\item \ch{Na2SO4\sld{} ->[ H2O ]}
+			\vspace{2em}
+		\item \ch{HCN\aq{} ->[ H2O ]}
+			\vspace{2em}
+		\item \ch{C3H8O3\aq{} ->[ H2O ]}
+			\vspace{2em}
+	\end{enumerate}
+\end{onyourown}
+
+\begin{frame}{Acid-Base Reactions}
+	We have a special name for reactions where \ch{H+} is one of the
+	electrolytes\footnote{According to Arrhenius acid-base theory (Chapter 16)}
+	--- \alert{acid-base} or \alert{neutralization}
+	reactions.
+
+	\begin{description}
+		\item[Acid:] produces \ch{H+} ions in water.
+			\begin{reaction*}
+				HCl\aq{} ->[ H2O ] H^{+}\aq{} +
+				Cl^{-}\aq{}
+			\end{reaction*}
+		\item[Base:] produces \ch{OH-} ions in water.
+			\begin{reaction*}
+				NaOH\aq{} ->[ H2O ] Na^{+}\aq{} +
+				OH^{-}\aq{}
+			\end{reaction*}
+	\end{description}
+
+	When an acid and base react together, they \alert{neutralize} each other:
+	{\small
+	\begin{reactions*}
+		HCl\aq{} + NaOH\aq{} &-> NaCl\aq{} + H2O\lqd{} \\
+		H^{+}\aq{} + Cl^{-}\aq{} + Na^{+}\aq{} + OH^{-}\aq{} &->
+		Na^{+}\aq{} + Cl^{-}\aq{} + H2O\lqd{} \\
+		H^{+}\aq{} + OH^{-}\aq{} &-> H2O\lqd{} \\
+	\end{reactions*}
+}
+\end{frame}
+
+\begin{frame}{Some notes on acids\ldots}
+	\begin{itemize}[<+->]
+		\item \ch{H+} normally associates with water to form the
+			\alert{hydronium ion}.
+			\begin{reaction*}
+				!(proton)( H^{+}\aq{} ) + !(water)( H2O\lqd{} )
+				-> !(hydronium~ion)( H3O^{+}\aq{} )
+			\end{reaction*}
+			
+			\bigskip
+
+		\item Acids have a sour taste. \hfill
+			\parbox{0.5\linewidth}{
+				\centering
+				\includegraphics[scale=0.15]{Citrus_fruits.jpg}
+				}
+
+			\bigskip
+		\item \alert{Polyprotic} acids have more than one
+			\alert{ionizable} proton.
+			\begin{reactions*}
+				H2SO4\aq{} + \water\lqd{} &-> \Oxo\aq{} +
+				HSO4^{-}\aq{} \\
+				HSO4^{-}\aq{} + \water\lqd{} &<=> \Oxo\aq{} +
+				SO4^{2-}\aq{}
+			\end{reactions*}
+			The most common are \alert{diprotic} and
+			\alert{triprotic} acids.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Some notes on bases\ldots}
+	\begin{itemize}[<+->]
+		\item Basic solutions are sometimes called ``alkaline''.
+
+			\bigskip
+
+		\item Bases have a bitter taste.\hfill
+			\parbox{0.5\linewidth}{
+				\centering
+				\includegraphics[scale=0.5]{BakingSoda.jpg}
+				}
+
+			\bigskip
+
+		\item Can turn your fat into soap \textrightarrow\
+			\alert{saponification}.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Some Common Acids and Bases}
+	\begin{center}
+		\small
+	\begin{tabular} {l E@{\qquad}l E}
+		\toprule
+		\bfseries Name of Acid & \bfseries Formula & \bfseries Name of
+		Base & \bfseries Formula \\ \midrule
+		Hydrochloric acid & HCl & Sodium Hydroxide & NaOH \\
+		Hydrobromic acid & HBr & Lithium hydroxide & LiOH \\
+		Hydroiodic acid & HI & Potassium hydroxide & KOH \\
+		Nitric acid & HNO3 & Calcium hydroxide & Ca(OH)2 \\
+		Sulfuric acid & H2SO4 & Barium hydroxide & Ba(OH)2 \\
+		Perchloric acid & HClO4 & Ammonia & NH3 \\
+		Acetic acid & HC2H3O2 \\
+		Hydrofluoric acid & HF \\ \bottomrule
+	\end{tabular}
+\end{center}
+\end{frame}
+
+\begin{frame}{Naming Acids}
+	\begin{itemize}
+		\item \alert{Binary acids} have just an \ch{H} and a nonmetal.
+			\begin{itemize}
+				\item They are named with the prefix ``hydro-''
+					and the suffix ``-ic acid''.
+					\begin{center}
+						\begin{tabular}
+							{p{3em}p{14em}}
+							\ch{HCl} &
+							\emph{hydro}chlor\emph{ic
+							acid}
+						\end{tabular}
+					\end{center}
+			\end{itemize}
+
+			\bigskip
+
+			\pause
+		\item \alert{Oxyacids} contain \ch{H} and a polyatomic anion
+			containing a nonmetal and oxygen.
+			\begin{itemize}
+				\item If the oxyanion ends in ``-ate'', we
+					replace ``-ate'' with ``-ic acid''.
+					\begin{center}
+						\begin{tabular}
+							{p{3em} p{14em}}
+							\ch{HNO3} & nitr\emph{ic
+							acid}
+						\end{tabular}
+					\end{center}
+				\item If the oxyanion ends in ``-ite'', we
+					replace the ``-ite'' with ``-ous acid''.
+					\begin{center}
+						\begin{tabular}
+							{p{3em}p{14em}}
+							\ch{HNO2} & nitr\emph{ous
+							acid}
+						\end{tabular}
+					\end{center}
+			\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Naming Bases}
+	\begin{itemize}
+		\item Bases with \Hyd\ ions follow general ionic compound naming
+			conventions.
+			\begin{center}
+				\begin{tabular}{>{\collectcell\ch}p{5em}<{\endcollectcell}p{10em}}
+					NaOH    & sodium     \emph{hydroxide} \\
+					KOH     & potassium  \emph{hydroxide} \\
+					Ba(OH)2 & barium     \emph{hydroxide} \\
+					Al(OH)3 & aluminum   \emph{hydroxide} \\
+					Fe(OH)3 & iron (III) \emph{hydroxide}
+				\end{tabular}
+			\end{center}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Acid-Base Nomenclature Practice}
+	Name the following acids or bases:
+
+	\begin{enumerate}
+		\item \ch{HI} \note[item]{hydroiodic acid}
+		\item \ch{KOH} \note[item]{potassium hydroxide}
+		\item \ch{HClO} \note[item]{hypochlorous acid}
+		\item \ch{HClO2} \note[item]{chlorous acid}
+		\item \ch{HClO3} \note[item]{chloric acid}
+		\item \ch{HClO4} \note[item]{perchloric acid}
+		\item \ch{Sr(OH)2} \note[item]{strontium hydroxide}
+	\end{enumerate}
+\end{frame}
+
+\begin{onyourown}[0em]
+	Name the following acids or bases:
+	
+	\begin{enumerate}
+		\item \ch{H2S}
+		\item \ch{HBr}
+		\item \ch{CsOH}
+		\item \ch{H2SO3} (This one is a bit of a challenge)
+		\item \ch{Cu(OH)2}
+		\item \ch{HC2H3O2}
+	\end{enumerate}
+\end{onyourown}
+
+\begin{frame}{Acid-Base Reactions}
+	\begin{itemize}
+		\item In the equations for neutralization, an acid and a base
+			produce a salt and water.
+			\begin{reaction*}
+				!(acid)( HCl\aq{} ) + !(base)( NaOH\aq{} ) ->
+				!(salt)( NaCl\aq{} ) + !(water)( \water\lqd{} )
+			\end{reaction*}
+
+		\item For \alert{every} acid-base reaction, we should have the
+			general trend,
+			\begin{reaction*}
+				acid + base -> salt + water
+			\end{reaction*}
+
+		\item The \alert{salt} (the ionic compound produced) is often
+			still dissolved in solution. We therefore can prepare a
+			\alert{net ionic equation}:
+			\begin{reaction*}
+				H^{+}\aq{} + \Hyd\aq{} -> \water\lqd{}
+			\end{reaction*}
+	\end{itemize}
+\end{frame}
+
+\vspace{\stretch{-1}}
+
+\begin{frame}{Guide to Balancing Acid-Base Reactions}
+	\begin{block}{Problem}
+		Balance the reaction when aqueous solutions of \ch{HNO3} with
+		\ch{Mg(OH)2} are mixed.
+	\end{block}
+
+	\bigskip
+
+	\begin{description}[<+(1)->]
+		\item[Step 1] Write the base and acid formulas.
+		\item[Step 2] Balance \Hyd\ and \ch{H^{+}}.
+		\item[Step 3] Balance with \water.
+		\item[Step 4] Write the salt from remaining ions.
+	\end{description}
+
+	\note<.>{
+		\begin{enumerate}
+			\item \ch{Mg(OH)2\aq{} + HNO3\aq{}}
+			\item \ch{Mg(OH)2\aq{} + "\alert{2}" HNO3\aq{}}
+			\item \ch{Mg(OH)2\aq{} + 2 HNO3\aq{} -> salt + 2
+				\water\lqd{}}
+			\item \ch{Mg(OH)2\aq{} + 2 HNO3\aq{} ->
+			Mg(NO3)2\aq{} + 2 \water\lqd{}}
+		\end{enumerate}
+		}
+\end{frame}
+
+\clearpage
+
+\begin{frame}[t]{Balancing Acid-Base Reaction Practice}
+	Balance the following reaction:
+
+	\begin{reaction*}
+		HCl\aq{} + Al(OH)3\aq{} -> AlCl3\aq{} + H2O\lqd
+	\end{reaction*}
+\end{frame}
+
+\begin{onyourown}
+	Balance the following reaction:
+
+	\begin{reaction*}
+		Ba(OH)2\aq{} + H3PO4\aq{} -> Ba3(PO4)2\sld{} + H2O\lqd{}
+	\end{reaction*}
+\end{onyourown}
+
+\begin{frame}{Practical Lab Skills: Titrations}
+	\begin{block}{Titration}
+		A substance in a solution of known concentration is reacted with
+		another substance in a solution of unknown concentration.
+	\end{block}
+
+	\begin{overlayarea}{\linewidth}{18em}
+	\begin{center}
+		\only<1>{\includegraphics[scale=0.35,trim={0 0 0 30pt},clip]{08_18_Figure.jpg}}
+		\mode<article>{\clearpage}
+		\only<2>{\includegraphics[scale=0.4]{08_19_Figure.jpg}}
+	\end{center}
+	\end{overlayarea}
+\end{frame}
+
+\vspace{\stretch{-1}}
+
+\begin{frame}[t]{Titration Calculations}
+	If \SI{32.7}{\milli\liter} of a \SI{0.5000}{\Molar} \ch{KOH} solution
+	were required to neutralize \SI{20.0}{\milli\liter} of a \ch{H2SO4}
+	solution, what is the concentration of the \ch{H2SO4}?
+
+	\note{
+		\begin{reaction*}
+			2 KOH\aq{} + H2SO4\aq{} -> K2SO4\aq{} + 2 H2O\lqd{}
+		\end{reaction*}
+
+		\begin{align*}
+			\intertext{Find moles of KOH:}
+			\frac{\SI{0.5000}{\mole}~\ch{KOH}}{\SI{1}{\liter}}
+			\times \SI{32.7}{\milli\liter} \times
+			\frac{\SI{1}{\liter}}{\SI{1000}{\milli\liter}} &=
+			\SI{0.01635}{\mole}~\ch{KOH} \\
+			\intertext{From stoichiometry:}
+			\SI{0.01635}{\mole}~\ch{KOH} \times
+			\frac{\SI{1}{\mole}~\ch{H2SO4}}{\SI{2}{\mole}~\ch{KOH}}
+			&= \SI{0.008175}{\mole}~\ch{H2SO4} \\
+			\intertext{Solve for concentration:}
+			\frac{\SI{0.008175}{\mole}~\ch{H2SO4}}{\SI{20.0}{\milli\liter}}
+			\times \frac{\SI{1000}{\milli\liter}}{\SI{1}{\liter}} &=
+			\SI{0.40875}{\Molar} \\
+			&= \boxed{\SI{0.409}{\Molar}}
+		\end{align*}}
+\end{frame}
+
+\begin{onyourown}
+	If \SI{41.9}{\milli\liter} of a \SI{0.1000}{\Molar} \ch{HCl} solution
+	were required to neutralize \SI{25.0}{\milli\liter} of a \ch{Mg(OH)2}
+	solution, what is the concentration of the \ch{Mg(OH)2}?
+\end{onyourown}
+
+\clearpage
+
+\begin{frame}{Strong Acids and Bases}
+	Like electrolytes, acids and bases can be either
+	\alert{weak} or \alert{strong}.
+	\begin{reactions*}
+		HCl\aq{} &-> H^{+}\aq{} + Cl^{-}\aq{} \\
+		HF\aq{} &<=> H^{+}\aq{} + F^{-}\aq{}
+	\end{reactions*}
+	\begin{center}
+		\footnotesize
+	\begin{tabular} {l l}
+		\toprule
+		\bfseries Strong Acids & \bfseries Strong Bases
+		\\
+		\midrule
+		Hydrochloric acid, \ch{HCl} & Group 1A metal
+		hydroxides \\
+		Hydrobromic acid, \ch{HBr} & [\ch{LiOH},
+		\ch{NaOH}, \ch{KOH}, \ch{RbOH}, \ch{CsOH}] \\
+		Hydroiodic acid, \ch{HI} & Heavy group 2A metal
+		hydroxides \\
+		Chloric acid, \ch{HClO3} & [\ch{Ca(OH)2},
+		\ch{Sr(OH)2}, \ch{Ba(OH)2}] \\
+		Perchloric acid, \ch{HClO4} \\
+		Nitric acid, \ch{HNO3} \\
+		Sulfuric acid (first proton), \ch{H2SO4} \\
+		\bottomrule
+	\end{tabular}
+	\end{center}
+
+	When titrating, we want to use \alert{strong} acids or bases. Why? 
+\end{frame}
+
+\begin{frame}{Gas-Evolution Reactions}
+	In precipitation reactions, we see a solid form:
+	\begin{reaction*}
+		Na2SO4\aq{} + Ba(NO3)2\aq{} -> BaSO4\sld{} + 2 NaNO3\aq{}
+	\end{reaction*}
+
+	\pause
+
+	In \alert{gas-evolution} reactions, we see a \alert{gas} form:
+	\begin{reaction*}
+		H2SO4\aq{} + Li2S\aq{} -> H2S\gas{} + Li2SO4\aq{}
+	\end{reaction*}
+
+	\pause
+
+	A common example is acids reacting with metals to produce hydrogen gas
+	and the metal salt:
+	\begin{reactions*}
+		2 K\sld{} + 2 HCl\aq{} &-> 2 KCl\aq{} + H2\gas{} \\
+		Zn\sld{} + 2 HCl\aq{} &-> ZnCl2\aq{} + H2\gas{} \\
+	\end{reactions*}
+
+	\pause
+
+	Can we write net ionic equations for gas evolution reactions?
+\end{frame}
+
+\begin{frame}{Intermediate Products Leading to Gas Evolution}
+	Occasionally, a product is not stable and \alert{decomposes} to form a
+	gas.
+	\begin{center}
+		\small
+	\begin{tabular} {l E E}
+		\toprule
+		\textbf{Reactant} & \textbf{Intermediate} & \textbf{Gas~Evolved}
+		\\ \midrule
+		Sulfides & None & H2S \\
+		Carbonates and bicarbonates & H2CO3 & CO2 \\
+		Sulfites and bisulfites & H2SO3 & SO2 \\
+		Ammonium & NH4OH & NH3 \\
+		\bottomrule
+	\end{tabular}
+	\end{center}
+
+	\pause
+
+	\medskip
+
+	\begin{center}
+		\begin{tabular} {L >{\collectcell\ch}r<{\endcollectcell} @{
+				\ch{->} } E}
+			& HCl\aq{} + NaHCO3\aq{} & !(intermediate~product)(
+			H2CO3\aq{} ) + NaCl\aq{} \\
+			+ & H2CO3\aq{} & H2O\lqd{} + CO2\gas{} \\ \midrule
+			& HCl\aq{} + NaHCO3\aq{} & H2O\lqd{} + CO2\gas{} +
+			NaCl\aq{}
+		\end{tabular}
+	\end{center}
+\end{frame}
+
+\vspace{\stretch{-1}}
+
+\begin{frame}[t]{Writing Gas Evolution Reactions}
+	Write a balanced molecular equation for the following reactions:
+
+	\begin{enumerate}
+		\item \ch{Al\sld{} + HCl\aq{}}
+			\note[item]{\ch{2 Al\sld{} + 6 HCl\aq{} -> 2 AlCl3\aq{}
+			+ 3 H2\gas{}}}
+
+			\vspace{5em}
+
+		\item \ch{NH4Cl\aq{} + KOH\aq{}}
+			\note[item]{\ch{NH4Cl\aq{} + KOH\aq{} -> H2O\lqd{} +
+			NH3\gas{} + KCl\aq{}}}
+
+			\vspace{5em}
+	\end{enumerate}
+\end{frame}
+
+\vspace{\stretch{-1}}
+
+\begin{onyourown}
+	Write a balanced molecular equation for the following reactions:
+
+	\begin{enumerate}
+		\item \ch{Fe\sld{} + HCl\aq{}}
+			\vspace{5em}
+		\item \ch{K2SO3\aq{} + HCl\aq{}}
+			\vspace{5em}
+	\end{enumerate}
+
+	Write the net ionic equations for the above reactions.
+\end{onyourown}
+
+\clearpage
+
+\begin{frame}{Oxidation-Reduction Reactions}
+	When electrons transfer from one reactant to another, we have an
+	\alert{oxidation-reduction} or \alert{redox} reaction.
+	\begin{center}
+		\begin{tabular} {>{\bfseries}r@{~}l}
+			Oxidation & is the \alert{loss} of electrons. \\
+			Reduction & is the \alert{gain} of electrons.
+		\end{tabular}
+	\end{center}
+
+	\pause
+
+	\medskip
+
+	The gas-evolution reactions just considered are examples of redox
+	reactions:
+	\begin{reaction*}
+		Zn\sld{} + 2 HCl\aq{} -> ZnCl2\aq{} + H2\gas{}
+	\end{reaction*}
+
+	\pause
+
+	\begin{center}
+		Why? How do we know?
+		\pause
+		There \alert{must} be a change in charge!
+	\end{center}
+
+	\begin{block}{Oxidation State/Number}
+		The ``charge'' an atom would have if all shared electrons were
+		assigned to the more electronegative atom.
+	\end{block}
+\end{frame}
+
+\vspace{\stretch{-1}}
+
+\begin{frame}{Rules for Assigning Oxidation Numbers}
+	\begin{enumerate}[<+->]
+		\item The oxidation state of an atom in a free element
+			is 0.
+			\only<.>{
+				\begin{reaction*}
+					!(0~ox~state)( Cu ) 
+					\qquad\qquad 
+					!(0~ox~state)( Cl2 )
+				\end{reaction*}
+				}
+		\item The oxidation state of a monatomic ion is equal to
+			its charge.
+			\only<.>{
+				\begin{reaction*}
+					!(\num{+2}~ox~state)( Ca^{2+} )
+					\qquad\qquad
+					!(\num{-1}~ox~state)( Cl^{-} )
+				\end{reaction*}
+				}
+		\item The sum of the oxidation states of all atoms in a
+			species must match the charge of the species.
+			\begin{itemize}
+				\item A neutral molecule or formula unit
+					is 0.
+					\only<.>{
+						\begin{reaction*}
+							!({$2 (\text{H~ox~state})
+							+ 1 (\text{O~ox~state})
+							= 0$})( H2O )
+						\end{reaction*}
+						}
+				\item An ion is equal to the charge of
+					the ion.
+					\only<.>{
+						\begin{reaction*}
+							!({$1 (\text{N~ox~state})
+							+ 3 (\text{O~ox~state})
+							= -1$})( NO3- )
+						\end{reaction*}
+						}
+			\end{itemize}
+		\item Metals always have positive oxidation states.
+			\only<.>{
+				\begin{reaction*}
+					!(\num{+1}~ox~state)( \alert{Na}Cl )
+					\qquad\qquad
+					!(\num{+2}~ox~state)( \alert{Ca}F2 )
+				\end{reaction*}
+				}
+		\item Nonmetals are assigned oxidation states according
+			to the table below.
+			\begin{center}
+				\small
+				\sisetup{table-format=-1}
+				\begin{tabular} {l S e | l S e}
+					\toprule
+					\textbf{Nonmetal} & \textbf{ON} & \textbf{Example} &
+					\textbf{Nonmetal} & \textbf{ON} & \textbf{Example} \\
+					\midrule
+					Fluorine & -1 & MgF2 & Group 7A & -1 & CCl4 \\
+					Hydrogen & +1 & H2O  & Group 6A & -2 & H2S \\
+					Oxygen & -2 & CO2    & Group 5A & -3 & NH3 \\
+					\bottomrule
+				\end{tabular}
+			\end{center}
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}[t]{Assigning Oxidation Numbers}
+	Assign oxidation numbers for all elements in the following compounds:
+
+	\begin{multicols}{2}
+	\begin{enumerate}
+		\item \ch{BaCl2}
+		\item \ch{PO4^{3-}}
+		\item \ch{Zn\sld{}}
+		\item \ch{ZnCl2}
+		\item \ch{HCl}
+		\item \ch{H2}
+	\end{enumerate}
+	\end{multicols}
+
+	\pause
+
+	What is happening to oxidation numbers in the reaction of Zn with HCl?
+	\begin{reaction*}
+		Zn\sld{} + 2 HCl\aq{} -> ZnCl2\aq{} + H2\gas{}
+	\end{reaction*}
+
+	\pause
+
+	\begin{block}{Identifying Redox Reactions}
+		At \alert{any} time in which we have a \alert{change} in oxidation
+		number, we know we have a \alert{redox} reaction.
+	\end{block}
+\end{frame}
+
+\vspace{\stretch{-1}}
+
+\begin{frame}{Intro to Balancing Redox Reactions}
+	In the reaction,
+	\begin{reaction*}
+		Zn\sld{} + 2 HCl\aq{} -> ZnCl2\aq{} + H2\gas{}
+	\end{reaction*}
+
+	\begin{itemize}
+		\item \ch{Zn} is \alert{oxidized}:
+			\begin{reaction*}
+				Zn\sld{} -> Zn^{2+}\aq{} + 2 \el{}
+			\end{reaction*}
+		\item \ch{H+} is \alert{reduced}:
+			\begin{reaction*}
+				2 H^{+}\aq{} + 2 \el{} -> H2\gas{}
+			\end{reaction*}
+	\end{itemize}
+
+	\pause
+
+	Note that an oxidation reaction \alert{must} occur for every reduction
+	reaction (and vice versa), because we need a \alert{stoichiometric}
+	amount of electrons to \alert{transfer}!
+	\begin{itemize}
+		\item \ch{Zn} is the \alert{reducing agent}.
+		\item \ch{H+} is the \alert{oxidizing agent}.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Oxidation-Reduction Identification}
+	Identify each of the following as either oxidation or reduction:
+
+	\begin{enumerate}
+		\item \ch{Sn\sld{} -> Sn^{4+} + 4 \el{}}
+
+			\bigskip
+
+		\item \ch{Fe^{3+}\aq{} + \el{} -> Fe^{2+}}
+
+			\bigskip
+
+		\item \ch{Cl2\gas{} + 2 \el{} -> 2 Cl^{-}\aq{}}
+
+			\bigskip
+	\end{enumerate}
+\end{frame}
+
+\vspace{\stretch{-1}}
+
+\begin{onyourown}[0em]
+	Identify each of the following as either oxidation or reduction:
+
+	\begin{enumerate}
+		\item \ch{3 I^{-}\aq{} -> I3^{-}\aq{} + 2 \el{}}
+
+			\bigskip
+
+		\item \ch{Br2\gas{} + 2 \el{} -> 2 Br^{-}\aq{}}
+			\bigskip
+	\end{enumerate}
+\end{onyourown}
+
+\begin{frame}[t]{Writing Half-Reactions}
+	Write the separate oxidation and reduction reactions for the following
+	equation:
+	\begin{reaction*}
+		2 Cs\sld{} + ZnCl2\aq{} -> Zn\sld{} + 2 CsCl\aq{}
+	\end{reaction*}
+
+	\note{
+		\begin{reactions*}
+			2 Cs\sld{} &-> 2 Cs^{+}\sld{} + 2 \el{} \\
+			Zn^{2+}\aq{} + 2 \el{} &-> Zn\sld{}
+		\end{reactions*}
+		}
+\end{frame}
+
+\begin{onyourown}
+	Write the separate oxidation and reduction reactions for the following
+	equation:
+	\begin{reaction*}
+		2 Fe\sld{} + 3 CuBr2\aq{} -> 2 FeBr3\aq{} + 3 Cu\sld{}
+	\end{reaction*}
+\end{onyourown}
+
+\clearpage
+
+\begin{frame}[t]{Some Challenging Examples}
+	\begin{enumerate}[<only@+>]
+		\item Write the balanced chemical equation for the reaction of
+			potassium with water.
+
+			\vfill
+
+			\note[item]{
+				\begin{reaction*}
+					2 K\sld{} + 2 H2O\lqd{} -> 2 KOH\aq{} +
+					H2\gas{}
+				\end{reaction*}
+				}
+
+		\item Write the balanced chemical reaction for aluminum with
+			bromine gas.
+
+			\vfill
+
+			\note[item]{
+				\begin{reaction*}
+					2 Al\sld{} + 3 Br2\gas{} -> 2 AlBr3\aq{}
+				\end{reaction*}
+				}
+
+		\item Write the balanced chemical equation for the combustion of
+			propane (\ch{C3H8}).
+
+			\vfill
+
+			\note[item]{
+				\begin{reaction*}
+					C3H8\gas{} + 5 O2\gas{} -> 3 CO2\gas{}
+					+ 4 H2O\lqd{}
+				\end{reaction*}
+				}
+	\end{enumerate}
+\end{frame}
+
+\end{document}

@@ -1,0 +1,101 @@
+% !TEX program = xelatex
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage{genchem}
+\usepackage{enumitem}
+\usepackage[margin=1in]{geometry}
+\usepackage{titling}
+
+\setallmainfonts{TeX Gyre Pagella}
+
+\title{Chapter 2 ``On Your Own'' Solutions}
+
+\setlist[enumerate,1]{itemsep=2em,leftmargin=0pt,label=\textbf{\Alph*.}}
+\setlist[enumerate,2]{label={\arabic*.}}
+
+\begin{document}
+
+\begin{center}
+	\bfseries
+	\Large
+	\thetitle
+\end{center}
+
+\begin{enumerate}
+	\item Make sure we use an equation that has all our needed variables,
+		$\lambda$ (what we're trying to find) and $\nu$ (what we're
+		given).
+		\begin{align*}
+			c &= \lambda \nu \\
+			\lambda &= \frac{c}{\nu} \\
+			&=
+			\frac{\SI{3.00e8}{\meter\per\second}}{\SI{3.4e12}{\per\second}} 
+			\times
+			\underbrace{\frac{\SI{1}{\nano\meter}}{\SI{e-9}{\meter}}}_{\mathclap{\text{We
+						were asked to find it in
+			\si{\nano\meter}!}}} \\
+			&= \SI{88235.29412}{\nano\meter} \\
+			&\approx \boxed{\SI{8.8e4}{\nano\meter}}
+		\end{align*}
+	\item Again, use the appropriate equation:
+		\begin{align*}
+			E &= \frac{hc}{\lambda} \\
+			&= \frac{(\SI{6.626e-34}{\joule\second})
+			(\SI{3.00e8}{\meter\per\second})}{\SI{0.107}{\nano\meter}}
+			\times \frac{\SI{1}{\nano\meter}}{\SI{e-9}{\meter}} \\
+			&= \SI{1.85776e-15}{\joule} \\
+			&\approx \boxed{\SI{1.86e-15}{\joule}}
+		\end{align*}
+	\item A two-parter. First, let's find the energy of \emph{a single
+		photon} using the appropriate equation:
+		\begin{align*}
+			E &= h\nu \\
+			  &=
+			  (\SI{6.626e-34}{\joule\second})(\SI{3.42e15}{\per\second})
+			  \\
+			  &= \SI{2.26609e-18}{\joule} \\
+			  &\approx \boxed{\SI{2.27e-18}{\joule}}
+		  \end{align*}
+		Now, we're asked to find the energy in \SI{0.5}{\mole} of
+		photons:
+		\begin{align*}
+			  \frac{\SI{2.26609e-18}{\joule}}{\SI{1}{photon}} \times
+			  \frac{\SI{6.022e23}{photons}}{\SI{1}{\mole}} \times
+			  \SI{0.5}{\mole} &=
+			  \SI{682320.3012}{\joule} \\
+			  &\approx \boxed{\SI{6.82e5}{\joule}}
+		  \end{align*}
+	  \item \begin{enumerate}
+		  \item $E_f - E_i = E_3 - E_1 = \SI{-5.0e-19}{\joule} -
+			  \SI{-15.0e-19}{\joule} = \boxed{\SI{10.0e-19}{\joule}}$
+		  \item $E_f - E_i = E_1 - E_4 = \SI{-15.0e-19}{\joule} -
+			  \SI{-1.0e-19}{\joule} = \SI{14.0e-19}{\joule}$
+			  \begin{align*}
+				  E &= \frac{hc}{\lambda} \\
+				  \lambda &= \frac{hc}{E} \\
+				  &=
+				  \frac{(\SI{6.626e-34}{\joule\second})(\SI{3.00e8}{\meter\per\second})}{\SI{14.0e-19}{\joule}}
+				  \times
+				  \frac{\SI{1}{\nano\meter}}{\SI{e-9}{\meter}}
+				  \\
+				  &= \SI{141.9857143}{\nano\meter} \\
+				  &\approx \boxed{\SI{142}{\nano\meter}}
+			  \end{align*}
+	  \end{enumerate}
+  \item Using the de Broglie equation:
+	  \begin{align*}
+		  \lambda &= \frac{h}{mv} \\
+		  v &= \frac{h}{m\lambda} \\
+		  &= \frac{\SI{6.626e-34}{\joule\second}}
+		  {(\SI{1650}{\kilo\gram})(\SI{3.82e-33}{\nano\meter})} \times
+		  \frac{\SI{1}{\kilo\gram\meter\squared\per\second\squared}}{\SI{1}{\joule}}
+		  \times
+		  \frac{\SI{1}{\nano\meter}}{\SI{e-9}{\meter}} 
+		  \times
+		  \frac{\SI{1}{\kilo\meter}}{\SI{1e3}{\meter}} \\
+		  &= \SI{105.1245439}{\kilo\meter\per\second} \\
+		  &\approx \boxed{\SI{105}{\kilo\meter\per\second}}
+	  \end{align*}
+\end{enumerate}
+
+\end{document}

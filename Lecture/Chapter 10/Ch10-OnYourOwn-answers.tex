@@ -1,0 +1,171 @@
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage{genchem}
+\usepackage{enumitem}
+\usepackage[margin=1in]{geometry}
+\usepackage{titling}
+\usepackage{tabularx}
+\chemsetup{chemformula/frac-style=nicefrac}
+
+\setallmainfonts{TeX Gyre Pagella}
+
+\title{Chapter 10 ``On Your Own'' Solutions}
+
+\begin{document}
+
+\begin{center}
+	\bfseries
+	\Large
+	\thetitle
+\end{center}
+
+\begin{enumerate}[itemsep=2em,leftmargin=0pt,label=\textbf{\Alph*.}]
+	\item We need to consider the balanced reaction:
+		\begin{reaction*}
+			Zn\sld{} + 2 H^{+}\aq{} -> H2\gas{} + Zn^{2+}\aq{}
+		\end{reaction*}
+
+		We therefore have $\dfrac{\SI{1}{\mole}~\ch{Zn}}{\SI{1}{\mole}~\ch{H2}}$. To find out how many moles of \ch{H2\gas}:
+		\begin{align*}
+			PV &= nRT \\
+			n &= \frac{PV}{RT} \\
+			&= \frac{(\SI{1.0}{\atm})(\SI{2.5}{\liter})}{(\SI{0.08206}{\liter\atm\per\mole\per\kelvin})\big((24 + 273.15)~\si{\kelvin}\big)} \\
+			&= \SI{0.10256}{\mole}~\ch{H2}
+			\intertext{Therefore,}
+			\SI{0.10256}{\mole}~\ch{H2} \times \frac{\SI{1}{\mole}~\ch{Zn}}{\SI{1}{\mole}~\ch{H2}} &= \SI{0.102526}{\mole}~\ch{Zn} \\
+			\intertext{And converting to grams:}
+			\SI{0.102526}{\mole}~\ch{Zn} \times \frac{\SI{65.38}{\gram}}{\SI{1}{\mole}} &= \SI{6.703131}{\gram} \\
+			&= \boxed{\SI{6.7}{\gram}~\ch{Zn}}
+		\end{align*}
+
+	\item We need to first find the total moles in the container:
+		\begin{align*}
+			n_\text{tot} &= n_{\ch{O2}} + n_{\ch{N2}} + n_{\ch{CH4}}
+			\\
+			&= \SI{0.301}{\mole} + \SI{0.788}{\mole} +
+			\SI{0.261}{\mole} \\
+			&= \SI{1.350}{\mole}
+		\end{align*}
+		We can then solve for pressure via the ideal gas law:
+		\begin{align*}
+			PV &= nRT \\
+			P &= \frac{nRT}{V} \\
+			&=
+			\frac{(\SI{1.350}{\mole})(\SI{0.08206}{\liter\atm\per\mole\per\kelvin})(\SI{288}{\kelvin})}{\SI{3.0}{\liter}}
+			\\
+			&= \SI{10.635}{\atm} = \boxed{\SI{11}{\atm}}
+		\end{align*}
+
+		For the pressure of \ch{CH4}, we apply the law of partial
+		pressures:
+		\begin{align*}
+			\mathcal{X}_{\ch{CH4}} &=
+			\frac{n_{\ch{CH4}}}{n_\text{total}} \\
+			&= \frac{\SI{0.261}{\mole}}{\SI{1.350}{\mole}} \\
+			&= \num{0.19333333} \\
+			P_{\ch{CH4}} &= \mathcal{X}_{\ch{CH4}}P_\text{total} \\
+			&= (\num{0.19333333})(\SI{10.635}{\atm}) \\
+			&= \SI{2.056}{\atm} = \boxed{\SI{2.1}{\atm}}
+		\end{align*}
+
+		\clearpage
+
+	\item We are just looking for the mass of \ch{H2\gas{}} at this
+		temperature, pressure, and volume. We don't need to worry about
+		the reaction with \ch{Zn}, but we \emph{do} need to consider the
+		vapor pressure of water. The pressure of \emph{just}
+		\ch{H2\gas{}} is calculated as
+		\begin{align*}
+			P_{\ch{H2}} &= P_\text{total} - P_{\water} \\
+			&= \SI{748.0}{\mmHg} - \SI{23.78}{\mmHg} \\
+			&= \SI{724.22}{\mmHg} \times
+			\frac{\SI{1}{\atm}}{\SI{760}{\mmHg}} \\
+			&= \SI{0.9529211}{\atm}
+			\intertext{We can use this value of $P$ to solve for the
+			moles of \ch{H2} in the ideal gas equation:}
+			PV &= nRT \\
+			n &= \frac{PV}{RT} \\
+			&=
+			\frac{(\SI{0.9529211}{\atm})(\SI{0.951}{\liter})}{(\SI{0.08206}{\liter\atm\per\mole\per\kelvin})(25
+			+ 273.15~\si{\kelvin})} \\
+			&= \SI{0.03704}{\mole}
+			\intertext{Converting moles of \ch{H2} to grams will
+			give us our final answer:}
+			\SI{0.03704}{\mole} \times
+			\frac{\SI{2.0158}{\gram}}{\SI{1}{\mole}} &=
+			\SI{0.0746653}{\gram}
+			= \boxed{\SI{0.075}{\gram}}
+		\end{align*}
+
+		We \emph{now} need to consider the balanced reaction to
+		determine how much \ch{Zn} is needed.
+		\begin{reaction*}
+			Zn\sld{} + 2 HCl\aq{} -> H2\gas{} + ZnCl2\aq{}
+		\end{reaction*}
+		Using the moles of \ch{H2} calculated above and the
+		stoichiometry from the reaction, we can solve for grams of
+		\ch{Zn}:
+		\begin{align*}
+			\SI{0.03704}{\mole}~\ch{H2} \times
+			\frac{\SI{1}{\mole}~\ch{Zn}}{\SI{1}{\mole}~\ch{H2}}
+			\times
+			\frac{\SI{65.39}{\gram}~\ch{Zn}}{\SI{1}{\mole}~\ch{Zn}}
+			&= \SI{2.4220463}{\gram} \\
+			&= \boxed{\SI{2.4}{\gram}}
+		\end{align*}
+	\item Root mean square velocity is calculated using the appropriate
+		equation:
+		\begin{align*}
+			u_\text{rms} &= \sqrt{\frac{3RT}{\mathcal{M}}} \\
+			&=
+			\sqrt{\frac{(3)(\SI{8.314}{\joule\per\mole\per\kelvin})(45
+			+ 273.15~\si{\kelvin})}{\SI{70.906}{\gram\per\mole}}
+			\times \frac{\SI{1000}{\gram}}{\SI{1}{\kilo\gram}}} \\
+			&= \sqrt{\SI{111913}{\meter\squared\per\second\squared}} \\
+			&= \SI{334.534}{\meter\per\second} =
+			\boxed{\SI{330}{\meter\per\second}}
+		\end{align*}
+		
+		\clearpage
+		
+	\item We need to determine the ratio of rates of effusion and compare
+		them to the molar masses of the gasses:
+		\begin{align*}
+			\frac{\text{rate}_\text{unk}}{\text{rate}_{\ch{Br2}}} &=
+			\sqrt{\frac{\mathcal{M}_{\ch{Br2}}}{\mathcal{M}_\text{unk}}}
+			\\
+			\bigg(\frac{\text{rate}_\text{unk}}{\text{rate}_{\ch{Br2}}}\bigg)^2
+			&=
+			\frac{\mathcal{M}_{\ch{Br2}}}{\mathcal{M}_\text{unk}} \\
+			\mathcal{M}_\text{unk} &=
+			\frac{\mathcal{M}_{\ch{Br2}}}{\big(\frac{\text{rate}_\text{unk}}{\text{rate}_{\ch{Br2}}}\big)^2}
+			\\
+			&= \frac{\SI{79.904}{\gram\per\mole}}{1.689^2} \\
+			&= \boxed{\SI{28.01}{\gram\per\mole}}
+		\end{align*}
+
+	\item We need to first find out how many moles of \ch{H2O} we have
+		produced:
+		\begin{align*}
+			\SI{42.0}{\milli\liter} \times
+			\frac{\SI{1.00}{\gram}}{\SI{1}{\milli\liter}} \times
+			\frac{\SI{1}{\mole}}{\SI{18.0148}{\gram}} &=
+			\SI{2.3314164}{\mole}~\ch{H2O}
+			\intertext{Using the stoichiometry from the reaction, we
+			can determine the moles of \ch{NO} produced:}
+			\SI{2.3314164}{\mole}~\ch{H2O} \times
+			\frac{\SI{4}{\mole}~\ch{NO}}{\SI{6}{\mole}~\ch{H2O}} &=
+			\SI{1.5542776}{\mole}~\ch{NO}
+			\intertext{Plugging these moles into the ideal gas
+			equation will let us solve for pressure:}
+			PV &= nRT \\
+			P &= \frac{nRT}{V} \\
+			&=
+			\frac{(\SI{1.5542776}{\mole})(\SI{0.08206}{\liter\atm\per\mole\per\kelvin})(50
+			+ 273.15~\si{\kelvin})}{\SI{2.0}{\liter}} \\
+			&= \SI{20.607925}{\atm} \\
+			&= \boxed{\SI{20.6}{\atm}}
+		\end{align*}
+\end{enumerate}
+
+\end{document}

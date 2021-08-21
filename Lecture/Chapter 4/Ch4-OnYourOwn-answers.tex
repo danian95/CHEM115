@@ -1,0 +1,203 @@
+% !TEX program = xelatex
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage{genchem}
+\usepackage{enumitem}
+\usepackage[margin=1in]{geometry}
+\usepackage{titling}
+
+\setallmainfonts{TeX Gyre Pagella}
+
+\title{Chapter 4 ``On Your Own'' Solutions}
+
+\setlist[enumerate,1]{itemsep=2em,leftmargin=0pt,label=\textbf{\Alph*.}}
+\setlist[enumerate,2]{label={\arabic*.}}
+
+\begin{document}
+
+\begin{center}
+	\bfseries
+	\Large
+	\thetitle
+\end{center}
+
+\begin{enumerate}
+	\item \begin{enumerate}
+		\item \ch{Rb2O}
+		\item \ch{Sr3P2}
+		\item \ch{LiBr}
+	\end{enumerate}
+\item \begin{enumerate}
+	\item rubidium oxide
+	\item strontium phosphide
+	\item lithium bromide
+\end{enumerate}
+\item \begin{enumerate}
+	\item tungsten(IV) oxide
+	\item palladium(II) chloride
+	\item gold(III) nitride
+\end{enumerate}
+\item \begin{enumerate}
+	\item cesium perchlorate
+	\item lithium dichromate
+	\item ruthenium(III) sulfite
+	\item molybdenum(IV) hydroxide
+\end{enumerate}
+\item \begin{enumerate}
+	\item tellurium dioxide
+	\item antimony pentachloride
+	\item trisilicon octabromide
+\end{enumerate}
+\item \begin{enumerate}
+	\item \ch{Ca(NO3)2}
+
+		\begin{tabular} {r E@{ @
+					}S[table-format=2.2,table-space-text-post={\,\si{\gram\per\mole}}]<{\,\si{\gram\per\mole}}@{ $=$
+			}S[table-format=3.2]<{\,\si{\gram\per\mole}}}
+			1 & Ca & 40.08 & 40.08 \\
+			2 & N  & 14.01 & 28.02 \\
+			6 & O  & 16.00 & 96.00 \\ \midrule
+			\multicolumn{3}{l}{} & 164.10
+		\end{tabular}
+	\item \ch{MgBr2 * 6 H2O}
+
+		\begin{tabular} {r E@{ @
+					}S[table-format=2.3,table-space-text-post={\,\si{\gram\per\mole}}]<{\,\si{\gram\per\mole}}@{ $=$
+			}S[table-format=3.2]<{\,\si{\gram\per\mole}}}
+			1  & Mg & 24.31 & 24.31 \\
+			2  & Br & 79.90 & 159.8 \\
+			12 & H  & 1.008 & 12.10 \\
+			6  & O  & 16.00 & 96.00 \\ \midrule
+			\multicolumn{3}{l}{} & 292.21 \\
+			\multicolumn{3}{l}{} & 292.2
+		\end{tabular}
+	\end{enumerate}
+\item \begin{enumerate}
+	\item $\SI{4.019}{\gram} \times \frac{\SI{1}{\mole}}{\SI{164.10}{\gram}} \times
+		\frac{\SI{6.022e23}{molecules}}{\SI{1}{\mole}} = \boxed{\SI{1.475e22}{molecules}}$
+	\item $\SI{0.223}{\gram} \times \frac{\SI{1}{\mole}}{\SI{292.2}{\gram}} \times
+		\frac{\SI{6.022e23}{molecules}}{\SI{1}{\mole}} = \boxed{\SI{4.60e20}{molecules}}$
+\end{enumerate}
+
+\item First, let's find the molar mass of \ch{SOCl2},
+
+	\begin{tabular} {r E@{ @
+					}S[table-format=2.2,table-space-text-post={\,\si{\gram\per\mole}}]<{\,\si{\gram\per\mole}}@{ $=$
+			}S[table-format=3.2]<{\,\si{\gram\per\mole}}}
+			1  & S  & 32.06 & 32.06 \\
+			1  & O  & 16.00 & 16.00 \\
+			2  & Cl & 35.45 & 70.90 \\ \midrule
+			\multicolumn{3}{l}{} & 118.96
+		\end{tabular}
+
+	Then, we can find the mass percent of \ch{Cl} as follows:
+	\begin{align*}
+		\text{Mass percent Cl} &= \frac{2 \times \text{molar mass Cl}}{\text{molar mass
+		\ch{SOCl2}}} \times \SI{100}{\percent} \\
+		&= \frac{2 \times \SI{35.45}{\gram\per\mole}}{\SI{118.96}{\gram\per\mole}} \times
+		\SI{100}{\percent} \\
+		&= \boxed{\SI{59.60}{\percent}}
+	\end{align*}
+
+\item We need to first figure out the mass percent of Au in \ch{AuCl3}. The molar mass of \ch{AuCl3}:
+
+	\begin{tabular} {r E@{ @
+					}S[table-format=3.2,table-space-text-post={\,\si{\gram\per\mole}}]<{\,\si{\gram\per\mole}}@{ $=$
+			}S[table-format=3.2]<{\,\si{\gram\per\mole}}}
+			1  & Au & 196.97 & 196.97 \\
+			3  & Cl & 35.45  & 106.4 \\ \midrule
+			\multicolumn{3}{l}{} & 303.3
+		\end{tabular}
+
+	Then, we can find the mass percent of \ch{Au} as follows:
+	\begin{align*}
+		\text{Mass percent Au} &= \frac{1 \times \text{molar mass Au}}{\text{molar mass
+		\ch{AuCl3}}} \times \SI{100}{\percent} \\
+		&= \frac{1 \times \SI{196.97}{\gram\per\mole}}{\SI{303.3}{\gram\per\mole}} \times
+		\SI{100}{\percent} \\
+		&= \SI{64.94}{\percent}
+	\end{align*}
+
+	Now we can set this up following the Given, Plan, Find method:
+
+	\begin{tabularx}{\linewidth} {X X X}
+                        \bfseries Given & \bfseries Plan & \bfseries Find \\
+                        \midrule
+                        \SI{302}{\milli\gram}~\ch{Au} &
+                        $\frac{\SI{64.94}{\milli\gram}~\ch{Au}}{\SI{100}{\milli\gram}~\ch{AuCl3}}$
+                        & \si{\milli\gram}~\ch{AuCl3}
+                \end{tabularx}
+
+                \begin{align*}
+                        \SI{302}{\milli\gram}~\ch{Au} \times
+                        \frac{\SI{100}{\milli\gram}~\ch{AuCl3}}{\SI{64.94}{\milli\gram}~\ch{Ag}}
+                        &= \SI{465.058841447936}{\milli\gram}~\ch{AgCl} \\
+                        &= \boxed{\SI{465}{\milli\gram}~\ch{AgCl}}
+                \end{align*}         
+	\item 
+		\begin{tabularx}{\linewidth} {X X X}
+                        \bfseries Given & \bfseries Plan & \bfseries Find \\ \midrule
+			\SI{11}{\gram}~\ch{As(OH)3} &
+			$\frac{\SI{1}{\mole}~\ch{As}}{\SI{1}{\mole}~\ch{As(OH)3}}$
+                        & \si{\gram}~\ch{As}                                     \end{tabularx}                                                       
+                \begin{align*}
+			\SI{11}{\gram}~\ch{As(OH)3} \times
+			\frac{\SI{1}{\mole}~\ch{As(OH)3}}{\SI{125.94}{\gram}~\ch{As(OH)3}}
+                        \times                                                          
+			\frac{\SI{1}{\mole}~\ch{As}}{\SI{1}{\mole}~\ch{As(OH)3}}         
+                        \times                                                 
+                        \frac{\SI{74.92}{\gram}~\ch{As}}{\SI{1}{\mole}~\ch{As}}
+			&= \boxed{\SI{6.5}{\gram}~\ch{As}}
+                \end{align*}
+
+	\item Let's solve for the \emph{empirical formula} first:
+
+		\begin{tabularx}{\linewidth} {X X X}
+                        \bfseries Given & \bfseries Plan & \bfseries Find \\ \midrule
+                        \SI{2.70}{\gram} \ch{H2O} & $\frac{\SI{2}{\mole}~\ch{H}}{\SI{1}{\mole}~\ch{H2O}}$ & \si{\mole}~H \\
+                        \SI{4.40}{\gram} \ch{CO2}  & $\frac{\SI{1}{\mole}~\ch{C}}{\SI{1}{\mole}~\ch{CO2}}$ & \si{\mole}~C \\
+                        \SI{1.50}{\gram} hydrocarbon
+                \end{tabularx}
+
+                \begin{align*}
+                        \SI{2.70}{\gram}~\ch{H2O} \times \frac{\SI{1}{\mole}~\ch{H2O}}{\SI{18.016}{\gram}~\ch{H2O}} \times \frac{\SI{2}{\mole}~\ch{H}}{\SI{1}{\mole}~\ch{H2O}} &= \SI{0.299733570159858}{\mole}~\ch{H} \\
+                        \SI{4.40}{\gram}~\ch{CO2} \times
+			\frac{\SI{1}{\mole}~\ch{CO2}}{\SI{44.01}{\gram}~\ch{CO2}} \times
+			\frac{\SI{1}{\mole}~\ch{C}}{\SI{1}{\mole}~\ch{CO2}} &=
+		\SI{0.099977277891388}{\mole}~\ch{C} \\
+                \end{align*}                                     
+                \begin{equation*}                                
+                        \ch{C}_{\frac{\num{0.099977277891388}}{\num{0.099977277891388}}}\ch{H}_{\frac{\num{0.299733570159858}}{\num{0.099977277891388}}}
+			= \ch{C}_{1}\ch{H}_{2.998} = \boxed{\ch{CH3}}                  
+                \end{equation*}
+
+		Given the molar mass of the sample, we can now solve for the \emph{molecular
+		formula}:
+
+		\begin{tabular} {r E@{ @
+					}S[table-format=2.3,table-space-text-post={\,\si{\gram\per\mole}}]<{\,\si{\gram\per\mole}}@{ $=$
+			}S[table-format=2.3]<{\,\si{\gram\per\mole}}}
+			1  & C  & 12.01 & 12.01 \\
+			3  & H  & 1.008 & 3.024 \\ \midrule
+			\multicolumn{3}{l}{} & 15.03
+		\end{tabular}
+
+        How many ``\ch{CH3}'' do we need to add up to \SI{64.17}{\gram\per\mole}?
+        \begin{align*}
+                \frac{\SI{64.17}{\gram\per\mole}}{\SI{15.03}{\gram\per\mole}} &= 4.27\ldots \\
+		\intertext{Hm. I seemed to make a mistake with the numbers I gave you in the
+		problem\ldots}
+		\ch{C}_{1 \times 4.26}\ch{H}_{3 \times 4.26} &=
+		\boxed{\ch{C_{4.27}H_{12.8}}}
+		\intertext{This is really terrible. We should know that we need a \emph{integer}
+			in each subscript. What I \emph{meant} to give you in the notes was a molar
+			mass of \SI{60.17}{\gram\per\mole}. Using this value, let's see what we come
+		up with:}
+               \frac{\SI{60.17}{\gram\per\mole}}{\SI{15.03}{\gram\per\mole}} &= 4.00 \\
+	       \intertext{Much better!}
+		\ch{C}_{1 \times 4.00}\ch{H}_{3 \times 4.00} &=
+		\boxed{\ch{C4H_{12}}}
+        \end{align*}
+
+\end{enumerate}
+\end{document}

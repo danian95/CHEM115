@@ -1,0 +1,32 @@
+%! TEX program = htlatex
+\documentclass[12pt]{article}
+
+\usepackage{chemformula}
+\usepackage{booktabs}
+
+\newcommand\p[1]{\textsuperscript{#1}}
+\renewcommand\b[1]{\textsubscript{#1}}
+
+\begin{document}
+
+\begin{tabular} {l l}
+	\toprule
+	\textbf{Name} & \textbf{Formula} \\ \midrule
+	Acetate              & C\b{2}H\b{3}O\p{2-}    \\
+	Carbonate            & CO\b{3}\p{2-}   \\
+	Hydroxide            & OH\p{-}        \\
+	Nitrite              & NO\b{2}\p{-}       \\
+	Nitrate              & NO\b{3}\p{-}       \\
+	Chromate             & CrO\b{4}\p{2-}  \\
+	Dichromate           & Cr\b{2}O\b{7}\p{2-} \\
+	Phosphate            & PO\b{4}\p{3-}   \\
+	Ammonium             & NH\b{4}\p{+}       \\
+	Hypochlorite         & ClO\p{-}       \\
+	Perchlorate          & ClO\b{4}\p{-}      \\
+	Sulfate              & SO\b{4}\p{2-}   \\
+	Cyanide              & CN\p{-}        \\
+	Peroxide             & O\b{2}\p{2-}    \\
+	\bottomrule
+\end{tabular}
+
+\end{document}

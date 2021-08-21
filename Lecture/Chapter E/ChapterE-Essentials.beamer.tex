@@ -1,0 +1,1205 @@
+% !TEX program = xelatex
+%\documentclass[notes=onlyslideswithnotes]{beamer}
+\documentclass[notes=show]{beamer}
+%\documentclass[11pt,letterpaper]{article}
+%\usepackage{beamerarticle}
+
+\usepackage{genchem}
+\usepackage{lecture}
+\usepackage{multirow}
+\usetikzlibrary{tikzmark}
+\usepackage{media9}
+
+\DeclareSIUnit\inch{in.}
+\DeclareSIUnit\mile{mi.}
+\DeclareSIUnit\pound{lb}
+
+\title{Essentials}%: Units, Measurement, and Problem Solving}
+%\subtitle{Chapter E}
+\institute[CHEM115 Bloomsburg University]{CHEM115 --- Chemistry for the Sciences I \\ Bloomsburg University}
+\author{D.A. McCurry}
+\date{Fall 2020}
+
+\begin{document}
+
+\maketitle
+\mode<article>{\thispagestyle{fancy}}
+
+%\begin{frame}{The Central Science}
+%	\begin{minipage}{\linewidth}
+%		\centering
+%		\includegraphics[scale=0.3]{centralscience.pdf}
+%
+%		\footnotesize M stone.
+%	\url{https://en.wikipedia.org/wiki/The_central_science}
+%	\end{minipage}
+%\end{frame}
+
+%\begin{frame}{The Scientific Method}
+%	\tabulinesep=1em
+%	\begin{tabu} to \linewidth {>{\color{primary}\bfseries}r X}
+%		\savetabu{description}
+%		Observation: & What did you see? \\
+%		Hypothesis: & What is a possible interpretation of what you
+%		  saw? \\
+%		Experiments: & What can we do to test the hypothesis? \\
+%		Theory: & Is the hypothesis confirmed consistently? \\
+%	\end{tabu}
+%\end{frame}
+
+%\begin{frame}{Scientists Use Consistent Terminology to Ease Communication}
+%	We must have a standard way to \alert{measure} things so we can
+%	communicate our ideas to others. There are two categories in which
+%	measurements can fall:
+%
+%	\begin{enumerate}[<+->]
+%		\item \alert{Qualitative:} Descriptive, things you
+%			\alert{see}.
+%			\begin{itemize}[<1->]
+%				\item Changes in color and physical state.
+%			\end{itemize}
+%		\item \alert{Quantitative:} Measured or counted values.
+%			\begin{itemize}[<1->]
+%				\item Values recorded from instrumentation or
+%					glassware.
+%				\item The number of students in this class.
+%				\item Often associated with a \alert{dimensional
+%					unit}.
+%			\end{itemize}
+%	\end{enumerate}
+%
+%%	\visible<2->{
+%%	\begin{center}
+%%		\bfseries \color{primary} What measurements did we do in 
+%%		lab yesterday?
+%%	\end{center}}
+%\end{frame}
+
+\begin{frame}{}
+	\section{Scientific Notation}
+	\begin{learningobjectives}
+		\item Write small and large numbers in scientific notation.
+		\item Use scientific notation to facilitate division.
+		\item Use scientific notation for order of magnitude estimates.
+	\end{learningobjectives}
+\end{frame}
+
+\begin{frame}{Why do we need a special notation?}
+	We normally aren't using numbers that are easy to work with.
+	\begin{example}
+		Atoms are very small (about \SI{0.0000000001}{\meter}) and we work with a lot of them (over
+		\num{600000000000000000000000}).
+	\end{example}
+
+	\pause
+
+	Losing count of zeroes is easy. There should be
+	\tikzmarknode{zeroes}{23} zeroes in the example above after the 6.
+	
+	\pause
+
+	Let's instead just say how many zeroes we want to use:
+	\begin{equation*}
+		\num{600000000000000000000000} =
+		6 \times 10^{\tikzmarknode{scinot}{23}}
+	\end{equation*}
+
+	\begin{tikzpicture}[remember picture,overlay]
+		\draw[thick,->,shorten >=5pt,shorten <=5pt,primary]
+			(zeroes.south)
+			to[bend left=55] (scinot);
+	\end{tikzpicture}
+
+
+%	\begin{description}[<+->]
+%		\item[Example:] One \alert{mole} of atoms contains
+%			\SI{602200000000000000000000}{atoms}.
+%		\item[Problem:] My hand is tired from writing all those zeroes.
+%		\item[Solution:] We can use \alert{scientific notation} to
+%			simplify writing this number: 
+%			\begin{equation*}
+%				\num{6.022e23}
+%			\end{equation*}
+%			This indicates that there are \alert{23} digits after the
+%			6 before the actual decimal point.
+%	\end{description}
+\end{frame}
+
+\begin{frame}[t]{Writing in Scientific Notation}
+	\begin{enumerate}
+		\item Rewrite the number so that only the \alert{ones}
+			place is occupied to the left of the decimal
+			point.
+		\item Count how many places your decimal point had to
+			move. This will be your exponent.
+		\item The sign of the exponent is \alert{very} important!
+			\begin{itemize}
+				\item Positive ($+$) if the number is bigger than 1.
+				\item Negative ($-$) if the number is smaller than 1.
+			\end{itemize}
+	\end{enumerate}
+
+	\pause
+
+	Let's try a few examples:
+	\begin{enumerate}[<only@+>]
+		\renewcommand\arraystretch{1.9}
+		\item Write the following in scientific notation:
+
+			\begin{tabularx}{\linewidth} {X X}
+				\num{371039}     &
+				\num{82909}       \\
+				\num{40}         & 
+				\num{0.0003319} \\
+			\end{tabularx}
+
+		\item Write the following in standard notation:
+
+			\begin{tabularx}{\linewidth} {X X}
+				\num{3.001e-4} &
+				\num{7.19e9} \\
+				\num{1e-1} &
+				\num{8.00e7} \\
+			\end{tabularx}
+	\end{enumerate}
+\end{frame}
+
+\begin{onyourown}[0em]\label{oyo:scientificnotation}
+	\begin{enumerate}
+		\item Write the following in scientific notation:
+
+			\begin{tabularx}{\linewidth} {X X}
+				\SI{201}{\gram}     & \\
+				\SI{4330}{\milli\liter}       & \\
+				\SI{0.00100}{\second}         & \\
+			\end{tabularx}
+
+		\item Write the following in standard notation:
+
+			\begin{tabularx}{\linewidth} {X X}
+				\SI{3.107e2}{\liter} & \\
+				\SI{6.0e-2}{\gram}    & \\
+				\SI{9.0002e6}{\second}    & \\
+			\end{tabularx}
+	\end{enumerate}
+\end{onyourown}
+
+\begin{frame}[c]
+	\frametitle{Multiplication with Scientific Notation}
+
+	Solve the following:
+	\begin{align*}
+		\num{173800} \times \num{80300000} &=
+		\onslide<+(1)->{
+			\intertext{Instead of plugging this in right away, let's
+			convert each number to scientific notation:}
+			\num{1.738e5} \times \num{8.03e7} &=
+		}
+		\onslide<+(1)->{
+			\intertext{Some rearrangement:}
+			\underbrace{1.738 \times 8.03}_{13.95614} \times
+			\underbrace{10^{5} \times 10^{7}}_{10^{5+7}=10^{12}} &=
+		}
+		\onslide<+(1)->{
+			\num{13.95614e12} \\
+		}
+		\onslide<+(1)->{
+			&= \boxed{\num{1.395614e13}}
+		}
+	\end{align*}
+\end{frame}
+
+\begin{frame}[c]
+	\frametitle{Division with Scientific Notation}
+	Solve the following:
+	\begin{align*}
+		\frac{\num{173800}}{\num{80300000}} =
+		\onslide<+(1)->{
+			\frac{\num{1.738e5}}{\num{8.03e7}} &=
+		}
+		\onslide<+(1)->{
+			\intertext{We can separate the like terms as in
+			multiplication!}
+			\underbrace{\frac{1.738}{8.03}}_{0.216438356} \times
+			\underbrace{\frac{10^5}{10^7}}_{10^{5-7}=10^{-2}} &=
+		}
+		\onslide<+(1)->{
+			\num{0.216438356e-2} \\
+		}
+		\onslide<+(1)->{
+			&= \boxed{\num{2.16438356e-3}}
+		}
+	\end{align*}
+\end{frame}
+
+\begin{frame}[t]
+	\frametitle{Let's Practice}
+	Solve the following:
+	\begin{enumerate}
+		\item $48013 \times 0.1391$
+			\vspace{\stretch{1}}
+			\note[item]{$\approx\num{6.6786e3}$}
+		\item $0.43 \div 1002$
+			\vspace{\stretch{1}}
+			\note[item]{\num{4.3086e2}}
+	\end{enumerate}
+\end{frame}
+
+	\begin{onyourown}[7em]
+	Solve the following:
+	\begin{enumerate}
+		\item $0.0758 \times 53.54$
+			\vspace{7em}
+		\item $678 \div 0.001333$
+	\end{enumerate}
+\end{onyourown}
+
+\begin{frame}[c]
+	\frametitle{The Big Advantage of Scientific Notation}
+	We can \alert{estimate} the order of magnitude of an answer. This lets us
+	quickly check if our calculation is set up correctly.
+
+	\pause
+	\mode<presentation>{\bigskip}
+
+	\begin{example}
+		If we wanted to calculate the size of a gold atom, we might
+		put together something that looks like this:
+		\begin{equation*}
+			\frac{19.3}{196.97} =
+		\end{equation*}
+		Will this give us a \emph{reasonable} answer?
+		\note<+>{No, we get $\frac{\num{e1}}{\num{e2}} = \num{e-1}$ which is very
+		far off from \num{e-10}.}
+	\end{example}
+\end{frame}
+
+\begin{frame}{}
+	\section{Fundamental Units}
+	\begin{learningobjectives}
+		\item Identify common units used in the sciences.
+		\item Understand the utility of unit prefixes.
+		\item Convert between different unit prefixes.
+	\end{learningobjectives}
+\end{frame}
+
+\begin{frame}[c]
+	\frametitle{The Gimli Glider: An Exercise in Unit Conversions}
+	\begin{center}
+		\includegraphics[scale=0.5]{gimlix.jpg}
+	\end{center}
+	\footnotetext{\tiny\url{https://web.archive.org/web/20200225013028/http://www.wadenelson.com/gimli.html}}
+\end{frame}
+
+\begin{frame}{Système Internationale d'Unités (SI)}
+	For consistency, scientists have agreed to use \alert{SI units} and the
+	\alert{metric system} for quantitative measurements.
+
+	\begin{center}
+		\renewcommand\arraystretch{1.1}
+		\begin{tabular}{l@{\qquad}l@{\qquad}l}
+			\toprule
+			\bfseries Physical Quantity & \bfseries Name of Unit &
+			\bfseries Abbreviation \\ \midrule
+			Mass                & kilogram & \si{\kilo\gram }\\
+			Length              & meter    & \si{\meter     }\\
+			Temperature         & kelvin   & \si{\kelvin    }\\
+			Amount of substance & mole     & \si{\mole      }\\
+			Time                & second   & \si{\second    }\\
+			Electric current    & ampere   & \si{\ampere    }\\
+			Luminous intensity  & candela  & \si{\candela   }\\
+			\bottomrule
+		\end{tabular}
+	\end{center}
+
+	\begin{center}
+		All other units are derived from these \alert{fundamental} units.
+	\end{center}
+\end{frame}
+
+\begin{frame}[c]
+	\frametitle{Fundamental Units were Defined from Physical Objects}
+
+	\begin{center}
+		\begin{tikzpicture}
+			\node(length) {\includegraphics[width=0.4\linewidth]{US_National_Length_Meter.JPG}};
+			\node[right=of
+				length](mass) {\includegraphics[width=0.4\linewidth]{National_prototype_kilogram_K20_replica.jpg}};
+		\end{tikzpicture}
+	\end{center}
+\end{frame}
+
+%\begin{frame}{Fundamental Units: Measuring Length}
+%	The \alert{meter} has gone through a number of revisions to its
+%	definition\ldots
+%
+%	\begin{tabularx}{\linewidth} {>{\usebeamercolor[fg]{structure}\bfseries}r<{:} >{\raggedright\arraybackslash}X}
+%		1790 & One ten-millionth of the distance from the equator to the North Pole. \\
+%		1889 & \begin{tabularx}{\linewidth}[t] {@{}>{\raggedright\arraybackslash}X >{\centering\arraybackslash}X}
+%				Distance between two thin lines on a bar of platinum-iridium alloy stored near Paris,
+%				France. &
+%				\raisebox{-7em}{\includegraphics[scale=0.4]{US_National_Length_Meter.JPG}}
+%				\end{tabularx} \\
+%		1983 & Distance traveled by light through a vacuum in $\sfrac{1}{\num{299792458}}$~\si{\second}.
+%	\end{tabularx}
+%\end{frame}
+
+%\begin{frame}{Fundamental Units: Measuring Mass}
+%	Likewise, the SI unit of mass (\si{\kilo\gram}) has undergone a few
+%	changes.
+%
+%	\begin{center}
+%		\begin{tabularx}{\linewidth} {c >{\usebeamercolor[fg]{structure}\bfseries}r<{:}@{\quad}>{\raggedright\arraybackslash}X}
+%			\multirow{4}{0.2\linewidth}{\includegraphics[width=\linewidth]{National_prototype_kilogram_K20_replica.jpg}} &
+%			1795 & Mass of one liter of water. \\
+%			     & 1799 & Mass of a platinum standard weight. \\
+%			     & 1879 & Mass of a platinum-iridium standard weight. \\
+%			     & 2019 & Defined in terms of the Planck constant,
+%				\SI{6.62607015e-34}{\kilo\gram\meter\squared\per\second\squared}
+%	\end{tabularx}
+%	\end{center}
+%
+%	\begin{block}{Mass vs Weight}
+%		The \alert{mass} of an object is the quantity of matter within
+%		it whereas weight is a measure of gravitational pull ($m \times g$).
+%		Weight differs on different planets, but mass is always the
+%		same.
+%	\end{block}
+%\end{frame}
+
+\begin{frame}[c]
+	\frametitle{Fundamental Units are Defined from Physical Constants}
+
+	\begin{center}
+		\renewcommand\arraystretch{1.1}
+		\sisetup{unit-color=primary,
+			table-format=1.3e+2,
+			table-align-text-post=false,
+			per-mode=fraction,
+			round-mode=places,
+			round-precision=3,
+			table-space-text-post=\,\si{\kilo\gram\meter\squared\per\second\squared\per\kelvin}
+		}
+		\begin{tabular}
+			{>{\raggedright\arraybackslash}m{0.4\linewidth}cS}
+			\toprule
+			\bfseries Quantity & \bfseries Symbol & \bfseries Value \\ \midrule
+			Elementary charge & $e$ & 1.602176634e-19 \,\si{\coulomb} \\
+			Speed of light in vacuum & $c$ & 2.99792458e8 \,\si{\meter\per\second} \\
+			Planck's constant & $h$ & 6.62607015e-34 \,\si{\kilo\gram\meter\squared\per\second} \\
+			Avogadro's number & $N_{\textrm{A}}$ & 6.02214076e23 \,\si{\per\mole} \\
+			Boltzmann's constant & $k$ & 1.380649e-23 \,\si{\kilo\gram\meter\squared\per\second\squared\per\kelvin} \\
+			Unperturbed ground-state hyperfine transition frequency of \ch{^{133}Cs} & $\Delta v_{\ch{Cs}}$
+												 & 9.192631770e9
+												 \,\si{\per\second}
+			\\
+			\bottomrule
+		\end{tabular}
+	\end{center}
+\end{frame}
+
+\begin{frame}{Fundamental Unit Conversions from Familiar Units}
+	\only<+>{
+		\begin{align*}
+			\textbf{Length:} &&  \SI{1}{\inch} &=
+			\SI{0.0254}{\meter} & \\
+					 &&  \SI{1}{\mile} &\approx
+			\SI{1610}{\meter} & \\ \\
+			\textbf{Weight/Mass:\textsuperscript{*}} &&
+				\SI{1}{\pound} &\approx \SI{0.4545}{\kilo\gram}
+					       &
+		\end{align*}
+
+		\begin{block}{\textsuperscript{*}Mass vs Weight}
+			The \alert{mass} of an object is the quantity of matter within
+			it whereas weight is a measure of gravitational pull ($m \times g$).
+			Weight differs on different planets, but mass is always the
+			same.
+		\end{block}
+	}
+
+	\only<+>{
+		\begin{flalign*}
+			\textbf{Temperature:} &&
+			T (\si{\celsius}) &= \frac{T (\si{\fahrenheit})
+					- 32}{1.8} &
+					\\ \bigskip
+						   && T (\si{\kelvin}) &=
+					T (\si{\celsius}) + 273.15 &
+		\end{flalign*}
+		
+	\begin{center}
+		\begin{tikzpicture}
+			\node(img)
+				{\includegraphics[width=0.48\linewidth,trim={0 0
+				0 40pt},clip]{tempscales.jpeg}};
+			\node[right=of img,text
+				width=0.3\linewidth,align=center]{\bfseries\usebeamercolor[fg]{alerted
+				text} At \SI{0}{\kelvin}, molecular motion
+			ceases.};
+		\end{tikzpicture}
+	\end{center}
+	}
+\end{frame}
+
+\begin{frame}{Numerical Prefixes}
+	\only<+>{
+		Some orders of magnitude are used more often than others. Rather than
+		express all values in terms of scientific notation, we can use
+		\alert{numerical prefixes} with our units.
+	
+		\begin{center}
+		\begin{tabular} {l c S[table-format=13]
+			S[retain-unity-mantissa=false,table-format=1e-2]}
+			\toprule
+			\bfseries Prefix & \bfseries Symbol &
+			\multicolumn{2}{c}{\bfseries Multiplier} \\ \midrule
+			tera  & \si{\tera } & 1000000000000        & 1e12 \\
+			giga  & \si{\giga } & 1000000000           & 1e9 \\
+			mega  & \si{\mega } & 1000000              & 1e6 \\
+			kilo  & \si{\kilo } & 1000                 & 1e3 \\
+			\bottomrule
+		\end{tabular}
+		\end{center}
+	
+		\begin{math}
+			\textbf{\color{primary}Example:} \hfill
+			\SI{2000}{\meter} = 2 \times
+					\underbrace{10^3}_{\text{kilo, \si{\kilo}}}
+				\si{\meter} = \SI{2}{\kilo\meter} \hfill\null
+		\end{math}
+	}
+
+	\only<+>{
+		There are prefixes for small numbers as well\ldots
+	
+		\begin{center}
+		\begin{tabular} {l c
+			S[table-format=1.18]
+			S[retain-unity-mantissa=false,table-format=1e-2]}
+			\toprule
+			\bfseries Prefix & \bfseries Symbol &
+			\multicolumn{2}{c}{Multiplier} \\ \midrule
+			deci  & \si{\deci } & 0.1                  & 1e-1 \\
+			centi & \si{\centi} & 0.01                 & 1e-2 \\
+			milli & \si{\milli} & 0.001                & 1e-3 \\
+			micro & \si{\micro} & 0.000001             & 1e-6 \\
+			nano  & \si{\nano } & 0.000000001          & 1e-9 \\
+			pico  & \si{\pico } & 0.000000000001       & 1e-12 \\
+			femto & \si{\femto} & 0.000000000000001    & 1e-15 \\
+			atto  & \si{\atto } & 0.000000000000000001 & 1e-18 \\
+			\bottomrule
+		\end{tabular}
+		\end{center}
+	}
+\end{frame}
+
+\begin{frame}{What's more convenient?}
+	\begin{center}
+	``I ran \SI{10000}{\meter} today.'' \par
+		\textbf{vs} \par
+	``I ran \SI{10}{\kilo\meter} today.''
+		
+		\bigskip
+
+	``My phone has \SI{32000000000}{B} of storage.'' \par
+		\textbf{vs} \par
+	``My phone has \SI{32}{\giga B} of storage.''
+	\end{center}
+\end{frame}
+
+\begin{frame}[c]
+	\frametitle{Converting Between Prefixes}
+
+	We can think of numerical prefixes as a \alert{replacement} for the
+	``$\times 10^x$'' term of scientific notation:
+	\begin{equation*}
+		1 \tikzmarknode{multiplier}{\times 10^3}\,\si{\meter} =
+		1 \,\tikzmarknode{prefix}{\si{\kilo}}\si{\meter}
+	\end{equation*}
+
+	\begin{tikzpicture}[remember picture,overlay]
+		\draw[thick,primary,->,shorten <=5pt,shorten >=5pt]
+			(multiplier.south) to[bend right=45] (prefix.south);
+	\end{tikzpicture}
+
+	When we need to convert between different prefixes, we need to multiply
+	by the correct \alert{conversion factor}.
+
+	\begin{example}
+		Convert \SI{2}{\micro\gram} to \si{\gram}.
+		\begin{equation*}
+			\SI{2}{\micro\gram} \times
+			\begin{array} {c|c|c}
+				1 & \times 10^{-6} & \si{\gram} \\ \midrule
+				1 & \si{\micro} & \si{\gram}
+			\end{array}
+			= \SI{2e-6}{\gram}
+		\end{equation*}
+	\end{example}
+\end{frame}
+
+\begin{frame}[t]
+	\frametitle{Let's Practice}
+	Complete the following unit conversions:
+	\begin{enumerate}
+		\item \SI{23}{\pico\mole} to \si{\mole}
+			\vspace{\stretch{1}}
+		\item \SI{4e7}{\second} to \si{\mega\second}
+			\vspace{\stretch{1}}
+		\item \SI{23}{\milli\ampere} to \si{\giga\ampere}
+			\vspace{\stretch{1}}
+	\end{enumerate}
+\end{frame}
+
+\begin{onyourown}[10em]
+	Revisit On Your Own \ref{oyo:scientificnotation} and find suitable
+	prefixes for each value. Assume all of the numbers are values of length.
+\end{onyourown}
+
+\begin{frame}{}
+	\section{Derived Units}
+	\begin{learningobjectives}
+		\item Understand how other units are related to the fundamental
+			units.
+		\item Recognize the differences between intensive and extensive
+			properties.
+		\item Know some common derived units in chemistry relating to
+			volume, density, and energy.
+	\end{learningobjectives}
+\end{frame}
+
+\begin{frame}{Derived Units are Composed of Fundamental Units}
+	Often, we need a combination of units to adequately describe a
+	measurement.
+
+	\begin{center}
+	\begin{tabular} {@{}*{3}{l}l}
+		\toprule \bfseries
+		Quantity     & \bfseries Definition                 &
+		\multicolumn{2}{l}{\bfseries Derived Unit}                                                   \\
+		\midrule
+		Area         & Length $\times$ length     & \si{\meter\squared                                  }                              \\
+		Volume       & Area $\times$ length       & \si{\meter\cubed                                    }                              \\
+		Density      & Mass / unit volume         & \si{\kilo\gram\per{\meter\cubed}                    }                              \\
+		Speed        & Distance / unit time       & \si{\meter\per{\second}                             }                              \\
+		Acceleration & Δ speed / unit time        & \si{\meter\per{\second\squared}                     }                              \\
+		Force        & Mass $\times$ acceleration &
+		\si{\kilo\gram.\meter\per{\second\squared}          } & \textrightarrow\ \si{\newton} \\
+		Pressure     & Force / unit area          &
+		\si{\kilo\gram\per(\meter.\second\squared)          } & \textrightarrow\ \si{\pascal} \\
+		Energy       & Force $\times$ distance    &
+		\si{(\kilo\gram.\meter\squared)\per{\second\squared}} & \textrightarrow\ \si{\joule}  \\
+		\bottomrule
+	\end{tabular}
+	\end{center}
+\end{frame}
+
+% Ended here on 1-22-2020
+
+\begin{frame}{Measuring Volume}
+	\begin{center}
+	\begin{tikzpicture}
+	\node(list)[text width=0.55\linewidth]{
+	\noindent
+	\textbf{Why is volume a derived unit?}
+
+	\medskip
+
+		\begin{itemize}
+			\item We can describe volume as the length 3 dimensions.
+			\item A cube has a \alert{height}, \alert{width}, and
+				\alert{depth}.
+				\begin{align*}
+					V &= h \times w \times d \\
+					&= m \times m \times m
+				\end{align*}
+			\item All are measurements of length, thus the unit is a
+				measure of length to the third power,
+				\si{\meter\cubed}.
+		\end{itemize}
+	};
+	\node(img)[anchor=west,align=center] at (list.east)
+		{\includegraphics[scale=0.3]{lengthandvolume.jpeg} \\[1em]
+	\fbox{$\SI{1}{\milli\liter} = \SI{1}{\centi\meter\cubed}$}
+	};
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+
+\begin{frame}{Measuring Density}
+	Density is really asking ``How much can fit in this space?''
+
+	\begin{align*}
+		\text{Density} &= \frac{\text{How much?}}{\text{In what space?}}
+		\\
+		\intertext{With mass as a measure of amount and volume as a
+		measure of space,}
+		\text{Density} &= \frac{\text{Mass (\si{\gram})}}{\text{Volume
+		(\si{\mL} or \si{\centi\meter\cubed})}}
+	\end{align*}
+
+	Density is an \alert{intensive property} -- it is independent of the
+	amount of substance. An \alert{extensive property}, such as mass, depends
+	on the amount present.
+\end{frame}
+
+\begin{frame}{Density of Some Common Substances at \SI{20}{\celsius}}
+	\begin{center}
+		\begin{tabular}{l S[table-format=2.3]}
+			\toprule
+			\bfseries Substance & \textbf{Density (\si{\gram\per\centi\meter\cubed})} \\
+			\midrule
+			Charcoal (from oak) & 0.57 \\
+			Ethanol & 0.789 \\
+			Sugar (sucrose) & 1.58 \\
+			Table salt (sodium chloride) & 2.16 \\
+			Glass & 2.6 \\
+			Aluminum & 2.70 \\
+			Iron & 7.86 \\
+			Copper & 8.96 \\
+			Lead & 11.4 \\
+			Gold & 19.3 \\
+			Platinum & 21.4 \\
+			\bottomrule
+		\end{tabular}
+	\end{center}
+\end{frame}
+
+
+\begin{frame}{Density is temperature dependent!}
+	\centering
+	\includegraphics[scale=0.4]{dH2O.jpeg}
+\end{frame}
+
+\begin{frame}{Measuring Energy}
+	\begin{description}
+		\item[Energy] is the capacity to supply heat or do work.
+		\item[Work] is the action of force through a distance.
+	\end{description}
+
+	\begin{center}
+		\includegraphics[scale=0.4,trim={0 70pt 0 0},clip]{work.jpeg}
+	\end{center}
+
+	The \alert{total energy} of a system is the sum of its \alert{kinetic
+	energy} (motion) and \alert{potential energy} (position/composition)
+\end{frame}
+
+\begin{frame}{Units of Energy}
+	\begin{center}
+		\begin{tabularx}{\linewidth} {l l X}
+		\toprule
+		\bfseries Unit & \bfseries Symbol & \bfseries Derivation \\
+		\midrule
+		joule & J & From kinetic energy, $E = \frac{1}{2}mV^2$ \\
+		& & \SI{1}{\joule} =
+		\SI{1}{\kilo\gram\meter\squared\per\second\squared} \\
+		calorie & cal & Amount of energy to raise \SI{1}{\gram} of water
+		by \SI{1}{\celsius} \\
+		Calorie & Cal & From nutrition, \SI{1}{Cal} =
+		\SI{1}{\kilo cal} \\
+		\bottomrule
+	\end{tabularx}
+	\end{center}
+
+	Joules and calories are common units, so we need to keep a
+	\alert{conversion factor} in mind:
+	\begin{equation*}
+		\SI{1}{cal} = \SI{4.184}{\joule}
+	\end{equation*}
+\end{frame}
+
+\begin{frame}{The Directionality of Energy}
+	Energy can flow into or out of a \alert{system} from or to the
+	\alert{surroundings}.
+
+	\begin{description}
+		\item[Exothermic:] Heat is lost from a system to the
+			surroundings. The change in energy is \alert{negative}.
+		\item[Endothermic:] Heat is gained by the system from the
+			surroundings. The change in energy is
+				\alert{positive}.
+	\end{description}
+\end{frame}
+
+\begin{frame}{}
+	\section{The Reliability of Measurements}
+	\begin{learningobjectives}
+		\item Understand the difference between accuracy and precision.
+		\item Note possible sources of error in experiments.
+		\item Round answers appropriately based on possible errors in
+			values.
+	\end{learningobjectives}
+\end{frame}
+
+\begin{frame}{What temperature is it?}
+	\includegraphics[width=\linewidth]{thermometer.jpeg}
+
+	\bigskip
+
+	{\Large\sffamily\renewcommand\arraystretch{1.25}
+		\begin{tabularx}{\linewidth}
+			{*{3}{>{\centering\arraybackslash}X}}
+		\SI{102.9}{\celsius} & \SI{103.0}{\celsius} &
+		\SI{103.1}{\celsius} \\
+		\bfseries A & \bfseries B & \bfseries C
+	\end{tabularx}
+}
+
+	
+%	How certain are we with these measurements?
+%
+%	\begin{center}
+%		\includegraphics[scale=0.4,trim={0 30pt 0 0},clip]{volumescales.jpeg}
+%	\end{center}
+%
+%	\pause
+%
+%	\begin{center}
+%	\begin{minipage}{0.9\linewidth}
+%		\centering
+%		Scientific measurements are reported so that \alert{every} digit
+%		is certain, except the \alert{last}.
+%	\end{minipage}
+%	\end{center}
+\end{frame}
+
+\begin{frame}{What defines ``good'' data?}
+	As important as units are to measurements, we must also make sure that
+	our measurements are accurate and precise!
+
+	\begin{description}
+		\item[Accuracy:] How close to the true value a given measurement
+		  is.
+	  \item[Precision:] How well a number of independent measurements
+		  agree with each other.
+	  \item[Uncertainty:] The degree to which one is confident in the
+			measurement.
+	\end{description}
+\end{frame}
+
+\begin{frame}{A Graphical Approach to Precision and Accuracy}
+	\centering
+	\only<1>{\includegraphics[scale=0.9]{dartboard.png}}
+
+	\only<2>{\includegraphics[scale=0.45]{accuracyprecision.jpeg}}
+\end{frame}
+
+\begin{frame}{An Example\ldots}
+	Three students weigh the same unknown mass 3 times and record the
+	following values:
+
+	\begin{center}
+		\sisetup{table-align-text-post=false}
+		\begin{tabular}
+			{>{\bfseries}l*{2}{S<{\,\si{\kilo\gram}}}S[table-format=4.1]<{\,\si{\kilo\gram}}}
+			\toprule
+			& \multicolumn{1}{c}{\bfseries Student A} &
+			\multicolumn{1}{c}{\bfseries Student B} &
+			\multicolumn{1}{c}{\bfseries Student C} \\ \midrule
+			Trial 1 & 988.5 & 999.3 & 872.1 \\
+			Trial 2 & 989.4 & 999.4 & 1150.3 \\
+			Trial 3 & 987.0 & 999.6 & 976.5 \\ \midrule
+			Average & 988.3 & 999.4 & 1000.3 \\
+			\bottomrule
+		\end{tabular}
+	\end{center}
+	\note{
+		\begin{description}
+			\item[Accuracy:] C > B > A
+			\item[Precision:] B > A > C
+		\end{description}
+	}
+
+	Assuming the mass actually weighs \SI{1000.0}{\kilo\gram}, rank the students in terms of accuracy
+	and precision.
+\end{frame}
+
+\begin{frame}[c]
+	\frametitle{Why is reliability important?}
+	\includegraphics[width=\textwidth,trim={0.75in 4.25in 0.75in 1.5in},clip]{COVIDsensor.pdf}
+\end{frame}
+
+\begin{frame}{Types of Error}
+	\begin{description}
+		\item[Systematic:] Measurements that are \alert{consistently} too
+			high or too low.
+		\item[Random:] Measurements that have equal probability of being
+			too high or too low.
+		\item[Gross:] You did something very wrong\ldots
+	\end{description}
+
+	\mode<presentation>{%
+		\begin{center}
+			\includemedia[%
+				width=0.6\linewidth,
+				activate=pageopen,
+				addresource=OJ.mp4,
+				flashvars={source=OJ.mp4&loop=true}
+			]{\includegraphics[width=\linewidth]{OJ.png}}{VPlayer.swf}
+		\end{center}
+	}
+\end{frame}
+
+\begin{frame}{How precise can we be with our measurements?}
+	\begin{block}{Significant Figures}
+		The total number of digits recorded for a measurement or
+		calculated quantity. All digits but the last are certain.
+	\end{block}
+
+	\begin{itemize}
+		\item Reporting of significant figures in an answer is dependent
+			on the \alert{precision} of the \alert{measured} values.
+		\item The last digit is an estimate. An error of plus or minus
+			one (\num{\pm 1}) is assumed.
+		\item Exact numbers effectively have an infinite number of
+			significant figures.
+	\end{itemize}
+
+	\begin{center}
+		\bfseries\color{primary} Is the answer 8.89 or 8.888888889?
+	\end{center}
+\end{frame}
+
+\begin{frame}{Rules for Significant Figures (SF)}
+	\begin{enumerate}[<+->]
+		\item All nonzero values are significant.
+		\item Zeroes between nonzero digits are significant.
+		\item Zeroes at the beginning of a number are not significant;
+			they act only to locate the decimal point.
+		\item Zeroes at the end of a number and after the decimal point
+			are always significant.
+		\item Zeroes at the end of a number and before the decimal point
+			may or may not be significant.
+		\item \alert{Exact numbers}, such as conversions between units or
+			counting, have \alert{infinite} significant figures (SF
+			rules do not apply).
+	\end{enumerate}
+\end{frame}
+
+% Ended here on 1-24-2020
+
+\begin{frame}[t]{Significant Figures in Calculations}
+	\begin{description}
+		\item<+->[Multiplication or Division:] The answer can't have more
+			\alert{significant figures} than either of the original numbers.
+			\only<.>{
+				\begin{align*}
+					110.5 \times 0.048 = 5.304 &\approx \\
+					\frac{1008.02}{0.012} = 84001.667
+					&\approx
+				\end{align*}}
+		\item<+->[Addition or Subtraction:] The answer can't have more
+		digits to the \alert{right} of the \alert{decimal point} than
+			either of the original numbers.
+			\only<.>{
+				\begin{center}
+				\begin{tabular} {c r@{.}l}
+					& 25 & 2 \\
+					+ & 1 & 34 \\ \midrule
+					& 26 & 54 \\
+					$\approx$
+				\end{tabular}
+					\qquad
+				\begin{tabular} {c r@{.}l}
+					& 235 & 05 \\
+					+ & 19 & 6 \\
+					+ & 2 \\ \midrule
+					& 256 & 65 \\
+					$\approx$
+				\end{tabular}
+				\end{center}}
+	\end{description}
+
+	\visible<+->{
+	\begin{center}
+		What happens to the non-significant figures?
+	\end{center}}
+\end{frame}
+
+\begin{frame}{Rounding Numbers}
+	\begin{enumerate}
+		\item<1-> If the first digit you remove is less than 5, round
+			down by dropping it and all following digits.
+		\item<2-> If the first digit you remove is 5 or greater, round
+			up by adding 1 to the digit on the left.
+	\end{enumerate}
+
+	\visible<3->{
+		\mode<article>{\clearpage}
+		What are each of the following numbers to 3 sig figs?
+
+		\begin{center}
+			\renewcommand\arraystretch{2}
+			\begin{tabularx}{\linewidth} {*{4}{X}}
+			0.01273 & & 182.145 & \\
+			981.83 & & 10.7 & \\
+			0.000218 & & 4.000005 & \\
+		\end{tabularx}
+		\end{center}
+		}
+\end{frame}
+
+\begin{onyourown}{0em}
+	What are each of the following numbers to 4 sig figs?
+	\begin{center}
+		\renewcommand\arraystretch{2}
+		\begin{tabularx}{\linewidth} {*{4}{X}}
+			103.101 & & 10.308 & \\
+			0.0188 & & 11.205 & \\
+			0.000111112 & & 6.000009 & \\
+		\end{tabularx}
+	\end{center}
+\end{onyourown}
+
+\begin{frame}{}
+	\section{Problem Solving}
+	\begin{learningobjectives}
+	\item Use conversion factors to find the solution to numerical problems.
+	\item Understand the utility of dimensional analysis in verifying answers.
+	\item Be familiar with the ``Give \textrightarrow\ Plan \textrightarrow\ Find'' method of problem solving.
+	\end{learningobjectives}
+\end{frame}
+
+
+\begin{frame}{Converting Between Units}
+	\begin{block}{Dimensional Analysis}
+		Using units as a guide to solving problems.
+	\end{block}
+
+	By 1:20 PM, there will only be \SI{600}{\second} left of lecture. How many
+	minutes is this?
+
+	\begin{itemize}
+		\item<2-> We have \alert{\SI{600}{\second}}.
+		\item<3-> We want \alert{time in minutes}.
+		\item<4-> We need \alert{a conversion factor}.
+	\end{itemize}
+
+	\visible<5->{
+		\begin{equation*}
+			\overbrace{\SI{60}{\second} =
+			\SI{1}{min}}^{\mathclap{\text{Equality}}}
+			\qquad\longrightarrow\qquad
+			\underbrace{\frac{\SI{60}{\second}}{\SI{1}{min}}}_{\mathclap{\text{Conversion
+			factor}}} = 1 \qquad \text{\alert{or}} \qquad
+			\underbrace{\frac{\SI{1}{min}}{\SI{60}{\second}}}_{\mathclap{\text{Conversion
+			factor}}} = 1
+		\end{equation*}
+		}
+\end{frame}
+
+\begin{frame}{Dimensional Analysis Example}
+	Let's try it!
+
+	\begin{enumerate}[<+->]
+		\item We need a final unit of time, so we should start with a
+			unit of time (our given value) in the \alert{numerator}.
+		\item We must multiply by our conversion factor so that
+			the units \alert{cancel out}.
+		\item Ensure the units cancel \alert{first} before doing any
+			math.
+		\item If you get the correct unit at the end, calculate the
+			answer.
+	\end{enumerate}
+
+	\begin{equation*}
+		\frac{\SIunitcancel<3->{600}{\second}}{1} \visible<2->{\times
+		\frac{\SI{1}{min}}{\SIunitcancel<3->{60}{\second}}}
+		\visible<3->{=} \visible<4->{\num{10}}~\visible<3->{\si{min}}
+	\end{equation*}
+\end{frame}
+
+\begin{onyourown}[5em]
+	A very tasty, yet incredibly unhealthy recipe requires \SI{42}{lbs} of
+	butter. Your friend in the UK wants the recipe, but he needs the amount
+	of butter expressed in terms of grams. How many grams of butter is this?
+\end{onyourown}
+
+%\begin{frame}{Some Common Equalities}
+%	\centering
+%	\scriptsize
+%	\begin{tabu} to \linewidth {X *{3}{X[-1,r]@{ }X[-1,l] @{ = } X[-1,r]@{
+%			}X[-1,l]}}
+%		\toprule\rowfont{\bfseries}
+%		Quantity & \multicolumn{4}{c}{U.S.} & \multicolumn{4}{c}{Metric	(SI)}                & \multicolumn{4}{c}{Metric - US}     \\ \midrule
+%		Length   & 1 & ft & 12 & in.        & 1 & \si{\kilo\meter} & 1000 & \si{\meter}      & 2.54 & \si{\centi\meter} & 1 & in.  \\
+%			 & 1 & yard & 3 & ft        & 1 & \si{\meter} & 1000 & \si{\milli\meter}     & 1 & \si{\meter} & 39.4 & in.        \\
+%			 & 1 & mile & 5280 & ft     & 1 & \si{\centi\meter} & 10 & \si{\milli\meter} & 1 & \si{\kilo\meter} & 0.621 & mile \\ \midrule
+%		Volume   & 1 & qt & 4 & cups        & 1 & \si{\liter} & 1000 & \si{\mL}              & 946 & \si{\mL} & 1 & qt             \\
+%		         & 1 & qt & 2 & pt          & 1 & \si{\deci\liter} & 100 & \si{\mL}          & 1 & \si{\liter} & 1.06 & qt         \\
+%			 & 1 & gal & 4 & qt         & 1 & \si{\mL} & 1 & \si{\centi\meter\cubed}     &                                     \\ \midrule
+%		Mass     & 1 & lb & 16 & oz         & 1 & \si{\kilo\gram} & 1000 & \si{\gram}        & 1 & \si{\kilo\gram} & 2.20 & lb     \\
+%			 & \multicolumn{4}{l}{}     & 1 & \si{\gram} & 1000 & \si{\milli\gram}       & 454 & \si{gram} & 1 & lb            \\ \midrule
+%		Time     & \multicolumn{4}{l}{}     & 1 & h & 60 & min                               &                                     \\
+%		         & \multicolumn{4}{l}{}     & 1 & min & 60 & \si{\second}                    &                                     \\
+%		\bottomrule
+%	\end{tabu}
+%\end{frame}
+
+\begin{frame}{Percentages}
+	Percentages provide a \alert{ratio} between the number of parts to the
+	whole.
+
+	\begin{equation*}
+		\si{\percent} = \frac{\text{Parts}}{\text{Whole}} \times \SI{100}{\percent}
+	\end{equation*}
+
+	As such, they use the same units for both the parts and the whole.
+	\begin{description}
+		\item[Example:] A food contains 18\% (by mass) fat.
+			\sisetup{inter-unit-product={~}}
+			\begin{equation*}
+				\frac{\SI{18}{\gram~fat}}{\SI{100}{\gram~food}}
+				\qquad\text{and}\qquad
+				\frac{\SI{100}{\gram~food}}{\SI{18}{\gram~fat}}
+			\end{equation*}
+	\end{description}
+
+	It is often \alert{convenient} to assume the part is out of 100 parts of
+	the whole.
+\end{frame}
+
+\begin{frame}{Problem Solving}
+	Learning to interpret problems will help your understanding of
+	chemistry.
+
+	\begin{center}
+		\settowidth{\leftmargini}{\usebeamertemplate{itemize item}}
+		\addtolength{\leftmargini}{\labelsep}
+		\begin{tikzpicture}[every node/.style={minimum width=0.25\linewidth,
+			minimum height=3em}]
+			\node[draw=primary,thick,font=\sffamily\bfseries,anchor=south
+			west](given) at (0,0) {Given};
+			\draw[draw=primary,thick,->] (given.east) to ++(1,0)
+			node[draw=primary,font=\sffamily\bfseries,anchor=west,align=center](concept) {Conceptual \\ Plan};
+			\draw[draw=primary,thick,->] (concept.east) to ++(1,0)
+			node[draw=primary,font=\sffamily\bfseries,anchor=west](find) {Find};
+			\node[below,anchor=north
+			west,align=left,font=\scriptsize\raggedright] at (given.south west) {%
+				\begin{minipage}{0.25\linewidth}
+					\begin{itemize}[<+(1)->]
+						\item Sort provided values.
+						\item Make note of units.
+					\end{itemize}
+				\end{minipage}
+				};
+			\node[below,anchor=north
+			west,align=left,font=\scriptsize\raggedright] at (find.south west) {%
+				\begin{minipage}{0.25\linewidth}
+					\begin{itemize}[<+(1)->]
+						\item What value is the question
+							asking for?
+						\item Determine final units.
+					\end{itemize}
+				\end{minipage}
+				};
+			\node[below,anchor=north
+			west,align=left,font=\scriptsize\raggedright] at (concept.south west) {%
+				\begin{minipage}{0.25\linewidth}
+					\begin{itemize}[<+(1)->]
+						\item Determine conversions
+							factors needed.
+						\item List possibly useful
+							equations.
+					\end{itemize}
+				\end{minipage}
+				};
+		\end{tikzpicture}
+	\end{center}
+
+	\pause
+
+	\begin{center}
+		Make sure to check that units \alert{cancel}!
+	\end{center}
+\end{frame}
+
+\begin{frame}[t]{Applying Dimensional Analysis}
+	Greg has been treating his headache with Ibuprofen. He has already had 6
+	pills today. The recommended maximum dose is \SI{100}{\milli\gram} every
+	\SI{1}{h} as needed in a single day. If each pill is
+	\SI{200}{\milli\gram}, can Greg have any more?\footnote{Please do not
+	refer to this lecture for medical advice.}
+
+	\note{
+%	\begin{tabu} to \linewidth {>{\bfseries}X[-1,l] X}
+%		Given: & \SI{100}{\milli\gram\per\hour} \\
+%		       & \SI{200}{\milli\gram\per pill} \\
+%		Find:  & \# of pills in 1 day \\
+%		Plan:  & \SI{24}{h\per d} \\
+%		       & Is the max. \# of pills $\geq$ 6?
+%	\end{tabu}
+
+	\bigskip
+
+	\begin{equation*}
+		\frac{\SI{1}{pill}}{\SI{200}{\milli\gram}} \times
+		\frac{\SI{100}{\milli\gram}}{\SI{1}{\hour}} \times
+		\frac{\SI{24}{\hour}}{\SI{1}{\day}} =
+		\frac{\SI{12}{pills}}{\SI{1}{\day}}
+	\end{equation*}
+
+	\begin{enumerate}
+		\item We want units of pills per day, so pills must be in the
+			numerator.
+		\item Cancel out the \si{\milli\gram} using the conversion
+			factor.
+		\item Cancel out the \si{\hour} using the conversion factor.
+		\item Do all units cancel?
+		\item Does the answer make sense?
+	\end{enumerate}
+	}
+\end{frame}
+
+%\mode<article>{
+%	\setlength{\textwidth}{\paperwidth}
+%	\pagebreak
+%	\section*{Additional Practice}
+%
+%	\begin{enumerate}
+%		\item Write the following in scientific notation:
+%
+%			\begin{tabu} to \linewidth {X X X X}
+%				\SI{0.00000008}{\meter} & & \SI{72000}{\liter} &
+%			\end{tabu}
+%
+%		\item Write the following in standard notation:
+%
+%			\begin{tabu} to \linewidth {X X X X}
+%				\SI{2.0e-2}{\second} & & \SI{1.8e5}{\gram} & \\
+%			\end{tabu}
+%
+%		\item \begin{samepage}
+%			Rank the following in order from greatest to least amount:
+%			\begin{center}
+%				\begin{tabu} spread 10pt {X[l]
+%					X[-1]{S[table-format=4]}@{ }X[-1,l]}
+%					\toprule\rowfont{\bfseries} & \multicolumn{2}{l}{Amount} \\
+%					\rowfont{\bfseries} Nutrient & \multicolumn{2}{l}{Recommended} \\ \midrule
+%					Protein                     & 44   & \si{\gram      } \\
+%					Vitamin C                   & 60   & \si{\milli\gram} \\
+%					Vitamin B\textsubscript{12} & 6    & \si{\micro\gram} \\
+%					Calcium                     & 1    & \si{\gram      } \\
+%					Iron                        & 18   & \si{\milli\gram} \\
+%					Iodine                      & 150  & \si{\micro\gram} \\
+%					Sodium                      & 2400 & \si{\milli\gram} \\
+%					Zinc                        & 15   & \si{\milli\gram} \\ \bottomrule
+%				\end{tabu}
+%			\end{center}
+%			\end{samepage}
+%
+%		\item State the number of significant figures in each of the following measurements:
+%			\begin{enumerate}
+%				\item \SI{0.030}{\meter}
+%				\item \SI{4.050}{\liter}
+%				\item \SI{0.0008}{\gram}
+%				\item \SI{2.80}{\meter}
+%			\end{enumerate}
+%	\end{enumerate}
+%	}
+%
+
+\end{document}

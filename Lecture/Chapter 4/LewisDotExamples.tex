@@ -1,0 +1,70 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage{beamerarticle}
+
+\usepackage{genchem}
+\usepackage{lecture}
+\usepackage{longtable}
+
+\setlength{\textwidth}{6.5in}
+
+\title{Lewis Electron Dot Structures}
+\subtitle{Examples}
+\institute[CHEM115 Bloomsburg University]{CHEM115 --- Chemistry for the Sciences I \\ Bloomsburg University}
+\author{CHEM115 - Chemistry for the Sciences I}
+\date{February 25, 2018}
+
+\begin{document}
+
+\section{Ionic Compounds}
+
+\begin{itemize}
+	\item Full transfer of electrons from one atom to another.
+\end{itemize}
+
+\subsection{Examples}
+\begin{center}
+	\includegraphics[scale=0.5]{lewisdot-ionic.pdf}
+\end{center}
+
+\section{Covalent Compounds}
+
+\begin{itemize}
+	\item Sharing of electrons in the \emph{valence} orbitals.
+\end{itemize}
+
+\subsection{Steps}
+\begin{enumerate}
+	\item \label{step:calc} Calculate number of valence \el{}.
+	\item Draw skeleton structure.
+	\item Subtract \# bonding \el{}.
+	\item Distribute remaining \el{} around terminal (not central) atoms.
+	\item Put any remaining \el{} on the central atom.
+	\item Check for full octets.
+		\begin{itemize}
+			\item Create double or triple bonds if needed.
+		\end{itemize}
+	\item Check for formal charge.
+		\begin{itemize}
+			\item Place compound in brackets with a superscript
+				charge if needed.
+		\end{itemize}
+	\item Double-check your work.
+		\begin{itemize}
+			\item Ensure total \# \el{} distributed equals \#
+				valence \el{} calculated in Step
+				\ref{step:calc}.
+		\end{itemize}
+\end{enumerate}
+
+\subsection{Examples}
+
+\begin{longtabu} to \linewidth {X[3.25,m] | X[1,m,c]}
+						& Try on your own: \\
+	\includegraphics[scale=0.5]{lewisdot-ccl4.pdf} & \ch{SiBr4} \\
+	\includegraphics[scale=0.5]{lewisdot-hocl.pdf} & \ch{AsF3}  \\
+	\includegraphics[scale=0.5]{lewisdot-ch2o.pdf} & \ch{HCN}   \\
+	\includegraphics[scale=0.5]{lewisdot-h3o.pdf}  & \ch{OH-}   \\
+	\includegraphics[scale=0.5]{lewisdot-icl3.pdf} & \ch{ClO3-} \\
+\end{longtabu}
+
+\end{document}

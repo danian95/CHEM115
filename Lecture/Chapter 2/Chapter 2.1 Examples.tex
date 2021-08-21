@@ -1,0 +1,101 @@
+\documentclass[12pt,letterpaper]{article}
+
+\usepackage[margin=0.5in]{geometry}
+\usepackage{mhchem}
+\usepackage{siunitx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{cancel}
+\usepackage{xlop}
+\setlength{\parskip}{\baselineskip}
+\setlength{\parindent}{0pt}
+\usepackage{array}
+\usepackage{xcolor}
+
+\pagestyle{empty}
+
+\begin{document}
+\section*{Chapter 2 Part I Examples}
+\subsection*{Relating Frequency to Wavelength}
+
+My laser pointer has a wavelength, $\lambda$, of 532 nm. What is its frequency
+in hertz?
+
+{\color{blue}
+We know that the speed of light, $c$, is \SI{3.00e8}{\meter\per\second}. In
+calculating frequency ($\nu$), we are really asking how many waves pass in 1
+second.  This then relates wavelength to the speed of light as:
+
+\begin{center}
+	\begin{math}
+		\lambda \times \nu = c
+	\end{math}
+\end{center}
+
+Plugging in our values from above, we get
+
+\begin{center}
+	\begin{align*}
+		(\SI{532}{\nano\meter})
+		\overbrace{\bigg(\dfrac{\SI{1}{\meter}}{\SI{1e9}{\nano\meter}}\bigg)}^{\text{units!}}
+		\times \nu &=
+		\SI{3.00e8}{\meter\per\second} \\
+		\nu &= \SI{5.64e14}{\per\second} =
+		\framebox[1.2\width]{\SI{5.64e14}{\hertz}}
+	\end{align*}
+\end{center}
+}
+
+\subsection*{Predicting H Emission}
+
+An energetic hydrogen atom is predicted to emit light at a certain wavelength.
+Determine the wavelength if the relaxation involves a transition from $n=4$ to
+$m=2$.
+
+{\color{blue}
+We'll get into more detail later in the chapter about what $m$ and $n$ actually
+mean. For now, let's consider just using the Balmer-Rydberg equation to
+determine the wavelength.
+
+\begin{align*}
+	\dfrac{1}{\lambda} &= R_\infty \bigg( \dfrac{1}{m^2} - \dfrac{1}{n^2}
+	\bigg) \\
+	&= (\SI{1.097e-2}{\per\nano\meter}) \bigg( \dfrac{1}{2^2} - \dfrac{1}{4^2} \bigg) \\
+	&= \SI{0.002056875}{\per\nano\meter} \\
+	\lambda = \bigg(\dfrac{1}{\lambda}\bigg)^{-1} &=
+	\framebox[1.2\width]{\SI{486.2}{\nano\meter}}
+\end{align*}}
+
+\subsection*{Particle-Like Behavior of Light}
+
+How much energy is a photon in my 532 nm laser?
+
+{\color{blue}
+The energy contained in a photon is related through Planck's postulate.
+Substituting in the appropriate values will help us arrive at a correct answer.
+Remember, $\nu=\frac{c}{\lambda}$.
+
+\begin{align*}
+	E = h\nu &= \dfrac{hc}{\lambda} \\
+	&= (\SI{6.626e-34}{\joule\second}) \bigg(
+	\dfrac{\SI{3.00e8}{\meter\per\second}}{\SI{532}{\nano\meter}} \bigg)
+	\bigg( \dfrac{\SI{1e9}{\nano\meter}}{\SI{1}{\meter}}\bigg) \\
+	&= \framebox[1.2\width]{\SI{3.74e-19}{\joule}}
+\end{align*}
+
+Of course, we rarely talk about single photons, much like we rarely talk about
+single atoms. Let's convert to kJ/mol:
+
+\begin{center}
+\begin{math}
+	\bigg( \dfrac{3.7\underline{3}647 \times 10^{-19}
+	\si{\joule}}{\SI{1}{photon}}\bigg)
+	\bigg( \dfrac{\SI{6.022e23}{photon}}{\SI{1}{\mole}} \bigg)
+	\bigg( \dfrac{\SI{1}{\kilo\joule}}{\SI{1e3}{\joule}} \bigg) 
+	= \framebox[1.2\width]{225. \si{\ \kilo\joule\per\mole}}
+\end{math}
+\end{center}
+
+
+}
+\end{document}

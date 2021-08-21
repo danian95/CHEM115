@@ -1,0 +1,123 @@
+\documentclass[12pt,letterpaper]{article}
+
+\usepackage[margin=0.5in]{geometry}
+\usepackage{mhchem}
+\usepackage{siunitx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{cancel}
+\usepackage{xlop}
+\setlength{\parskip}{\baselineskip}
+\setlength{\parindent}{0pt}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{multicol}
+\usepackage{wrapfig}
+
+\newcommand{\electron}[2]{{% orbital-filling diagrams
+	\def\+{\underline{\upharpoonleft}}
+	\def\-{\underline{\downharpoonright}}
+	\def\0{\underline{\phantom{\downharpoonright}}}
+	\setlength\tabcolsep{0pt}
+	\begin{tabular}{c}$#2$\\[2pt]#1\end{tabular}
+}}
+
+\pagestyle{empty}
+
+\begin{document}
+\section*{Chapter 2 Part II Examples}
+\subsection*{Converting $\lambda$ to Electron Transitions}
+
+\begin{wrapfigure}{r}{0.4\textwidth}
+	\centering
+	\begin{tikzpicture}
+		\draw[thick] (0,0) -- (4,0) node[right] {$n=1$};
+		\draw[thick] (0,4) -- (4,4) node[right] {$n=2$};
+		\draw[thick] (0,6) -- (4,6) node[right] {$n=3$};
+		\draw[thick] (0,7) -- (4,7) node[right] {$n=4$};
+		\draw[thick] (0,7.5) -- (4,7.5) node[right] {$n=5$};
+		\draw[thick,->] (2,5.9) -- (2,6.5);
+		\draw[thick,->] (-0.5,5) node[rotate=90,left] {Energy (E)} -- (-0.5,7);
+	\end{tikzpicture}
+\end{wrapfigure}
+
+
+Given the following energy level diagram for an atom that contains an electron
+in the $n=3$ level, answer the following questions:
+
+\begin{enumerate}
+	\item Which transition of the electron will emit the lowest frequency
+		light?
+	\item Using only those levels depicted in the diagram, which transition
+		of the electron would require the highest frequency light?
+	\item If the transition from the $n=3$ level to the $n=1$ level emits
+		green light, what color light is absorbed when an electron makes
+		the transition from the $n=1$ to $n=3$ level?
+\end{enumerate}
+
+{\color{blue}
+
+1. The lowest frequency light corresponds to a lower energy
+($E=h\nu=\frac{hc}{\lambda}$). Therefore, we want the smallest transition. We
+can use the Balmer-Rydberg equation to determine and verify this, knowing that
+we start at $n=3$ and are \underline{emitting} light (i.e., we are falling to
+a inner orbital). As we are considering frequency, let's also convert
+$\frac{1}{\lambda}$ to frequency, $\nu$.
+
+\begin{align*}
+	\dfrac{1}{\lambda} &= R_\infty \bigg( \dfrac{1}{m^2} - \dfrac{1}{n^2}
+	\bigg) \\
+	\dfrac{1}{\lambda} = \dfrac{\nu}{c}
+	&= R_\infty \bigg( \dfrac{1}{m^2} - \dfrac{1}{3^2} \bigg) 
+	= R_\infty \bigg( \dfrac{1}{m^2} - \dfrac{1}{9} \bigg) \\
+	\nu &= R_\infty c \bigg( \dfrac{1}{m^2} - \dfrac{1}{9} \bigg) 
+\end{align*}
+
+We can either go from 3 to 2 or from 3 to 1. In order to get the lowest
+frequency, we need the smallest value for $(\frac{1}{m^2}-\frac{1}{9})$, which
+would either be $(\frac{1}{4}-\frac{1}{9})$ (from 3 to 2) or
+$(\frac{1}{1}-\frac{1}{9})$ (from 3 to 1). As $m=4$ will provide the smallest
+value, we can conclude that the transition \framebox[1.2\width]{from $n=3$ to
+$n=2$} has the lowest frequency.
+
+2. Because we're talking about \underline{requiring} light, we can assume that
+we will be gaining energy and moving to an outer-orbital. Using the same notes
+as above, except considering $m=3$ instead of $n=3$, we should be able to figure
+this out. $n=4$ will provide us with $(\frac{1}{9}-\frac{1}{16})$ and $n=5$ will
+provide us with $(\frac{1}{9}-\frac{1}{25})$. The transition
+\framebox[1.2\width]{from $n=3$ to $n=5$} would therefore required the greatest
+frequency of light.
+
+3. The orbital energies are quantized. The emission of green light indicates
+that we also require \framebox[1.2\width]{green} light to excite from $n=1$ to
+$n=3$.
+
+}
+
+\subsection*{Electron Configurations}
+
+Write the ground state electron configurations and orbital-filling diagrams for
+the following atoms: Se, Tc, Be, Al
+
+{\color{blue}
+\begin{center}
+	\begin{tabular}{c c c c}
+		\textbf{Atom} & \textbf{Configuration} & \textbf{Shorthand} &
+		\textbf{Orbital-Filling Diagram} \\
+		Se & $1s^22s^22p^63s^23p^64s^23d^{10}4p^4$ &
+		[Ar]$4s^23d^{10}4p^4$ & \electron{4s}{\+\-} \electron{3d}{\+\-\ 
+		\+\-\ \+\-\ \+\-\ \+\-} \electron{4p}{\+\-\ \+\0\ \+\0} \\
+		Tc & $1s^22s^22p^63s^23p^64s^23d^{10}4p^65s^24d^5$ &
+		[Kr]$5s^24d^{5}$ & \electron{5s}{\+\-} \electron{4d}{\+\0\ 
+		\+\0\ \+\0\ \+\0\ \+\0} \\
+		Be & $1s^22s^2$ &
+		[He]$2s^2$ & \electron{2s}{\+\-} \\
+		Al & $1s^22s^22p^63s^23p^1$ &
+		[Ne]$3s^23p^1$ & \electron{3s}{\+\-} \electron{3p}{\+\0\ 
+		\0\0\ \0\0} \\
+	\end{tabular}
+\end{center}
+}
+
+\end{document}

@@ -1,0 +1,61 @@
+% !TEX program = xelatex
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage{beamerarticle}
+\usepackage{genchem}
+\usepackage{enumitem}
+\usepackage[margin=1in]{geometry}
+\usepackage{titling}
+
+%\setallmainfonts{TeX Gyre Pagella}
+%\usepackage{palatino}
+
+\title{Chapter E ``On Your Own'' Solutions}
+
+\setlist[enumerate,1]{itemsep=2em,leftmargin=0pt,label=\textbf{\Alph*.}}
+\setlist[enumerate,2]{label={\arabic*.}}
+
+\begin{document}
+
+\begin{center}
+	\bfseries
+	\Large
+	\thetitle
+\end{center}
+
+\begin{enumerate}
+	\item \begin{enumerate}
+		\item \SI{2.01e2}{\gram}, 
+			\SI{4.330e3}{\milli\liter}, 
+			\SI{1.00e-3}{\second}
+		\item \SI{310.7}{\liter}, 
+			\SI{0.060}{\gram},
+			\SI{9000200}{\second}
+	\end{enumerate}
+
+\item \begin{enumerate}
+	\item \num{4.058332e0}
+	\item \num{5.086271568e5}
+\end{enumerate}
+
+	\item This is pretty flexible in terms of answers:
+		\begin{itemize}
+			\item \SI{0.201}{\kilo\meter}
+			\item \SI{4.330}{\meter}
+			\item \SI{1.00}{\milli\meter}
+			\item \SI{0.3107}{\kilo\meter}
+			\item \SI{60}{\milli\meter}
+			\item \SI{9.00002}{\mega\meter}
+		\end{itemize}
+
+	\item \numlist{103.1;10.31;0.01880;11.21;0.0001111;6.000}
+
+	\item Watch your sig figs!
+		\begin{align*}
+			\SI{42}{lbs} \times \frac{\SI{454}{\gram}}{\SI{1}{lb}}
+			&= \SI{19068}{\gram} \\
+			&\approx \boxed{\SI{1.91e4}{\gram}}
+		\end{align*}
+\end{enumerate}
+
+\end{document}

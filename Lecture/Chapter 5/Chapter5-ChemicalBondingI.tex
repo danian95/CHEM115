@@ -1,0 +1,1180 @@
+% !TEX program = xelatex
+\documentclass[notes=onlyslideswithnotes,notes=hide]{beamer}
+%\documentclass[notes=only]{beamer}
+%\documentclass[notes=hide]{beamer}
+%\documentclass[notes=show]{beamer}
+%\documentclass[11pt,letterpaper]{article}
+%\usepackage{beamerarticle}
+
+\usepackage{genchem}
+\usepackage{lecture}
+\usepackage{multicol}
+\usepackage{elements}
+\usepackage{collcell}
+\usetikzlibrary{tikzmark}
+% Some scaling, probably delete this
+%\usepackage{environ}
+%
+%\makeatletter
+%\newsavebox{\measure@tikzpicture}
+%\NewEnviron{scaletikzpicturetowidth}[1]{%
+%	\def\tikz@width{#1}%
+%	\def\tikzscale{1}\begin{lrbox}{\measure@tikzpicture}%
+%		\BODY
+%	\end{lrbox}%
+%	\pgfmathparse{#1/\wd\measure@tikzpicture}%
+%	\edef\tikzscale{\pgfmathresult}%
+%	\BODY
+%}
+%\makeatother
+
+\renewcommand*\printangularmomentum[1]{#1}
+
+\usepackage{orbitalfilling}[2019/02/14]
+
+\title{Chemical Bonding I}
+\subtitle{Chapter 5}
+\institute[CHEM115 Bloomsburg University]{CHEM115 --- Chemistry for the Sciences I \\ Bloomsburg University}
+\author{D.A. McCurry}
+\date{Fall 2020}
+
+\begin{document}
+
+\maketitle
+\mode<article>{\thispagestyle{fancy}}
+
+\begin{frame}{Beyond the Lewis Model}
+	\begin{itemize}[<+->]
+		\item We have represented molecules previously using Lewis
+			Electron Dot Structures:
+
+			\begin{center}
+				\begin{tikzpicture}[node distance=-1ex]
+					\node(C) at (0,0) {\chlewis{0:90:180:270}{C}};
+					\node[left=of C] {\ch{H}};
+					\node[below=of C] {\ch{H}};
+					\node[right=of C] {\ch{H}};
+					\node[above=of C] {\ch{H}};
+					\node(N) at (2,0) {\chlewis{0:90:180:270}{N}};
+					\node[left=of N] {\ch{H}};
+					\node[below=of N] {\ch{H}};
+					\node[right=of N] {\ch{H}};
+					\node(O) at (4,0) {\chlewis{0:90:180:270}{O}};
+					\node[left=of O] {\ch{H}};
+					\node[right=of O] {\ch{H}};
+					\node(F) at (6,0) {\chlewis{0:90:180:270}{F}};
+					\node[left=of F] {\ch{H}};
+				\end{tikzpicture}
+			\end{center}
+
+		\item But such structures only tell part of the story.
+		\item Both \ch{H2} and \ch{HF} \alert{share} the same number of
+			electrons:
+
+			\begin{center}
+				\begin{tikzpicture}[node distance=-1ex]
+					\node(H) at (0,0) {\chlewis{0:}{H}};
+					\node[right=of H] {\ch{H}};
+					\node(F) at (2,0) {\chlewis{0:90:180:270}{F}};
+					\node[left=of F] {\ch{H}};
+				\end{tikzpicture}
+			\end{center}
+
+			But they have very different properties.
+	\end{itemize}
+\end{frame}
+
+\frame{\section{Electronegativity and the Lewis Model}
+	\begin{learningobjectives}
+	\item Show how electronegativity differences can lead to polar or
+		nonpolar molecules.
+	\item Determine the most stable Lewis structures based on formal charge.
+	\item Understand how resonance plays a part in stability and bond
+		polarity.
+	\end{learningobjectives}
+}
+
+\begin{frame}{Bond Polarity}
+	\begin{itemize}[<+->]
+		\item Many more electrons are surrounding F in HF -- an
+			\alert{electrostatic potential map} appears as
+			\begin{center}
+				\includegraphics[scale=0.2]{05_02_Figure.jpg}
+			\end{center}
+		\item F has a much higher attraction towards electrons, thus the
+			bonding pair is \alert{unequally shared} between the
+			atoms.
+
+			\medskip
+
+			\begin{center}
+				\chemfig{
+					\chemabove[3pt]{\ch{H}}{\delp}(-[::270,0.5,,,draw=none]@{a})-
+					\chemabove[3pt]{\ch{F}}{\delm}(-[::270,0.5,,,draw=none]@{b})
+			        }
+				\chemmove{
+			          \draw[|->,thick] (a)--(b);
+				  \draw[-,thick] (a) -- ++(-0.75ex,0);
+			         } 
+			\end{center}
+
+			\medskip
+
+			We represent this unequal sharing with a \alert{dipole
+			moment vector} or \alert{partial charges}.
+		\item Atoms that attract electrons moreso than other atoms in
+			the same molecule will form \alert{polar covalent bonds}.
+	\end{itemize}
+\end{frame}
+
+%\begin{frame}
+%	\begin{block}{Electronegativity}
+%		The ability of an atom to attract electrons to itself in a
+%		chemical bond. Results in polar covalent and ionic bonds.
+%	\end{block}
+%
+%	\begin{center}
+%		\includegraphics[scale=0.40,trim={0 0 0
+%		30pt},clip]{05_03_Figure.jpg}
+%	\end{center}
+%\end{frame}
+%
+%\begin{frame}[t]{Electronegativity Example}
+%	Arrange the following elements in order of \alert{decreasing}
+%	electronegativity:
+%
+%	\begin{center}
+%		\ch{Na} \qquad \ch{Al} \qquad{Mg}
+%	\end{center}
+%
+%	\mode<article>{\vspace*{5em}}
+%
+%	\note{$\ch{Al} > \ch{Mg} > \ch{Na}$}
+%\end{frame}
+%
+%\begin{onyourown}{5em}
+%	Arrange the following elements in order of \alert{increasing}
+%	electronegativity:
+%	
+%	\begin{center}
+%		\ch{C} \qquad \ch{Al} \qquad \ch{Si}
+%	\end{center}
+%\end{onyourown}
+%
+%\clearpage
+
+\vspace{\stretch{-1}}
+
+\begin{frame}[t]{Degree of Polarity}
+	\only<1-2>{%
+	Different elements will exhibit different \alert{degrees of
+	polarity}
+	\begin{itemize}
+		\item A \alert{larger} electronegativity
+			difference will lead to a \alert{more
+			polar} bond.
+		\item A \alert{smaller} electronegativity
+			difference will lead to a \alert{less
+			polar} bond.
+	\end{itemize}
+
+	\bigskip
+
+	\only<2>{%
+		For \ch{HF},
+		\begin{equation*}
+			\Delta \text{EN} = 4.0 - 2.1 = 1.9
+		\end{equation*}
+	}
+}
+
+	\only<3->{%
+		We then classify this difference according to this (fairly arbitrary)
+		scale:
+		\begin{center}
+			\includegraphics[scale=0.3,trim={0 0 0
+			50pt},clip]{05_04_Figure.jpg}
+
+			\visible<4->{Note that the degree of polarity is a
+			\alert{continuum}!}
+		\end{center}
+}
+\end{frame}
+
+\begin{frame}[t]{Polarity Examples}
+	% McMurray Problem 4.4
+	Classify the following compounds as having nonpolar covalent, polar
+	covalent, or ionic bonds:
+
+	\begin{columns}
+		\column{0.45\linewidth}
+		\begin{enumerate}
+			\item \ch{SiCl4}
+				\note[item]{$\Delta\text{EN} = 3.0 - 1.8 = 1.2$,
+				polar covalent}
+			\item \ch{CsBr}
+				\note[item]{$\Delta\text{EN} = 2.8 - 0.7 = 2.1$,
+				ionic}
+			\item \ch{Cl2}
+				\note[item]{$\Delta\text{EN} = 3.0 - 3.0 = 0.0$,
+				nonpolar covalent}
+			\item \ch{FeBr3}
+				\note[item]{$\Delta\text{EN} = 2.8 - 1.8 = 1.0$,
+				polar covalent}
+		\end{enumerate}
+		\column{0.45\linewidth}
+		\centering
+		\begin{tabular} {c S[table-format=1.1]}
+			\textbf{Element} & \textbf{EN} \\ \midrule
+			Si & 1.8 \\
+			Cl & 3.0 \\
+			Cs & 0.7 \\
+			Br & 2.8 \\
+			Fe & 1.8 \\
+		\end{tabular}
+	\end{columns}
+
+	\mode<article>{\vspace*{4em}}
+\end{frame}
+
+\begin{onyourown}
+	% McMurray Problem 4.5
+	Order the following compounds according to the increasing ionic
+	character of their bonds:
+
+	\begin{enumerate}
+		\item \ch{CCl4}
+		\item \ch{BaCl2}
+		\item \ch{TiCl3}
+		\item \ch{Cl2O}
+	\end{enumerate}
+\end{onyourown}
+
+\begin{frame}{The Dipole Moment}
+	A dipole moment represents both \alert{magnitude} and \alert{direction}.
+	\begin{itemize}
+		\item The \alert{magnitude} can be calculated as
+			\begin{equation*}
+				\mu = \tikzmark{charge}qr
+			\end{equation*}
+			where
+			\begin{description}
+				\item[$\mu$] is the dipole moment measured in
+					debye ($\SI{1}{\debye} =
+					\SI{3.34e-30}{\coulomb\meter}$),
+				\item[$q$] is the \alert{magnitude} of equal (but
+					opposite) charges, and
+				\item[$r$] is the distance over which the
+					charges are separated.
+			\end{description}
+		\item The \alert{direction} is always \alert{towards} the more
+			negative charge.
+	\end{itemize}
+
+	\pause
+
+	\begin{tikzpicture}[remember picture, overlay]
+		\node[right,text width=10em,align=left,font=\footnotesize](note)
+		at ($(pic cs:charge) + (1,-0.3)$) {In our case, $q$ is the charge
+		of an electron, \SI{1.6e-19}{\coulomb}.};
+		\draw[thick,<-,shorten <=3pt] ($(pic cs:charge) + (1ex,0)$) to
+		[in=180,out=300] (note);
+	\end{tikzpicture}
+\end{frame}
+
+\begin{frame}{Percent Ionic Character}
+	If the degree of polarity is a continuum rather than finite ionic or
+	covalent bonds, we can estimate the \alert{percent ionic character}:
+
+	\begin{equation*}
+		\footnotesize
+		\text{\% ionic character} = \frac{\text{measured
+		dipole moment}}{\text{dipole moment assuming
+		full transfer of \el{}}} \times 100\%
+	\end{equation*}
+
+	\bigskip
+
+	In other words, $\mu = qr$ assumes the bond is ionic. After
+	experimentally measuring $\mu$, how close to an ionic compound is it?
+
+	\pause
+
+	\begin{block}{Note:}
+		Don't worry about calculating this. We'll never use it.
+	\end{block}
+\end{frame}
+
+%\begin{frame}[t]{Percent Ionic Character Example}
+%	\ch{HBr} has a bond length of \SI{141}{\pico\meter} and a dipole moment
+%	of \SI{0.82}{\debye}. What is the percent ionic character of the
+%	\chemfig{\ch{H}-\ch{Br}} bond?
+%
+%	\vspace*{10em}
+%
+%	\note{
+%		\begin{align*}
+%			\mu &= qr \\
+%			&= (\SI{1.6e-19}{\coulomb})(\SI{141}{\pico\meter}) \\
+%			&= \SI{2.256e-17}{\coulomb\pico\meter} \times
+%			\frac{\SI{1}{\meter}}{\SI{1e12}{\pico\meter}} \times
+%			\frac{\SI{1}{\debye}}{\SI{3.34e-30}{\coulomb\meter}} \\
+%			&= \SI{6.75}{\debye} \\
+%			\text{\% ionic character} &= \frac{\text{measured
+%			dipole moment}}{\text{dipole moment assuming
+%			full transfer of \el{}}} \times 100\% \\
+%			&= \frac{\SI{0.82}{\debye}}{\SI{6.75}{\debye}} \times
+%			100\% \\
+%			&= \boxed{\SI{12}{\percent}}
+%		\end{align*}
+%	}
+%\end{frame}
+%	
+%\begin{onyourown}{10em}
+%	\ch{HI} has a dipole moment of \SI{0.44}{\debye} and the percent ionic
+%	character of the \chemfig{\ch{H}-\ch{I}} bond is \SI{5.7}{\percent}.
+%	What is the length of the bond?
+%\end{onyourown}
+%
+\begin{frame}{Back to Lewis Structures!}
+	Considering electroneutrality now provides us with a little more
+	direction in drawing Lewis structures. Specifically,
+	\begin{itemize}
+		\item Hydrogen atoms are always terminal.
+		\item The \alert{least} electronegative element is generally in
+			the central position.
+	\end{itemize}
+
+	For the Spartan lab,
+	\begin{center}
+		\footnotesize
+		\renewcommand\arraystretch{1.5}
+		\begin{tabular} {>{\centering\arraybackslash}m{0.5in}
+			>{\centering\arraybackslash}m{1.5in} @{ NOT }
+		>{\centering\arraybackslash}m{1.5in}}
+			\ch{HCN} & \chemfig{\ch{H}-\ch{C}~\chlewis{0:}{N}} &
+			\chemfig{\ch{H}-\ch{N}~\chlewis{0:}{C}} \\
+			\ch{CH2O} &
+			\chemfig{\ch{H}-[:30]\ch{C}(=[:90]\chlewis{30:150:}{O})-[:-30]\ch{H}}
+			&
+			\chemfig{\ch{H}-[:30]\ch{O}(=[:90]\chlewis{30:150:}{C})-[:-30]\ch{H}}
+			\\
+			\ch{OCS} &
+			\chemfig{\chlewis{120:240:}{O}=\ch{C}=\chlewis{60:300:}{S}} &
+			\chemfig{\chlewis{120:240:}{C}=\ch{O}=\chlewis{60:300:}{S}}
+		\end{tabular}
+	\end{center}
+\end{frame}
+
+\begin{frame}{Why is the least electronegative element central?}
+	\begin{itemize}
+		\item Electronegative elements don't like to share electrons --
+			central atoms have to share the most.
+		\item The most negative \alert{formal charge} should be on the
+			most electronegative element.
+	\end{itemize}
+
+	\begin{block}{Formal Charge}
+		The charge an atom would have if all bonding electrons were
+		equally shared. Ignores electronegativity.
+		\begin{equation*}
+			\text{FC} = \text{\# valence \el} -
+			\left(\text{\# nonbonding \el} + \frac{1}{2}\text{\# bonding
+			\el}\right)
+		\end{equation*}
+	\end{block}
+\end{frame}
+
+\begin{frame}{Another Way of Thinking About Formal Charge}
+	\begin{itemize}
+		\item If an atom has \alert{more} electrons than it does in its
+			valence shell when \alert{isolated}, then the formal
+			charge is going to be \alert{negative}.
+		\item If an atom has \alert{less} electrons than it does in its
+			valence shell when \alert{isolated}, then the formal
+			charge is going to be \alert{positive}.
+	\end{itemize}
+
+	%\mode<article>{\clearpage}
+
+	\noindent
+	For example, \ch{H2O} has
+	\begin{description}
+		\item[8] electrons total
+		\item[4] are in lone pairs and belong only to \ch{O}
+		\item[4] are shared between \ch{O} and \ch{H}
+		\item[2] of those 4 therefore ``belong'' to \ch{O}
+	\end{description}
+	As oxygen then has 6 of its ``own'' electrons and oxygen
+	normally has 6 valence electrons, its formal charge is 0.
+\end{frame}
+
+\begin{frame}{Calculating Formal Charge}
+	\begin{columns}
+		\column{0.25\linewidth}
+		\centering
+		\mode<presentation>{\Large}
+		\chemfig{\ch{H}-[:45]\chlewis{45:135:}{O}(-[:90,0.001,,,draw=none]@{c})-[:-45]\ch{H}}
+		\chemmove{
+			\draw<2->[dashed] (c) circle (1.65em);
+			}
+		\column{0.65\linewidth}
+		\centering
+		\begin{align*}
+			\text{FC} &= \text{\# valence} - \left(\text{\# nonbonding}
+			+ \frac{1}{2}\text{\# bonding}\right) \\
+			&= 6 - \left(4 + \frac{1}{2}4\right) \\
+			&= 6 - 6 = 0
+		\end{align*}
+
+		\pause
+
+		\textit{OR}
+
+		\bigskip
+	\end{columns}
+
+	\begin{enumerate}
+		\item Draw a circle around the atom.
+		\item Note how the circle cuts bonds in half.
+		\item Count the electrons in the circle.
+		\item Subtract the counted electrons from the \# of
+			valence electrons.
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}{Rules of Formal Charge}
+	\begin{enumerate}
+		\item Sum of all formal charges in a neutral molecule must be
+			zero.
+
+			\begin{center}
+				\ch{CO2} \qquad $\text{FC} = 0$
+			\end{center}
+
+		\item Sum of all formal charges in an ion must equal the charge
+			of the ion.
+
+			\begin{center}
+				\ch{SO4^{2-}} \qquad $\text{FC} = -2$
+			\end{center}
+
+		\item Small (or zero) formal charge on individual atoms are
+			preferred.
+
+		\item When formal charges cannot be avoided, negative formal
+			charges should be on the most electronegative atom.
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}[t]{Formal Charge Example}
+	Calculate the formal charge on each atom in the thiocyanate (\ch{SCN-})
+	polyatomic ion.
+
+	\mode<article>{\vspace*{10em}}
+
+	\note{
+		\begin{enumerate}
+			\item Draw the lewis structure.
+			\item Calculate the formal charges.
+			\item Which is correct?
+		\end{enumerate}
+
+		\bigskip
+
+		\begin{tabular} {*{3}{>{\qquad}c S[table-format=-1]@{\qquad}}}
+			\multicolumn{2}{c}{$\chemleft[
+				\chemfig{\chlewis{90:180:270:}{S}-\ch{C}~\chlewis{0:}{N}}
+				\chemright]^{-}$}
+				&
+			\multicolumn{2}{c}{$\chemleft[
+				\chemfig{\chlewis{180:}{S}~\ch{C}-\chlewis{270:90:0:}{N}}
+				\chemright]^{-}$}
+				&
+			\multicolumn{2}{c}{$\chemleft[
+				\chemfig{\chlewis{120:240:}{S}=\ch{C}=\chlewis{60:300:}{N}}
+				\chemright]^{-}$} \\ [2em]
+				S & -1 & S & +1 & S & 0 \\
+				C & 0 & C & 0 & C & 0 \\
+				N & 0 & N & -2 & N & -1
+		\end{tabular}}
+\end{frame}
+
+\begin{onyourown}
+	Calculate the formal charge on each atom in the sulfate (\ch{SO4^{2-}})
+	polyatomic ion.
+\end{onyourown}
+
+\begin{frame}{Resonance}
+	\begin{itemize}[<+->]
+		\item When a compound has multiple possible arrangements of
+			electrons (but the same skeletal structure), it is said
+			to demonstrate \alert{resonance}.
+
+			\bigskip
+
+			\begin{center}
+				\schemestart
+				\chemfig{\chlewis{150:270:}{O}=[:30]\chlewis{90:}{O}-[:330]\chlewis{60:240:330:}{O}}
+				\arrow{<->}
+				\chemfig{\chlewis{120:210:300:}{O}-[:30]\chlewis{90:}{O}=[:330]\chlewis{270:30:}{O}}
+				\schemestop
+			\end{center}
+
+			\bigskip
+
+		\item This is \alert{convenient} to draw, but the \alert{actual}
+			structure is an intermediate between the two -- a
+			\alert{resonance hybrid}.
+
+			\bigskip
+
+			\begin{center}
+				\chemfig{\ch{O}-[:30,,,,lddbond]\ch{O}-[:330,,,,lddbond]\ch{O}}
+			\end{center}
+
+			\bigskip
+		\item Electrons are \alert{delocalized}.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Non-Equivalent Resonance Structures}
+	\begin{center}
+
+		\schemestart[0,0.6]
+		$\chemleft[
+		\chemfig[atom sep=2em]{\chlewis{90:180:270:}{S}-C~\chlewis{0:}{N}}
+		\chemright]^{-}$
+		\arrow{<->}
+		$\chemleft[
+		\chemfig[atom sep=2em]{\chlewis{180:}{S}~C-\chlewis{270:90:0:}{N}}
+		\chemright]^{-}$
+		\arrow{<->}
+		$\chemleft[
+		\chemfig[atom sep=2em]{\chlewis{120:240:}{S}=C=\chlewis{60:300:}{N}}
+		\chemright]^{-}$
+		\schemestop
+	\end{center}
+
+	\bigskip
+
+	\begin{itemize}[<+->]
+		\item Many compounds have resonance structures that are not
+			equivalent in terms of stability.
+		\item N is more electronegative than S --- how does this affect
+			the electron distribution?
+		\item All structures are correct, but one is lower in energy
+			than the others (most stable).
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Determining the Most Stable Lewis Structure}
+	Draw the possible resonance structures for phosgene (\ch{COCl2}). Which
+	contributes the most to the correct structure?
+
+	\mode<article>{\vspace*{14em}}
+
+	\mode<presentation>{
+	\bigskip
+
+	\begin{columns}
+		\column{0.5\linewidth}
+		\column{0.4\linewidth}
+		\includegraphics[scale=0.3]{phosgene.jpg}
+	\end{columns}}
+
+	\note{
+		\begin{tabular} {*{3}{>{\qquad}c S[table-format=-1]@{\qquad}}}
+			\multicolumn{2}{c}{
+				\chemfig{\chlewis{90:180:270:}{Cl}-C(=[:90]\chlewis{30:150:}{O})-\chlewis{0:90:270:}{Cl}}}
+				&
+			\multicolumn{2}{c}{
+				\chemfig{\chlewis{120:240:}{Cl}=C(-[:90]\chlewis{0:90:180:}{O})-\chlewis{270:90:0:}{Cl}}}
+				&
+			\multicolumn{2}{c}{
+				\chemfig{\chlewis{90:180:270:}{Cl}-C(-[:90]\chlewis{0:90:180:}{O})=\chlewis{60:300:}{Cl}}}
+			\\[2em]
+				Cl & 0 & Cl & +1 & Cl & 0 \\
+				Cl & 0 & Cl & 0 & Cl & +1 \\
+				C & 0 & C & 0 & C & 0 \\
+				O & 0 & O & -1 & O & -1
+		\end{tabular}}
+\end{frame}
+
+\begin{onyourown}
+	What are the possible Lewis structures for \ch{CO2}? Which is lowest in
+	energy?
+\end{onyourown}
+
+\frame{\section{Advanced Lewis Structures}
+	\begin{learningobjectives}
+	\item Build Lewis structures with odd numbers of electrons.
+	\item Build Lewis structures without complete octets.
+	\item Build Lewis structures with more than 8 electrons in the
+		``octet''.
+	\end{learningobjectives}
+}
+
+\begin{frame}{Exceptions to the Octet Rule}
+	\begin{enumerate}[<+(1)->]
+		\item Odd numbers of electrons
+			\begin{itemize}[<1->]
+				\item Some species do not have even
+					\alert{pairs}.
+				\item The odd electron is known as a \alert{free
+					radical}.
+				\item These species are often very reactive.
+			\end{itemize}
+		\item Incomplete octets
+			\begin{itemize}[<1->]
+				\item Some atoms do not require a full octet.
+				\item \ch{H}, \ch{B}, \ldots
+			\end{itemize}
+		\item Expanded octets
+			\begin{itemize}[<1->]
+				\item Some atoms can have more than 8 electrons.
+				\item The electrons often occupy $d$ orbitals.
+			\end{itemize}
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}{Free Radicals}
+	A major concern regarding depletion of the ozone layer in the 1970s lead
+	to the banning of many consumer products that contained
+	chlorofluorocarbons (CFCs) in 1989.
+
+	\bigskip
+
+	\begin{columns}
+		\column{0.45\linewidth}
+		\begin{reactions*}
+			\text{CFCs} &->[$hv$] Cl^. \\
+			Cl^. + O3 &->[\hphantom{$hv$}] ClO^. + O2 \\
+			O3 &->[$hv$] O + O2 \\
+			O + ClO^. &->[\hphantom{$hv$}] Cl^. + O2 \\
+			2 O3 &->[$hv$] 3 O2
+		\end{reactions*}
+		\column{0.45\linewidth}
+		\centering
+		\includegraphics[scale=0.15]{ozone-hole.png}
+	\end{columns}
+
+	\bigskip
+
+	What is the Lewis structure for \ch{ClO^.}?
+\end{frame}
+
+\begin{frame}{Incomplete Octets}
+	\begin{itemize}[<+->]
+		\item Boron does not require a complete octet for an appropriate
+			Lewis structure.
+
+			\begin{center}
+				\tikzmark{textbookfix}\includegraphics[scale=0.18]{05_Pg218_UnFigure_1.jpg}
+			\end{center}
+		
+		\item For a compound such as \ch{BF3}, we \alert{could} create a
+			double bond to form a complete octet around boron.
+
+			\begin{center}
+				\alt<1>{\includegraphics[scale=0.1]{05_Pg218_UnFigure_2.jpg}}{\includegraphics[scale=0.1]{05_Pg218_UnFigure_3.jpg}}
+			\end{center}
+		\item This would create a positive formal charge on \ch{F},
+			which is \alert{very unfavorable}.
+	\end{itemize}
+
+	\begin{tikzpicture}[remember picture, overlay]
+		\node[align=right,text width=8em,font=\footnotesize](note) at
+		($(pic cs:textbookfix) + (-2,0.5)$) {Fix this figure on Pg. 218
+		of your textbook!};
+		\draw[<-,thick,shorten <=3pt] ($(pic cs:textbookfix) + (0,0.5)$)
+		to (note.east);
+	\end{tikzpicture}
+\end{frame}
+
+\begin{frame}[t]{Expanded Octets}
+	\begin{itemize}
+		\item Third period elements and below can hold more than 8
+			electrons.
+		\item Electrons fill in to $d$ orbitals.
+		\item In drawing Lewis structures, make sure to note formal
+			charges.
+	\end{itemize}
+
+	\pause
+
+	\bigskip
+
+	Let's take a look at the Lewis structure for \ch{H2SO4}\ldots
+
+	\note{%
+		\begin{center}
+			\begin{tabular} {>{\centering\arraybackslash}m{1.5in}@{ \ch{<->}
+				}>{\centering\arraybackslash}m{1.5in}}
+				\includegraphics[scale=0.2]{05_Pg219_UnFigure_3.jpg}
+				&
+				\includegraphics[scale=0.2]{05_Pg219_UnFigure_4.jpg}
+			\end{tabular}
+		\end{center}
+	}
+
+	\vfill
+
+	\pause
+
+	How do we know which structure is correct experimentally?
+
+\end{frame}
+
+\frame{\section{Translating Structure to Physical Properties}
+	\begin{learningobjectives}
+	\item Describe how different elements and different bond orders can
+		affect the overall stability of a molecule.
+	\item Explain the different geometries of molecules according to the
+		VSEPR model.
+	\item Relate the above phenomenon to predict the overall polarity of molecules.
+	\end{learningobjectives}
+}
+
+\begin{frame}[allowframebreaks=1]{Bond Energies and Bond Lengths}
+	\begin{columns}
+		\column{0.35\textwidth}
+		\begin{block}{Bond Energy}
+			The energy required to break \SI{1}{\mole} of the chemical bonds
+			in the gas phase. \alert{Always} positive --- energy must be
+			added to break bonds.
+		\end{block}
+		\column{0.65\textwidth}
+		\begin{center}
+			\includegraphics[scale=0.3]{05_03_Table.jpg}
+		\end{center}
+	\end{columns}
+
+	\begin{itemize}
+		\item The stability of a bond can be measured in terms of the
+			energy required to break the bond.
+	\end{itemize}
+
+	\framebreak
+
+	\begin{columns}
+	\column{0.35\textwidth}
+	\begin{block}{Bond Length}
+		The length of a chemical bond between two particular atoms.
+	\end{block}
+\column{0.65\textwidth}
+	\begin{center}
+		\includegraphics[scale=0.3]{05_04_Table.jpg}
+	\end{center}
+\end{columns}
+	\begin{itemize}
+		\item For \ch{H2SO4}, it has been experimentally shown that the
+			\chemfig{[,0.75]S=O} bonds are shorter than the
+			\chemfig{[,0.75]S-O}
+			bonds.
+		\item Both bond length and bond energy depend on the type of
+			elements present in the compound.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Bond Energies Example}
+	Rank the following in order of \alert{increasing} average bond energies:
+
+	\begin{itemize}
+		\item \chemfig{[,0.75]C-C} \mode<presentation>{\qquad
+			\alt<+(1)->{\alert{\SI{347}{\kilo\joule\per\mole}}}{}}
+		\item \chemfig{[,0.75]C=C} \mode<presentation>{\qquad
+			\alt<+(1)->{\alert{\SI{611}{\kilo\joule\per\mole}}}{}}
+		\item \chemfig{[,0.75]C~C} \mode<presentation>{\qquad
+			\alt<+(1)->{\alert{\SI{837}{\kilo\joule\per\mole}}}{}}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Bond Lengths Example}
+	Rank the following in order of \alert{decreasing} average bond length:
+
+	\begin{itemize}
+		\item \chemfig{[0,0.75]H-F}~  \mode<presentation>{\qquad
+			\alt<5->{\alert{\SI{92}{\pico\meter}}}{}}
+		\item \chemfig{[0,0.75]H-Cl}  \mode<presentation>{\qquad
+			\alt<4->{\alert{\SI{127}{\pico\meter}}}{}}
+		\item \chemfig{[0,0.75]H-Br}  \mode<presentation>{\qquad
+			\alt<3->{\alert{\SI{141}{\pico\meter}}}{}}
+		\item \chemfig{[0,0.75]H-I}~   \mode<presentation>{\qquad
+			\alt<2->{\alert{\SI{161}{\pico\meter}}}{}}
+	\end{itemize}
+\end{frame}
+
+\begin{onyourown}
+	Rank the following in order of \alert{increasing} stability. Use trends
+	in expected bond lengths to guide your reasoning.
+
+	\begin{itemize}
+		\item \chemfig{[0,0.75]Cl-Cl}
+		\item \chemfig{[0,0.75]Br-Br}
+		\item \chemfig{[0,0.75]I-I}
+	\end{itemize}
+\end{onyourown}
+
+\begin{frame}{Molecular Shape: The VSEPR Theory}
+
+	\textbf{VSEPR: V}alence-\textbf{S}hell \textbf{E}lectron-\textbf{P}air
+	\textbf{R}epulsion
+
+	\begin{itemize}
+		\item Electrons repel each other
+		\item Electron dense areas surrounding an atom (the bonds or
+			lone pairs) try to stay as far apart as possible
+		\item Molecules assume specific shapes according to these
+			repulsive forces (think Coulomb's Law)
+	\end{itemize}
+
+	\pause
+	\begin{center}
+		We can use \alert{Lewis structures} to help determine
+		molecular \alert{shape}!
+	\end{center}
+\end{frame}
+
+\begin{frame}{Predicting Molecular Geometry}
+	Predict the shape of the polyatomic anion, \ch{CrO4^{2-}}.
+
+	\bigskip
+
+	\begin{description}[<+(1)->]
+		\item[Step 1:] Draw the Lewis electron-dot structure.
+		\item[Step 2:] Count the number of lone pairs and bonds.
+			\begin{itemize}[<1->]
+				\item Double and triple bonds will be counted as
+					one bond.
+				\item We will consider this number as the number
+					of \alert{electron groups}.
+			\end{itemize} 
+		\item[Step 3:] Assume each charge cloud is as far away from the
+			other charge clouds as possible.
+	\end{description}
+\end{frame}
+
+\vspace{\stretch{-1}}
+
+\begin{frame}{Two Electron Groups}
+	\begin{center}
+		\includegraphics[scale=0.4]{McMurray/05_Pg169_UnFigure.jpg}
+	\end{center}
+
+	\bigskip
+	
+	\begin{itemize}
+		\item \alert{Linear} molecules.
+		\item Bond angles of \SI{180}{\degree}.
+	\end{itemize}
+\end{frame}
+
+\vspace{\stretch{-1}}
+
+\begin{frame}{Three Electron Groups}
+	\begin{columns}
+		\column{0.55\linewidth}
+		\begin{center}
+			\includegraphics[scale=0.35]{McMurray/05_Pg170_UnFigure.jpg}
+		\end{center}
+		\column{0.35\linewidth}
+		\begin{itemize}
+			\item Molecule can be either \textbf{trigonal planar} or
+				\textbf{bent}.
+			\item Bond angles are \alert{approximately}
+				\SI{120}{\degree}.
+		\end{itemize}
+	\end{columns}
+\end{frame}
+
+\vspace{\stretch{-1}}
+
+\begin{frame}[allowframebreaks]{Four Electron Groups}
+	\begin{center}
+		\includegraphics[scale=0.4]{McMurray/05_01_Figure.jpg}
+	\end{center}
+
+	\bigskip
+	
+	\begin{itemize}
+		\item Molecule can be \textbf{tetrahedral},
+			\textbf{trigonal pyramidal}, or \textbf{bent}
+		\item Bond angles are \alert{approximately}
+			\SI{109.5}{\degree}
+	\end{itemize}
+
+	\framebreak
+
+	\begin{center}
+		\includegraphics[scale=0.4]{McMurray/05_Pg171_UnFigure_1.jpg}
+	\end{center}
+\end{frame}
+
+\vspace{\stretch{-1}}
+
+\begin{frame}[allowframebreaks]{Five Electron Groups}
+	\begin{center}
+		\includegraphics[scale=0.4]{McMurray/05_Pg171_UnFigure_2.jpg}
+	\end{center}
+
+	\bigskip
+
+	\begin{itemize}
+		\item Molecules can be \textbf{trigonal bipyramidal},
+			\textbf{seesaw}, \textbf{T-shaped},
+			or \textbf{linear}
+		\item Bond angles are \SI{120}{\degree} between
+			\alert{equatorial} positions and \SI{90}{\degree}
+			between \alert{equatorial} and \alert{axial}
+			positions
+	\end{itemize}
+
+	\framebreak
+
+	\begin{center}
+		\includegraphics[scale=0.4]{McMurray/05_Pg172_UnFigure_1.jpg}
+
+		\bigskip
+
+		\includegraphics[scale=0.4]{McMurray/05_Pg172_UnFigure_2.jpg}
+	\end{center}
+
+	\framebreak
+
+	\begin{center}
+		\includegraphics[scale=0.4]{McMurray/05_Pg172_UnFigure_3.jpg}
+
+		\bigskip
+
+		\includegraphics[scale=0.2]{McMurray/05_Pg172_UnFigure_4.jpg}
+	\end{center}
+\end{frame}
+
+\vspace{\stretch{-1}}
+
+\begin{frame}[allowframebreaks]{Six Electron Groups}
+	\begin{center}
+		\includegraphics[scale=0.4]{McMurray/05_Pg173_UnFigure_1.jpg}
+	\end{center}
+
+	\bigskip
+	
+	\begin{itemize}
+		\item Molecules are \textbf{octahedral}, \textbf{square
+			pyramidal}, or \textbf{square planar}
+		\item \alert{All} bond angles are \SI{90}{\degree}
+	\end{itemize}
+
+	\framebreak
+
+	\begin{center}
+		\includegraphics[scale=0.4]{McMurray/05_Pg173_UnFigure_2.jpg}
+	\end{center}
+
+	\framebreak
+
+	\begin{center}
+		\includegraphics[scale=0.4]{McMurray/05_Pg173_UnFigure_3.jpg}
+
+		\bigskip
+		
+		\includegraphics[scale=0.4]{McMurray/05_Pg173_UnFigure_4.jpg}
+	\end{center}
+\end{frame}
+
+\mode<presentation|article:0>{
+\begin{frame}{Predicting Molecular Geometry}
+	Predict the shape of the polyatomic anion, \ch{CrO4^{2-}}.
+
+	\bigskip
+
+	\begin{description}
+		\item[Step 1:] Draw the Lewis electron-dot structure.
+		\item[Step 2:] Count the number of lone pairs and bonds.
+			\begin{itemize}
+				\item Double and triple bonds will be counted as
+					one bond.
+				\item We will consider this number as the number
+					of \alert{electron groups}.
+			\end{itemize} 
+		\item[Step 3:] Assume each charge cloud is as far away from the
+			other charge clouds as possible.
+	\end{description}
+\end{frame}}
+
+\begin{frame}{Shapes of Larger Molecules}
+
+	\begin{itemize}
+		\item Not all molecules include just one central atom
+		\item More complicated geometries can be predicted by combining 
+			the shapes based on their electron cloud distribution
+	\end{itemize}
+
+	\bigskip
+
+	\begin{columns}
+		\column{0.45\linewidth}
+		\centering
+		\includegraphics[scale=0.7]{largemolecule.png}
+		\column{0.45\linewidth}
+		\centering
+		\chemfig{\lewis{5:,N}~[:45]C-[:45]Si(-[:45]\lewis{1:3:7:,F})(-[:135]\lewis{1:3:5:,F})(<[:260]\lewis{0:4:6:,F})(>:[:80]\lewis{0:2:4:,F})-[:315]C
+	(-[:225]H)(-[:315]H)-[:45]C(=[:90]\lewis{1:3:,O})-[:315]\lewis{5:7:,O}-[:45]H}
+	\end{columns}
+\end{frame}
+
+\begin{frame}[t]{Molecular Shape Practice}
+	State the number of electron groups and lone pairs. Use VSEPR theory to
+	determine the electronic and molecular shape of the following molecules
+	or ions.
+
+	\begin{enumerate}
+		\item \ch{PF3} \note[item]{trigonal pyramidal}
+		\item \ch{H2S} \note[item]{bent}
+		\item \ch{CCl4} \note[item]{tetrahedral}
+	\end{enumerate}
+
+	\vspace{10em}
+\end{frame}
+
+\begin{onyourown}
+	% Ebbing 8th Ed. 10.27
+	Predict the electronic and molecular shape of the following molecules:
+
+	\begin{enumerate}
+		\item \ch{SiF4}
+		\item \ch{SF2}
+		\item \ch{COF2}
+		\item \ch{PCl3}
+	\end{enumerate}
+
+	What bond angles do you expect for each?
+\end{onyourown}
+
+\begin{frame}{Molecular Shape and Polarity}
+	\begin{itemize}
+		\item If a molecule has polar bonds, the molecule as a whole may
+			also be polar. \pause
+		\item For diatomic molecules, if the bond is polar, the molecule
+			is polar.
+
+			\begin{center}
+				\includegraphics[scale=0.3]{05_Pg235_UnFigure_4.jpg}
+			\end{center}
+
+			\pause
+
+		\item For polyatomic molecules, we must consider the
+			\alert{geometry} of the molecule.
+
+			\begin{columns}
+				\column{0.45\linewidth}
+				\centering
+				\includegraphics[scale=0.2]{05_Pg236_UnFigure_1.jpg}
+				\column{0.45\linewidth}
+				\centering
+				\includegraphics[scale=0.2]{05_Pg236_UnFigure_2.jpg}
+			\end{columns}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Polar Molecules}
+	\begin{itemize}
+		\item Contain \alert{polar} bonds.
+		\item Has a separation of positive and negative charge called a
+			dipole, indicated with \delp\ and \delm.
+		\item Has dipoles that \alert{do not} cancel.
+	\end{itemize}
+
+	\bigskip
+
+	\begin{center}
+		\chemfig{H-Cl}
+		\hspace{5em}
+		\chemfig{H>:[:20]\lewis{2:,N}(<[:240]H)-[:330]H}
+	\end{center}
+\end{frame}
+
+\begin{frame}{Nonpolar Molecules}
+	\begin{itemize}
+		\item \alert{May} contain \alert{nonpolar} bonds.
+
+			\begin{center}
+				\chemfig{Cl-Cl}
+				\hspace{5em}
+				\chemfig{H-H}
+			\end{center}
+
+		\item \alert{May} have a symmetrical arrangement of polar bonds.
+
+			\bigskip
+
+			\begin{center}
+				\chemfig{\lewis{3:5:,O}=C=\lewis{1:7:,O}}
+				\hspace{5em}
+				\chemfig{\lewis{2:4:6:,Cl}>:[:20]C(<[:240]\lewis{3:5:7:,Cl})(-[:90]\lewis{0:2:4:,Cl})-[:330]\lewis{0:2:6:,Cl}}
+			\end{center}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Polarity Practice}
+	Which of the following molecules would be expected to have a dipole
+	moment of zero?
+
+	\begin{enumerate}
+		\item \ch{CS2}
+		\item \ch{TeF2}
+	\end{enumerate}
+	
+	\vspace{8em}
+\end{frame}
+
+\begin{onyourown}
+	% Ebbing 8th Ed. 10.39
+	Which of the following molecules would be expected to have a zero dipole
+	moment?
+
+	\begin{enumerate}
+		\item \ch{SeCl4}
+		\item \ch{XeF4}
+	\end{enumerate}
+\end{onyourown}
+
+\begin{frame}{Guide to Predicting Polarity}
+\centering
+% Define block styles
+\tikzstyle{block} = [rectangle, draw, fill=blue!10, 
+    text width=8em, text centered, rounded corners, minimum height=2em]
+\tikzstyle{line} = [draw,->]
+
+\begin{tikzpicture}[node distance = 8em, auto]
+	% Place nodes
+	\node [block,text width=6em] (molecule) {Molecule};
+	\node [block, below = 2em of molecule] (centrallonepairs) {Only 1 lone pair on central atom?};
+	\node [block, left of=centrallonepairs, yshift=-6em,text width=4em](polar) {Polar};
+	\node [block, right of=centrallonepairs, yshift=-6em](polarbonds) {Polar bonds?};
+	\node [block, right of=polarbonds, yshift=-6em,text width=5em](nonpolar) {Nonpolar};
+	\node [block, left of=polarbonds, yshift=-6em](3D) {Dipoles cancel?};
+	% Draw edges
+	\path [line] (molecule) -- (centrallonepairs);
+	\path [line] (centrallonepairs) -| node [above,near start] {Yes} (polar);
+	\path [line] (centrallonepairs) -| node [above,near start] {No} (polarbonds);
+	\path [line] (polarbonds) -| node [above, near start] {Yes} (3D);
+	\path [line] (polarbonds) -| node [above, near start] {No} (nonpolar);
+	\path [line] (3D) -- node [above, near start] {Yes} (nonpolar);
+	\path [line] (3D) -| node [above, near start] {No} (polar);
+%    \path [line] (init) -- (identify);
+%    \path [line] (identify) -- (evaluate);
+%    \path [line] (evaluate) -- (decide);
+%    \path [line] (decide) -| node [near start] {yes} (update);
+%    \path [line] (update) |- (identify);
+%    \path [line] (decide) -- node {no}(stop);
+%    \path [line,dashed] (expert) -- (init);
+%    \path [line,dashed] (system) -- (init);
+%    \path [line,dashed] (system) |- (evaluate);
+\end{tikzpicture}
+\end{frame}
+
+
+\end{document}

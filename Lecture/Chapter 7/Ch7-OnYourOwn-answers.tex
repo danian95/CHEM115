@@ -1,0 +1,105 @@
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage{genchem}
+\usepackage{enumitem}
+\usepackage[margin=1in]{geometry}
+\usepackage{titling}
+
+\setallmainfonts{TeX Gyre Pagella}
+
+\title{Chapter 7 ``On Your Own'' Solutions}
+
+\begin{document}
+
+\begin{center}
+	\bfseries
+	\Large
+	\thetitle
+\end{center}
+
+\begin{enumerate}[itemsep=2em,leftmargin=0pt,label=\textbf{\Alph*.}]
+	\item Balanced reactions:
+		\begin{reactions*}
+			3 Mg\sld{} + N2\gas{} &-> Mg3N2\sld{} \\
+			C2H4\gas{} + H2O\lqd{} &-> C2H5OH\lqd{}
+		\end{reactions*}
+	\item For \SI{12.0}{\mole} \ch{O2},
+		\begin{reaction*}
+			4 Fe\sld{} + 3 O2\gas{} -> 2 Fe2O3\sld{}
+		\end{reaction*}
+		\begin{align*}
+			\SI{12.0}{\mole}~\ch{O2} \times
+			\frac{\SI{2}{\mole}~\ch{Fe2O3}}{\SI{3}{\mole}~\ch{O2}}
+			&= \boxed{\SI{8.0}{\mole}~\ch{Fe2O3}}
+		\end{align*}
+	\item We need the \emph{balanced} reaction first:
+		\begin{reaction*}
+			Fe3O4 + 4 H2 -> 4 H2O + 3 Fe
+		\end{reaction*}
+
+		Then solve:
+		\begin{align*}
+			\SI{1.07}{\gram}~\ch{Fe3O4} \times
+			\frac{\SI{1}{\mole}~\ch{Fe3O4}}{\SI{231.795}{\gram}~\ch{Fe3O4}}
+				\times
+			\frac{\SI{4}{\mole}~\ch{H2O}}{\SI{1}{\mole}~\ch{Fe3O4}}
+			\times
+			\frac{\SI{18.015}{\gram}~\ch{H2O}}{\SI{1}{\mole}~\ch{H2O}}
+			&= \boxed{\SI{0.333}{\gram}~\ch{H2O}}
+		\end{align*}
+	\item Balance the reaction:
+		\begin{reaction*}
+			N2\gas{} + 3 H2\gas{} -> 2 NH3\gas{}
+		\end{reaction*}
+
+		Need theoretical yield:
+		\begin{align*}
+			\SI{5.00}{\gram}~\ch{H2} \times
+			\frac{\SI{1}{\mole}~\ch{H2}}{\SI{2.016}{\gram}~\ch{H2}}
+			\times
+			\frac{\SI{2}{\mole}~\ch{NH3}}{\SI{3}{\mole}~\ch{H2}}
+			\times \frac{\SI{17.031}{\gram}}{\SI{1}{\mole}} &=
+			\SI{28.15972222}{\gram}~\ch{NH3}~\text{theoretical}
+		\end{align*}
+
+		Then solve for percent yield:
+		\begin{align*}
+			\text{\% yield} &=
+			\frac{\text{actual}}{\text{theoretical}} \times
+			\SI{100}{\percent} \\
+			&= \frac{15.0}{28.15972222} \times \SI{100}{\percent} \\
+			&= \boxed{\SI{53.3}{\%}}
+		\end{align*}
+
+		\pagebreak
+
+	\item Balance the equation:
+		\begin{reaction*}
+			2 C3H6\gas{} + 9 O2\gas{} -> 6 CO2\gas{} + 6 H2O\lqd{}
+		\end{reaction*}
+
+		Find theoretical yield:
+		\begin{align*}
+			\SI{91.3}{\gram}~\ch{C3H6} \times
+			\frac{\SI{1}{\mole}~\ch{C3H6}}{\SI{42.081}{\gram}~\ch{C3H6}}
+			\times
+			\frac{\SI{6}{\mole}~\ch{CO2}}{\SI{2}{\mole}~\ch{C3H6}}
+			\times
+			\frac{\SI{44.009}{\gram}~\ch{CO2}}{\SI{1}{\mole}~\ch{CO2}}
+			&= \SI{286.4491124}{\gram}~\text{theoretical}
+		\end{align*}
+
+		Find actual yield:
+		\begin{align*}
+			\text{\% yield} &=
+			\frac{\text{actual}}{\text{theoretical}} \times
+			\SI{100}{\percent} \\
+			\text{actual} &= \frac{\text{\%
+			yield}}{\SI{100}{\percent}} \times \text{theoretical} \\
+			&= \frac{81.3}{100} \times \SI{286.4491124}{\gram} \\
+			&= \boxed{\SI{233}{\gram}~\ch{CO2}}
+		\end{align*}
+
+\end{enumerate}
+
+\end{document}

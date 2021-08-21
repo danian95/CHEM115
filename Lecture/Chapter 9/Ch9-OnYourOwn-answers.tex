@@ -1,0 +1,153 @@
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage{genchem}
+\usepackage{enumitem}
+\usepackage[margin=1in]{geometry}
+\usepackage{titling}
+\usepackage{tabularx}
+\chemsetup{chemformula/frac-style=nicefrac}
+
+\setallmainfonts{TeX Gyre Pagella}
+
+\title{Chapter 9 ``On Your Own'' Solutions}
+
+\begin{document}
+
+\begin{center}
+	\bfseries
+	\Large
+	\thetitle
+\end{center}
+
+\begin{enumerate}[itemsep=2em,leftmargin=0pt,label=\textbf{\Alph*.}]
+	\item \begin{enumerate}[label={\arabic*.}]
+			\item exothermic
+			\item exothermic
+			\item endothermic
+		\end{enumerate}
+
+	\item This problem just needs values plugged in to the equation for heat
+		transfer:
+		\begin{align*}
+			q &= m C_\text{s} \Delta T \\
+			&= \SI{3.20}{\gram} \times
+			\SI{0.235}{\joule\per\gram\per\celsius} \times
+			\underbrace{(\SI{42}{\celsius} -
+			\SI{22}{\celsius})}_{\mathclap{T_f - T_i}}
+			\\
+			&= \SI{15.04}{\joule} \\
+			&= \boxed{\SI{15.0}{\joule}}
+		\end{align*}
+	
+	
+	\item At thermal equilibrium, the temperature of both the \ch{Ti} and
+		the \ch{H2O} is equal ($T_\text{f, \ch{Ti}} = T_\text{f, \ch{H2O}}$)
+		\begin{align*}
+			q_{\ch{Ti}} &= -q_{\ch{H2O}} \\
+			m \times C_\text{s} \times \Delta T &= - m \times
+			C_\text{s} \times \Delta T \\
+			m \times C_\text{s} \times (T_\text{f} - T_\text{i}) &=
+			- m \times C_\text{s} \times (T_\text{f} - T_\text{i})
+			\\ \SI{8.12}{\gram} \times
+			\SI{0.523}{\joule\per\gram\per\celsius} \times
+			(T_\text{f} - \SI{47}{\celsius}) &= - \SI{50.0}{\gram}
+			\times \SI{4.184}{\joule\per\gram\per\celsius} \times
+			(T_\text{f} - \SI{18.0}{\celsius}) \\
+			\SI{4.24676}{\joule\per\celsius} \times T_\text{f} -
+			\SI{199.59772}{\joule} &= \SI{-209.2}{\joule\per\celsius}
+			\times T_\text{f} + \SI{3765.6}{\joule} \\
+			\SI{213.44676}{\joule\per\celsius} \times T_\text{f} &=
+			\SI{3965.19772}{\joule} \\
+			T_\text{f} &= \SI{18.5769872}{\celsius} \\
+			&= \boxed{\SI{18.6}{\celsius}}
+		\end{align*}
+
+	\item We need to determine a stoichiometric ratio between heat released
+		per mole of \ch{O2}:
+		\begin{align*}
+			\frac{\SI{-213}{\kilo\cal}}{\SI{2}{\mole}~\ch{O2}}
+		\end{align*}
+		Note that the sign of the heat is negative as this is heat
+		\emph{released}.
+
+		We can now solve for moles \ch{O2}
+		\textrightarrow\ grams \ch{O2}:
+		\begin{align*}
+			\SI{-306}{\kilo\cal} \times
+			\frac{\SI{2}{\mole}~\ch{O2}}{\SI{-213}{\kilo\cal}}
+			\times
+			\underbrace{\frac{\SI{31.998}{\gram}}{\SI{1}{\mole}~\ch{O2}}}_{\mathclap{\SI{15.998}{\gram\per\mole} \times
+			2}} &= \SI{91.93791549}{\gram}~\ch{O2} \\
+			&= \boxed{\SI{91.9}{\gram}~\ch{O2}}
+		\end{align*}
+
+		\pagebreak
+
+	\item Note direction of reactions and coefficients:
+		\begin{center}
+			\begin{tabular}
+				{>{\collectcell\ch}r<{\endcollectcell} @{ \ch{->} } E
+				>{\collectcell\enthalpy}l<{\endcollectcell}}
+				CS2\lqd{} & C\sld[graphite]{} + 2 S\sld{} & -87.9 \\
+				C\sld[graphite]{} + O2\gas{} & CO2\gas{} &
+				-393.5 \\
+				2 S\sld{} + 2 O2\gas{} & 2 SO2\gas{} & -593.6 \\ \midrule
+				CS2\lqd{} + 3 O2\gas{} & CO2\gas{} + 2 SO2\gas{} &
+				-1075.0
+			\end{tabular}
+		\end{center}
+
+	\item We need to examine the bonds that will be broken and those that
+		will be formed in this reaction.
+
+		\begin{center}	
+			\begin{tabularx}{\linewidth} {*{4}{>{\centering\arraybackslash}X}}
+				\multicolumn{2}{c}{\bfseries Bonds Broken} & \multicolumn{2}{c}{\bfseries Bonds Formed} \\ \midrule
+				\chemfig{H-C(-[:90]H)(-[:270]H)-H} & \chemfig{H-\lewis{2:6:,O}-H} & \chemfig{H-H} & \chemfig{\lewis{3:5:,O}=C=\lewis{1:7:,O}} \\[1em]
+				\ch{C-H} & \ch{O-H} &                                 \ch{H-H} & \ch{C=O} \\
+				\SI{414}{\kilo\joule\per\mole} & \SI{464}{\kilo\joule\per\mole} &             \SI{-436}{\kilo\joule\per\mole} & \SI{-799}{\kilo\joule\per\mole}
+			\end{tabularx}
+		\end{center}
+
+		\begin{align*}
+			\Delta H_\text{rxn} &= \sum (\Delta H~\text{bonds broken}) + \sum (\Delta H~\text{bonds formed}) \\
+			&= \bigg[\underbrace{(\SI{4}{\mole})}_{\mathclap{4 \times \ch{C-H}}}(\SI{414}{\kilo\joule\per\mole})
+			+
+		\underbrace{(\SI{4}{\mole})}_{\mathclap{2 \times (2 \times \ch{O-H})}}(\SI{464}{\kilo\joule\per\mole})\bigg] \\
+		&\qquad\qquad {} +
+			\bigg[\underbrace{(\SI{4}{\mole})}_{\mathclap{4 \times \ch{H-H}}}(\SI{-436}{\kilo\joule\per\mole})
+			+
+			\underbrace{(\SI{2}{\mole})}_{\mathclap{2 \times \ch{C=O}}}(\SI{-799}{\kilo\joule\per\mole})
+			\bigg] \\
+			&= \SI{3512}{\kilo\joule\per\mole} +
+			\SI{-3342}{\kilo\joule\per\mole} \\
+			&=
+			\boxed{\SI{170}{\kilo\joule\per\mole}}
+		\end{align*}
+
+	\item We need the following reactions and values from the textbook:
+		\begin{center}
+			\begin{tabular} {>{\collectcell\ch}r<{\endcollectcell} @{ \ch{->} } E @{\enthalpy[subscript-right=f,unit=]{}} S[table-format=-3.1]<{
+					\si{\kilo\joule\per\mole}}}
+				H2\gas{} + S\sld[rhombic]{} & H2S\gas{} & -20.6 \\
+				H2\gas{} + 1/2 O2\gas{} & H2O\lqd{} & -285.8 \\
+				S\sld[rhombic]{} + O2\gas{} & SO2\gas{} & -296.8 \\
+			\end{tabular}
+		\end{center}
+		Rearranging equations and multiplying by adequate coefficients:
+		\begin{center}
+			\begin{tabular} {>{\collectcell\ch}r<{\endcollectcell} @{ \ch{->} } E @{\enthalpy[subscript-right=f,unit=]{}} S[table-format=-4.1]<{
+					\si{\kilo\joule\per\mole}}}
+				2 H2S\gas{} & 2 H2\gas{} + 2 S\sld[rhombic]{} & +41.2 \\
+				2 H2\gas{} + O2\gas{} & 2 H2O\lqd{} & -571.6 \\
+				2 S\sld[rhombic]{} + 2 O2\gas{} & 2 SO2\gas{} & -593.6 \\
+				\midrule
+				2 H2S\gas{} + 3 O2\gas{} & 2 H2O\lqd{} + 2 SO2\gas{} & -1124.0
+			\end{tabular}
+		\end{center}
+	
+
+
+\end{enumerate}
+
+\end{document}

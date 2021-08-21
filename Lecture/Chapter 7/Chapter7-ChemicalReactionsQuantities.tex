@@ -1,0 +1,1014 @@
+% !TEX program = xelatex
+%\documentclass[notes=onlyslideswithnotes,notes=hide]{beamer}
+%\documentclass[notes=only]{beamer}
+%\documentclass[notes=show]{beamer}
+%\documentclass[notes=hide]{beamer}
+%\documentclass[notes]{beamer}
+\documentclass[11pt,letterpaper]{article}
+\usepackage{beamerarticle}
+
+\usepackage{genchem}
+\usepackage{lecture}
+\usepackage{multicol}
+\usepackage{elements}
+\usepackage{collcell}
+\usetikzlibrary{tikzmark}
+
+\renewcommand*\printangularmomentum[1]{#1}
+
+\usepackage{orbitalfilling}[2019/02/14]
+
+\title{Chemical Reactions and Chemical Quantities}
+\subtitle{Chapter 7}
+\institute[CHEM115 Bloomsburg University]{CHEM115 --- Chemistry for the Sciences I \\ Bloomsburg University}
+\author{D.A. McCurry}
+\date{Fall 2020}
+
+\begin{document}
+
+\maketitle
+\mode<article>{\thispagestyle{fancy}}
+
+\begin{frame}{Chemical and Physical Change}
+	\begin{columns}
+		\column{0.5\textwidth}
+		\begin{itemize}[<+->]
+			\item \textbf{Chemical Change}\par
+			Atoms rearrange and the original
+			substances transform into different substances.
+			\begin{itemize}[<1->]
+				\item Iron rusting
+				\item Gasoline burning
+			\end{itemize}
+		\item \textbf{Physical Change}\par
+			The molecular structure or composition does not change.
+			\begin{itemize}[<1->]
+				\item Water boiling
+				\item Candle wax melting
+			\end{itemize}
+	\end{itemize}
+		\column{0.5\textwidth}
+		\centering
+		\only<1>{\includegraphics[scale=0.4]{07_04_Figure.jpg}}
+		\only<2>{\includegraphics[scale=0.27]{07_05_Figure.jpg}}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Physical Changes}
+	\begin{itemize}
+		\item The identity and composition of the substance do not
+			change.
+		\item The state can change or the material can be torn into
+			smaller pieces.
+	\end{itemize}
+
+	\bigskip
+
+	\begin{small}
+	\begin{tabularx}{\linewidth}
+		{l
+		>{\raggedright\arraybackslash}X}
+		\toprule
+		\bfseries Physical Change & \bfseries Example \\
+		\midrule
+		State & Water boiling \\
+		& Water freezing \\
+		Appearance & Dissolving sugar in water \\
+		Shape & Hammering a gold ingot into shiny gold leaf \\
+		& Drawing copper into a thin copper wire \\
+		Size & Cutting paper into tiny pieces for confetti \\
+		& Grinding pepper into smaller particles \\
+		\bottomrule
+	\end{tabularx}
+	\end{small}
+
+%	\framebreak
+%
+%	A substance
+%	\begin{description}
+%		\item[melts] when it changes from a solid to a liquid.
+%		\item[freezes] when it changes from a liquid to a solid.
+%		\item[sublimes] when it changes from a solid to a gas.
+%		\item[deposits] when it changes from a gas to a solid.
+%		\item[vaporizes] when it changes from a liquid to a gas.
+%		\item[condenses] when it changes from a gas to a liquid.
+%	\end{description}
+\end{frame}
+
+\vspace{\stretch{-1}}
+
+\frame{\section{Chemical Equations}
+	\begin{learningobjectives}
+	\item Write chemical equations to show reaction conditions.
+	\item Balance chemical equations.
+	\item Calculate reactant and product amounts using stoichiometry.
+	\end{learningobjectives}
+}
+
+\vspace{\stretch{-1}}
+
+\begin{frame}[allowframebreaks]{Chemical Changes}
+	\begin{itemize}
+		\item A \alert{chemical reaction} takes place where one or
+			more new substances are produced.
+			\begin{itemize}
+				\item Sometimes there is no visible evidence.
+				\item Old bonds are broken and new bonds formed.
+			\end{itemize}
+		\item A \alert{chemical equation} gives the chemical formulas of
+			the \alert{reactants} on the left of the arrow and the
+			\alert{products} on the right.
+			\begin{reaction*}
+				\text{Reactants} -> \text{Products}
+			\end{reaction*}
+	\end{itemize}
+	
+	\framebreak
+
+	Symbols used in chemical equations show
+	\begin{itemize}
+		\item the states of the reactants.
+		\item the states of the products.
+		\item the reaction conditions.
+	\end{itemize}
+
+	\bigskip
+
+	\begin{center}
+		\begin{tabular} {c l}
+			\toprule
+			\bfseries
+			Symbol & \bfseries Meaning \\
+			\midrule
+			\ch{+} & Separates two or more formula units \\
+			\ch{->} & Reacts to form products \\
+			\ch{->[$\Delta$]} & Reactants are heated \\
+			\ch{\sld} & Solid \\
+			\ch{\lqd} & Liquid \\
+			\ch{\gas} & Gas or vapor \\
+			\ch{\aq} & Aqueous (dissolved in \ch{H2O}) \\
+			\bottomrule
+		\end{tabular}
+	\end{center}
+\end{frame}
+
+\begin{frame}[t]{Balancing Chemical Equations}
+	\only<1-2>{%
+		\begin{itemize}
+			\item A \alert{balanced} chemical equation adheres to the
+				\alert{law of conservation of mass}.
+			\item In a balanced chemical equation, the numbers and kinds of
+				atoms must remain the same in both products and
+				reactants.
+		\end{itemize}
+
+		\bigskip
+	}
+
+	\begin{center}
+		\only<+>{%
+			\begin{tabular}{E e E}
+				2 Na\sld{} + Cl2\gas\ & -> & 2 NaCl\sld \\ \midrule
+				2 Na & & 2 Na \\
+				2 Cl & & 2 Cl
+			\end{tabular}
+		}
+		\only<+>{%
+			\begin{tabular}{E e E}
+				Hg(NO3)2\aq{} + 2 KI\aq & -> & HgI2\sld{} + 2 KNO3\aq
+				\\ \midrule
+				1 Hg & & 1 Hg \\
+				2 N & & 2 I \\
+				6 O & & 2 K \\
+				2 K & & 2 N \\
+				2 I & & 6 O
+			\end{tabular}
+		}
+		\only<+>{%
+			\includegraphics[scale=0.4]{h2o-balance.jpg}
+		}
+	\end{center}
+\end{frame}
+
+\begin{frame}[t]{Guide to Balancing a Chemical Reaction}
+	\begin{overlayarea}{\linewidth}{12em}
+	\begin{enumerate}
+		\item<only@1-2> Write the unbalanced equation using the correct chemical
+			formula for each reactant and product.
+		\item<only@2> Count the atoms of each element in the reactants and
+			products.
+		\item<only@3-4> Find suitable \alert{coefficients} -- the numbers placed
+			before formulas to indicate how many formula units of
+			each substance are required.
+			\begin{description}[<1->]
+				\item[Hint:] Start with the heavy atoms, end
+					with hydrogens.
+			\end{description}
+		\item<only@4> Check your answer by making sure that the numbers and
+			kinds of atoms are the same on both sides of the quation
+	\end{enumerate}
+	\end{overlayarea}
+
+	\bigskip
+
+	\begin{center}
+		\mode<presentation>{\only<1>{
+		\begin{tabular} {l c l}
+			\ch{CH4\gas{}} \ch{+}
+			\visible<3->{\alert{\ch{2}}}
+			\ch{O2\gas{}} & \ch{->} &
+			\ch{CO2\gas{}} \ch{+}
+			\visible<3->{\alert{\ch{2}}} \ch{H2O\lqd{}} \\
+		\end{tabular}
+		}}
+
+		\only<2->{\begin{tabular} {l c l}
+			\ch{CH4\gas{}} \ch{+}
+			\visible<3->{\alert{\ch{2}}}
+			\ch{O2\gas{}} & \ch{->} &
+			\ch{CO2\gas{}} \ch{+}
+			\visible<3->{\alert{\ch{2}}} \ch{H2O\lqd{}}
+			\\ \midrule
+			1 C & \visible<4->{$=$} & 1 C \\
+			4 H & \visible<4->{$=$} & \alt<4->{\alert{4}}{2}
+			H \mode<presentation>{\visible<3>{$\times$ 2}} \\
+			\alt<4->{\alert{4}}{2} O
+			\mode<presentation>{\visible<3>{$\times$ 2}} & \visible<4->{$=$} &
+			\alt<4->{\alert{4}}{3}\ O
+			\mode<presentation>{\visible<3>{$\times$ 2}}
+		\end{tabular}}
+	\end{center}
+\end{frame}
+
+\begin{frame}[t]{Balance the following equation\ldots}
+	\begin{reaction*}
+		N2\gas{} + H2\gas{} -> NH3\gas{}
+	\end{reaction*}
+
+	\vfill
+	
+	\note{
+		\begin{center}
+			\begin{tabular} {E e E}
+				N2\gas{} + H2\gas{} & -> & NH3\gas{} \\
+				\midrule
+				2 N & & 1 N \\
+				2 H & & 3 H
+			\end{tabular}
+		\end{center}
+
+		We should balance the heaviest (N) first, then H:
+
+		\begin{center}
+			\begin{tabular} {E e E}
+				N2\gas{} + 3 H2\gas{} & -> & 2 NH3\gas{} \\
+				\midrule
+				2 N & & 2 N \\
+				6 H & & 6 H
+			\end{tabular}
+		\end{center}
+		}
+\end{frame}
+
+\begin{frame}[t]{Balance the following equation\ldots}
+	\begin{reaction*}
+		Fe3O4\sld{} + H2\gas{} -> Fe\sld{} + H2O\lqd{}
+	\end{reaction*}
+
+	\vfill
+
+	\note{
+		\begin{center}
+			\begin{tabular} {E e E}
+				Fe3O4\sld{} + H2\gas{} & -> & Fe\sld{} + H2O\lqd{} \\
+				\midrule
+				3 Fe & & 1 Fe \\
+				4 O & & 1 O \\
+				2 H & & 2 H
+			\end{tabular}
+		\end{center}
+
+		We should balance the heaviest (Fe) first, then O:
+
+		\begin{center}
+			\begin{tabular} {E e E}
+				Fe3O4\sld{} + 4 H2\gas{} & -> & 3 Fe\sld{} + 4 H2O\lqd{} \\
+				\midrule
+				3 Fe & & 3 Fe \\
+				4 O & & 4 O \\
+				8 H & & 8 H
+			\end{tabular}
+		\end{center}
+		}
+\end{frame}
+
+\begin{onyourown}[10em]
+	Balance the following equations:
+
+	\begin{itemize}
+		\item \ch{Mg\sld{} + N2\gas{} -> Mg3N2\sld{}}
+
+			\vspace{10em}
+
+		\item \ch{C2H4\gas{} + H2O\lqd{} -> C2H5OH\lqd{}}
+	\end{itemize}
+\end{onyourown}
+
+\clearpage
+
+\begin{frame}[t]{Balance the following equation\ldots}
+	\begin{reaction*}
+		Na3PO4\aq{} + MgCl2\aq{} -> NaCl\aq{} + Mg3(PO4)2\sld{}
+	\end{reaction*}
+
+	\vspace{10em}
+	
+	\note{
+		\begin{center}
+			\begin{tabular} {E e E}
+				Na3PO4\aq{} + MgCl2\aq{} & -> & NaCl\aq{} +
+				Mg3(PO4)2\sld{} \\ \midrule
+				3 Na+ & & 1 Na \\
+				1 PO4^{3-} & & 2 PO4^{3-} \\
+				1 Mg^{2+} & & 3 Mg^{2+} \\
+				2 Cl- & & 1 Cl- \\
+			\end{tabular}
+		\end{center}
+
+		We should balance the most complicated (\ch{PO4^{3-}}) first:
+
+		\begin{center}
+			\begin{tabular} {E e E}
+				2 Na3PO4\aq{} + 3 MgCl2\aq{} & -> & 6 NaCl\aq{} +
+				Mg3(PO4)2\sld{} \\ \midrule
+				6 Na+ & & 6 Na+ \\
+				2 PO4^{3-} & & 2 PO4^{3-} \\
+				3 Mg^{2+} & & 3 Mg^{2+} \\
+				6 Cl- & & 6 Cl- \\
+			\end{tabular}
+		\end{center}
+		}
+\end{frame}
+
+\begin{frame}{What do chemical equations tell us?}
+	\begin{itemize}[<+(1)->]
+		\item Identity of products formed.
+		\item Reaction conditions.
+		\item Relative \alert{amounts} of reactants needed for the
+			reaction.
+		\item Relative \alert{amounts} of products expected from the
+			reaction.
+	\end{itemize}
+
+	\bigskip
+
+	\pause
+
+	For the reaction,
+	\begin{reaction*}
+		CH4\gas{} + 2 O2\gas{} -> CO2\gas{} + 2 H2O\lqd{}
+	\end{reaction*}
+	
+	\begin{tabular} {@{}l @{ }>{\collectcell\alert}l<{\endcollectcell} @{ } l @{ }
+		>{\collectcell\alert}l<{\endcollectcell} @{ } l}
+		we need & 2 equivalents & \ch{O2} to react with every & 1 equivalent &
+	\ch{CH4}. \\
+		& \visible<+(1)->{2 molecules} & & \visible<.(1)->{1 molecule} & \\
+		& \visible<+(1)->{2 moles} & & \visible<.(1)->{1 mole} &
+	\end{tabular}
+\end{frame}
+
+\begin{frame}{Molar Ratios}
+	The mole-to-mole ratios in chemical equations can be used to predict how
+	much reactant is needed or how much product will be produced.
+	\begin{reaction*}
+		CH4\gas{} + 2 O2\gas{} -> CO2\gas{} + 2 H2O\lqd{}
+	\end{reaction*}
+
+	\begin{center}
+		\def\arraystretch{1.75}
+	\begin{tabular} {>{\collectcell\ch}r<{\endcollectcell}@{:}E 
+		>{\begin{math}}c<{\end{math}}
+			@{\quad and \quad} >{\begin{math}}c<{\end{math}}}
+				CH4 & O2 &
+				\frac{\SI{1}{\mole}~\ch{CH4}}{\SI{2}{\mole}~\ch{O2}}
+				&
+				\frac{\SI{2}{\mole}~\ch{O2}}{\SI{1}{\mole}~\ch{CH4}}
+				\\
+				CH4 & CO2 &
+				\frac{\SI{1}{\mole}~\ch{CH4}}{\SI{1}{\mole}~\ch{CO2}}
+				&
+				\frac{\SI{1}{\mole}~\ch{CO2}}{\SI{1}{\mole}~\ch{CH4}}
+				\\
+				CH4 & H2O &
+				\frac{\SI{1}{\mole}~\ch{CH4}}{\SI{2}{\mole}~\ch{H2O}}
+				&
+				\frac{\SI{2}{\mole}~\ch{H2O}}{\SI{1}{\mole}~\ch{CH4}}
+	\end{tabular}
+	\end{center}
+
+	\pause
+
+	\begin{block}{Stoichiometry}
+		The numerical relationship between chemical amounts in a
+		balanced chemical equation.
+	\end{block}
+\end{frame}
+
+\begin{frame}[t]{Molar Ratio Example}
+	How many moles of Fe are needed for the reaction of 12.0 moles of
+	\ch{O2}?
+	\begin{reaction*}
+		Fe\sld{} + O2 \gas{} -> Fe2O3\sld{}
+	\end{reaction*}
+
+	\vspace{10em}
+
+	\note{
+		\begin{enumerate}
+			\item Balance:
+				\begin{reaction*}
+					4 Fe\sld{} + 3 O2 \gas{} -> 2 Fe2O3\sld{}
+				\end{reaction*}
+			\item Given \SI{12.0}{\mole}~\ch{O2}, find
+				\si{\mole}~\ch{Fe}. Plan:
+				\begin{equation*}
+					\frac{\SI{4}{\mole}~\ch{Fe}}{\SI{3}{\mole}~\ch{O2}}
+				\end{equation*}
+			\item Solve:
+				\begin{align*}
+					\SI{12.0}{\mole}~\ch{O2} \times
+					\frac{\SI{4}{\mole}~\ch{Fe}}{\SI{3}{\mole}~\ch{O2}}
+					= \boxed{\SI{16.0}{\mole}~\ch{Fe}}
+				\end{align*}
+			\item Why 3 sig figs?
+		\end{enumerate}}
+\end{frame}
+
+\begin{onyourown}[10em]
+	Using the values from the previous question, how many moles of
+	\ch{Fe2O3} will be produced?
+\end{onyourown}
+
+\tikzstyle{block} = [draw, text width=5em, text centered, rounded corners,
+minimum height=2em]
+\tikzstyle{blockA} = [block,fill=blue!10]
+\tikzstyle{blockB} = [block,fill=green!10]
+\tikzstyle{line} = [draw,->]
+
+\frame{\section{Practical Use of Chemical Equations}
+	\begin{learningobjectives}
+	\item Calculate mass amounts of products and reactants based on a
+		chemical equation.
+	\item Determine which species limit the extent of a reaction.
+	\item Calculate the percent yield of a reaction.
+	\end{learningobjectives}
+}
+
+\vspace{\stretch{-1}}
+
+\begin{frame}[t]{Translating Molar Ratios to Experimental Quantities}
+	\only<1-3>{%
+	\begin{itemize}[<+->]
+		\item We are unable to ``count'' moles directly.
+			\begin{itemize}[<1->]
+				\item How would we measure the moles of \ch{Fe}
+					required for the last example?
+			\end{itemize}
+		\item We must convert to and from units of mass!
+			\begin{center}
+				\small
+				\begin{tikzpicture}[node distance = 2em, auto]
+					\node[blockA](massA) {Mass \ch{Fe}};
+					\node[blockA,right =of massA](molesA)
+					{Moles \ch{Fe}};
+					\node[blockB,right =of molesA](molesB)
+					{Moles \ch{O2}};
+					\node[blockB,right =of molesB](massB)
+					{Mass \ch{O2}};
+					\path[line] (massA) -- (molesA);
+					\path[line] (molesA) -- (molesB);
+					\path[line] (molesB) -- (massB);
+				\end{tikzpicture}
+			\end{center}
+		\item In more generic terms,
+			\begin{center}
+				\small
+				\begin{tikzpicture}[node distance = 2em, auto]
+					\node[blockA](massA) {Mass \ch{A}};
+					\node[blockA,right =of massA](molesA)
+					{Amount \ch{A} \\ (in moles)};
+					\node[blockB,right =of molesA](molesB)
+					{Amount \ch{B} \\ (in moles)};
+					\node[blockB,right =of molesB](massB)
+					{Mass \ch{B}};
+					\path[line] (massA) -- (molesA);
+					\path[line] (molesA) -- (molesB);
+					\path[line] (molesB) -- (massB);
+				\end{tikzpicture}
+			\end{center}
+	\end{itemize}
+}
+
+%	\bigskip
+%
+%	\pause[\thebeamerpauses]
+
+	\only<4->{%
+	How many \emph{grams} of Fe are needed for the reaction of
+	\SI{12.0}{moles} of \ch{O2}?
+	}
+
+	\note{
+		\begin{align*}
+			\SI{16.0}{\mole}~\ch{Fe} \times
+			\frac{\SI{55.845}{\gram}~\ch{Fe}}{\SI{1}{\mole}~\ch{Fe}}
+			&= \SI{893.52}{\gram} \\
+			&= \boxed{\SI{894}{\gram}}
+		\end{align*}}
+\end{frame}
+
+\begin{frame}[t]{Revisiting Balanced Examples 1}
+	What mass of \ch{NH3} is produced from \SI{2.50}{\gram}~\ch{N2}?
+	\begin{reaction*}
+		N2\gas{} + H2\gas{} -> NH3\gas{}
+	\end{reaction*}
+
+	\vspace{10em}
+
+	\note{
+		\footnotesize
+		\begin{enumerate}
+			\item Balance:
+				\begin{reaction*}
+					N2\gas{} + 3 H2\gas{} -> 2 NH3\gas{}
+				\end{reaction*}
+			\item Stoichiometric ratio:
+				\begin{equation*}
+					\frac{\SI{2}{\mole}~\ch{NH3}}{\SI{1}{\mole}~\ch{N2}}
+				\end{equation*}
+			\item Calculate:
+			\begin{center}
+				\begin{tikzpicture}[node distance = 2em, auto]
+					\node[blockA](massA) {Mass \ch{N2}};
+					\node[blockA,right =of massA](molesA)
+					{Moles \ch{N2}};
+					\node[blockB,right =of molesA](molesB)
+					{Moles \ch{NH3}};
+					\node[blockB,right =of molesB](massB)
+					{Mass \ch{NH3}};
+					\path[line] (massA) -- (molesA);
+					\path[line] (molesA) -- (molesB);
+					\path[line] (molesB) -- (massB);
+				\end{tikzpicture}
+			\end{center}
+
+				\begin{align*}
+					\SI{2.50}{\gram}~\ch{N2} \times
+					\frac{\SI{1}{\mole}~\ch{N2}}{\SI{28.014}{\gram}~\ch{N2}}
+					\times 
+					\frac{\SI{2}{\mole}~\ch{NH3}}{\SI{1}{\mole}~\ch{N2}}
+					\times
+					\frac{\SI{17.031}{\gram}~\ch{NH3}}{\SI{1}{\mole}~\ch{NH3}}
+					&= \SI{3.0397}{\gram} \\
+					&= \boxed{\SI{3.04}{\gram}}
+				\end{align*}
+		\end{enumerate}
+		}
+\end{frame}
+
+\begin{frame}[t]{Revisiting Balanced Examples 2}
+	How many grams of \ch{Na3PO4} are required to produce
+	\SI{0.338}{\gram}~\ch{NaCl}?
+	\begin{reaction*}
+		Na3PO4\aq{} + MgCl2\aq{} -> NaCl\aq{} + Mg3(PO4)2\sld{}
+	\end{reaction*}
+
+	\vspace{10em}
+
+	\note{\footnotesize
+		\begin{enumerate}
+			\item Balance:
+				\begin{reaction*}
+					2 Na3PO4\aq{} + 3 MgCl2\aq{} -> 6
+					NaCl\aq{} + Mg3(PO4)2\sld{}
+				\end{reaction*}
+			\item Stoichiometric ratio:
+				\begin{equation*}
+					\frac{\SI{2}{\mole}~\ch{Na3PO4}}{\SI{6}{\mole}~\ch{NaCl}}
+				\end{equation*}
+			\item Calculate:
+			\begin{center}
+				\begin{tikzpicture}[node distance = 2em, auto]
+					\node[blockA](massA) {Mass \ch{NaCl}};
+					\node[blockA,right =of massA](molesA)
+					{Moles \ch{NaCl}};
+					\node[blockB,right =of molesA](molesB)
+					{Moles \ch{Na3PO4}};
+					\node[blockB,right =of molesB](massB)
+					{Mass \ch{Na3PO4}};
+					\path[line] (massA) -- (molesA);
+					\path[line] (molesA) -- (molesB);
+					\path[line] (molesB) -- (massB);
+				\end{tikzpicture}
+			\end{center}
+
+				\begin{align*}
+					\SI{0.337}{\gram}~\ch{NaCl} \times
+					\frac{\SI{1}{\mole}~\ch{NaCl}}{\SI{58.44}{\gram}~\ch{NaCl}}
+					\times 
+					\frac{\SI{2}{\mole}~\ch{Na3PO4}}{\SI{6}{\mole}~\ch{NaCl}}
+					\times
+					\frac{\SI{163.94}{\gram}~\ch{Na3PO4}}{\SI{1}{\mole}~\ch{Na3PO4}}
+					&= \SI{0.315125371}{\gram} \\
+					&= \boxed{\SI{0.315}{\gram}}
+				\end{align*}
+		\end{enumerate}
+		}
+\end{frame}
+
+\begin{onyourown}[10em]
+	How many grams of water will be produced when
+	\SI{1.07}{\gram}~\ch{Fe3O4} reacts with excess \ch{H2}?
+\end{onyourown}
+
+\begin{frame}[t]{A More Complicated Example}
+	How many grams of \ch{AgCl} are produced when \SI{0.412}{\gram}~\ch{Ag}
+	react with \SI{0.793}{\gram}~\ch{Cl2}?
+	\begin{reaction*}
+		Ag\sld{} + Cl2\gas{} -> AgCl\sld{}
+	\end{reaction*}
+
+	\vfill
+
+	\note{
+		\begin{enumerate}
+			\item Balance:
+				\begin{reaction*}
+					2 Ag\sld{} + Cl2\gas{} -> 2 AgCl\sld{}
+				\end{reaction*}
+			\item Stoichiometry:
+				$\frac{\SI{2}{\mole}~\ch{AgCl}}{\SI{2}{\mole}~\ch{Ag}}$
+				and
+				$\frac{\SI{2}{\mole}~\ch{AgCl}}{\SI{1}{\mole}~\ch{Cl2}}$
+			\item Solve:
+				\begin{itemize}
+					\item $\SI{0.412}{\gram}~\ch{Ag} \times
+						\frac{\SI{1}{\mole}~\ch{Ag}}{\SI{107.87}{\gram}}
+						\times
+						\frac{\SI{2}{\mole}~\ch{AgCl}}{\SI{2}{\mole}~\ch{Ag}}
+						\times
+						\frac{\SI{143.32}{\gram}~\ch{AgCl}}{\SI{1}{\mole}~\ch{AgCl}}
+						= \SI{0.547}{\gram}$
+					\item $\SI{0.793}{\gram}~\ch{Cl2} \times
+						\frac{\SI{1}{\mole}~\ch{Cl2}}{\SI{70.90}{\gram}}
+						\times
+						\frac{\SI{2}{\mole}~\ch{AgCl}}{\SI{1}{\mole}~\ch{Cl2}}
+						\times
+						\frac{\SI{143.32}{\gram}~\ch{AgCl}}{\SI{1}{\mole}~\ch{AgCl}}
+						= \SI{3.21}{\gram}$
+				\end{itemize}
+			\item Which is right?
+		\end{enumerate}
+		}
+\end{frame}
+
+\begin{frame}[t]{Limits in Chemical Reactions}
+	We can't produce the product if one of the reactants is missing.
+
+	\bigskip
+
+	\only<2-3>{%
+		\begin{block}{Limiting Reactant}
+			The reactant that is completely consumed in a chemical reaction
+			and limits the amount of product.
+		\end{block}
+	
+		\begin{block}{Reactant in Excess}
+			Any reactant that occurs in a quantity greater than is required
+			to completely react with the limiting reactant.
+		\end{block}
+	
+		\bigskip
+
+		\visible<3->{%
+			For the last example, which is the \emph{limiting
+			reactant} and which is the \emph{reactant in excess}?
+		}
+	}
+
+	\mode<article>{\vspace{5em}}
+
+	\only<4>{%
+		\begin{center}
+			\includegraphics[scale=0.4]{07_Pg300_UnFigure_1.jpg}
+		\end{center}
+	}
+\end{frame}
+
+\begin{frame}[t]{Calculating the Reactant in Excess}
+	When \SI{0.412}{\gram}~\ch{Ag} reacts with \SI{0.793}{\gram}~\ch{Cl2},
+	how much of the reactant in excess is left?
+	\begin{reaction*}
+		Ag\sld{} + Cl2\gas{} -> AgCl\sld{}
+	\end{reaction*}
+
+	\vfill
+
+	\note{
+		\begin{enumerate}
+			\item Balance:
+				\begin{reaction*}
+					2 Ag\sld{} + Cl2\gas{} -> 2 AgCl\sld{}
+				\end{reaction*}
+			\item We had enough reactant to produce
+				\SI{0.547}{\gram}~\ch{AgCl}. How much \ch{Cl2}
+				did it require to produce this much?
+			\item Stoichiometry:
+				$\frac{\SI{2}{\mole}~\ch{AgCl}}{\SI{1}{\mole}~\ch{Cl2}}$
+			\item Solve for \ch{Cl2} needed:
+				\begin{align*}
+					\SI{0.547}{\gram}~\ch{AgCl} \times
+						\frac{\SI{1}{\mole}~\ch{AgCl}}{\SI{143.32}{\gram}}
+						\times
+						\frac{\SI{1}{\mole}~\ch{Cl2}}{\SI{2}{\mole}~\ch{AgCl}}
+						\times
+						\frac{\SI{70.90}{\gram}~\ch{Cl2}}{\SI{1}{\mole}}
+						= \SI{0.135}{\gram}
+				\end{align*}
+			\item Subtract for \ch{Cl2} left:
+				\begin{align*}
+					\SI{0.793}{\gram} - \SI{0.135}{\gram} &=
+					\boxed{\SI{0.658}{\gram}}
+				\end{align*}
+		\end{enumerate}
+		}
+\end{frame}
+
+\begin{frame}{Guide to Calculating Product from a Limiting Reactant}
+	\begin{center}
+	\begin{tikzpicture}[node distance = 1.5em,auto]
+		\tikzstyle{blockC} = [block,fill=red!10,text width=10em];
+		\node [blockC] (small) {Smaller Moles of Product};
+		\node [blockB,above right = of small] (productB) {Moles of Product};
+		\node [blockB,above = of productB] (molesB) {Moles of Reactant B};
+		\node [blockB,above = of molesB] (gramsB) {Grams of Reactant B};
+		\node [blockA,above left = of small] (productA) {Moles of Product};
+		\node [blockA,above = of productA] (molesA) {Moles of Reactant A};
+		\node [blockA,above = of molesA] (gramsA) {Grams of Reactant A};
+		\node [blockC,below = of small] (finalprod) {Grams of
+		Product};
+		\path [line] (gramsB) -- (molesB);
+		\path [line] (molesB) -- (productB);
+		\path [line] (productB) -| (small);
+		\path [line] (gramsA) -- (molesA);
+		\path [line] (molesA) -- (productA);
+		\path [line] (productA) -| (small);
+		\path [line] (small) -- (finalprod);
+	\end{tikzpicture}
+	\end{center}
+\end{frame}
+
+\begin{frame}{Yields of Reaction}
+	Often, we don't always get \alert{exactly} the amount we planned to
+	obtain.
+	\begin{itemize}
+		\item Side reactions (other things happening)
+		\item Equilibrium limits (a more advanced topic)
+		\item Experimental error (did every grain make it in the
+			beaker?)
+	\end{itemize}
+
+	\begin{overlayarea}{\linewidth}{12em}
+	\only<1-2>{%
+	\begin{block}{Theoretical Yield}
+		The amount of product that can be made in a chemical reaction
+		based on the amount of limiting reactant.
+	\end{block}
+	\visible<2>{%
+	\begin{block}{Actual Yield}
+		The amount of product actually produced by a chemical reaction.
+	\end{block}
+	}
+	}
+
+	\only<3>{%
+	\begin{block}{Percent Yield}
+		The ratio of what we actually produced to what we should
+		theoretically have produced.
+		\begin{equation*}
+			\frac{\text{actual yield}}{\text{theoretical yield}}
+			\times 100\%
+		\end{equation*}
+	\end{block}
+	}
+	\end{overlayarea}
+\end{frame}
+
+\begin{frame}[t]{Calculating a Percent Yield 1}
+	When \SI{0.412}{\gram}~\ch{Ag} reactis with \SI{0.793}{\gram}~\ch{Cl2},
+	only \SI{0.498}{\gram}~\ch{AgCl} was produced.
+	\begin{reaction*}
+		Ag\sld{} + Cl2\gas{} -> AgCl\sld{}
+	\end{reaction*}
+
+	\begin{enumerate}
+		\item What is the actual yield?
+			\note[item]{\SI{0.498}{\gram}~\ch{AgCl}}
+		\item What is the theoretical yield?
+			\note[item]{\SI{0.547}{\gram}~\ch{AgCl}}
+		\item What is the percent yield?
+			\note[item]{
+				\begin{align*}
+					\text{\% Yield} &= \frac{\text{actual
+					yield}}{\text{theoretical yield}} \times
+					100\% \\
+					&=
+					\frac{\SI{0.498}{\gram}}{\SI{0.547}{\gram}}
+					\times 100\% \\
+					&= \boxed{\SI{91.0}{\percent}}
+				\end{align*}}
+			\note[item]{Can we ever have a negative percent yield?}
+	\end{enumerate}
+
+\end{frame}
+
+\begin{frame}[t]{Calculating Percent Yield 2}
+	With a limited amount of oxygen, the reaction of carbon and oxygen
+	produces carbon monoxide according to the following reaction:
+	\begin{reaction*}
+		2 C\gas{} + O2\gas{} -> 2 CO\gas{}
+	\end{reaction*}
+	What is the percent yield if \SI{40.0}{\gram} of \ch{CO} are produced
+	when \SI{30.0}{\gram}~\ch{O2} are used?
+
+	\mode<article>{\vfill}
+
+	\note{\footnotesize
+		\begin{enumerate}
+			\item Is it balanced? \boxed{Yes}
+			\item What is the actual yield?
+				\boxed{\SI{40.0}{\gram}~\ch{CO}}
+			\item What is the theoretical yield?
+				\begin{enumerate}
+					\item Stoichiometry:
+						$\frac{\SI{2}{\mole}~\ch{CO}}{\SI{1}{\mole}~\ch{O2}}$
+					\item Grams to moles to moles to grams:
+						\begin{equation*}
+							\SI{30.0}{\gram}~\ch{O2}
+							\times
+							\frac{\SI{1}{\mole}}{\SI{31.998}{\gram}~\ch{O2}}
+							\times
+							\frac{\SI{2}{\mole}~\ch{CO}}{\SI{1}{\mole}~\ch{O2}}
+							\times
+							\frac{\SI{28.010}{\gram}}{\SI{1}{\mole}~\ch{CO}}
+							=
+							\boxed{\SI{52.522}{\gram}~\ch{CO}}
+						\end{equation*}
+				\end{enumerate}
+			\item What is the percent yield?
+				\begin{align*}
+					\text{\% Yield} &= \frac{\text{actual
+					yield}}{\text{theoretical yield}} \times
+					100\% \\
+					&=
+					\frac{\SI{40.0}{\gram}}{\SI{52.522}{\gram}}
+					\times 100\% \\
+					&= \boxed{\SI{76.2}{\percent}}
+				\end{align*}
+		\end{enumerate}
+		}
+\end{frame}
+
+\clearpage
+
+\begin{onyourown}[15em]
+	When excess \ch{N2} and \SI{5.00}{\gram} of \ch{H2} are mixed, the
+	reaction produces \SI{15.0}{\gram}~\ch{NH3}. What is the percent yield
+	for the reaction?
+	\begin{reaction*}
+		N2\gas{} + H2\gas{} -> NH3\gas{}
+	\end{reaction*}
+\end{onyourown}
+
+\begin{frame}[t]{Calculating Percent Yield 3}
+	Acetic acid (\ch{C2H4O2}) reacts with isopentyl alcohol (\ch{C5H12O}) to
+	yield isopentyl acetate (\ch{C7H14O2}), which has the odor of bananas.
+	If the yield from the reaction is \SI{45}{\percent}, how many grams of
+	isopentyl acetate are formed from \SI{3.58}{\gram} acetic acid and
+	\SI{4.75}{\gram} isopentyl alcohol?
+	\begin{reaction*}
+		C2H4O2\lqd{} + C5H12O\lqd{} -> C7H14O2\lqd{} + H2O\lqd{}
+	\end{reaction*}
+
+	\note{\tiny
+		\begin{enumerate}
+			\item Balanced? \boxed{Yes}
+			\item What is the theoretical yield?
+				\begin{enumerate}
+					\item What is the limiting reagent?
+						\begin{align*}
+							\SI{3.58}{\gram}~\ch{C2H4O2}
+							\times
+							\tfrac{\SI{1}{\mole}~\ch{C2H4O2}}{\SI{60.0516}{\gram}}
+							\times
+							\tfrac{\SI{1}{\mole}~\ch{C2H4O2}}{\SI{1}{\mole}~\ch{C7H14O2}}
+							&=
+							\SI{0.05962}{\mole}~\ch{C7H14O2}
+							\\
+							\SI{4.75}{\gram}~\ch{C5H12O}
+							\times
+							\tfrac{\SI{1}{\mole}~\ch{C5H12O}}{\SI{88.1488}{\gram}}
+							\times
+							\tfrac{\SI{1}{\mole}~\ch{C5H12O}}{\SI{1}{\mole}~\ch{C7H14O2}}
+							&=
+							\boxed{\SI{0.05389}{\mole}~\ch{C7H14O2}}
+						\end{align*}
+					\item How much \ch{C7H14O2} should be
+						produced?
+						\begin{equation*}
+							\SI{0.05389}{\mole}~\ch{C7H14O2}
+							\times
+							\tfrac{\SI{130.1856}{\gram}}{\SI{1}{\mole}~\ch{C7H14O2}}
+							=
+							\boxed{\SI{7.0152}{\gram}~\ch{C7H14O2}}
+						\end{equation*}
+				\end{enumerate}
+			\item What is the actual yield?
+				\begin{align*}
+					\text{\% Yield} &= \tfrac{\text{actual
+					yield}}{\text{theoretical yield}} \times
+					100\% \\
+					\SI{45}{\percent} &=
+					\tfrac{\text{actual yield}}{\SI{7.0152}{\gram}}
+					\times 100\% \\
+					\text{actual yield} &=
+					\SI{3.1568}{\gram} 
+					= \boxed{\SI{3.2}{\gram}~\ch{C7H14O2}}
+				\end{align*}
+		\end{enumerate}}
+\end{frame}
+
+\begin{onyourown}[20em]
+	The reaction of \SI{91.3}{\gram}~\ch{C3H6} with excess \ch{O2} produces
+	a \SI{81.3}{\percent} yield. How many grams of \ch{CO2} are produced?
+	\begin{reaction*}
+		C3H6\gas{} + O2\gas{} -> CO2\gas{} + H2O\lqd{}
+	\end{reaction*}
+\end{onyourown}
+
+%C = 12
+%H = 1
+%O = 16
+%
+%12 * 3 = 36
+%1 * 6 = 6
+%
+%
+%36 + 6 = 42 grams/mole
+%
+%12 * 1 = 12
+%16 * 2 = 32
+%
+%12 + 32 = 44 
+%
+%
+%42 * 2 = 84      44 * 6 = 264
+%
+%264/84 = 3.14
+%
+%3.14 * 91.3 = 286
+%
+%81.3 = (actual yield/ 286) * 100
+%
+%81.3 = (actual yield/ 286) * 100
+%
+%100
+%
+%286 * .831 = actual yield
+%
+%actual yield = 232 grams}
+
+\begin{frame}{Types of Reactions}
+	\begin{itemize}
+		\item Combustion reactions
+			\begin{reaction*}
+				CH4\gas{} + 2 O2\gas{} -> CO2\gas{} + 2
+				H2O\gas{}
+			\end{reaction*}
+			
+		\item Alkali metal reactions
+			\begin{reaction*}
+				2 Na\sld{} + 2 H2O\lqd{} -> 2
+				Na^{+}\aq{} + 2 OH^{-}\aq{} + H2\gas{}
+			\end{reaction*}
+
+		\item Halogen reactions
+			\begin{reaction*}
+				2 Fe\sld{} + 3 Cl2\gas{} -> 2
+				FeCl3\sld{}
+			\end{reaction*}
+	\end{itemize}
+\end{frame}
+
+\end{document}

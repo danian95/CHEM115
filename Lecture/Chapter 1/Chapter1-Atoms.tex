@@ -1,0 +1,979 @@
+% !TEX program = xelatex
+%\documentclass[notes=onlyslideswithnotes,notes=hide]{beamer}
+\documentclass[notes=only]{beamer}
+%\documentclass[notes=show]{beamer}
+%\documentclass[notes=hide]{beamer}
+%\documentclass[10pt,letterpaper]{article}
+%\usepackage{beamerarticle}
+
+\usepackage{genchem}
+\usepackage{lecture}
+\usepackage{ccicons}
+
+\title{Atoms}
+\subtitle{Chapter 1}
+\institute[CHEM115 Bloomsburg University]{CHEM115 --- Chemistry for the Sciences I \\ Bloomsburg University}
+\author{D.A. McCurry}
+\date{Fall 2020}
+
+\begin{document}
+
+\maketitle
+\mode<article>{\thispagestyle{fancy}}
+
+\mode<presentation>{%
+	{%
+		\usebackgroundtemplate{\includegraphics[width=\paperwidth]{California-fire.jpg}}
+		\setbeamercolor{frametitle}{bg=black}
+		\setbeamercolor{normal text}{fg=white}
+		\usebeamercolor*{normal text}
+		\setbeamercolor{structure}{fg=white!80!black}
+		\begin{frame}[t,plain]{California is Burning}
+			What does this mean globally?
+			\begin{itemize}[<+(1)->]
+				\item Massive fires release significant amounts of
+					\ch{CO2} into the atmosphere.
+				\item The \emph{structure} of the \ch{CO2} molecule causes some infrared (IR) radiation
+					to be absorbed by the atmosphere.
+					\begin{center}
+						\includegraphics[width=0.55\linewidth]{co2-ir.png}
+					\end{center}
+			\end{itemize}
+
+			\begin{footnotesize} Ringo H.W. Chiu/AP \end{footnotesize}
+		\end{frame}
+	}
+}
+
+\frame{\section{Substances and Compounds}
+	\begin{learningobjectives}
+		\item Know the definition of matter.
+		\item Qualitatively understand how states of material relate to atomic structure.
+		\item Classify materials based on their composition.
+		\end{learningobjectives}
+	}
+
+\begin{frame}{A Particulate View of the World}
+
+	\begin{block}{What is Chemistry?}
+		Chemistry is the science that seeks to understand the properties
+		of matter by studying the \alert{structure} of the particles that
+		compose it.
+	\end{block}
+
+	\begin{columns}
+		\column{0.45\linewidth}
+		\begin{itemize}[<+(1)->]
+		\item What is matter?
+			\mode<presentation>{
+				\begin{itemize}[<+(1)-|article:0>]
+				\item Anything that occupies space
+					and has mass.
+			\end{itemize}}
+		\item What particles compose matter?
+			\mode<presentation>{
+				\begin{itemize}[<+(1)-|article:0>]
+				\item Atoms
+			\end{itemize}}
+		\item What determines the structure?
+	\end{itemize}
+		\column{0.35\linewidth}
+		\visible<5->{
+		\begin{center}
+		\includegraphics[scale=0.25]{watermol.jpeg}
+		\end{center}}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Properties Follow Structure}
+	\begin{center}
+		\includegraphics[scale=0.35]{carbonstructure.jpeg}
+	\end{center}
+
+	Both graphite and diamond are composed of only carbon, but their
+	\alert{structures} differ!
+\end{frame}
+
+\begin{frame}[t]{Classifying Matter: States}
+	\begin{block}{States of Matter}
+		The \alert{state} is determined by the \alert{relative positions}
+		of the particles and \alert{how strongly they interact} with one
+		another.
+	\end{block}
+
+	\only<1>{\begin{center}
+		\includegraphics[scale=0.35,trim={0 90pt 0 0},clip]{matterstates.jpeg}
+\end{center}}
+
+\only<2>{%
+	\begin{center}
+		\includegraphics[scale=0.45]{compress.jpeg}
+	\end{center}
+
+	We can squeeze gas particles together and \alert{compress} them, but we
+	cannot do the same with a solid.
+}
+\end{frame}
+
+\clearpage
+
+\begin{frame}{Classifying Matter: Composition}
+	\only<1>{
+	\begin{center}
+		\includegraphics[scale=0.45]{composition.jpeg}
+	\end{center}}
+
+	\pause
+
+	\alert{Pure Substances:} There is only one type of component, invariant
+	between samples.
+	\begin{itemize}[<+(1)->]
+		\item \alert{Elements} cannot be chemically broken down further.
+		\item \alert{Compounds} are composed of two or more elements
+			\alert{in fixed proportions}.
+	\end{itemize}
+
+	\pause
+
+	\alert{Mixtures:} Two or more components with varying composition between
+	samples.
+	\begin{itemize}[<+(1)->]
+		\item \alert{Heterogeneous} mixtures have varying composition
+			from one region to another -- the particles do not mix
+			uniformly.
+		\item \alert{Homogeneous} mixtures have the same composition
+			throughout -- the particles do mix uniformly.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Classifying Composition Examples}
+	Identify whether each substance is a \alert{pure substance} (element or
+	compound) or a \alert{mixture} (heterogeneous or homogeneous):
+	
+	\begin{center}
+		\begin{minipage}[t]{0.3\linewidth}
+			\centering
+			\textbf{Neon} 
+
+			\medskip
+
+			\includegraphics[width=0.8\linewidth,height=5em,keepaspectratio]{NeTube.jpg}
+
+			\medskip
+			
+			\tiny{\ccbysa\ Pslawinski}
+		\end{minipage}
+		\qquad
+		\begin{minipage}[t]{0.3\linewidth}
+			\centering
+			\textbf{Gasoline}
+
+			\medskip
+
+			\includegraphics[width=0.8\linewidth,height=5em,keepaspectratio]{GasStationHiroshima.jpg}
+		\end{minipage}
+
+		\bigskip
+
+		\begin{minipage}[t]{0.3\linewidth}
+			\centering
+			\textbf{Oxygen}
+
+			\medskip
+
+			\includegraphics[width=0.8\linewidth,height=5em,keepaspectratio]{astronaut.jpg}
+		\end{minipage}
+		\qquad
+		\begin{minipage}[t]{0.3\linewidth}
+			\centering
+			\textbf{Cereal}
+
+			\medskip
+
+			\includegraphics[width=0.8\linewidth,height=5em,keepaspectratio]{cereal.jpg}
+		\end{minipage}
+	\end{center}
+	
+\end{frame}
+
+\begin{onyourown}%{0em}
+	Identify whether each substance is a \alert{pure substance} (element or
+	compound) or a \alert{mixture} (heterogeneous or homogeneous):
+	
+	\renewcommand\arraystretch{2}
+	\begin{tabularx}{\linewidth} {l@{\qquad}X}
+		dish soap & \\ \cline{2-2}
+		helium & \\ \cline{2-2}
+		coffee & \\ \cline{2-2}
+	\end{tabularx}
+\end{onyourown}
+
+\frame{\section{Atoms: The Building Blocks of Matter}
+	\begin{learningobjectives}
+		\item Explain how the atomic theory of matter guides chemical reactions.
+		\item Understand the charge distribution in an atom.
+		\item Draw and label an atom.
+		\end{learningobjectives}
+	}
+
+\begin{frame}{Early Atomic Theory}
+	What is the smallest unit that we can actually break down?
+
+	\medskip
+
+	\begin{columns}
+		\column{0.6\linewidth}
+		\begin{itemize}[<+(1)->]
+			\item All matter is composed of four elements.
+			\item Later aether was added.
+			\item $\sim$450 \textsc{B.C.E.}, Democritus proposed that Matter is composed of small,
+				indivisible parts.  Many different types of atoms (``atomos'') exist.
+		\end{itemize}
+
+		\onslide<+(1)->
+		\begin{center}
+			\bfseries\usebeamercolor[fg]{alerted text} How do these atoms create compounds?
+		\end{center}
+		\column{0.4\linewidth}
+		\onslide<2->
+		\includegraphics<presentation>[width=\linewidth]{4elements.jpg}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{The Law of Conservation of Mass}
+	Early 1700s Lavoisier:
+	\begin{quote}
+		Mass is neither created nor destroyed in chemical reactions.
+	\end{quote}
+
+	\bigskip
+
+	\begin{overlayarea}{\linewidth}{10em}
+		\only<1>{\includegraphics[width=\linewidth]{conservemass-mcmurry.jpg}}
+	
+		\only<2->{
+		\begin{align*}
+			\overbrace{\ch{Hg(NO3)2\aq{} + 2
+			KI\aq{}}}^{\mathclap{\SI{3.25}{\gram} + \SI{3.32}{\gram} =
+			\SI{6.57}{\gram}}} &\ch{->} \underbrace{\ch{HgI2\sld{} + 2
+			KNO3\aq}}_{\mathclap{\SI{4.55}{\gram} + \SI{2.02}{\gram} =
+			\SI{6.57}{\gram}}} \\[1em]
+			\text{Reactants} &\ch{->} \text{Products} \\[1em]
+			m_\text{Reactants} &= m_\text{Products}
+		\end{align*}}
+	\end{overlayarea}
+\end{frame}
+
+\begin{frame}{The Law of Definite Proportions}
+	1799, Proust:
+	\begin{quote}
+		All samples of a given compound have the same proportions of
+		constituent elements (mass ratio).
+	\end{quote}
+
+	\begin{center}
+		\includegraphics[scale=0.5]{definiteproportions.jpg}
+	\end{center}
+\end{frame}
+
+\begin{frame}{The Law of Multiple Proportions}
+	1803, John Dalton:
+	\begin{quote}
+		When two elements (A and B) form two different compounds, the
+		mass of B that reacts with A can be expressed as a whole number
+		ratio.
+	\end{quote}
+
+	\begin{center}
+		\includegraphics[scale=0.3]{multipleproportions.jpeg}
+	\end{center}
+
+	\begin{equation*}
+		\frac{2.67}{1.33} = 2 \qquad
+		\text{\parbox{0.6\linewidth}{Carbon dioxide has $2 \times$
+		more \ch{O} atoms than carbon monoxide.}}
+	\end{equation*}
+\end{frame}
+
+\begin{frame}{John Dalton and the Atomic Theory of Matter}
+	\begin{enumerate}[<+->]
+		\item Each element is composed of tiny, indestructible particles
+			called atoms.
+		\item All atoms of a given element have the same mass and other
+			properties that distinguish them from the atoms of other
+			elements.
+		\item Atoms combine in simple, whole-number ratios to form
+			compounds.
+		\item Atoms of one element cannot change into atoms of another
+			element. In a chemical reaction, the atoms only change
+			the way that they are \alert{bound together} with other
+			atoms.
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}{What is an atom?}
+	\centering
+
+	\includegraphics[scale=0.8]{stylized-li-atom.pdf}
+
+	\bigskip
+
+	\tiny\ccbysa\ Indolences
+\end{frame}
+
+\begin{frame}{The Discovery of the Electron}
+	J.J. Thompson (1856 -- 1940) proposes that cathode rays must consist of
+	tiny, negatively charged particles, which we now call \alert{electrons}.
+
+	\begin{center}
+		\includegraphics[width=\linewidth]{cathode-tube-mcmurry.jpg}
+	\end{center}
+\end{frame}
+
+\begin{frame}{What charge are electrons?}{Millikan's oil drop experiment}
+	\begin{center}
+		\includegraphics[width=\linewidth]{millikan-mcmurry.jpg}
+	\end{center}
+\end{frame}
+
+\begin{frame}{An Electron-Centric Atomic Structure}
+	Electrons were thought to exist within a sphere of
+	positive charge.
+
+	\begin{tabularx}{\linewidth} {X@{\qquad}X}
+		\includegraphics[width=\linewidth]{superb-english-plum-pudding.jpg}
+
+		\tiny\url{https://www.epicurious.com/}
+		& \includegraphics[width=\linewidth]{plumpudding.jpeg} \\
+	\end{tabularx}
+\end{frame}
+
+\mode<article>{\clearpage}
+
+\begin{frame}{The Discovery of the Nucleus}
+	{Rutherford's Gold Foil Experiment}
+
+	\begin{center}
+		\includegraphics[width=\linewidth]{rutherford-mcmurry.jpg}
+	\end{center}
+\end{frame}
+
+\begin{frame}{The Nuclear Theory of the Atom}
+	\begin{enumerate}
+		\item Most of the atom's mass and all of its positive charge
+			resides in the nucleus.
+		\item Most of the atom's volume is empty space, which tiny
+			negatively charged electrons dispersed.
+		\item In a neutral atom, there are a many negatively charged
+			electrons as there are positively charged nuclear
+			particles (protons).
+	\end{enumerate}
+
+	\begin{center}
+		\includegraphics[scale=0.3]{predictedpudding.jpeg}
+	\end{center}
+\end{frame}
+
+\mode<presentation|handout:0>{{%
+	\usebackgroundtemplate{\includegraphics[width=\paperwidth]{baseball-mcmurry.jpg}}
+	\begin{frame}[plain]
+	\end{frame}}}
+
+
+\begin{frame}{So\ldots\ What is an atom?}
+	\centering
+
+	\includegraphics[width=\linewidth]{atom-mcmurry.jpg}
+\end{frame}
+
+\begin{frame}{Basic Atomic Structure}
+	\begin{itemize}
+		\item \alert{Nucleus}
+			\begin{itemize}
+				\item Contains positive \alert{protons}
+					(\ch{p^{+}} or \ch{^1_1p}).
+				\item Contains neutral \alert{neutrons} (\ch{n}
+					or \ch{^1_0n}).
+				\item Extremely small compared to the size of
+					the atom.
+			\end{itemize}
+		\item \alert{Electrons} (\ch{e^{-}} or \ch{^0_{-1}e}) orbit the
+			nucleus.
+			\begin{itemize}
+				\item Define the size of the atom.
+				\item Have energy -- constantly moving.
+				\item Remain in atom because of electrostatic
+					attraction to the positive nucleus.
+			\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Subatomic Particles}
+	\begin{center}
+		\small
+		\begin{tabular} {@{}l S[table-format=1.5e-2]
+			S[table-format=1.5]
+			S[table-format=2.5e-2]}
+			\toprule & \textbf{Mass (\si{\kilo\gram})} &
+			\textbf{Mass (amu)\textsuperscript{*}} & 
+			\textbf{Charge (\si{\coulomb})} \\ \midrule
+			Proton   & 1.67262e-27 & 1.00727 & +1.60218e-19 \\
+			Neutron  & 1.67493e-27 & 1.00866 &  0           \\
+			Electron & 0.00091e-27 & 0.00055 & -1.60218e-19 \\
+			\bottomrule
+			\multicolumn{4}{p{4in}}{\footnotesize *Atomic Mass Units (amu) -- a mass exactly equal to
+			$\sfrac{1}{12}$ the mass of one carbon-12 atom.}
+		\end{tabular}
+	\end{center}
+
+	\begin{itemize}
+		\item \alert{Protons}
+			\begin{itemize}
+				\item The number of protons defines the element
+					(\alert{Atomic Number}).
+			\end{itemize}
+		\item \alert{Neutrons}
+			\begin{itemize}
+				\item Usually close to or greater than the
+					number of protons.
+			\end{itemize}
+		\item \alert{Electrons}
+			\begin{itemize}
+				\item Same number of protons ($\# \ch{p^{+}} =
+					\# \ch{e^{-}}$)
+			\end{itemize}
+	\end{itemize}
+\end{frame}
+
+% Ended class here on 2020-08-24
+
+\frame{\section{Describing Atoms}
+	\begin{learningobjectives}
+		\item Read the periodic table to determine atomic structure.
+		\item Use atomic notation to describe a specific atom.
+		\item Calculate the mass and charge of atoms based on their atomic structure.
+	\end{learningobjectives}
+}
+
+\begin{frame}{The Number of Protons Defines the Element}
+	\centering
+	\includegraphics[scale=0.45,trim={0 0 0 30pt},clip]{numprotons.jpeg}
+\end{frame}
+
+\mode<presentation>{
+	{
+	\usebackgroundtemplate{\includegraphics[width=\paperwidth]{ACS-periodic-table-2020.pdf}}
+	\begin{frame}[plain]
+		\null
+\end{frame}}}
+
+\begin{frame}{Atomic Notation}
+	\begin{align*}
+		\text{\alert{Atomic Number} ($Z$)} &= \text{\# of protons in
+		the nucleus} \\
+		\text{\alert{Mass Number} ($A$)} &= \text{\# of protons} +
+		\text{\# of neutrons} \\
+		&= Z + \text{\# of neutrons} \\
+	\end{align*}
+	\begin{center}
+		\includegraphics[scale=0.4]{atomic-notation.jpeg}
+	\end{center}
+
+	\begin{block}{Isotopes}
+		Atoms of the same element (X) with different numbers of neutrons in their nuclei.
+	\end{block}
+\end{frame}
+
+\begin{frame}{Complete the table\ldots}
+	\begin{tabularx}{\linewidth} {>{\qquad}r@{}l*{2}{>{\centering\arraybackslash}X}}
+		\toprule
+		\multicolumn{2}{>{\centering\arraybackslash}X}{\bfseries Chemical Symbol} & \bfseries \# Protons & \bfseries \# Neutrons \\
+		\midrule
+		\ch{^1_1}      & H & 1 & 0 \\[1em] 
+		\ch{^2_1}      &&&         \\[1em] 
+		\ch{^3_1}      &&&         \\[1em] 
+		\ch{^{15}_7}   &&&         \\[1em] 
+		\ch{^{238}_92} &&&         \\[1em] 
+		\ch{^{235}_92} &&&         \\      
+		\bottomrule
+	\end{tabularx}
+
+	\note{
+		\begin{tabular} {r@{}l*{2}{c}}
+			\toprule \multicolumn{2}{c}{\bfseries Chemical
+			Symbol} & \# \bfseries Protons & \# \bfseries Neutrons \\ \midrule
+			\ch{^1_1}      & H & 1  & 0   \\[1em] 
+			\ch{^2_1}      & H & 1  & 1   \\[1em]
+			\ch{^3_1}      & H & 1  & 2   \\[1em]
+			\ch{^{15}_7}   & N & 7  & 8   \\[1em]
+			\ch{^{238}_92} & U & 92 & 146 \\[1em]
+			\ch{^{235}_92} & U & 92 & 143 \\
+			\bottomrule
+		\end{tabular}}
+\end{frame}
+
+\begin{onyourown}%{0em}
+	Complete the table\ldots
+	\renewcommand\arraystretch{1.5}
+
+	\begin{tabularx}{\linewidth} {@{\qquad}r@{}l*{2}{>{\centering\arraybackslash}X}}
+		\toprule
+		\multicolumn{2}{>{\centering\arraybackslash}X}{\bfseries Chemical Symbol} & \bfseries \# Protons & \bfseries \# Neutrons \\
+		\midrule
+		\ch{^7_3}        \\ 
+		\ch{^{58}_{25}}  \\
+		\ch{^{201}_{83}} \\
+		\bottomrule
+	\end{tabularx}
+\end{onyourown}
+
+\begin{frame}{Isotopes and Average Mass}
+	Isotopes are generally referred to by their element name followed by the
+	mass:
+
+	\renewcommand\arraystretch{2}
+	\begin{center}
+		\begin{tabular} {@{}r@{}l@{\qquad} *{2}{c@{\qquad}}}
+		\ch{^{238}_{92}} & U  & U-238 & uranium-238 \\
+		\ch{^{21}_{10}}  & Ne & Ne-21 & neon-21 \\
+		\ch{^{208}_{82}} & Pb & Pb-208 & lead-208
+	\end{tabular}
+	\end{center}
+
+	\pause
+
+	\begin{center}
+		\rmfamily
+		\begin{tikzpicture}
+			\node[font=\bfseries\LARGE,](Cl) at (0,0) {Cl};
+			\node[above = 0.2em of Cl](17) {17};
+			\node[below = 0.2em of Cl](35) {35.45};
+			\node[font=\small,below = 0.2em of 35](chlorine) {chlorine};
+			\draw[thick] (-1.2,-1.65) rectangle (1.2,1);
+			\draw[<-,ultra thick,primary] (35) to ++(-2,0) node[left,font=\sffamily,align=right,text
+				width=1in,black] {But what is this mass?};
+		\end{tikzpicture}
+	\end{center}
+\end{frame}
+
+\begin{frame}{Calculating the Average Atomic Mass}
+	\begin{block}{Atomic Mass}
+		Mass of an ``average'' element in atomic mass units (amu) --
+		listed on the periodic table -- weighted according to the
+		natural abundance of each isotope.
+	\end{block}
+
+	\begin{overlayarea}{\linewidth}{12em}
+
+	\only<1>{
+	\begin{center}
+	\begin{tikzpicture}
+		\node[fill=orange,circle,draw=orange!60!black](B10) at (0,0) {\ch{^{10}B}};
+		\node[right,align=left,font=\footnotesize,xshift=5pt] at (B10.east) {1 \alert{atom} of boron-10
+		has \\ a \alert{mass} of \num{10.0129}~\alert{amu}};
+		\node[fill=green,circle,draw=green!60!black](B11) at (6,0) {\ch{^{11}B}};
+		\node[right,align=left,font=\footnotesize,xshift=5pt] at
+		(B11.east) {1 \alert{atom} of boron-11
+		has \\ a \alert{mass} of \num{11.0093}~\alert{amu}};
+		\foreach \x in {0,...,49}
+			\draw[fill=orange,draw=orange!60!black,line width=0.3pt] (\x/20,-1.5) circle (0.4cm);
+		\foreach \x in {50,...,200}
+			\draw[fill=green,draw=green!60!black,line width=0.3pt] (\x/20,-1.5) circle (0.4cm);
+	\end{tikzpicture}
+	\end{center}
+
+	In every 1000 atoms of boron, 199 of them are boron-10 atoms and the
+	other 801 are boron-11 atoms. What is the atomic mass of the average
+	boron atom?}
+
+	\only<2>{
+	\begin{align*}
+		\parbox{\widthof{Atomic}}{\centering Atomic mass} &= \sum_n \bigg[ (\text{fraction of isotope\ } n) \times (\text{mass of isotope\ } n) \bigg] \\
+				   &= (\text{fraction of isotope 1}) \times (\text{mass of isotope 1}) \\
+				   &\qquad {} + (\text{fraction of isotope 2}) \times (\text{mass of isotope 2}) \\
+				   &\qquad {} + (\text{fraction of isotope 3}) \times (\text{mass of isotope 3}) \\
+				   &\qquad {} + \ldots
+	\end{align*}}
+
+	\end{overlayarea}
+\end{frame}
+
+\begin{frame}[t]{What is the atomic mass of the average B atom?}
+	\centering
+	\begin{tabular} {l S[table-format=2.4]
+		S[table-format=2.1]}
+		\toprule
+		\bfseries Isotope & \textbf{Mass (amu)} & \textbf{Natural
+		Abundance (\%)} \\ \midrule
+		boron-10 & 10.0129 & 19.9 \\
+		boron-11 & 11.0093 & 80.1 \\ \bottomrule
+	\end{tabular}
+
+	\mode<article>{\vfill}
+
+	\note{
+		\begin{align*}
+			\parbox{\widthof{Atomic}}{\centering Atomic\\mass} &= \sum_n \bigg[ (\text{fraction of isotope\ } n) \times (\text{mass of isotope\ } n) \bigg] \\
+			&= (0.199 \times 10.0129) + (0.801 \times 11.0093) \\
+			&= 10.8110164 \\
+			&= \fbox{\SI{10.8}{amu}}
+		\end{align*}}
+\end{frame}
+
+\begin{frame}[t]{What is the atomic mass of the average Mg atom?}
+	\centering
+	\begin{tabular} {l S[table-format=2.7]
+		S[table-format=2.2]}
+		\toprule
+		\bfseries Isotope & \textbf{Mass (amu)} & \textbf{Natural
+		Abundance (\%)} \\ \midrule
+		magnesium-24 & 23.9850423 & 78.99 \\
+		magnesium-25 & 24.9858374 & 10.00 \\ 
+		magnesium-26 & 25.9825937 & 11.01 \\\bottomrule
+	\end{tabular}
+
+	\mode<article>{\vfill}
+
+	\note{
+		\begin{align*}
+			\parbox{\widthof{Atomic}}{\centering Atomic\\mass} &= \sum_n \bigg[ (\text{fraction of isotope\ } n) \times (\text{mass of isotope\ } n) \bigg] \\
+			&= (0.7899 \times 23.9850423) + (0.1000 \times
+			24.9858374) \\ &\qquad {} + (0.1101 \times 25.9825937) \\
+			&= 24.30505222 \\
+			&= \fbox{\SI{24.31}{amu}}
+		\end{align*}}
+\end{frame}
+
+\mode<article>{\clearpage}
+
+\begin{onyourown}%{10em}
+	What is the atomic mass of the average O atom?
+
+	\begin{center}
+		\begin{tabular} {l S[table-format=2.4] S[table-format=2.2]}
+			\toprule
+			\bfseries Isotope & {\bfseries Mass (amu)} & {\bfseries Natural Abundance (\%)} \\
+			\midrule
+			oxygen-16 & 15.9949 & 99.76 \\
+			oxygen-17 & 16.9991 & 0.04 \\
+			oxygen-18 & 17.9992 & 0.20 \\
+			\bottomrule
+		\end{tabular}
+	\end{center}
+\end{onyourown}
+
+\begin{frame}{What about the electrons?}{Ionization}
+	\only<1>{In order to keep atoms and molecules \alert{neutral}, the number of
+	electrons must be \alert{equal to} to the number of protons.
+
+	\bigskip
+
+	\begin{center}
+	\begin{tabular} {l *{4}{c}}
+		\toprule
+		\bfseries Atom & \bfseries Protons & \bfseries Neutrons &
+		\bfseries Electrons & \bfseries Charge     \\ \midrule
+		H    & 1       & 0        & 1         & 0          \\
+		Li   & 3       & 4        & 3         & 0          \\
+		Be   & 4       & 5        & 4         & 0          \\
+		F    & 9       & 10       & 9         & 0          \\
+		Cl   & 17      & 18       & 17        & 0          \\
+		O    & 8       & 8        & 8         & 0          \\
+		\bottomrule
+	\end{tabular}
+	\end{center}}
+
+	\only<2->{Atoms (or molecules) can \alert{gain} or \alert{lose} electrons
+	in a process known as \alert{ionization} to become \alert{ions}.
+
+	\bigskip
+
+	\begin{center}
+		\begin{tabular} {l *{3}{c} S[table-format=-1]}
+		\toprule
+		\bfseries Ion & \bfseries Protons & \bfseries Neutrons &
+		\bfseries Electrons & \bfseries Charge     \\ \midrule
+		\ch{H+}      & 1       & 0        & 0         & +1         \\
+		\ch{Li+}     & 3       & 4        & 2         & +1         \\
+		\ch{Be^{2+}} & 4       & 5        & 2         & +2         \\
+		\ch{F-}      & 9       & 10       & 10        & -1         \\
+		\ch{Cl-}     & 17      & 18       & 18        & -1         \\
+		\ch{O^{2-}}  & 8       & 8        & 10        & -2         \\
+		\bottomrule
+	\end{tabular}
+	\end{center}}
+
+	\begin{center}
+	\visible<3->{
+		\begin{minipage}{0.3\linewidth}
+		\begin{tabular} {c @{ \textrightarrow\ } l}
+			$+$ & cation \\
+			$-$ & anion
+		\end{tabular}
+		\end{minipage}
+		}
+		\qquad
+	\visible<4->{
+		\begin{minipage}{0.3\linewidth}
+			\centering\bfseries
+			\usebeamercolor[fg]{alerted text}
+			Does the mass change?
+		\end{minipage}}
+	\end{center}
+\end{frame}
+
+\begin{frame}{Interpreting Atomic Symbols}
+	Complete the table\ldots 
+
+	\bigskip
+	
+	\noindent
+	{\mode<presentation>{\footnotesize}
+		\renewcommand\arraystretch{1.5}
+		\begin{tabularx}{\linewidth} {@{}*{7}{>{\centering\arraybackslash}X}}
+		\toprule
+		\bfseries Atom /Ion & \bfseries Atomic \# & \bfseries Mass \# & \bfseries Charge & \bfseries \# Protons & \bfseries \# Neutrons & \bfseries \# Electrons \\ \midrule
+		\ch{^{23}_{11}Na+} \\
+		\ch{^{35}_{16}S^{2-}} \\
+		\ch{^{197}_{79}Au^{3+}} \\
+		\ch{^{88}_{38}Sr} \\ \bottomrule
+	\end{tabularx}}
+\end{frame}
+
+\begin{onyourown}%{0em}
+	Complete the table\ldots
+
+	\renewcommand\arraystretch{1.5}
+	\begin{tabularx}{\linewidth} {@{}*{7}{>{\centering\arraybackslash}X}}
+		\toprule
+		\bfseries Atom /Ion & \bfseries Atomic \# & \bfseries Mass \# & \bfseries Charge & \bfseries \# Protons & \bfseries \# Neutrons & \bfseries \# Electrons \\ \midrule
+		\ch{^{87}_{37}Rb+} \\
+		\ch{^{71}_{32}Ge^{2-}} \\
+		\ch{^{198}_{77}Ir^{4+}} \\
+		\ch{^{119}_{50}Sn} \\ \bottomrule
+	\end{tabularx}
+\end{onyourown}
+
+\begin{frame}{Mass Spectrometry}
+	\begin{center}
+		\includegraphics[scale=0.45]{massspec.jpeg}
+	\end{center}
+
+	\begin{minipage}{0.3\linewidth}
+		\includegraphics[scale=0.15]{massspectrum.jpeg}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.65\linewidth}
+		\begin{itemize}
+			\item \alert{Ions} are affected by electric and magnetic
+				fields.
+			\item \alert{Mass} affects how easy it is to direct the
+				ions.
+		\end{itemize}
+	\end{minipage}
+\end{frame}
+
+\mode<article>{\clearpage}
+
+\begin{frame}{Graham Cooks: Purdue University}
+	\centering
+	\includegraphics[scale=0.35]{mini11-1.png}
+\end{frame}
+
+\frame{\section{The Mole Concept}
+	\begin{learningobjectives}
+	\item Know the relation between moles and absolute amount.
+	\item Use appropriate conversions to switch between moles and mass.
+	\item Calculate the mass required for a specific number of moles and vice versa.
+	\end{learningobjectives}
+}
+
+\begin{frame}{The Mole Concept}
+	\only<1-2>{
+	Often, we discuss things in terms of a \alert{collection}.
+	\begin{align*}
+		\text{1 dozen donuts} &= \text{12 donuts} \\
+		\text{1 ream of paper} &= \text{500 sheets of
+		paper} \\
+		\text{1 case} &= \text{24 cans} \\
+		\visible<2->{\intertext{This is also true in chemistry!}
+		\SI{1}{\mole} &=
+		\underbrace{\SI{6.02214e23}{particles}}_{\mathclap{\text{\alert{Avogadro's
+		number}}}}}
+	\end{align*}}
+
+	\only<3->{
+	\begin{align*}
+		\intertext{This relationship arises from the number of atoms in
+		exactly \SI{12}{\gram} of pure carbon-12:}
+		\SI{12}{\gram}~\text{C-12} = \SI{1}{\mole}~\text{C-12 atoms} =
+		\num{6.022e23}~\text{C-12 atoms} \\
+		\intertext{But it extends to \alert{anything}\ldots}
+	\end{align*}
+
+	\begin{center}
+	\begin{tabular} {>{1 mole of }l @{ = } l}
+		C & \num{6.022e23} C atoms \\
+		Na & \num{6.022e23} Na atoms \\
+		Au & \num{6.022e23} Au atoms \\
+		donut & \num{6.022e23} donuts \\
+	\end{tabular}
+	\end{center}}
+\end{frame}
+
+\begin{frame}{Moles as a Conversion Factor}
+	\begin{itemize}
+		\item Equality:
+			\begin{equation*}
+				\SI{1}{\mole} = \SI{6.022e23}{particles}
+			\end{equation*}
+		\item Conversion Factors:
+			\begin{align*}
+				\frac{\SI{6.022e23}{particles}}{\SI{1}{\mole}}
+				\qquad\text{and}\qquad
+				\frac{\SI{1}{\mole}}{\SI{6.022e23}{particles}}
+			\end{align*}
+	\end{itemize}
+
+	\pause
+	\bigskip
+
+	How many \ch{Cu} atoms are in \SI{0.50}{\mole} of \ch{Cu}?
+
+	\mode<article>{\vspace{10em}}
+
+	\note<+>{
+		\begin{equation*}
+			\SI{0.50}{\mole}~\ch{Cu} \times
+			\frac{\SI{6.022e23}{atoms}}{\SI{1}{\mole}~\ch{Cu}} =
+			\SI{3.0e23}{atoms}
+		\end{equation*}}
+
+	\bigskip
+
+	\begin{block}{Warning}
+		This is the only type of question where Avogadro's number is
+		important! Do \textbf{not} automatically apply Avogadro's number
+		whenever you see moles!
+	\end{block}
+\end{frame}
+
+\begin{onyourown}%{10em}
+	How many \ch{Hg} atoms are in \SI{1.20}{\mole} of \ch{Hg}?
+\end{onyourown}
+
+\begin{frame}{The Utility of Moles}{AKA Why bother?}
+	When compounds react, they do so \alert{stoichiometrically}
+		-- there is a specific ratio in which they will combine.
+		\begin{itemize}[<+(1)->]
+			\item Consider the following reaction: %In lab, we looked at
+				%\ch{Ca(NO3)2} and \ch{Na2CO3}:
+				\begin{align*}
+					\ch{Ca(NO3)2\aq{} &+ Na2CO3\aq{} \\ 
+					&->
+					CaCO3\sld{} + 2 NaNO3\aq{}}
+				\end{align*}
+				\alert{\SI{1}{\mole}} \ch{Ca(NO3)2}
+				reacted with \alert{\SI{1}{\mole}}
+				\ch{Na2CO3}
+			\item This \alert{does not} mean that \SI{1}{\gram}
+				\ch{Ca(NO3)2} reacted with \SI{1}{\gram}
+				\ch{Na2CO3}!
+			\item Saying 1:1 is much easier than saying
+				164.09:84.99.
+			\item So how do we convert moles to mass of a compound?
+		\end{itemize}
+\end{frame}
+
+\begin{frame}{Moles to Mass}
+	If \SI{1}{\mole} is defined to be the number of carbon-12 atoms in
+	\SI{12}{\gram} of carbon, can we create a conversion factor?
+
+	\begin{columns}
+		\column{0.45\linewidth}
+		\begin{itemize}[<+(1)->]
+			\item Equality:
+				\begin{equation*}
+					\SI{1}{\mole}~\ch{C}~\text{atoms} = \SI{12}{\gram}
+				\end{equation*}
+			\item Conversion Factor:
+				\begin{equation*}
+					\frac{\SI{12}{\gram}}{\SI{1}{\mole}~\ch{C}}
+				\end{equation*}
+		\end{itemize}
+		\column{0.45\linewidth}
+		\begin{itemize}[<+(1)->]
+			\item Equality:
+				\begin{equation*}
+					\SI{1}{atom}~\ch{C} = \SI{12}{amu}
+				\end{equation*}
+			\item Conversion Factor:
+				\begin{equation*}
+					\frac{\SI{12}{amu}}{\SI{1}{atom}~\ch{C}}
+				\end{equation*}
+		\end{itemize}
+	\end{columns}
+
+	\pause
+
+	\begin{equation*}
+		\boxed{\frac{\si{\gram}}{\si{\mole}} =
+		\frac{\si{amu}}{\si{atom}}}
+	\end{equation*}
+
+	The mass in atomic mass units is equivalent to the \alert{molar mass} of
+	the element.
+\end{frame}
+
+\begin{frame}{Examples: Converting Moles and Mass}
+	Complete the table\ldots
+
+	\bigskip
+
+	\begin{center}
+		\begin{tabular} {l S[table-format=1.3]
+			S[table-format=2.3]}
+			\toprule
+			\bfseries Element & \textbf{\# Moles} & \textbf{Mass (\si{\gram})} \\ \midrule
+			\ch{Rh} & 0.250    &                  \\[1em]
+			\ch{Fr} &          & 23.003           \\[1em]
+			\ch{Cd} & 1.033    &                  \\[1em]
+			\ch{W}  &          & 0.014            \\ \bottomrule
+		\end{tabular}
+	\end{center}
+
+	\note{
+	\begin{center}
+		\begin{tabular} {l S[table-format=1.3e-1]
+			S[table-format=2.3]}
+			\toprule
+			\bfseries Element & \textbf{\# Moles} & \textbf{Mass (\si{\gram})} \\ \midrule
+			\ch{Rh} & 0.250    & 25.7        \\[1em]
+			\ch{Fr} & 0.103    & 23.003      \\[1em]
+			\ch{Cd} & 1.033    & 116.0       \\[1em]
+			\ch{W}  & 7.6e-5   & 0.014       \\ \bottomrule
+		\end{tabular}
+	\end{center}}
+\end{frame}
+
+\begin{onyourown}%{0em}
+	Complete the table\ldots
+
+	\renewcommand\arraystretch{1.5}
+	\begin{center}
+		\begin{tabular} {l@{\qquad} S[table-format=3.5]@{\qquad} S[table-format=4.4]}
+		\toprule
+		\bfseries Element & {\bfseries \# Moles} & {\bfseries Mass (\si{\gram})} \\
+		\midrule
+		\ch{Y}  & 3.01   & \\
+		\ch{Ru} &        & 72.10 \\
+		\ch{Bi} & 0.0020 & \\
+		\ch{Mo} &        & 204.3 \\
+		\bottomrule
+	\end{tabular}
+	\end{center}
+\end{onyourown}
+
+% Finished on 2020-08-28
+
+\end{document}

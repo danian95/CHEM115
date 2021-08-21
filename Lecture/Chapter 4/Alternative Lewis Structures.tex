@@ -1,0 +1,308 @@
+\documentclass[12pt,letterpaper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{chemfig}
+\usetikzlibrary{arrows}
+\usepackage[version=4]{mhchem}
+\usepackage{chemformula}
+\usepackage{elements}
+\usepackage{siunitx}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{cancel}
+\usepackage{xlop}
+\setlength{\parskip}{\baselineskip}
+\setlength{\parindent}{0pt}
+\usepackage{array}
+\usepackage{xcolor}
+
+\pagestyle{empty}
+
+\begin{document}
+\section*{Alternative Method for Drawing Lewis Structures}
+
+Rather than working through the total \# of valence \ce{e-} and ``decorating''
+the skeletal structure with lone pairs as we discussed in class, we can also
+consider another method for drawing Lewis electron-dot structures. You may find
+this method easier but please note that \textbf{this method requires extra
+consideration and care when dealing with charged molecules}.
+
+Let's consider the Lewis electron-dot structure for methane, \ce{CH4}:
+
+\begin{enumerate}
+	\item Draw the separate, component atoms as complete Lewis structures --
+		i.e. surround each component atom with its valence electrons
+
+		\begin{center}
+			\chemfig{\lewis{0.2.4.6.,C}
+				(-[:0,1.5,,,draw=none]\lewis{4.,H})
+				(-[:90,1.5,,,draw=none]\lewis{6.,H})
+				(-[:180,1.5,,,draw=none]\lewis{0.,H})
+				(-[:270,1.5,,,draw=none]\lewis{2.,H})
+			}
+		\end{center}
+
+	\item Create bonds by sharing each electron -- ``connect the dots''
+
+		\begin{center}
+			\schemestart
+			\chemfig{@{C}\lewis{0.2.4.6.,C}
+				(-[@{H1b}:0,1.5,,,draw=none]@{H1}\lewis{4.,H})
+				(-[@{H2b}:90,1.5,,,draw=none]@{H2}\lewis{6.,H})
+				(-[@{H3b}:180,1.5,,,draw=none]@{H3}\lewis{0.,H})
+				(-[@{H4b}:270,1.5,,,draw=none]@{H4}\lewis{2.,H})
+			}
+			\arrow{->}
+			\chemfig{C
+				(-[:0,1.5]H)
+				(-[:90,1.5]H)
+				(-[:180,1.5]H)
+				(-[:270,1.5]H)
+			}
+			\schemestop
+			% H1
+			\chemmove{\draw[blue,thick,-right to,shorten
+			<=3pt,shorten >=1pt](C.east)+(2pt,0)..controls
+			+(270:6mm) and +(270:6mm)..(H1b);}
+			\chemmove{\draw[blue,thick,-right to,shorten
+				<=3pt,shorten >=1pt](H1.west)+(-2pt,0)..controls
+				+(90:6mm) and +(90:6mm)..(H1b);}
+			% H2
+			\chemmove{\draw[blue,thick,-right to,shorten
+			<=3pt,shorten >=1pt](C.north)+(0,2pt)..controls +(0:6mm)
+			and +(0:6mm)..(H2b);}
+			\chemmove{\draw[blue,thick,-right to,shorten
+				<=3pt,shorten
+				>=1pt](H2.south)+(0,-2pt)..controls +(180:6mm)
+				and +(180:6mm)..(H2b);}
+			% H3
+			\chemmove{\draw[blue,thick,-right to,shorten
+			<=3pt,shorten >=1pt](C.west)+(-2pt,0)..controls
+			+(90:6mm) and +(90:6mm)..(H3b);}
+			\chemmove{\draw[blue,thick,-right to,shorten
+				<=3pt,shorten >=1pt](H3.east)+(2pt,0)..controls
+				+(270:6mm) and +(270:6mm)..(H3b);}
+			% H4
+			\chemmove{\draw[blue,thick,-right to,shorten
+			<=3pt,shorten >=1pt](C.south)+(0,-2pt)..controls
+			+(180:6mm) and +(180:6mm)..(H4b);}
+			\chemmove{\draw[blue,thick,-right to,shorten
+				<=3pt,shorten >=1pt](H4.north)+(0,2pt)..controls
+				+(0:6mm) and +(0:6mm)..(H4b);}
+		\end{center}
+
+		And we're done!
+\end{enumerate}
+
+But what about molecules with double (or triple) bonds? Let's consider
+dichloroethene, \ce{C2H2Cl2}:
+
+\begin{enumerate}
+	\item Draw the separate, component atoms as complete Lewis structures --
+		i.e. surround each component atom with its valence electrons
+
+		\begin{center}
+			\chemfig{\lewis{0.2.4.6.,C}
+				(-[:180,1.5,,,draw=none]\lewis{0.,H})
+				(-[:270,1.5,,,draw=none]\lewis{0:2.4:6:,Cl})
+				-[:0,1.5,,,draw=none]\lewis{0.2.4.6.,C}
+				(-[:0,1.5,,,draw=none]\lewis{4.,H})
+				(-[:270,1.5,,,draw=none]\lewis{0:2.4:6:,Cl})
+			}
+		\end{center}
+
+	\item Create bonds by sharing each electron -- ``connect the dots''
+
+		\begin{center}
+			\schemestart
+			\chemfig{@{C1}\lewis{0.2.4.6.,C}
+				(-[@{H1b}:180,1.5,,,draw=none]@{H1}\lewis{0.,H})
+				(-[@{Cl1b}:270,1.5,,,draw=none]@{Cl1}\lewis{0:2.4:6:,Cl})
+				-[@{Cb}:0,1.5,,,draw=none]@{C2}\lewis{0.2.4.6.,C}
+				(-[@{H2b}:0,1.5,,,draw=none]@{H2}\lewis{4.,H})
+				(-[@{Cl2b}:270,1.5,,,draw=none]@{Cl2}\lewis{0:2.4:6:,Cl})
+			}
+			\arrow{->}
+			\chemfig{\lewis{2.,C}
+				(-[:180,1.5]H)
+				(-[:270,1.5]\lewis{0:4:6:,Cl})
+				-[:0,1.5]\lewis{2.,C}
+				(-[:0,1.5]H)
+				(-[:270,1.5]\lewis{0:4:6:,Cl})
+			}
+			\schemestop
+			% C
+			\chemmove{\draw[blue,thick,-right to,shorten
+			<=3pt,shorten >=1pt](C1.east)+(2pt,0)..controls
+			+(90:6mm) and +(90:6mm)..(Cb);}
+			\chemmove{\draw[blue,thick,-right to,shorten
+			<=3pt,shorten >=1pt](C2.west)+(-2pt,0)..controls
+			+(270:6mm) and +(270:6mm)..(Cb);}
+			% H1
+			\chemmove{\draw[blue,thick,-right to,shorten
+				<=3pt,shorten >=1pt](C1.west)+(-2pt,0)..controls
+				+(270:6mm) and +(270:6mm)..(H1b);}
+			\chemmove{\draw[blue,thick,-right to,shorten
+			<=3pt,shorten >=1pt](H1.east)+(2pt,0)..controls
+			+(90:6mm) and +(90:6mm)..(H1b);}
+			% Cl1
+			\chemmove{\draw[blue,thick,-right to,shorten
+			<=3pt,shorten >=1pt](C1.south)+(0,-2pt)..controls
+			+(0:6mm) and +(0:6mm)..(Cl1b);}
+			\chemmove{\draw[blue,thick,-right to,shorten
+			<=3pt,shorten >=1pt](Cl1.north)+(0,2pt)..controls
+			+(180:6mm) and +(180:6mm)..(Cl1b);}
+			% H2
+			\chemmove{\draw[blue,thick,-right to,shorten
+				<=3pt,shorten >=1pt](C2.east)+(2pt,0)..controls
+				+(90:6mm) and +(90:6mm)..(H2b);}
+			\chemmove{\draw[blue,thick,-right to,shorten
+			<=3pt,shorten >=1pt](H2.west)+(-2pt,0)..controls
+			+(270:6mm) and +(270:6mm)..(H2b);}
+			% Cl2
+			\chemmove{\draw[blue,thick,-right to,shorten
+			<=3pt,shorten >=1pt](C2.south)+(0,-2pt)..controls
+			+(0:6mm) and +(0:6mm)..(Cl2b);}
+			\chemmove{\draw[blue,thick,-right to,shorten
+			<=3pt,shorten >=1pt](Cl2.north)+(0,2pt)..controls
+			+(180:6mm) and +(180:6mm)..(Cl2b);}
+		\end{center}
+
+	\item In this case, we are left with 2 unpaired electrons above each C,
+		which we can use to create another bond -- the double bond
+
+		\begin{center}
+			\schemestart
+			\chemfig{@{C1}\lewis{2.,C}
+				(-[:180,1.5]H)
+				(-[:270,1.5]\lewis{0:4:6:,Cl})
+				(-[:0,0.6,,,draw=none]@{C1b})
+				-[:0,1.5]@{C2}\lewis{2.,C}
+				(-[180,0.6,,,draw=none]@{C2b})
+				(-[:0,1.5]H)
+				(-[:270,1.5]\lewis{0:4:6:,Cl})
+			}
+			\arrow{->}
+			\chemfig{C
+				(-[:180,1.5]H)
+				(-[:270,1.5]\lewis{0:4:6:,Cl})
+				=[:0,1.5]C
+				(-[:0,1.5]H)
+				(-[:270,1.5]\lewis{0:4:6:,Cl})
+			}
+			\schemestop
+			% C
+			\chemmove{\draw[blue,thick,-right to,shorten
+			<=1pt,shorten >=3pt](C1.north)+(0,4pt)..controls
+			+(90:6mm) and +(90:8mm)..(C1b);}
+			\chemmove{\draw[blue,thick,-left to,shorten
+			<=1pt,shorten >=3pt](C2.north)+(0,4pt)..controls
+			+(90:6mm) and +(90:8mm)..(C2b);}
+		\end{center}
+\end{enumerate}
+
+The last problem we will take a look at is if we have a charged molecule, such
+as \ce{CN-}:
+
+\begin{enumerate}
+	\item Because we have an overall negative charge, we need to add an
+		additional electron to \textbf{one} (we have a charge of -1) of
+		our atoms -- in this case, we will add it to \ce{N} as \ce{N}
+		(EN=3.04) has a larger electronegativity than \ce{C} (EN=2.55)
+
+		\begin{center}
+			$\chemleft[
+			\chemfig{\lewis{0.2.4.6.,C}
+				-[:0,1.5,,,draw=none]\lewis{0:2:4.6.,N}
+				}
+			\chemright]^-$
+		\end{center}
+
+	\item Create bonds by sharing each electron -- ``connect the dots''
+
+		\begin{center}
+			\schemestart
+			$\chemleft[
+				\chemfig{@{C}\lewis{0.2.4.6.,C}
+				-[@{CN}:0,1.5,,,draw=none]@{N}\lewis{0:2:4.6.,N}
+				}
+			\chemright]^-$
+			\arrow{->}
+			$\chemleft[
+			\chemfig{\lewis{2.4.6.,C}
+				-[:0,1.5]\lewis{0:2:6.,N}
+				}
+			\chemright]^-$
+			\schemestop
+			% CN
+			\chemmove{\draw[blue,thick,-right to,shorten
+			<=3pt,shorten >=1pt](C.east)+(2pt,0)..controls
+			+(90:6mm) and +(90:6mm)..(CN);}
+			\chemmove{\draw[blue,thick,-right to,shorten
+			<=3pt,shorten >=1pt](N.west)+(-2pt,0)..controls
+			+(270:6mm) and +(270:6mm)..(CN);}
+		\end{center}
+
+	\item We still have some unpaired electrons so let's make another bond
+
+		\begin{center}
+			\schemestart
+			$\chemleft[
+				\chemfig{@{C}\lewis{2.4.6.,C}
+				(-[:0,0.6]@{CN1})
+				-[:0,1.5]@{N}\lewis{0:2:6.,N}
+				(-[:180,0.6]@{CN2})
+				}
+			\chemright]^-$
+			\arrow{->}
+			$\chemleft[
+			\chemfig{\lewis{2.4.,C}
+				=[:0,1.5]\lewis{0:2:,N}
+				}
+			\chemright]^-$
+			\schemestop
+			% CN
+			\chemmove{\draw[blue,thick,-left to,shorten
+			<=3pt,shorten >=1pt](C.south)+(0,-2pt)..controls
+			+(270:6mm) and +(270:8mm)..(CN1);}
+			\chemmove{\draw[blue,thick,-right to,shorten
+			<=3pt,shorten >=1pt](N.south)+(0,-2pt)..controls
+			+(270:6mm) and +(270:8mm)..(CN2);}
+		\end{center}
+
+	\item It looks like we won't be able to form any more bonds between
+		unpaired electrons -- let's instead combine the two unpaired
+		electrons on C to a lone pair and push a lone pair from N into a
+		triple bond
+
+		\begin{center}
+			\schemestart
+			$\chemleft[
+				\chemfig{@{C}\lewis{2.4.,C}
+				=[@{CN}:0,1.5]@{N}\lewis{0:2:,N}
+				}
+			\chemright]^-$
+			\arrow{->}
+			$\chemleft[
+			\chemfig{\lewis{4:,C}
+				~[:0,1.5]\lewis{0:,N}
+				}
+			\chemright]^-$
+			\schemestop
+			% CN
+			\chemmove{\draw[blue,thick,-right to,shorten
+			<=2pt,shorten >=3pt](C.north)+(0,4pt)..controls
+			+(90:6mm) and +(110:8mm)..(C.west);}
+			\chemmove{\draw[blue,thick,shorten
+			<=3pt,shorten >=1pt](N.north)+(0,2pt)..controls
+			+(90:6mm) and +(90:8mm)..(CN);}
+		\end{center}
+
+
+		
+\end{enumerate}
+
+
+
+
+\end{document}

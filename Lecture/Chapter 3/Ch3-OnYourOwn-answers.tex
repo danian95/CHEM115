@@ -1,0 +1,127 @@
+% !TEX program = xelatex
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage{genchem}
+\usepackage{enumitem}
+\usepackage[margin=1in]{geometry}
+\usepackage{titling}
+
+\usepackage{orbitalfilling}
+
+\setallmainfonts{TeX Gyre Pagella}
+
+\title{Chapter 3 ``On Your Own'' Solutions}
+
+\setlist[enumerate,1]{itemsep=2em,leftmargin=0pt,label=\textbf{\Alph*.}}
+\setlist[enumerate,2]{label={\arabic*.}}
+
+\begin{document}
+
+\begin{center}
+	\bfseries
+	\Large
+	\thetitle
+\end{center}
+
+\begin{enumerate}
+	\item The completed table:
+
+		\begin{tabularx}{\linewidth} {c c X}
+			\bfseries Element & \bfseries \ch{e^{-}} Config & \bfseries Orbital Diagram \\ \midrule
+			\ch{Na} & $1s^22s^22p^63s^1$ & $1s:$\electronboth\quad $2s:$\electronboth\quad
+			$2p:$\electronboth\electronboth\electronboth\quad $3s:$\electronup \\                                                                       
+			\ch{F} & $1s^22s^22p^5$ & $1s:$\electronboth\quad $2s:$\electronboth\quad
+			$2p:$\electronboth\electronboth\electronup\\                                                                        
+                \ch{Cl} & $1s^22s^22p^63s^23p^6$ & $1s:$\electronboth\quad $2s:$\electronboth\quad
+			$2p:$\electronboth\electronboth\electronboth \\
+			&& $3s:$\electronboth\quad
+			$3p:$\electronboth\electronboth\electronup
+        \end{tabularx}                                                                                 
+\item The completed table:
+	
+	\begin{tabularx}{\linewidth} {c c X}
+			\bfseries Element & \bfseries \ch{e^{-}} Config & \bfseries Orbital Diagram \\ \midrule
+			\ch{C} & $1s^22s^22p^2$ & $1s:$\electronboth\quad $2s:$\electronboth\quad
+			$2p:$\electronup\electronup\electronnone \\
+			\ch{S} & $1s^22s^22p^63s^23p^4$ & $1s:$\electronboth\quad $2s:$\electronboth\quad
+			$2p:$\electronboth\electronboth\electronboth \\                                                                        
+			&& $3s:$\electronboth\quad $3p:$\electronboth\electronup\electronup \\
+                \ch{Mg} & $1s^22s^22p^63s^2$ & $1s:$\electronboth\quad $2s:$\electronboth\quad
+			$2p:$\electronboth\electronboth\electronboth\quad $3s:$\electronboth
+	\end{tabularx}
+
+\item \begin{itemize}
+	\item[\ch{Se}:] [\ch{Ar}]$4s^23d^{10}4p^4$
+	\item[\ch{Se^{2-}:}] [\ch{Kr}]
+	\item[\ch{Sr}:] [\ch{Kr}]$5s^2$
+	\item[\ch{Sr^{2+}}:] [\ch{Kr}]
+	\end{itemize}
+
+\item \begin{itemize}
+	\item[Si:] $Z_\text{eff} = 14 - 10 = \boxed{+4}$, could lose or gain an electron (similar to
+		carbon)
+	\item[Fr:] $Z_\text{eff} = 87 - 86 = \boxed{+1}$, will lose an electron
+	\item[I:] $Z_\text{eff} = 53 - 46 = \boxed{+7}$, will gain an electron (remember the $d$
+		orbitals were shielding!)
+	\item[As:] $Z_\text{eff} = 33 - 28 = \boxed{+5}$, probably will gain
+	\end{itemize}
+
+	\clearpage
+
+\item Rank: $\ch{K+} > \ch{Ca^{2+}} > \ch{Ga^{3+}}$
+	
+	\begin{tabular} {>{\bfseries}l c c c}
+	        \toprule
+		& \bfseries \ch{K+} & \bfseries \ch{Ca^{2+}} & \bfseries \ch{Ga^{3+}} \\
+	        \midrule
+		\ch{e-} config & [\ch{Ar}] & [\ch{Ar}] & [\ch{Ar}]$3d^{10}$ \\
+		\# protons & 19 & 20 & 31 \\
+		\# electrons & 18 & 18 & 28 \\
+		$\bm{Z_\text{eff}}$ & +9 & +10 & +21 \\
+	        \bottomrule
+	\end{tabular}
+
+	This is a \emph{really} difficult problem. Don't expect something like this on an exam, but
+	if you can understand how $Z_\text{eff}$ was calculated above (subtract the \emph{shielding}
+	electrons), you have a great grasp on effective nuclear charge!
+
+\item The completed table (with full diagrams):
+
+	\begin{tabularx}{\linewidth} {l c X}
+		\ch{Ni^{2+}} & [\ch{Ar}]$3d^8$ & $4s:$\electronnone\quad
+		$4p:$\electronnone\electronnone\electronnone\quad
+		$4d:$\electronnone\electronnone\electronnone\electronnone\electronnone \\
+		&& $3s:$\electronboth\quad
+		$3p:$\electronboth\electronboth\electronboth\quad
+		$3d:$\electronboth\electronboth\electronboth\electronup\electronup \\
+		&& $2s:$\electronboth\quad $2p:$\electronboth\electronboth\electronboth \\
+		&& $1s:$\electronboth\hfill \fbox{paramagnetic} \\
+		\ch{Ag^{+}} & [\ch{Kr}]$5s^14d^9$ & $5s:$\electronup\quad
+		$5p:$\electronnone\electronnone\electronnone\quad
+		$5d:$\electronnone\electronnone\electronnone\electronnone\electronnone \\
+		&& $4s:$\electronboth\quad $4p:$\electronboth\electronboth\electronboth\quad
+		$4d:$\electronboth\electronboth\electronboth\electronboth\electronup \\
+		&& $3s:$\electronboth\quad
+		$3p:$\electronboth\electronboth\electronboth\quad
+		$3d:$\electronboth\electronboth\electronboth\electronboth\electronboth \\
+		&& $2s:$\electronboth\quad $2p:$\electronboth\electronboth\electronboth \\
+		&& $1s:$\electronboth\hfill according to this table (the \emph{systematic} way),
+		\fbox{paramagnetic} \\
+		&& If you looked up the true filling diagram, the 4 and 5
+		levels would probably look like this: \\
+		&& $5s:$\electronnone\quad
+		$5p:$\electronnone\electronnone\electronnone\quad
+		$5d:$\electronnone\electronnone\electronnone\electronnone\electronnone \\
+		&& $4s:$\electronboth\quad $4p:$\electronboth\electronboth\electronboth\quad
+		$4d:$\electronboth\electronboth\electronboth\electronboth\electronboth \\
+		&& and your final answer would be \fbox{diamagnetic}. \ch{Ag+} is one of those
+		exceptions that you \emph{do not} need to know. \\
+		\ch{Ca^{2+}} & [\ch{Ar}] & $3s:$\electronboth\quad
+		$3p:$\electronboth\electronboth\electronboth\quad
+		$3d:$\electronboth\electronboth\electronboth\electronboth\electronboth \\
+		&& $2s:$\electronboth\quad $2p:$\electronboth\electronboth\electronboth \\
+		&& $1s:$\electronboth \hfill \fbox{diamagnetic}
+        \end{tabularx}
+\end{enumerate}
+
+\end{document}

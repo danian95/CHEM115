@@ -1,0 +1,198 @@
+%! TEX program = xelatex
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage{genchem}
+\usepackage{enumitem}
+\usepackage[margin=1in]{geometry}
+\usepackage{titling}
+
+\setallmainfonts{TeX Gyre Pagella}
+
+\title{Chapter 8 ``On Your Own'' Solutions}
+
+\begin{document}
+
+\begin{center}
+	\bfseries
+	\Large
+	\thetitle
+\end{center}
+
+\begin{enumerate}[itemsep=2em,leftmargin=0pt,label=\textbf{\Alph*.}]
+	\item Multiply volume by concentration:
+		\begin{align*}
+			\SI{25.00}{\milli\liter} \times
+			\frac{\SI{0.100}{\mole}}{\SI{1}{\liter}} \times
+			\frac{\SI{1}{\liter}}{\SI{1000}{\milli\liter}} &=
+			\boxed{\SI{0.00250}{\mole}}
+		\end{align*}
+
+	\item First, we need to find how many moles of \ch{HNO3} are in
+		\SI{24.0}{\gram}:
+		\begin{align*}
+			\SI{24.0}{\gram} \times
+			\frac{\SI{1}{\mole}}{\SI{63.012}{\gram}} &=
+			\SI{0.380879832}{\mole}
+		\end{align*}
+
+		Then, divide the number of moles by the concentration to find
+		the volume:
+		\begin{align*}
+			\SI{0.380879832}{\mole} \times
+			\frac{\SI{1}{\liter}}{\SI{2.00}{\mole}} \times
+			\frac{\SI{1000}{\milli\liter}}{\SI{1}{\liter}} &=
+			\boxed{\SI{190.}{\milli\liter}}
+		\end{align*}
+		
+	\item Make a table of values:
+
+		\begin{tabular} {L S[table-format=2.3] s}
+			C_\text{stock} & 0.250 & \Molar \\
+			V_\text{stock} & 1.00 & \milli\liter \\
+			V_\text{dilute} & 40.0 & \milli\liter
+		\end{tabular}
+
+		Rearrange dilution equation and solve:
+		\begin{align*}
+			C_\text{stock}V_\text{stock} &=
+			C_\text{dilute}V_\text{dilute} \\
+			C_\text{dilute} &=
+			\frac{C_\text{stock}V_\text{stock}}{V_\text{dilute}} \\
+			&=
+			\frac{(\SI{0.250}{\Molar})(\SI{1.00}{\milli\liter})}{\SI{40.0}{\milli\liter}}
+			\\
+			&= \boxed{\SI{0.00625}{\Molar}}
+		\end{align*}
+
+	\item We need to find out how many moles of \ch{MgCl2} we add:
+		\begin{align*}
+			\frac{\SI{0.100}{\mole}}{\SI{1}{\liter}} \times
+			\SI{22.8}{\milli\liter} \times
+			\frac{\SI{1}{\liter}}{\SI{1000}{\milli\liter}} &=
+			\SI{0.00228}{\mole}
+		\end{align*}
+
+		Then, we need to know how many moles of \ch{AgNO3} will react
+		completely with this amount:
+		\begin{align*}
+			\SI{0.00228}{\mole}~\ch{MgCl2} \times
+			\underbrace{\frac{\SI{2}{\mole}~\ch{AgNO3}}{\SI{1}{\mole}~\ch{MgCl2}}}_{\mathclap{\text{From
+			stoichiometry in reaction.}}}
+			&= \SI{0.00456}{\mole}~\ch{AgNO3}
+		\end{align*}
+
+		Finally, divide the moles of \ch{AgNO3} needed by the volume of
+		the \ch{AgNO3} solution added to get the concentration:
+		\begin{align*}
+			\SI{0.00456}{\mole}~\ch{AgNO3} \times
+			\frac{1}{\SI{15.0}{\milli\liter}} \times
+			\frac{\SI{1000}{\milli\liter}}{\SI{1}{\liter}} &=
+			\boxed{\SI{0.304}{\Molar}~\ch{AgNO3}}
+		\end{align*}
+
+	\item We need to see if each compound in the reactants is a strong
+		electrolyte or a weak electrolyte.
+		\begin{enumerate}[label={\arabic*.},itemsep=2em]
+			\item \ch{Na2SO4\sld{} ->[ H2O ] 2 Na^{+}\aq{} +
+				SO4^{2-}\aq{}}
+
+				\ch{Na2SO4} is considered a ``soluble ionic
+				compound'', so it is a strong electrolyte.
+			\item \ch{HCN\aq{} <=>[ H2O ] H^{+}\aq{} +
+				CN^{-}\aq{}}
+
+				\ch{HCN} is a weak electrolyte, so ``equilibrium
+				arrows'' (\ch{<=>}) are necessary.
+			\item \ch{C3H8O3\aq{} -/>}
+
+				\ch{C3H8O3} is an organic compound, considered a
+				nonelectrolyte.
+		\end{enumerate}
+	\item The names of each acid or base are as follows:
+
+		\begin{tabular} {r E l}
+			1. & H2S & hydrosulfuric acid (note that it is
+			\emph{not} sulfuric acid) \\
+			2. & HBr & hydrobromic acid \\
+			3. & CsOH & cesium hydroxide \\
+			4. & H2SO3 & sulfurous acid \\
+			5. & Cu(OH)2 & copper(II) hydroxide (the II is
+			important!) \\
+			6. & HC2H3O2 & acetic acid
+		\end{tabular}
+
+	\item The balanced equation is
+		\begin{reaction*}
+			3 Ba(OH)2\aq{} + 2 H3PO4\aq{} -> Ba3(PO4)2\sld{} + 6
+			H2O\lqd{}
+		\end{reaction*}
+
+	\item We need to consider the balanced reaction:
+		\begin{reaction*}
+			Mg(OH)2\aq{} + 2 HCl\aq{} -> MgCl2\aq{} + 2 H2O\lqd{}
+		\end{reaction*}
+		\begin{align*}
+			\intertext{Find moles of HCl added:}
+			\frac{\SI{0.1000}{\mole}~\ch{HCl}}{\SI{1}{\liter}}
+			\times \SI{41.9}{\milli\liter} \times
+			\frac{\SI{1}{\liter}}{\SI{1000}{\milli\liter}} &=
+			\SI{0.00419}{\mole}~\ch{HCl} \\
+			\intertext{From stoichiometry:}
+			\SI{0.00419}{\mole}~\ch{HCl} \times
+			\frac{\SI{1}{\mole}~\ch{Mg(OH)2}}{\SI{2}{\mole}~\ch{HCl}}
+			&= \SI{0.002095}{\mole}~\ch{Mg(OH)2} \\
+			\intertext{Solve for concentration:}
+			\frac{\SI{0.002095}{\mole}~\ch{Mg(OH)2}}{\SI{25.0}{\milli\liter}}
+			\times \frac{\SI{1000}{\milli\liter}}{\SI{1}{\liter}} &=
+			\boxed{\SI{0.0838}{\Molar}}
+		\end{align*}
+
+		\pagebreak
+
+	\item Balanced molecular and net ionic equations for each reaction are
+		as follows:
+
+		\begin{tabular} {r >{\bfseries}r
+				>{\collectcell\ch}r<{\endcollectcell} @{ \ch{->}
+			} E}
+			1. & Molecular: & Fe\sld{} + 2 HCl\aq{} & H2\gas{} +
+			FeCl2\aq{} \\
+			& Net Ionic: & Fe\sld{} + 2 H^{+}\aq{} &
+			H2\gas{} + Fe^{2+}\aq{} \\
+			& \multicolumn{3}{c}{\emph{and/or}} \\
+			& Molecular: & 2 Fe\sld{} + 6 HCl\aq{} & 3 H2\gas{} +
+			2 FeCl3\aq{} \\
+			& Net Ionic: & Fe\sld{} + 6 H^{+}\aq{} &
+			3 H2\gas{} + 2 Fe^{3+}\aq{} \\[2em]
+			2. & Molecular: & K2SO3\aq{} + 2 HCl\aq{} & 
+			SO2\gas{} + H2O\lqd{} + 2 KCl\aq{} \\
+			& Net Ionic: & SO3^{2-}\aq{} + 2 H^{+}\aq{} &
+			SO2\gas{} + H2O\lqd{} \\
+			& \multicolumn{3}{c}{\emph{due to}} \\
+			& & SO3^{2-}\aq{} + 2 H^{+}\aq{} &
+			!(intermediate~product)( H2SO4\aq{} ) ->
+			SO2\gas{} + H2O\lqd{}
+		\end{tabular}
+
+	\item \begin{enumerate}[label={\arabic*.}]
+			\item Oxidation
+			\item Reduction
+		\end{enumerate}
+
+	\item Half-reactions are as follows:
+
+		\begin{tabular} {>{\bfseries}r
+				>{\collectcell\ch}r<{\endcollectcell} @{ \ch{->}
+			} E }
+			Oxidation: & Fe\sld{} & Fe^{3+} + 3 \el{} \\
+			Reduction: & Cu^{2+} + 2 \el{} & Cu\sld{} \\
+			\\
+			\multicolumn{3}{l}{For balance:} \\
+			Oxidation: & 2 Fe\sld{} & 2 Fe^{3+} + 6 \el{} \\
+			Reduction: & 3 Cu^{2+} + 6 \el{} & 3 Cu\sld{}
+		\end{tabular}
+
+
+\end{enumerate}
+
+\end{document}

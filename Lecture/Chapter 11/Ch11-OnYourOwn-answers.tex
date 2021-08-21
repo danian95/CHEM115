@@ -1,0 +1,50 @@
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage{genchem}
+\usepackage{enumitem}
+\usepackage[margin=1in]{geometry}
+\usepackage{titling}
+\usepackage{tabularx}
+\chemsetup{chemformula/frac-style=nicefrac}
+
+\setallmainfonts{TeX Gyre Pagella}
+
+\title{Chapter 11 ``On Your Own'' Solutions}
+
+\begin{document}
+
+\begin{center}
+	\bfseries
+	\Large
+	\thetitle
+\end{center}
+
+\begin{enumerate}[itemsep=2em,leftmargin=0pt,label=\textbf{\Alph*.}]
+	\item \begin{enumerate}[label={\arabic*.}]
+			\item dispersion
+			\item dispersion, hydrogen bonding, dipole-dipole
+			\item dispersion, dipole-dipole
+			\item dispersion
+		\end{enumerate}
+	\item We need to first bring ethanol to its boiling point:
+		\begin{align*}
+			q_1 &= m C_s \Delta T \\
+			&=
+			(\SI{3.45}{\gram})(\SI{2.04}{\joule\per\gram\per\celsius})(\SI{78}{\celsius}-\SI{18}{\celsius})
+			\\
+			&= \SI{422.28}{\joule}
+			\intertext{We then need to vaporize the ethanol:}
+			\Delta H_\text{vap} &= \frac{q_2}{n} \\
+			q_2 &= n \Delta H_\text{vap} \\
+			&= (\SI{3.24}{\gram})(\SI{841}{\joule\per\gram}) \\
+			&= \SI{2901.45}{\joule}
+			\intertext{Finally, we sum the two heats together to
+			obtain the total energy required:}
+			q_\text{total} &= q_1 + q_2 \\
+			&= \SI{422.28}{\joule} + \SI{2901.45}{\joule} \\
+			&= \SI{3323.73}{\joule} \\
+			&= \boxed{\SI{3320}{\joule}}
+		\end{align*}
+\end{enumerate}
+
+\end{document}

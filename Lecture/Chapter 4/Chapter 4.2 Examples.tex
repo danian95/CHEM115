@@ -1,0 +1,170 @@
+\documentclass[12pt,letterpaper]{article}
+
+\usepackage[margin=0.5in]{geometry}
+\usepackage{chemfig}
+\usepackage[version=4]{mhchem}
+\usepackage{chemformula}
+\usepackage{elements}
+\usepackage{siunitx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{cancel}
+\usepackage{xlop}
+\setlength{\parskip}{\baselineskip}
+\setlength{\parindent}{0pt}
+\usepackage{array}
+\usepackage{xcolor}
+
+\pagestyle{empty}
+
+\begin{document}
+\section*{Chapter 4 Part II Examples}
+\subsection*{Drawing Electron-Dot/Lewis Structures}
+
+Draw an electron-dot structure for \ce{CCl4}
+
+{\color{blue}
+\begin{tabular}{p{1in} p{2in} p{1in} p{2in}}
+	\textbf{Step 1:} &
+	\multicolumn{3}{l}{$ \underbrace{4}_{\ce{C}} +
+	\underbrace{4(7)}_{4 \times \ce{Cl}} = 
+	32 $ valence electrons } \\[2em]
+	\textbf{Step 2:} &
+	\chemfig{C(-[:0]Cl)(-[:90]Cl)(-[:180]Cl)(-[:270]Cl)} &
+	\textbf{Step 3:} &
+	\chemfig{C(-[:0]\lewis{0:2:6:,Cl})(-[:90]\lewis{0:2:4:,Cl})
+	(-[:180]\lewis{2:4:6:,Cl})(-[:270]\lewis{0:4:6:,Cl})} \\
+\end{tabular}
+}
+
+Draw an electron-dot structure for \ce{H3O+}
+
+{\color{blue}
+\begin{tabular}{p{1in} p{2in} p{1in} p{2in}}
+	\textbf{Step 1:} &
+	\multicolumn{3}{l}{ $ \underbrace{3(1)}_{3 \times \ce{H}} +
+	\underbrace{6}_{\ce{O}} - \underbrace{1}_\text{+1 charge} = 
+	8 $ valence electrons } \\[2em]
+	\textbf{Step 2:} &
+	\chemfig{O(-[:0]H)(-[:90]H)(-[:180]H)} &
+	\textbf{Step 3:} &
+	$\chemleft[\chemfig{\lewis{6:,O}(-[:0]H)(-[:90]H)
+	(-[:180]H)}\chemright]^{+}$ \\
+\end{tabular}
+}
+
+Draw an electron-dot structure for \ce{CH2O}
+
+{\color{blue}
+\begin{tabular}{p{1in} p{2in} p{1in} p{2in}}
+	\textbf{Step 1:} &
+	\multicolumn{3}{l}{ $ \underbrace{4}_{\ce{C}} +
+	\underbrace{2(1)}_{2 \times \ce{H}} + \underbrace{6}_{\ce{O}} = 
+	12 $ valence electrons } \\[2em]
+	\textbf{Step 2:} &
+	\chemfig{C(-[:0]H)(-[:90]O)(-[:180]H)} &
+	\textbf{Step 3:} &
+	\chemfig{C(-[:0]H)(-[:90]\lewis{0:2:4:,O})
+	(-[:180]H)} \\[2em]
+	\textbf{Step 5:} &
+	\schemestart
+		\chemfig{C(-[:0]H)(-[@{db}:90]@{lp}\lewis{0:2:4:,O})
+			(-[:180]H)}
+		\arrow{->}
+		\chemfig{C(-[:0]H)(=[:90]\lewis{1:3:,O})
+			(-[:180]H)}
+	\schemestop
+	\chemmove{\draw[shorten <=5pt,shorten >=2pt](lp)..controls +(0:8mm) and
+	+(0:8mm)..(db);} \\
+\end{tabular}
+}
+
+\clearpage
+
+Draw an electron-dot structure for \ce{SF6}
+
+{\color{blue}
+\begin{tabular}{p{1in} p{2in} p{1in} p{2in}}
+	\textbf{Step 1:} &
+	\multicolumn{3}{l}{ $ \underbrace{6}_{\ce{S}} +
+	\underbrace{6(7)}_{6 \times \ce{F}} = 
+	48 $ valence electrons } \\[2em]
+	\textbf{Step 2:} &
+	\chemfig{S(-[:30]F)(-[:90]F)(-[:150]F)(-[:210]F)(-[:270]F)(-[:330]F)} &
+	\textbf{Step 3:} &
+	\chemfig{S(-[:30]\lewis{1:3:7:,F})(-[:90]\lewis{0:2:4:,F})
+	(-[:150]\lewis{1:3:5:,F})(-[:210]\lewis{3:5:7:,F})
+	(-[:270]\lewis{0:4:6:,F})(-[:330]\lewis{1:5:7:,F})}
+\end{tabular}
+}
+
+Draw an electron-dot structure for \ce{ICl3}
+
+{\color{blue}
+\begin{tabular}{p{1in} p{2in} p{1in} p{2in}}
+	\textbf{Step 1:} &
+	\multicolumn{3}{l}{ $ \underbrace{7}_{\ce{I}} +
+	\underbrace{3(7)}_{3 \times \ce{Cl}} = 
+	28 $ valence electrons } \\[2em]
+	\textbf{Step 2:} &
+	\chemfig{I(-[:18]Cl)(-[:90]Cl)(-[:162]Cl)} &
+	\textbf{Step 3:} &
+	\chemfig{I(-[:18]\lewis{0:2:6:,Cl})(-[:90]\lewis{0:2:4:,Cl})
+	(-[:162]\lewis{2:4:6:,Cl})} \\[2em]
+	\textbf{Step 4:} &
+	\chemfig{\lewis{5:7:,I}(-[:18]\lewis{0:2:6:,Cl})
+	(-[:90]\lewis{0:2:4:,Cl})(-[:162]\lewis{2:4:6:,Cl})} \\[2em]
+\end{tabular}
+}
+
+Draw an electron-dot structure for \ce{O3}
+
+{\color{blue}
+\begin{tabular}{p{1in} p{2in} p{1in} p{2in}}
+	\textbf{Step 1:} &
+	\multicolumn{3}{l}{ $ \underbrace{3(6)}_{3 \times \ce{O}} =
+	18 $ valence electrons } \\[2em]
+	\textbf{Step 2:} &
+	\chemfig{O(-[:0]O)(-[:180]O)} &
+	\textbf{Step 3:} &
+	\chemfig{O(-[:0]\lewis{0:2:6:,O})(-[:180]\lewis{2:4:6:,O})} \\[2em]
+	\textbf{Step 4:} &
+	\chemfig{\lewis{2:,O}(-[:0]\lewis{0:2:6:,O})
+	(-[:180]\lewis{2:4:6:,O})} \\[2em]
+	\textbf{Step 5:} &
+	\schemestart
+		\chemfig{\lewis{2:,O}(-[:0]\lewis{0:2:6:,O})
+		(-[@{dba}:180]@{lpa}\lewis{2:4:6:,O})}
+		\arrow{->}
+		\chemfig{\lewis{2:,O}(-[:0]\lewis{0:2:6:,O})
+		(=[:180]\lewis{3:5:,O})}
+		\arrow{<->}[-90]
+		\chemfig{\lewis{2:,O}(=[:0]\lewis{1:7:,O})
+		(-[:180]\lewis{2:4:6:,O})}
+		\arrow{<-}[180]
+		\chemfig{\lewis{2:,O}(-[@{dbb}:0]@{lpb}\lewis{0:2:6:,O})
+		(-[:180]\lewis{2:4:6:,O})}
+	\schemestop
+	\chemmove{\draw[shorten <=5pt,shorten >=2pt](lpa)..controls +(270:8mm)
+	and +(270:8mm)..(dba);}
+	\chemmove{\draw[shorten <=5pt,shorten >=2pt](lpb)..controls +(90:8mm)
+	and +(90:8mm)..(dbb);}
+	\\
+\end{tabular}
+}
+
+\clearpage
+
+Draw the following molecules and determine the formal charge of each atom. If
+there are resonance structures, indicate all possibilities.
+
+\begin{itemize}
+	\item \ce{SCN-}
+	\item \ce{BF3}
+	\item \ce{N2O}
+	\item \ce{ClO3^{-}}
+	\item \ce{HCN}
+	\item \ce{H2SO3}
+\end{itemize}
+
+\end{document}

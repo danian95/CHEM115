@@ -1,0 +1,90 @@
+% !TEX program = xelatex
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage{genchem}
+\usepackage{enumitem}
+\usepackage[margin=1in]{geometry}
+\usepackage{titling}
+
+\setallmainfonts{TeX Gyre Pagella}
+
+\title{Chapter 1 ``On Your Own'' Solutions}
+
+\setlist[enumerate,1]{itemsep=2em,leftmargin=0pt,label=\textbf{\Alph*.}}
+\setlist[enumerate,2]{label={\arabic*.}}
+
+\begin{document}
+
+\begin{center}
+	\bfseries
+	\Large
+	\thetitle
+\end{center}
+
+\begin{enumerate}
+	\item \begin{description}
+		\item[dish soap:] homogeneous mixture (or it could be
+			heterogeneous if there's a bunch of bubbles!)
+		\item[helium:] element
+		\item[coffee:] homogeneous mixture
+	\end{description}
+
+\item	The completed table:
+	\renewcommand\arraystretch{1.5}
+
+	\begin{tabular} {@{\qquad}r@{}l*{2}{c}}
+		\toprule
+		\multicolumn{2}{c}{\bfseries Chemical Symbol} & \bfseries \# Protons & \bfseries \# Neutrons \\
+		\midrule
+		\ch{^7_3}        & Li & 3  & 4   \\
+		\ch{^{58}_{25}}  & Mn & 25 & 33  \\
+		\ch{^{201}_{83}} & Bi & 83 & 118 \\
+		\bottomrule
+	\end{tabular}
+
+\item Remember that assuming we have 100 of something makes working with
+	percentages easier.
+	\begin{align*}
+		\frac{99.76}{100} \times \SI{15.9949}{amu}
+		+ \frac{0.04}{100} \times \SI{16.9991}{amu}
+		+ \frac{0.20}{100} \times \SI{17.9992}{amu}
+		&= \SI{15.99931028}{amu} \\
+		&\approx \boxed{\SI{15.9993}{amu}}
+	\end{align*}
+	I didn't make sig figs clear in this question, so don't worry if you
+	didn't round the way I did.
+
+\item The completed table:
+
+		\begin{tabularx}{\linewidth} {@{}*{7}{>{\centering\arraybackslash}X}}
+		\toprule
+		\bfseries Atom /Ion & \bfseries Atomic \# & \bfseries Mass \# & \bfseries Charge & \bfseries \# Protons & \bfseries \# Neutrons & \bfseries \# Electrons \\ \midrule
+		\ch{^{87}_{37}Rb+} & 37 & 87 & +1 & 37 & 50 & 36 \\
+		\ch{^{71}_{32}Ge^{2-}} & 32 & 71 & -2 & 32 & 39 & 34 \\
+		\ch{^{198}_{77}Ir^{4+}} & 77 & 198 & +4 & 77 & 121 & 73 \\
+		\ch{^{119}_{50}Sn} & 50 & 119 & 0 & 50 & 69 & 50\\ \bottomrule
+	\end{tabularx}
+\item It doesn't matter what element it is, every mole has \SI{6.022e23}{atoms}!
+	\begin{align*}
+		\SI{1.20}{\mole} \times
+		\frac{\SI{6.022e23}{atoms}}{\SI{1}{\mole}} &=
+		\SI{7.2264e23}{atoms} \\
+		&\approx \boxed{\SI{7.23e23}{atoms}}
+	\end{align*}
+
+	\clearpage
+
+\item The completed table:
+
+		\begin{tabular} {l S[table-format=1.4]
+			S[table-format=3.2]}
+			\toprule
+			\bfseries Element & \textbf{\# Moles} & \textbf{Mass (\si{\gram})} \\ \midrule
+			\ch{Y}  & 3.01    & 268        \\[1em]
+			\ch{Ru} & 0.7234  & 72.10      \\[1em]
+			\ch{Bi} & 0.0020  & 0.42       \\[1em]
+			\ch{Mo} & 2.129   & 204.3       \\ \bottomrule
+		\end{tabular}
+\end{enumerate}
+
+\end{document}
