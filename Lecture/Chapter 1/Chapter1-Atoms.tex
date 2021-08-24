@@ -1,34 +1,35 @@
 % !TEX program = xelatex
 %\documentclass[notes=onlyslideswithnotes,notes=hide]{beamer}
-\documentclass[notes=only]{beamer}
-%\documentclass[notes=show]{beamer}
+%\documentclass[notes=only]{beamer}
+\documentclass[notes=show]{beamer}
 %\documentclass[notes=hide]{beamer}
 %\documentclass[10pt,letterpaper]{article}
 %\usepackage{beamerarticle}
 
+\usepackage{newtxtext}
 \usepackage{genchem}
 \usepackage{lecture}
+\usepackage{bucolors}
 \usepackage{ccicons}
 
 \title{Atoms}
 \subtitle{Chapter 1}
 \institute[CHEM115 Bloomsburg University]{CHEM115 --- Chemistry for the Sciences I \\ Bloomsburg University}
-\author{D.A. McCurry}
-\date{Fall 2020}
+\author{D.A.\ McCurry}
+\date{Fall 2021}
 
 \begin{document}
 
 \maketitle
-\mode<article>{\thispagestyle{fancy}}
 
 \mode<presentation>{%
 	{%
-		\usebackgroundtemplate{\includegraphics[width=\paperwidth]{California-fire.jpg}}
-		\setbeamercolor{frametitle}{bg=black}
+		\usebackgroundtemplate{\includegraphics[scale=0.6]{amazon.jpg}}
+		\setbeamercolor{frametitle}{bg=bumaroon!10!black}
 		\setbeamercolor{normal text}{fg=white}
 		\usebeamercolor*{normal text}
 		\setbeamercolor{structure}{fg=white!80!black}
-		\begin{frame}[t,plain]{California is Burning}
+		\begin{frame}[t,plain]{The Amazon is Burning}
 			What does this mean globally?
 			\begin{itemize}[<+(1)->]
 				\item Massive fires release significant amounts of
@@ -40,12 +41,13 @@
 					\end{center}
 			\end{itemize}
 
-			\begin{footnotesize} Ringo H.W. Chiu/AP \end{footnotesize}
+			\begin{footnotesize} Andre Penner/AP \end{footnotesize}
 		\end{frame}
 	}
 }
 
-\frame{\section{Substances and Compounds}
+\frame{%
+	\section{Substances and Compounds}
 	\begin{learningobjectives}
 		\item Know the definition of matter.
 		\item Qualitatively understand how states of material relate to atomic structure.
@@ -53,8 +55,7 @@
 		\end{learningobjectives}
 	}
 
-\begin{frame}{A Particulate View of the World}
-
+\mode<article>{%
 	\begin{block}{What is Chemistry?}
 		Chemistry is the science that seeks to understand the properties
 		of matter by studying the \alert{structure} of the particles that
@@ -83,7 +84,7 @@
 		\includegraphics[scale=0.25]{watermol.jpeg}
 		\end{center}}
 	\end{columns}
-\end{frame}
+}
 
 \begin{frame}{Properties Follow Structure}
 	\begin{center}
@@ -115,36 +116,34 @@
 }
 \end{frame}
 
-\clearpage
-
-\begin{frame}{Classifying Matter: Composition}
-	\only<1>{
-	\begin{center}
-		\includegraphics[scale=0.45]{composition.jpeg}
-	\end{center}}
-
-	\pause
-
-	\alert{Pure Substances:} There is only one type of component, invariant
-	between samples.
-	\begin{itemize}[<+(1)->]
-		\item \alert{Elements} cannot be chemically broken down further.
-		\item \alert{Compounds} are composed of two or more elements
-			\alert{in fixed proportions}.
-	\end{itemize}
-
-	\pause
-
-	\alert{Mixtures:} Two or more components with varying composition between
-	samples.
-	\begin{itemize}[<+(1)->]
-		\item \alert{Heterogeneous} mixtures have varying composition
-			from one region to another -- the particles do not mix
-			uniformly.
-		\item \alert{Homogeneous} mixtures have the same composition
-			throughout -- the particles do mix uniformly.
-	\end{itemize}
-\end{frame}
+%\begin{frame}{Classifying Matter: Composition}
+%	\only<1>{
+%	\begin{center}
+%		\includegraphics[scale=0.45]{composition.jpeg}
+%	\end{center}}
+%
+%	\pause
+%
+%	\alert{Pure Substances:} There is only one type of component, invariant
+%	between samples.
+%	\begin{itemize}[<+(1)->]
+%		\item \alert{Elements} cannot be chemically broken down further.
+%		\item \alert{Compounds} are composed of two or more elements
+%			\alert{in fixed proportions}.
+%	\end{itemize}
+%
+%	\pause
+%
+%	\alert{Mixtures:} Two or more components with varying composition between
+%	samples.
+%	\begin{itemize}[<+(1)->]
+%		\item \alert{Heterogeneous} mixtures have varying composition
+%			from one region to another -- the particles do not mix
+%			uniformly.
+%		\item \alert{Homogeneous} mixtures have the same composition
+%			throughout -- the particles do mix uniformly.
+%	\end{itemize}
+%\end{frame}
 
 \begin{frame}[t]{Classifying Composition Examples}
 	Identify whether each substance is a \alert{pure substance} (element or
@@ -196,17 +195,17 @@
 	
 \end{frame}
 
-\begin{onyourown}%{0em}
-	Identify whether each substance is a \alert{pure substance} (element or
-	compound) or a \alert{mixture} (heterogeneous or homogeneous):
-	
-	\renewcommand\arraystretch{2}
-	\begin{tabularx}{\linewidth} {l@{\qquad}X}
-		dish soap & \\ \cline{2-2}
-		helium & \\ \cline{2-2}
-		coffee & \\ \cline{2-2}
-	\end{tabularx}
-\end{onyourown}
+%\begin{onyourown}%{0em}
+%	Identify whether each substance is a \alert{pure substance} (element or
+%	compound) or a \alert{mixture} (heterogeneous or homogeneous):
+%	
+%	\renewcommand\arraystretch{2}
+%	\begin{tabularx}{\linewidth} {l@{\qquad}X}
+%		dish soap & \\ \cline{2-2}
+%		helium & \\ \cline{2-2}
+%		coffee & \\ \cline{2-2}
+%	\end{tabularx}
+%\end{onyourown}
 
 \frame{\section{Atoms: The Building Blocks of Matter}
 	\begin{learningobjectives}
@@ -216,60 +215,65 @@
 		\end{learningobjectives}
 	}
 
-\begin{frame}{Early Atomic Theory}
-	What is the smallest unit that we can actually break down?
-
-	\medskip
-
-	\begin{columns}
-		\column{0.6\linewidth}
-		\begin{itemize}[<+(1)->]
-			\item All matter is composed of four elements.
-			\item Later aether was added.
-			\item $\sim$450 \textsc{B.C.E.}, Democritus proposed that Matter is composed of small,
-				indivisible parts.  Many different types of atoms (``atomos'') exist.
-		\end{itemize}
-
-		\onslide<+(1)->
-		\begin{center}
-			\bfseries\usebeamercolor[fg]{alerted text} How do these atoms create compounds?
-		\end{center}
-		\column{0.4\linewidth}
-		\onslide<2->
-		\includegraphics<presentation>[width=\linewidth]{4elements.jpg}
-	\end{columns}
-\end{frame}
+%\begin{frame}{Early Atomic Theory}
+%	What is the smallest unit that we can actually break down?
+%
+%	\medskip
+%
+%	\begin{columns}
+%		\column{0.6\linewidth}
+%		\begin{itemize}[<+(1)->]
+%			\item All matter is composed of four elements.
+%			\item Later aether was added.
+%			\item $\sim$450 \textsc{B.C.E.}, Democritus proposed that Matter is composed of small,
+%				indivisible parts.  Many different types of atoms (``atomos'') exist.
+%		\end{itemize}
+%
+%		\onslide<+(1)->
+%		\begin{center}
+%			\bfseries\usebeamercolor[fg]{alerted text} How do these atoms create compounds?
+%		\end{center}
+%		\column{0.4\linewidth}
+%		\onslide<2->
+%		\includegraphics<presentation>[width=\linewidth]{4elements.jpg}
+%	\end{columns}
+%\end{frame}
 
 \begin{frame}{The Law of Conservation of Mass}
-	Early 1700s Lavoisier:
-	\begin{quote}
+	\begin{block}{Early 1700s: Lavoisier}
 		Mass is neither created nor destroyed in chemical reactions.
-	\end{quote}
+	\end{block}
 
-	\bigskip
+	\begin{reaction*}
+		Hg(NO3)2\aq{} + 2 KI\aq{} -> HgI2\sld{} + 2 KNO3\aq{}
+	\end{reaction*}
 
-	\begin{overlayarea}{\linewidth}{10em}
-		\only<1>{\includegraphics[width=\linewidth]{conservemass-mcmurry.jpg}}
+%	\begin{overlayarea}{\linewidth}{10em}
+	%	\only<1>{
+	\begin{center}
+		\includegraphics[scale=0.4]{conservemass-mcmurry.jpg}
+	\end{center}
+
+	%}
 	
-		\only<2->{
-		\begin{align*}
-			\overbrace{\ch{Hg(NO3)2\aq{} + 2
-			KI\aq{}}}^{\mathclap{\SI{3.25}{\gram} + \SI{3.32}{\gram} =
-			\SI{6.57}{\gram}}} &\ch{->} \underbrace{\ch{HgI2\sld{} + 2
-			KNO3\aq}}_{\mathclap{\SI{4.55}{\gram} + \SI{2.02}{\gram} =
-			\SI{6.57}{\gram}}} \\[1em]
-			\text{Reactants} &\ch{->} \text{Products} \\[1em]
-			m_\text{Reactants} &= m_\text{Products}
-		\end{align*}}
-	\end{overlayarea}
+	%	\only<2->{
+%		\begin{align*}
+%			\overbrace{\ch{Hg(NO3)2\aq{} + 2
+%			KI\aq{}}}^{\mathclap{\SI{3.25}{\gram} + \SI{3.32}{\gram} =
+%			\SI{6.57}{\gram}}} &\ch{->} \underbrace{\ch{HgI2\sld{} + 2
+%			KNO3\aq}}_{\mathclap{\SI{4.55}{\gram} + \SI{2.02}{\gram} =
+%			\SI{6.57}{\gram}}} \\[1em]
+%			\text{Reactants} &\ch{->} \text{Products} \\[1em]
+%			m_\text{Reactants} &= m_\text{Products}
+%		\end{align*}}
+%	\end{overlayarea}
 \end{frame}
 
 \begin{frame}{The Law of Definite Proportions}
-	1799, Proust:
-	\begin{quote}
+	\begin{block}{1799: Proust}
 		All samples of a given compound have the same proportions of
 		constituent elements (mass ratio).
-	\end{quote}
+	\end{block}
 
 	\begin{center}
 		\includegraphics[scale=0.5]{definiteproportions.jpg}
@@ -277,12 +281,11 @@
 \end{frame}
 
 \begin{frame}{The Law of Multiple Proportions}
-	1803, John Dalton:
-	\begin{quote}
+	\begin{block}{1803: John Dalton}
 		When two elements (A and B) form two different compounds, the
 		mass of B that reacts with A can be expressed as a whole number
 		ratio.
-	\end{quote}
+	\end{block}
 
 	\begin{center}
 		\includegraphics[scale=0.3]{multipleproportions.jpeg}
@@ -386,7 +389,7 @@
 	\includegraphics[width=\linewidth]{atom-mcmurry.jpg}
 \end{frame}
 
-\begin{frame}{Basic Atomic Structure}
+\mode<article>{Basic Atomic Structure
 	\begin{itemize}
 		\item \alert{Nucleus}
 			\begin{itemize}
@@ -406,7 +409,7 @@
 					attraction to the positive nucleus.
 			\end{itemize}
 	\end{itemize}
-\end{frame}
+}
 
 \begin{frame}{Subatomic Particles}
 	\begin{center}
@@ -421,7 +424,7 @@
 			Neutron  & 1.67493e-27 & 1.00866 &  0           \\
 			Electron & 0.00091e-27 & 0.00055 & -1.60218e-19 \\
 			\bottomrule
-			\multicolumn{4}{p{4in}}{\footnotesize *Atomic Mass Units (amu) -- a mass exactly equal to
+			\multicolumn{4}{>{\raggedright\arraybackslash}p{4in}}{\footnotesize *Atomic Mass Units (amu) -- a mass exactly equal to
 			$\sfrac{1}{12}$ the mass of one carbon-12 atom.}
 		\end{tabular}
 	\end{center}
@@ -550,7 +553,7 @@
 			\node[below = 0.2em of Cl](35) {35.45};
 			\node[font=\small,below = 0.2em of 35](chlorine) {chlorine};
 			\draw[thick] (-1.2,-1.65) rectangle (1.2,1);
-			\draw[<-,ultra thick,primary] (35) to ++(-2,0) node[left,font=\sffamily,align=right,text
+			\draw[<-,ultra thick,bumaroon] (35) to ++(-2,0) node[left,font=\sffamily,align=right,text
 				width=1in,black] {But what is this mass?};
 		\end{tikzpicture}
 	\end{center}
@@ -563,9 +566,8 @@
 		natural abundance of each isotope.
 	\end{block}
 
-	\begin{overlayarea}{\linewidth}{12em}
+%	\begin{overlayarea}{\linewidth}{12em}
 
-	\only<1>{
 	\begin{center}
 	\begin{tikzpicture}
 		\node[fill=orange,circle,draw=orange!60!black](B10) at (0,0) {\ch{^{10}B}};
@@ -584,18 +586,18 @@
 
 	In every 1000 atoms of boron, 199 of them are boron-10 atoms and the
 	other 801 are boron-11 atoms. What is the atomic mass of the average
-	boron atom?}
+	boron atom?
 
-	\only<2>{
-	\begin{align*}
-		\parbox{\widthof{Atomic}}{\centering Atomic mass} &= \sum_n \bigg[ (\text{fraction of isotope\ } n) \times (\text{mass of isotope\ } n) \bigg] \\
-				   &= (\text{fraction of isotope 1}) \times (\text{mass of isotope 1}) \\
-				   &\qquad {} + (\text{fraction of isotope 2}) \times (\text{mass of isotope 2}) \\
-				   &\qquad {} + (\text{fraction of isotope 3}) \times (\text{mass of isotope 3}) \\
-				   &\qquad {} + \ldots
-	\end{align*}}
-
-	\end{overlayarea}
+%	\only<2>{
+%	\begin{align*}
+%		\parbox{\widthof{Atomic}}{\centering Atomic mass} &= \sum_n \bigg[ (\text{fraction of isotope\ } n) \times (\text{mass of isotope\ } n) \bigg] \\
+%				   &= (\text{fraction of isotope 1}) \times (\text{mass of isotope 1}) \\
+%				   &\qquad {} + (\text{fraction of isotope 2}) \times (\text{mass of isotope 2}) \\
+%				   &\qquad {} + (\text{fraction of isotope 3}) \times (\text{mass of isotope 3}) \\
+%				   &\qquad {} + \ldots
+%	\end{align*}}
+%
+%	\end{overlayarea}
 \end{frame}
 
 \begin{frame}[t]{What is the atomic mass of the average B atom?}
@@ -662,11 +664,9 @@
 	\end{center}
 \end{onyourown}
 
-\begin{frame}{What about the electrons?}{Ionization}
-	\only<1>{In order to keep atoms and molecules \alert{neutral}, the number of
+\begin{frame}[allowframebreaks]{What about the electrons?}{Ionization}
+	In order to keep atoms and molecules \alert{neutral}, the number of
 	electrons must be \alert{equal to} to the number of protons.
-
-	\bigskip
 
 	\begin{center}
 	\begin{tabular} {l *{4}{c}}
@@ -681,12 +681,12 @@
 		O    & 8       & 8        & 8         & 0          \\
 		\bottomrule
 	\end{tabular}
-	\end{center}}
+	\end{center}
 
-	\only<2->{Atoms (or molecules) can \alert{gain} or \alert{lose} electrons
+	\framebreak
+
+	Atoms (or molecules) can \alert{gain} or \alert{lose} electrons
 	in a process known as \alert{ionization} to become \alert{ions}.
-
-	\bigskip
 
 	\begin{center}
 		\begin{tabular} {l *{3}{c} S[table-format=-1]}
@@ -701,24 +701,21 @@
 		\ch{O^{2-}}  & 8       & 8        & 10        & -2         \\
 		\bottomrule
 	\end{tabular}
-	\end{center}}
+	\end{center}
 
 	\begin{center}
-	\visible<3->{
 		\begin{minipage}{0.3\linewidth}
 		\begin{tabular} {c @{ \textrightarrow\ } l}
 			$+$ & cation \\
 			$-$ & anion
 		\end{tabular}
 		\end{minipage}
-		}
 		\qquad
-	\visible<4->{
 		\begin{minipage}{0.3\linewidth}
 			\centering\bfseries
 			\usebeamercolor[fg]{alerted text}
 			Does the mass change?
-		\end{minipage}}
+		\end{minipage}
 	\end{center}
 \end{frame}
 
@@ -779,6 +776,12 @@
 	\centering
 	\includegraphics[scale=0.35]{mini11-1.png}
 \end{frame}
+
+{\usebackgroundtemplate{\includegraphics[width=\paperwidth]{johnbygc.jpg}}
+\begin{frame}
+		\frametitle{Bloomsburg University GC-MS}
+\end{frame}
+}
 
 \frame{\section{The Mole Concept}
 	\begin{learningobjectives}
