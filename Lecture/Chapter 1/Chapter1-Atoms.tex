@@ -1,10 +1,10 @@
 % !TEX program = xelatex
 %\documentclass[notes=onlyslideswithnotes,notes=hide]{beamer}
 %\documentclass[notes=only]{beamer}
-\documentclass[notes=show]{beamer}
-%\documentclass[notes=hide]{beamer}
-%\documentclass[10pt,letterpaper]{article}
-%\usepackage{beamerarticle}
+%\documentclass[notes=show]{beamer}
+%\documentclass[handout]{beamer}
+\documentclass[10pt,letterpaper]{article}
+\usepackage{beamerarticle}
 
 \usepackage{newtxtext}
 \usepackage{genchem}
@@ -22,7 +22,7 @@
 
 \maketitle
 
-\mode<presentation>{%
+\mode<presentation|handout:0>{%
 	{%
 		\usebackgroundtemplate{\includegraphics[scale=0.6]{amazon.jpg}}
 		\setbeamercolor{frametitle}{bg=bumaroon!10!black}
@@ -329,13 +329,13 @@
 	tiny, negatively charged particles, which we now call \alert{electrons}.
 
 	\begin{center}
-		\includegraphics[width=\linewidth]{cathode-tube-mcmurry.jpg}
+		\includegraphics[scale=0.45]{cathode-tube-mcmurry.jpg}
 	\end{center}
 \end{frame}
 
 \begin{frame}{What charge are electrons?}{Millikan's oil drop experiment}
 	\begin{center}
-		\includegraphics[width=\linewidth]{millikan-mcmurry.jpg}
+		\includegraphics[scale=0.45]{millikan-mcmurry.jpg}
 	\end{center}
 \end{frame}
 
@@ -343,21 +343,21 @@
 	Electrons were thought to exist within a sphere of
 	positive charge.
 
-	\begin{tabularx}{\linewidth} {X@{\qquad}X}
-		\includegraphics[width=\linewidth]{superb-english-plum-pudding.jpg}
+	\bigskip
+
+	\begin{tabular} {m{0.45\linewidth}@{\qquad}m{0.45\linewidth}}
+		\includegraphics[scale=0.2]{superb-english-plum-pudding.jpg}
 
 		\tiny\url{https://www.epicurious.com/}
-		& \includegraphics[width=\linewidth]{plumpudding.jpeg} \\
-	\end{tabularx}
+		& \includegraphics[scale=0.25]{plumpudding.jpeg} \\
+	\end{tabular}
 \end{frame}
-
-\mode<article>{\clearpage}
 
 \begin{frame}{The Discovery of the Nucleus}
 	{Rutherford's Gold Foil Experiment}
 
 	\begin{center}
-		\includegraphics[width=\linewidth]{rutherford-mcmurry.jpg}
+		\includegraphics[scale=0.45]{rutherford-mcmurry.jpg}
 	\end{center}
 \end{frame}
 
@@ -386,7 +386,7 @@
 \begin{frame}{So\ldots\ What is an atom?}
 	\centering
 
-	\includegraphics[width=\linewidth]{atom-mcmurry.jpg}
+	\includegraphics[scale=0.45]{atom-mcmurry.jpg}
 \end{frame}
 
 \mode<article>{Basic Atomic Structure
@@ -488,6 +488,7 @@
 \end{frame}
 
 \begin{frame}{Complete the table\ldots}
+	\mode<presentation>{%
 	\begin{tabularx}{\linewidth} {>{\qquad}r@{}l*{2}{>{\centering\arraybackslash}X}}
 		\toprule
 		\multicolumn{2}{>{\centering\arraybackslash}X}{\bfseries Chemical Symbol} & \bfseries \# Protons & \bfseries \# Neutrons \\
@@ -500,8 +501,9 @@
 		\ch{^{235}_92} &&&         \\      
 		\bottomrule
 	\end{tabularx}
+}
 
-	\note{
+	\mode<article>{%
 		\begin{tabular} {r@{}l*{2}{c}}
 			\toprule \multicolumn{2}{c}{\bfseries Chemical
 			Symbol} & \# \bfseries Protons & \# \bfseries Neutrons \\ \midrule
@@ -515,20 +517,20 @@
 		\end{tabular}}
 \end{frame}
 
-\begin{onyourown}%{0em}
-	Complete the table\ldots
-	\renewcommand\arraystretch{1.5}
-
-	\begin{tabularx}{\linewidth} {@{\qquad}r@{}l*{2}{>{\centering\arraybackslash}X}}
-		\toprule
-		\multicolumn{2}{>{\centering\arraybackslash}X}{\bfseries Chemical Symbol} & \bfseries \# Protons & \bfseries \# Neutrons \\
-		\midrule
-		\ch{^7_3}        \\ 
-		\ch{^{58}_{25}}  \\
-		\ch{^{201}_{83}} \\
-		\bottomrule
-	\end{tabularx}
-\end{onyourown}
+%\begin{onyourown}%{0em}
+%	Complete the table\ldots
+%	\renewcommand\arraystretch{1.5}
+%
+%	\begin{tabularx}{\linewidth} {@{\qquad}r@{}l*{2}{>{\centering\arraybackslash}X}}
+%		\toprule
+%		\multicolumn{2}{>{\centering\arraybackslash}X}{\bfseries Chemical Symbol} & \bfseries \# Protons & \bfseries \# Neutrons \\
+%		\midrule
+%		\ch{^7_3}        \\ 
+%		\ch{^{58}_{25}}  \\
+%		\ch{^{201}_{83}} \\
+%		\bottomrule
+%	\end{tabularx}
+%\end{onyourown}
 
 \begin{frame}{Isotopes and Average Mass}
 	Isotopes are generally referred to by their element name followed by the
@@ -611,9 +613,7 @@
 		boron-11 & 11.0093 & 80.1 \\ \bottomrule
 	\end{tabular}
 
-	\mode<article>{\vfill}
-
-	\note{
+	\mode<article>{%
 		\begin{align*}
 			\parbox{\widthof{Atomic}}{\centering Atomic\\mass} &= \sum_n \bigg[ (\text{fraction of isotope\ } n) \times (\text{mass of isotope\ } n) \bigg] \\
 			&= (0.199 \times 10.0129) + (0.801 \times 11.0093) \\
@@ -634,9 +634,7 @@
 		magnesium-26 & 25.9825937 & 11.01 \\\bottomrule
 	\end{tabular}
 
-	\mode<article>{\vfill}
-
-	\note{
+	\mode<article>{%
 		\begin{align*}
 			\parbox{\widthof{Atomic}}{\centering Atomic\\mass} &= \sum_n \bigg[ (\text{fraction of isotope\ } n) \times (\text{mass of isotope\ } n) \bigg] \\
 			&= (0.7899 \times 23.9850423) + (0.1000 \times
@@ -646,23 +644,21 @@
 		\end{align*}}
 \end{frame}
 
-\mode<article>{\clearpage}
-
-\begin{onyourown}%{10em}
-	What is the atomic mass of the average O atom?
-
-	\begin{center}
-		\begin{tabular} {l S[table-format=2.4] S[table-format=2.2]}
-			\toprule
-			\bfseries Isotope & {\bfseries Mass (amu)} & {\bfseries Natural Abundance (\%)} \\
-			\midrule
-			oxygen-16 & 15.9949 & 99.76 \\
-			oxygen-17 & 16.9991 & 0.04 \\
-			oxygen-18 & 17.9992 & 0.20 \\
-			\bottomrule
-		\end{tabular}
-	\end{center}
-\end{onyourown}
+%\begin{onyourown}%{10em}
+%	What is the atomic mass of the average O atom?
+%
+%	\begin{center}
+%		\begin{tabular} {l S[table-format=2.4] S[table-format=2.2]}
+%			\toprule
+%			\bfseries Isotope & {\bfseries Mass (amu)} & {\bfseries Natural Abundance (\%)} \\
+%			\midrule
+%			oxygen-16 & 15.9949 & 99.76 \\
+%			oxygen-17 & 16.9991 & 0.04 \\
+%			oxygen-18 & 17.9992 & 0.20 \\
+%			\bottomrule
+%		\end{tabular}
+%	\end{center}
+%\end{onyourown}
 
 \begin{frame}[allowframebreaks]{What about the electrons?}{Ionization}
 	In order to keep atoms and molecules \alert{neutral}, the number of
@@ -737,19 +733,19 @@
 	\end{tabularx}}
 \end{frame}
 
-\begin{onyourown}%{0em}
-	Complete the table\ldots
-
-	\renewcommand\arraystretch{1.5}
-	\begin{tabularx}{\linewidth} {@{}*{7}{>{\centering\arraybackslash}X}}
-		\toprule
-		\bfseries Atom /Ion & \bfseries Atomic \# & \bfseries Mass \# & \bfseries Charge & \bfseries \# Protons & \bfseries \# Neutrons & \bfseries \# Electrons \\ \midrule
-		\ch{^{87}_{37}Rb+} \\
-		\ch{^{71}_{32}Ge^{2-}} \\
-		\ch{^{198}_{77}Ir^{4+}} \\
-		\ch{^{119}_{50}Sn} \\ \bottomrule
-	\end{tabularx}
-\end{onyourown}
+%\begin{onyourown}%{0em}
+%	Complete the table\ldots
+%
+%	\renewcommand\arraystretch{1.5}
+%	\begin{tabularx}{\linewidth} {@{}*{7}{>{\centering\arraybackslash}X}}
+%		\toprule
+%		\bfseries Atom /Ion & \bfseries Atomic \# & \bfseries Mass \# & \bfseries Charge & \bfseries \# Protons & \bfseries \# Neutrons & \bfseries \# Electrons \\ \midrule
+%		\ch{^{87}_{37}Rb+} \\
+%		\ch{^{71}_{32}Ge^{2-}} \\
+%		\ch{^{198}_{77}Ir^{4+}} \\
+%		\ch{^{119}_{50}Sn} \\ \bottomrule
+%	\end{tabularx}
+%\end{onyourown}
 
 \begin{frame}{Mass Spectrometry}
 	\begin{center}
@@ -769,8 +765,6 @@
 		\end{itemize}
 	\end{minipage}
 \end{frame}
-
-\mode<article>{\clearpage}
 
 \begin{frame}{Graham Cooks: Purdue University}
 	\centering
@@ -792,7 +786,6 @@
 }
 
 \begin{frame}{The Mole Concept}
-	\only<1-2>{
 	Often, we discuss things in terms of a \alert{collection}.
 	\begin{align*}
 		\text{1 dozen donuts} &= \text{12 donuts} \\
@@ -803,9 +796,9 @@
 		\SI{1}{\mole} &=
 		\underbrace{\SI{6.02214e23}{particles}}_{\mathclap{\text{\alert{Avogadro's
 		number}}}}}
-	\end{align*}}
+	\end{align*}
 
-	\only<3->{
+	\mode<article>{%
 	\begin{align*}
 		\intertext{This relationship arises from the number of atoms in
 		exactly \SI{12}{\gram} of pure carbon-12:}
@@ -843,9 +836,7 @@
 
 	How many \ch{Cu} atoms are in \SI{0.50}{\mole} of \ch{Cu}?
 
-	\mode<article>{\vspace{10em}}
-
-	\note<+>{
+	\mode<article>{%
 		\begin{equation*}
 			\SI{0.50}{\mole}~\ch{Cu} \times
 			\frac{\SI{6.022e23}{atoms}}{\SI{1}{\mole}~\ch{Cu}} =
@@ -854,16 +845,16 @@
 
 	\bigskip
 
-	\begin{block}{Warning}
+	\begin{alertblock}{Warning}
 		This is the only type of question where Avogadro's number is
 		important! Do \textbf{not} automatically apply Avogadro's number
 		whenever you see moles!
-	\end{block}
+	\end{alertblock}
 \end{frame}
 
-\begin{onyourown}%{10em}
-	How many \ch{Hg} atoms are in \SI{1.20}{\mole} of \ch{Hg}?
-\end{onyourown}
+%\begin{onyourown}%{10em}
+%	How many \ch{Hg} atoms are in \SI{1.20}{\mole} of \ch{Hg}?
+%\end{onyourown}
 
 \begin{frame}{The Utility of Moles}{AKA Why bother?}
 	When compounds react, they do so \alert{stoichiometrically}
@@ -933,6 +924,7 @@
 
 	\bigskip
 
+	\mode<presentation|article:0>{%
 	\begin{center}
 		\begin{tabular} {l S[table-format=1.3]
 			S[table-format=2.3]}
@@ -944,8 +936,9 @@
 			\ch{W}  &          & 0.014            \\ \bottomrule
 		\end{tabular}
 	\end{center}
+}
 
-	\note{
+	\mode<article>{%
 	\begin{center}
 		\begin{tabular} {l S[table-format=1.3e-1]
 			S[table-format=2.3]}
@@ -959,23 +952,23 @@
 	\end{center}}
 \end{frame}
 
-\begin{onyourown}%{0em}
-	Complete the table\ldots
-
-	\renewcommand\arraystretch{1.5}
-	\begin{center}
-		\begin{tabular} {l@{\qquad} S[table-format=3.5]@{\qquad} S[table-format=4.4]}
-		\toprule
-		\bfseries Element & {\bfseries \# Moles} & {\bfseries Mass (\si{\gram})} \\
-		\midrule
-		\ch{Y}  & 3.01   & \\
-		\ch{Ru} &        & 72.10 \\
-		\ch{Bi} & 0.0020 & \\
-		\ch{Mo} &        & 204.3 \\
-		\bottomrule
-	\end{tabular}
-	\end{center}
-\end{onyourown}
+%\begin{onyourown}%{0em}
+%	Complete the table\ldots
+%
+%	\renewcommand\arraystretch{1.5}
+%	\begin{center}
+%		\begin{tabular} {l@{\qquad} S[table-format=3.5]@{\qquad} S[table-format=4.4]}
+%		\toprule
+%		\bfseries Element & {\bfseries \# Moles} & {\bfseries Mass (\si{\gram})} \\
+%		\midrule
+%		\ch{Y}  & 3.01   & \\
+%		\ch{Ru} &        & 72.10 \\
+%		\ch{Bi} & 0.0020 & \\
+%		\ch{Mo} &        & 204.3 \\
+%		\bottomrule
+%	\end{tabular}
+%	\end{center}
+%\end{onyourown}
 
 % Finished on 2020-08-28
 
