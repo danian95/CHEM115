@@ -1,8 +1,9 @@
 % !TEX program=xelatex
 %\documentclass[notes=show]{beamer}
-\documentclass[notes=onlyslideswithnotes,notes=hide]{beamer}
+%\documentclass[notes=onlyslideswithnotes,notes=hide]{beamer}
 %\documentclass[notes=hide]{beamer}
 %\documentclass[notes=only]{beamer}
+\documentclass[handout]{beamer}
 %\documentclass[10pt,letterpaper]{article}
 %\usepackage{beamerarticle}
 
@@ -10,12 +11,15 @@
 %\usepackage{pgfpages}
 %\setbeameroption{show notes on second screen}
 
+\usepackage{newtxtext}
+\usepackage{bucolors}
 \usepackage{genchem}
 \usepackage{lecture}
 \usepackage{multicol}
 %\usepackage{modiagram}
 \usepackage{elements}
 %\usepackage{ccicons}
+\usetikzlibrary{calc}
 
 \renewcommand*\printangularmomentum[1]{#1}
 
@@ -25,7 +29,7 @@
 \subtitle{Chapter 3}
 \institute[CHEM115 Bloomsburg University]{CHEM115 --- Chemistry for the Sciences I \\ Bloomsburg University}
 \author{D.A. McCurry}
-\date{Fall 2020}
+\date{Fall 2021}
 
 \begin{document}
 
@@ -65,7 +69,7 @@
 			%		domain=0:4,
 			%		height=1in,
 			%		width=2in,ymax=1,ymin=-0.3]
-			%		\addplot[primary,thick,samples=200]
+			%		\addplot[bumaroon,thick,samples=200]
 			%		{0.25*sin(x*180)};
 			%		\node[anchor=north] at (current bounding
 			%		box.north) {$H\Psi = E\Psi$};
@@ -78,46 +82,51 @@
 	\end{itemize}
 \end{frame}
 
-\begin{frame}{Dmitri Mendeleev (1869)}
-	\only<1>{%
-		\begin{center}
-			\includegraphics[scale=0.3]{density.jpg}
-		\end{center}
+\begin{frame}[allowframebreaks=1]{Dmitri Mendeleev (1869)}
+	\begin{center}
+		\includegraphics[scale=0.25]{density.jpg}
+	\end{center}
 	
-		\begin{block}{The Periodic Law}
-			When the elements are arranged in order of increasing mass,
-			certain sets of properties recur periodically.
-		\end{block}
-	}
-	\only<2>{%
-		Elements could be \alert{grouped} into columns based on their properties.
+	\begin{block}{The Periodic Law}
+		When the elements are arranged in order of increasing mass,
+		certain sets of properties recur periodically.
+	\end{block}
 
-		\begin{center}
-			\begin{tikzpicture}
-				\node(ptable)
-				{\includegraphics[width=0.9\linewidth]{mendeleev-ptable.png}};
-				\node[anchor=south east] at (ptable.south east)
-				{\includegraphics[scale=0.4]{mendeleev-wiki.jpg}};
-			\end{tikzpicture}
-		\end{center}
-	}
-	\only<3>{%
-		Using Mendeleev's early periodic table, he could even predict properties
-		for elements that had yet to be discovered:
+	\framebreak%
 
-		\bigskip
+	Elements could be \alert{grouped} into columns based on their properties.
 
-		\includegraphics[width=\linewidth]{gallium-germanium.jpg}
-	}
+	\begin{center}
+		\begin{tikzpicture}
+			\node(ptable)
+			{\includegraphics[width=0.9\linewidth]{mendeleev-ptable.png}};
+			\node[anchor=south east] at (ptable.south east)
+			{\includegraphics[scale=0.4]{mendeleev-wiki.jpg}};
+		\end{tikzpicture}
+	\end{center}
+
+	\framebreak%
+
+	Using Mendeleev's early periodic table, he could even predict properties
+	for elements that had yet to be discovered:
+
+	\bigskip
+
+	\includegraphics[width=\linewidth]{gallium-germanium.jpg}
 \end{frame}
 
-\begin{frame}{The Modern Periodic Table}
+\begin{frame}[allowframebreaks=1]{The Modern Periodic Table}
 	\centering
 
 	\includegraphics[width=\linewidth]{modern-ptable.jpg}
+
+	\framebreak
+
+	\includegraphics[width=\linewidth]{periodic-table-wide.pdf}
 \end{frame}
 
-\begin{frame}{What determines these trends?}
+\note{%
+	What determines these trends?
 	\begin{itemize}
 		\item Recall: chemistry is the study of the \alert{structure} of
 			the particles that compose matter.
@@ -127,39 +136,43 @@
 			configurations} --- the locations of electrons within an
 			atom.
 	\end{itemize}
+}
 
-	\pause%
-
-	\begin{example}
+\begin{frame}[t]{Electron Configurations}
 	What is the electron configuration of hydrogen in the ground
 	state?
-	\end{example}
-
-	\note<2->{%
-		\begin{itemize}
+	\begin{itemize}
 			\item How many electrons does hydrogen have?
 			\item Where might this electron exist in the ground
 				state?
-				\begin{itemize}
-					\item Principal quantum number ($n = 1$)
-					\item Angular momentum quantum number
-						($l = 0$)
-					\item Magnetic momentum quantum number
-						($m_l = 0$)
-				\end{itemize}
-		\end{itemize}
+
+				\vfill
+
+
+			\item<+-> Another method for indicating electron
+				location is via \alert{orbital diagrams}.
+
+				\vfill
+	\end{itemize}
+\end{frame}
+
+\note{%
+		\begin{itemize}
+				\item Principal quantum number ($n = 1$)
+				\item Angular momentum quantum number
+					($l = 0$)
+				\item Magnetic momentum quantum number
+					($m_l = 0$)
+			\end{itemize}
 
 		\begin{equation*}
 			1s^1
-		\end{equation*}}
-\end{frame}
+		\end{equation*}
+	}
 
-\begin{frame}{Orbital Filling Diagrams}
-	\begin{itemize}[<+->]
-		\item Another method for indicating electron location is via
-			\alert{orbital diagrams}.
-
-			\begin{center}
+\note{%
+	\textbf{Orbital Filling Diagrams}
+		\begin{center}
 				\begin{tikzpicture}
 					\node[font=\Huge](up)
 					{$\upharpoonleft\mathrel{\hphantom{\downharpoonright}}$};
@@ -178,67 +191,49 @@
 					{$m_s\hspace{10pt}=$};
 				\end{tikzpicture}
 			\end{center}
+}
 
-		\item For hydrogen,
+\begin{frame}[t]{Adding an Electron: Helium}
+	What is the electron configuration of \ch{He}?
 
-			\begin{center}
-				\begin{tabular} {@{}*{3}{c}}
-					\ch{H} & $1s^1$ & \electronup%
-				\end{tabular}
-			\end{center}
+	\vspace{\stretch{0.5}}
 
-		\item What about multi-electron systems?
-	\end{itemize}
-\end{frame}
+	\pause
 
-\begin{frame}{Adding an Electron: Helium}
-	\begin{itemize}
-		\item What is the electron configuration of \ch{He}?
-
-			\pause%
-
-			\begin{equation*}
-				1s^2
-			\end{equation*}
-
-			\pause%
-
-		\item What is the orbital diagram for Helium?
-
-			\pause%
-
-			\begin{center}
-				\electron{$\upharpoonleft\upharpoonright$}?
-				\qquad
-				\pause%
-				\electron{$\upharpoonleft\downharpoonright$}?
-				\qquad
-				\pause%
-				\electron{$\downharpoonleft\downharpoonright$}?
-			\end{center}
-	\end{itemize}
+	What is the orbital diagram for Helium?
 
 	\pause%
+
+	\note<2>{%
+		\begin{center}
+			\electron{$\upharpoonleft\upharpoonright$}?
+			\qquad
+			\electron{$\upharpoonleft\downharpoonright$}?
+			\qquad
+			\electron{$\downharpoonleft\downharpoonright$}?
+		\end{center}
+	}
+
+	\vfill
 
 	\begin{block}{Pauli Exclusion Principle}
 		No two electrons in an atom can have the same four quantum
 		numbers.
 	\end{block}
+	\null%
 
-	\pause%
-
+	\note<3>{%
 	\begin{center}
 		$1s^2 \rightarrow n = 1 \qquad l = 0 \qquad m_l = 0$
 
 		so $m_s$ \alert{must} differ.
 
-		\pause%
-
 		\textbf{\usebeamercolor[fg]{alerted text}This also means we can only have 2 electrons per orbital!}
 	\end{center}
+}
 \end{frame}
 
-\begin{inclass}[c]
+\begin{frame}[c]{Some ``easy'' diagrams\ldots}
 		\begin{tabularx}{\linewidth} {c >{\centering\arraybackslash}m{1in}
 			>{\centering\arraybackslash}X}
 		\toprule
@@ -261,22 +256,22 @@
 		\electronboth\quad \electronup\electronnone\electronnone \\
 		\end{tabular}
 \end{center}}
-\end{inclass}
+\end{frame}
 
-\begin{onyourown}%{0em}
-	\begin{tabularx}{\linewidth} {c >{\centering\arraybackslash}m{1in}
-			>{\centering\arraybackslash}X}
-		\toprule
-		\bfseries Element & \bfseries \ch{e^{-}} Config & \bfseries Orbital
-		Diagram \\ \midrule
-		\parbox[c][4em][c]{0.5in}{\centering\ch{Na}} & \\
-		\parbox[c][4em][c]{0.5in}{\centering\ch{F} }& \\
-		\parbox[c][4em][c]{0.5in}{\centering\ch{Cl}} & \\
-		\bottomrule
-	\end{tabularx}
-\end{onyourown}
-
-\vspace{\stretch{1}}
+%\begin{onyourown}%{0em}
+%	\begin{tabularx}{\linewidth} {c >{\centering\arraybackslash}m{1in}
+%			>{\centering\arraybackslash}X}
+%		\toprule
+%		\bfseries Element & \bfseries \ch{e^{-}} Config & \bfseries Orbital
+%		Diagram \\ \midrule
+%		\parbox[c][4em][c]{0.5in}{\centering\ch{Na}} & \\
+%		\parbox[c][4em][c]{0.5in}{\centering\ch{F} }& \\
+%		\parbox[c][4em][c]{0.5in}{\centering\ch{Cl}} & \\
+%		\bottomrule
+%	\end{tabularx}
+%\end{onyourown}
+%
+%\vspace{\stretch{1}}
 
 \frame{\section{Higher-Level Electron Configurations}
 	\begin{learningobjectives}
@@ -364,7 +359,7 @@
 	\end{itemize}
 \end{frame}
 
-\begin{inclass}[c]
+\begin{frame}[c]{Some ``intermediate'' diagrams\ldots}
 	\begin{tabularx}{\linewidth} {c
 			>{\centering\arraybackslash}m{1in}
 		>{\centering\arraybackslash}X}
@@ -395,29 +390,26 @@
 		\bottomrule
 
 		\end{tabular}}
-\end{inclass}
+\end{frame}
 
-\vspace{\stretch{-1}}
-
-\begin{onyourown}%{0em}
-	\begin{tabularx}{\linewidth} {c
-			>{\centering\arraybackslash}m{1in}
-		>{\centering\arraybackslash}X}
-		\toprule
-		\bfseries Element & \bfseries \ch{e^{-}} Config & \bfseries Orbital
-		Diagram \\ \midrule
-		\parbox[c][4em][c]{0.5in}{\centering\ch{C} }& \\
-		\parbox[c][4em][c]{0.5in}{\centering\ch{S} } & \\
-		\parbox[c][4em][c]{0.5in}{\centering\ch{Mg}} & \\
-		\bottomrule
-	\end{tabularx}
-\end{onyourown}
-
-\vspace{\stretch{-1}}
+%\begin{onyourown}%{0em}
+%	\begin{tabularx}{\linewidth} {c
+%			>{\centering\arraybackslash}m{1in}
+%		>{\centering\arraybackslash}X}
+%		\toprule
+%		\bfseries Element & \bfseries \ch{e^{-}} Config & \bfseries Orbital
+%		Diagram \\ \midrule
+%		\parbox[c][4em][c]{0.5in}{\centering\ch{C} }& \\
+%		\parbox[c][4em][c]{0.5in}{\centering\ch{S} } & \\
+%		\parbox[c][4em][c]{0.5in}{\centering\ch{Mg}} & \\
+%		\bottomrule
+%	\end{tabularx}
+%\end{onyourown}
+%
+%\vspace{\stretch{-1}}
 
 \begin{frame}[t]{An Issue with Aufbau}
-	\begin{itemize}[<+->]
-		\item What is the electron configuration of vanadium (\ch{V})?
+	What is the electron configuration of vanadium (\ch{V})?
 			\note<1>{
 				\begin{enumerate}
 					\item How many electrons does vanadium
@@ -430,21 +422,13 @@
 						\alert{\elconf{V}}
 				\end{enumerate}
 				}
-			\item $3d$ orbitals are often \alert{higher} in energy
-				than $4s$ orbitals, but \alert{lower} in energy
-				than $4p$ orbitals.
+	\pause%
+	\begin{center}
+		\includegraphics[scale=0.35, trim={0 0 0
+		40pt}, clip]{energyordering.jpg}
+	\end{center}
 
-				\only<2>{
-					\medskip
-				\begin{center}
-					\includegraphics[scale=0.35, trim={0 0 0
-					40pt}, clip]{energyordering.jpg}
-				\end{center}}
-
-			\item An easy-ish way of remembering how to fill
-				orbitals:
-
-				\note{
+		\note<2>{
 				\begin{center}
 					\begin{tikzpicture}[x=2em,y=2em,
 						nodes={%
@@ -452,7 +436,7 @@
  						  execute at end node=$%
  						 },
 						 every node/.style={anchor=base}]
-						\tikzstyle{aufbau}=[thick,primary,->];
+						\tikzstyle{aufbau}=[thick,bumaroon,->];
 						\node(1s) at (0,0) {1s};
 						\node(2s) at (0,-1) {2s};
 						\node(2p) at (1,-1) {2p};
@@ -489,7 +473,6 @@
 %						}
 					\end{tikzpicture}
 			\end{center}}
-	\end{itemize}
 \end{frame}
 
 \begin{frame}{Electron Configurations from the Periodic Table}
@@ -504,33 +487,33 @@
 \end{frame}
 
 \begin{frame}{Some Exceptions to Electron Configurations}
-	\begin{itemize}
-		\item The $4s$ and $3d$ orbitals are so close in energy that
-			some elements do not follow the trends.
-	\end{itemize}
-
+	The $4s$ and $3d$ orbitals are so close in energy that
+	some elements do not follow the trends.
 	\begin{center}
 		\includegraphics[scale=0.4]{transition-exceptions.jpg}
 	\end{center}
-
-	\begin{itemize}
-		\item These exceptions are determined experimentally through
-			spectroscopy (think atomic emission).
-	\end{itemize}
+	These exceptions are determined experimentally through
+	spectroscopy (think atomic emission).
 \end{frame}
 
-\begin{frame}{Shorthand Electron Configurations}
+\begin{frame}[t]{Shorthand Electron Configurations}
 	As we build up the electron configuration for the larger atomic numbers,
 	we can distinguish the \alert{inner} electron configurations from the
 	\alert{outer} electron configurations:
 
 	\begin{description}
-		\item[Inner:] Completed suborbitals can be represented by a
+		\item[Inner:] Completed suborbitals represented by a
 			noble gas.
-		\item[Outer:] Remaining electrons are indicated as before.
+		\item[Outer:] Remaining electrons indicated as before.
 	\end{description}
 
-	\textbf{Example:} For chlorine,
+	\bigskip
+
+	\begin{example}
+		What is the full and shorthand electron configuration for
+		\ch{Cl}?
+	\end{example}
+	\note{For chlorine,
 		\begin{equation*}
 			\underbrace{\bm{1s^22s^22p^6}}_{\ch{[Ne]}}3s^23p^5
 		\end{equation*}
@@ -538,39 +521,33 @@
 		\begin{equation*}
 			\ch{[Ne]}3s^23p^5
 		\end{equation*}
+	}
 \end{frame}
 
-\begin{frame}{Core Shell vs. Valence Electrons}
-	\only<1>{%
-		Shorthand configurations are not just useful for simplicity!
-		\begin{itemize}
-			\item Noble gases are considered noble because they don't bond
-				with other atoms.
-			\item All electrons are paired and orbitals are in their most
-				stable configuration.
-			\item These inner electrons are considered \alert{core shell}
-				electrons.
-				\smallskip
-				\begin{center}
-			\includegraphics[scale=0.2]{coreshell-config.jpg}
-		\end{center}
-		\end{itemize}
-	}
+\begin{frame}[allowframebreaks]{Core Shell vs. Valence Electrons}
+	Shorthand configurations are not just useful for simplicity!
+	\begin{itemize}
+		\item Noble gases are considered noble because they don't bond
+			with other atoms.
+		\item All electrons are paired and orbitals are in their most
+			stable configuration.
+		\item These inner electrons are considered \alert{core shell}
+			electrons.
+			\smallskip
+			\begin{center}
+		\includegraphics[scale=0.2]{coreshell-config.jpg}
+	\end{center}
+	\end{itemize}
 
-	\only<2>{%
-		\begin{itemize}
-			\item The outer, or \alert{valence}, electrons participate in
-				reactions, bonding, etc.
-			\item Note the arrangement of the periodic table places elements
-				with the same number of valence electrons in the same
-				\alert{groups}.
-		\begin{center}
-			\includegraphics[scale=0.4,trim={0 0 0 40pt},clip]{valence-electrons.jpg}
-		\end{center}
-			\item Atoms without a \alert{noble gas configuration} react to
-				attain such a configuration.
-		\end{itemize}
-	}
+	\framebreak%
+
+	The outer, or \alert{valence}, electrons participate in
+	reactions, bonding, etc.
+	\begin{center}
+		\includegraphics[width=\linewidth]{valence-electrons.jpg}
+	\end{center}
+	Atoms without a \alert{noble gas configuration} react to attain such a
+	configuration.
 \end{frame}
 
 \frame{\section{Periodic Trends}
@@ -613,10 +590,10 @@
 	\begin{columns}
 		\column{0.45\textwidth}
 		\begin{itemize}
-			\item \alert{DO NOT} conduct electricity
-			\item \alert{DO NOT} have luster
-			\item \alert{ARE NOT} malleable or ductile
-			\item \alert{ARE NOT ALL} solids at room temperature
+			\item \textbf{\usebeamercolor[fg]{alerted text}DO NOT} conduct electricity
+			\item \textbf{\usebeamercolor[fg]{alerted text}DO NOT} have luster
+			\item \textbf{\usebeamercolor[fg]{alerted text}ARE NOT} malleable or ductile
+			\item \textbf{\usebeamercolor[fg]{alerted text}ARE NOT ALL} solids at room temperature
 		\end{itemize}
 		\column{0.55\textwidth}
 		\centering
@@ -702,6 +679,9 @@
 	\begin{enumerate}
 		\item What is its electron configuration \alert{before}
 			oxidation?
+
+			\bigskip
+
 		\item What is its electron configuration \alert{after} oxidation?
 	\end{enumerate}
 	
@@ -716,6 +696,9 @@
 	\begin{enumerate}
 		\item What is its electron configuration \alert{before}
 			oxidation?
+
+			\bigskip
+
 		\item What is its electron configuration \alert{after} oxidation?
 	\end{enumerate}
 	
@@ -730,6 +713,9 @@
 	\begin{enumerate}
 		\item What is its electron configuration \alert{before}
 			reduction?
+
+			\bigskip
+
 		\item What is its electron configuration \alert{after} reduction?
 	\end{enumerate}
 
@@ -761,12 +747,16 @@
 
 	\framebreak
 
+	\noindent
 	\begin{center}
 		\includegraphics[scale=0.4]{predictable-ions.jpg}
 
 		\bigskip
 
 		\em Note this typo in Figure 3.12 in your book!
+
+		\em Still not corrected in the digital version --- thanks
+		Pearson!
 	\end{center}
 \end{frame}
 
@@ -788,7 +778,6 @@
 	\begin{itemize}
 		\item The nucleus attracts electrons due to opposite charge.
 		\item Other electrons repel electrons due to similar charge.
-			\pause
 		\item A balance must exist where in some cases we can attract
 			electrons and in others, repel them.
 	\end{itemize}
@@ -805,7 +794,7 @@
 	\end{block}
 \end{frame}
 
-\begin{frame}[allowframebreaks]{Shielding Charges}
+\begin{frame}{Shielding Charges}
 	\begin{itemize}
 		\item What is the electron configuration of lithium?
 		\item How many \alert{valence} electrons does lithium have?
@@ -816,8 +805,6 @@
 		\includegraphics[scale=0.35,trim={0 0 0 40pt},clip]{shielding.jpg}
 	\end{center}
 \end{frame}
-
-\vspace{\stretch{-1}}
 
 \begin{frame}[allowframebreaks]{Consider the third period elements\ldots}
 	\begin{center}
@@ -1064,10 +1051,9 @@
 \end{onyourown}
 
 \begin{frame}{Some notes on forming ions\ldots}
-	\begin{itemize}[<+->]
-		\item For \alert{main group elements}, electrons are removed in
+	\begin{block}{Main Group Elements}
+		Electrons are removed in
 			the reverse order of filling.
-
 			\begin{center}
 				\begin{tabular} {l c l}
 					F = \elconf{F} & $\rightarrow$ & \ch{F-} =
@@ -1077,35 +1063,46 @@
 					\elconf{He} \\
 				\end{tabular}
 			\end{center}
+	\end{block}
+	\pause%
 
-		\item For \alert{transition elements}, remove the electrons in
-			the highest $n$-value orbitals first, even if this does
-			not correspond to the reverse order of filling.
+	\begin{block}{Transition Elements}
+		Remove the electrons in
+		the highest $n$-value orbitals first, even if this does
+		not correspond to the reverse order of filling.
 
-			\begin{center}
-				\begin{tabular} {l c l}
-					V = [Ar]$4s^23d^3$ & $\rightarrow$ &
-					\ch{V^{2+}} =
-					[Ar]$4s^{\color{red}0}3d^3$ or
-					[Ar]$3d^3$
-				\end{tabular}
-			\end{center}
+		\begin{center}
+			\begin{tabular} {l c l}
+				V = [Ar]$4s^23d^3$ & $\rightarrow$ &
+				\ch{V^{2+}} =
+				[Ar]$4s^{\color{red}0}3d^3$ or
+				[Ar]$3d^3$
+			\end{tabular}
+		\end{center}
 
-			This deviation has been confirmed experimentally -- in
-			particular, this agrees well with the \alert{magnetic
-			properties} of the elements/ions.
-	\end{itemize}
+		This deviation has been confirmed experimentally -- in
+		particular, this agrees well with the \alert{magnetic
+		properties} of the elements/ions.
+	\end{block}
 \end{frame}
 
 \begin{frame}[t]{The Magnetic Properties of Ions}
 	Recall $m_s$ -- What does it mean to have a spin of $\pm\frac{1}{2}$?
+\end{frame}
 
-	\begin{description}
-		\item<+(1)->[Paramagnetic:] The atom or ion is \alert{attracted} to a
-			magnetic field.
-	\end{description}
+\begin{frame}[t]{Paramagnetism}
+	The atom or ion is \alert{attracted} to a magnetic field.
+	\begin{itemize}
+		\item What is the orbital diagram for \ch{Ag}?
 
-	\only<.(1)>{%
+			\vfill
+
+		\item What is the orbital diagram for \ch{Ag+}?
+
+			\vfill
+	\end{itemize}
+
+	\note{%
 		\begin{center}
 			\begin{tabular} {*{2}{l} *{2}{c}}
 				\ch{Ag} & [\ch{Kr}]$5s^14d^{10}$ &
@@ -1115,13 +1112,22 @@
 			\end{tabular}
 		\end{center}
 	}
+\end{frame}
 
-	\begin{description}
-		\item<+(1)->[Diamagnetic:] The atom or ion is \alert{slightly repelled}
-			by a magnetic field.
-	\end{description}
+\begin{frame}[t]{Diamagnetism}
+	The atom or ion is \alert{slightly repelled} by a magnetic field.
+	\begin{itemize}
+		\item What is the orbital diagram for \ch{Zn}?
 
-	\only<.(1)>{%
+			\vfill
+
+		\item What is the orbital diagram for \ch{Zn^{2+}}?
+
+			\vfill
+	\end{itemize}
+
+
+	\note{%
 		\begin{center}
 			\begin{tabular} {*{2}{l} *{2}{c}}
 				\ch{Zn} & [\ch{Ar}]$4s^23d^{10}$ &
@@ -1137,11 +1143,11 @@
 	}
 \end{frame}
 
-\begin{frame}{Identifying Magnetism}
+\begin{frame}[t]{Identifying Magnetism}
 	Write the electron configuration and orbital diagram for each ion and
 	determine whether each is diamagnetic or paramagnetic.
 
-	\renewcommand\arraystretch{2}
+	\renewcommand\arraystretch{3}
 	\begin{tabular} {l *{2}{c}}
 		\ch{Al^{3+}}  \\
 		\ch{Fe^{3+}}  \\
@@ -1171,68 +1177,68 @@
 
 \begin{frame}{How easy is it to remove an electron?}
 	\begin{columns}
-		\column{0.5\textwidth}
-		\begin{itemize}[<+->]
-			\item We have calculated the energies of atomic orbitals
-				before:
-				\begin{equation*}
-					E_n = -R_{\ch{H}} \bigg( \frac{Z^2}{n^2} \bigg)
-				\end{equation*}
-			\item As we increase in $n$, we noted that the energy of
-				the orbital \alert{increased}.
-			\item What happens if we keep increasing $n$?
-		\end{itemize}
-		\column{0.5\textwidth}
-		\visible<3->{%
+		\column{0.35\textwidth}
+		We have calculated the energies of atomic orbitals before:
+		\begin{equation*}
+			E_n = -R_{\ch{H}} \bigg( \frac{Z^2}{n^2} \bigg)
+		\end{equation*}
+		What happened to the energy as we increased in $n$?
+
+		\bigskip
+
+		\visible<+(1)->{What happens if we keep increasing $n$?}
+		\column{0.45\textwidth}
 		\begin{center}
-			\begin{tikzpicture}[scale=0.4]
+			\begin{tikzpicture}[scale=1.85]
 				\tikzstyle{every node} = [font=\scriptsize];
-				\filldraw[black] (0,0) circle (0.2);
-				\foreach \x in {1,2,...,4} {
-					\draw[black] (0,0) circle (\x);
-					\node[yshift=4pt] at (0,\x) {$n =
+				\filldraw[black] (0,0) circle (0.05);
+				\foreach[evaluate=\x as \n using 2.25-2*\x^-0.5] \x in {1,2,...,4} {
+					\draw[black] (0,0) circle (\n);
+					\node[yshift=4pt] at (0,\n) {$n =
 					\x$};
 					}
-				\draw[dotted,black] (0,0) circle (5);
-				\draw[black] (0,0) circle (6);
-				\node[yshift=4pt] at (0,6) {$n = \infty$};
+					\visible<.(1)->{%
+				\draw[dotted,black] (0,0) circle (1.5);
+				\node[yshift=4pt] at (0,1.5) {$n = \infty$};
+			}
 			\end{tikzpicture}
-		\end{center}}
+		\end{center}
 	\end{columns}
-
-	\visible<4->{%
-	\begin{block}{Ionization Energy}
-		 The energy required to remove an electron from the atom or ion
-		 in the gaseous state. Ionization energy is \alert{always}
-		 positive.
-	\end{block}}
 \end{frame}
 
-\vspace{\stretch{-1}}
+\begin{frame}[c]{Ionization Energy}
+	The energy required to remove an electron from the atom or ion
+	in the gaseous state. Ionization energy is \alert{always}
+	positive.
 
-\begin{frame}[allowframebreaks]{First Ionization Energy}
-	The energy required to remove the \alert{first} electron is the
-	\alert{first ionization energy}.
-	\begin{reaction*}
-		Na\gas{} + \text{energy} -> Na^{+}\gas{} + 1 \el
-	\end{reaction*}
-		
-	\begin{itemize}
-		\item Decreases going down a group as the distance between the
-			nucleus and valence electrons increases.
-		\item Increases going across a period from left to right due to
-			greater effective nuclear charge.
-	\end{itemize}
+	\bigskip
 
-	\framebreak
+	\begin{block}{First Ionization Energy}
+		The energy required to remove the \alert{first} electron is the
+		\alert{first ionization energy}.
+		\begin{reaction*}
+			Na\gas{} + \text{energy} -> Na^{+}\gas{} + 1 \el
+		\end{reaction*}
+	\end{block}
+\end{frame}
 
+\begin{frame}{Trends in First Ionization Energy}
 	\begin{center}
 		\includegraphics[scale=0.4,trim={0 0 0
 		40pt},clip]{first-ionization.jpg}
 	\end{center}
+
+	\note{%
+		\begin{itemize}
+			\item Decreases going down a group as the distance between the
+				nucleus and valence electrons increases.
+			\item Increases going across a period from left to right due to
+				greater effective nuclear charge.
+		\end{itemize}
+	}
 \end{frame}
 
-\begin{frame}[allowframebreaks]{Second (and Successive) Ionization Energy}
+\begin{frame}{Second (and Successive) Ionization Energy}
 	\begin{columns}
 		\column{0.4\textwidth}
 		The energy required to remove an electron from an \alert{ion} is
@@ -1247,25 +1253,24 @@
 			\includegraphics[scale=0.3]{successive-ionization.jpg}
 		\end{center}
 	\end{columns}
+\end{frame}
 
-	\framebreak%
-
+\begin{frame}{Trends in Successive Ionization Energies}
 	\begin{center}
 		\includegraphics[scale=0.42]{ionization-energies.jpg}
 	\end{center}
 \end{frame}
-
-\vspace{\stretch{-1}}
 
 \begin{frame}{What about gaining electrons?}
 	\begin{block}{Electron Affinity}
 		The energy change associated with gaining an electron in the
 		gaseous state. \alert{Usually negative} because energy is
 		released as electrons are gained.
+		\begin{reaction*}
+			Cl\gas{} + 1 \el{} -> Cl^{-}\gas{} + \text{energy}
+		\end{reaction*}
 	\end{block}
-	\begin{reaction*}
-		Cl\gas{} + 1 \el{} -> Cl^{-}\gas{} + \text{energy}
-	\end{reaction*}
+
 	\begin{columns}
 		\column{0.5\textwidth}
 		\begin{itemize}
