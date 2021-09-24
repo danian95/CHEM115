@@ -1,11 +1,13 @@
 % !TEX program = xelatex
-\documentclass[notes=onlyslideswithnotes,notes=hide]{beamer}
+%\documentclass[notes=onlyslideswithnotes,notes=hide]{beamer}
 %\documentclass[notes=only]{beamer}
 %\documentclass[notes=hide]{beamer}
 %\documentclass[notes=show]{beamer}
+\documentclass[handout]{beamer}
 %\documentclass[11pt,letterpaper]{article}
 %\usepackage{beamerarticle}
 
+\usepackage{newtxtext}
 \usepackage{genchem}
 \usepackage{lecture}
 \usepackage{multicol}
@@ -22,8 +24,8 @@
 \title{Molecules and Compounds}
 \subtitle{Chapter 4}
 \institute[CHEM115 Bloomsburg University]{CHEM115 --- Chemistry for the Sciences I \\ Bloomsburg University}
-\author{D.A. McCurry}
-\date{Fall 2020}
+\author{D.A.\ McCurry}
+\date{Fall 2021}
 
 \begin{document}
 
@@ -38,79 +40,57 @@
 }
 
 \begin{frame}{From Elements to Molecules}
-	When two or more elements combine, a molecule is formed.
-	\begin{columns}
-		\column{0.6\linewidth}
-		\begin{itemize}
-			\item Elements can be the same:
-				\begin{itemize}
-					\item The molecular compound of oxygen,
-						\ch{O2}.
-				\end{itemize}
-			\item Elements can be different:
-				\begin{itemize}
-					\item The molecular compound of water,
-						\ch{H2O}.
-				\end{itemize}
-		\end{itemize}
-		\column{0.4\linewidth}
-		\centering
-		\includegraphics[scale=0.2]{o2-h2-h2o.jpg}
-	\end{columns}
-
-	\bigskip
-
-	Compounds are composed of atoms held together by \alert{chemical bonds}.
-
-	\pause
+	\begin{center}
+		\includegraphics[scale=0.4]{o2-h2-h2o.jpg}
+	\end{center}
 
 	\begin{block}{Chemical Bond}
 		The force of attraction between any two atoms in a compound.
 	\end{block}
 \end{frame}
 
-\begin{frame}{Chemical Bonding}
+\begin{frame}[t]{Chemical Bonding}
 	There are three types of chemical bonds:
-	\begin{description}[<+(1)->]
-		\item[Ionic:] The \alert{transfer} of one or more
-			electrons from one atom to another.
-			\begin{itemize}[<1->]
-				\item Formation of cations and anions.
-				\item There is not an actual bond formed.
-			\end{itemize}
-		\item[Covalent:] A \alert{sharing} of two electrons between
-			atoms.
-		\item[Metallic:] \tikzmark{st}Metal cations in a ``sea'' of
-			electrons.\tikzmark{stend}
-	\end{description}
-	\pause
+	\begin{enumerate}[<+(1)->]
+		\item Ionic
+		\item Covalent
+		\item Metallic
+	\end{enumerate}
 
-	\begin{tikzpicture}[remember picture,overlay]
-		\draw[thick] ($(pic cs:st) + (-5em,0.45em) $) -- ($(pic
-		cs:stend) + (0,0.45em)$);
-	\end{tikzpicture}
+	\note<.(1)>{%
+		\begin{description}
+			\item[Ionic:] The \alert{transfer} of one or more
+				electrons from one atom to another.
+				\begin{itemize}[<1->]
+					\item Formation of cations and anions.
+					\item There is not an actual bond formed.
+				\end{itemize}
+			\item[Covalent:] A \alert{sharing} of two electrons between
+				atoms.
+			\item[Metallic:] Metal cations in a ``sea'' of
+				electrons.
+		\end{description}
+	}
 
-	\pause
+	\bigskip
 
-%	\mode<presentation>{\bigskip}
+	\onslide<+(1)->
 
 	\begin{block}{Chemical Bonding Commonalities}
 		\begin{itemize}
-			\item Both bonds involve the valence electrons.
-			\item Both bonds allow for the formation of stable
+			\item All bonds involve the valence electrons.
+			\item All bonds allow for the formation of stable
 				octets (or duets) for the atoms involved.
 		\end{itemize}
 	\end{block}
 \end{frame}
 
 \begin{frame}{Ionic Bonds}
-	\only<+>{%
-		\begin{center}
-			\includegraphics[scale=0.4]{ionic-formation.jpg}
-		\end{center}
-	}
+	\begin{center}
+		\includegraphics[scale=0.4]{ionic-formation.jpg}
+	\end{center}
 
-	\only<+->{%
+	\note{%
 		\begin{itemize}
 			\item Ionic bonds occur between metals and nonmetals.
 			\item One or more electrons are fully transferred \alert{from}
@@ -126,21 +106,70 @@
 	}
 \end{frame}
 
-\begin{frame}{Covalent Bonds}
+\begin{frame}{The Lewis Model and Lattice Energy}
+	Ionic compounds\ldots
 	\begin{itemize}
-		\item Covalent bonds occur between two or more nonmetals.
-		\item The electrons are \alert{shared} between the two atoms.
-		\item Covalently bound atoms compose a \alert{molecule}.
+		\item consist of positive and negative ions.
+		\item have high melting and boiling points.
+		\item are solid at room temperature.
 	\end{itemize}
+
+	Why?
+
+	\pause
 
 	\bigskip
 
+	\begin{block}{Lattice Energy}
+		The energy associated with the formation of a crystalline
+		lattice of alternating cations and anions from the gaseous ions.
+
+		\alert{Always exothermic (negative)}.
+	\end{block}
+
+\end{frame}
+
+\begin{frame}[plain]
 	\begin{center}
-		\includegraphics[scale=0.4]{ionic-vs-covalent.jpg}
+		\includegraphics[width=\linewidth]{lattice-energy-cmpd.jpg}
+	
+		What is the sign of $\Delta H$? Why is heat released?
 	\end{center}
 \end{frame}
 
-\vspace{\stretch{-1}}
+
+%\begin{frame}{Covalent Bonds}
+%	\note{%
+%		\begin{itemize}
+%			\item Covalent bonds occur between two or more nonmetals.
+%			\item The electrons are \alert{shared} between the two atoms.
+%			\item Covalently bound atoms compose a \alert{molecule}.
+%		\end{itemize}
+%	}
+%
+%	\includegraphics[width=\linewidth]{ionic-vs-covalent.jpg}
+%\end{frame}
+
+\begin{frame}{Covalent Bonds}
+	To fill orbitals, atoms sometimes \alert{share}
+	electrons to form \alert{covalent bonds}.
+	\begin{itemize}
+		\item Occurs between two non-metals.
+		\item Each provides an electron to the sharing relationship.
+		\item The electron pair spends time with both nuclei so each
+			feels like they have an octet.
+	\end{itemize}
+	
+	\begin{center}
+		\includegraphics[scale=0.225]{McMurray-covalent.jpg}
+	\end{center}
+\end{frame}
+
+\begin{frame}{The Energetics of Covalent Bonding}
+	\begin{center}
+		\includegraphics[width=\linewidth]{McMurray-covalent2.jpg}
+	\end{center}
+\end{frame}
 
 \frame{\section{Representing Ionic Compounds}
 	\begin{learningobjectives}
@@ -156,13 +185,9 @@
 	\end{learningobjectives}
 }
 
-\vspace{\stretch{-1}}
-
 \begin{frame}{Chemical Formulas and Models}
 	A chemical formula indicates the type and number of each element present
 	in a compound.
-
-	\bigskip
 
 	\begin{description}[<+(1)->]
 		\item[Empirical formula:] Relative number of atoms of each
@@ -202,94 +227,15 @@
 
 	\bigskip
 
-	\begin{center}
-		\includegraphics[scale=0.4]{3d-models.jpg}
-	\end{center}
+	\includegraphics[width=\linewidth]{3d-models.jpg}
 \end{frame}
 
-\begin{frame}{The Lewis Model and Lattice Energy}
-	\only<+>{%
-		Ionic compounds\ldots
-		\begin{itemize}
-			\item consist of positive and negative ions.
-			\item have attractions called \alert{ionic interactions} between
-				oppositely charged ions.
-			\item have high melting and boiling points.
-			\item are solid at room temperature.
-		\end{itemize}
-	
-		\bigskip
-	
-		The octet rule helps guide the formulas of ionic compounds --- every atom
-		is trying to achieve a stable octet in the valence shell!
-	}
-
-	\only<+>{%
-		\begin{block}{Lattice Energy}
-			The energy associated with the formation of a crystalline
-			lattice of alternating cations and anions from the gaseous ions.
-	
-			\alert{Always exothermic (negative)}.
-		\end{block}
-	}
-
-	\only<+>{%
-		\begin{center}
-			\includegraphics[scale=0.4]{lattice-energy-cmpd.jpg}
-	
-			What is the sign of $\Delta H$? Why is heat released?
-		\end{center}
-	}
-
-%	This is not useful to discuss at this time
-
-%	\framebreak
-%
-%	\begin{center}
-%		\begin{tabu} {r@{ \ch{->} }l@{\qquad}>{$\Delta H$ }c S[table-format=3]<{
-%			\si{\kilo\joule\per\mole}}}
-%		\ch{Na\gas{}} & \ch{Na^{+}\gas{} + \el} & $=$ & +496 \\
-%		\ch{Cl\gas{} + \el{}} & \ch{Cl^{-}\gas{}}  & $=$ & -349 \\ \tabucline-
-%		\ch{Na^{+}\gas{} + Cl^{-}\gas{}} & \ch{NaCl\sld{}} & $\neq$ & +147
-%	\end{tabu}
-%	\end{center}
-%
-%	\bigskip
-%
-%	Recall Coulomb's law\ldots
-%
-%	\begin{equation*}
-%		E = \frac{1}{4\pi\epsilon_0} \frac{q_1q_2}{r}
-%	\end{equation*}
-%
-%	\begin{itemize}
-%		\item $\epsilon_0$ is a constant
-%		\item $q_1$ and $q_2$ are the charges
-%		\item $E$ is a positive value for repulsion, negative value for
-%			attraction
-%	\end{itemize}
-%
-%	\framebreak
-%
-%	\bigskip
-%
-%	The lattice energy for the formation of \ch{NaCl} is
-%	\SI{-411}{\kilo\joule\per\mole}.
-%	\begin{itemize}
-%		\item The \ch{Na+} and \ch{Cl-} ions are ``locked'' in position.
-%		\item \ch{NaCl\sld{}} has a \alert{high} melting point.
-%		\item \ch{NaCl\sld{}} \alert{does not} conduct electricity.
-%		\item \ch{NaCl\aq{}} \alert{does} conduct electricity.
-%	\end{itemize}
-\end{frame}
-
-\begin{frame}{Writing Formulas for Ionic Compounds}
-	An \alert{ionic formula}\ldots
+\begin{frame}[t]{Writing Formulas for Ionic Compounds}
+	An ionic formula\ldots
 	\begin{itemize}
 		\item consists of positively and negatively charged ions.
 		\item is electrically \alert{neutral} overall.
 		\item has charge \alert{balance}.
-
 			\begin{equation*}
 				\text{total positive charge} = \text{total
 				negative charge}
@@ -300,35 +246,29 @@
 
 	\bigskip
 
-	The symbol of the metal is written first, followed by the symbol of the
-	nonmetal.
-\end{frame}
+	\begin{example}
+		Determine the formula for the ionic compound composed only of
+		\ch{Na+} and \ch{N^{3-}}.
+	\end{example}
 
-\vspace{\stretch{-1}}
-
-\begin{frame}[t]{Using Charges to Write Ionic Formulas}
-	Charge balance is used to write the formula for sodium nitride, a
-	compound containing \ch{Na+} and \ch{N^{3-}}.
-
-	\begin{equation*}
-		\underbrace{\ch{3 Na^{+}}}_{3(+1)} +
-		\underbrace{\ch{N^{3-}}}_{-3} = \underbrace{\ch{Na3N}}_0
-	\end{equation*}
+	\note{%
+		Charge balance is used to write the formula for sodium nitride, a
+		compound containing \ch{Na+} and \ch{N^{3-}}.
+	
+		\begin{equation*}
+			\underbrace{\ch{3 Na^{+}}}_{3(+1)} +
+			\underbrace{\ch{N^{3-}}}_{-3} = \underbrace{\ch{Na3N}}_0
+		\end{equation*}
 
 	\textbf{Example:} Write the ionic formula of the compound containing
 	\ch{Ba^{2+}} and \ch{Cl-}.
 
-			\note{
 				\begin{enumerate}
-					\item Write the symbols of the ions.
-						\begin{reaction*}
-							Ba^{2+} \qquad Cl-
-						\end{reaction*}
-					\item Balance the charges.
-						\begin{reaction*}
-							Ba^{2+} \qquad Cl-
-							\qquad Cl-
-						\end{reaction*}
+					\item Write the symbols of the ions:
+						\qquad \ch{Ba^{2+} \qquad Cl-}
+					\item Balance the charges: \qquad
+							\ch{Ba^{2+} \qquad Cl-
+							\qquad Cl-}
 					\item Write the ionic formula using a
 						\alert{subscript} 2 for two
 						chloride ions that give charge
@@ -340,24 +280,24 @@
 				}
 \end{frame}
 
-\begin{frame}{The Cross-Over Method for Ionic Formulas}
-	\textbf{Examples:}
+\begin{frame}[t]{The Cross-Over Method for Ionic Formulas}
+	\begin{example}
+	Determine the formula for the ionic compound composed only of\ldots
 	\begin{itemize}
 		\item sodium and sulfur     
 		\item aluminum and chlorine 
 		\item magnesium and nitrogen
 	\end{itemize}
+	\end{example}
 
-	\bigskip
-
-	\begin{enumerate}[<+(1)->]
+	\note{%
+	\begin{enumerate}
 		\item Write the cation.
 		\item Write the anion.
 		\item Cross the charges over to become subscripts.
 		\item Erase the signs on the charges.
 	\end{enumerate}
 
-	\note<+>{
 		\begin{itemize}
 			\item \ch{Na2S}
 			\item \ch{AlCl3}
@@ -366,42 +306,51 @@
 
 \end{frame}
 
-\clearpage
-
-\begin{onyourown}[4em]\label{oyo:ionicformula}
-	Write the ionic formulas for the compounds containing the following:
-	\begin{enumerate}
-		\item rubidium and oxygen
-		\item strontium and phosphorous
-		\item lithium and bromine
-	\end{enumerate}
-\end{onyourown}
+%\begin{onyourown}[4em]\label{oyo:ionicformula}
+%	Write the ionic formulas for the compounds containing the following:
+%	\begin{enumerate}
+%		\item rubidium and oxygen
+%		\item strontium and phosphorous
+%		\item lithium and bromine
+%	\end{enumerate}
+%\end{onyourown}
 
 \begin{frame}[t]{Nomenclature Rules}
 	How do we name compounds?
-	\begin{description}[<only@+(1)-3>]
-		\item[Common names:] Baking soda, table salt
-		\item[Systematic names:] sodium bicarbonate, sodium chloride
-	\end{description}
-
-	\pause
-
-	Similar to the ionic formula, we write the cation \alert{first}.
-
 	\begin{center}
-		\includegraphics[scale=0.4]{invariant-cations.jpg}
+		\begin{tabular} {l l}
+			\toprule
+			\bfseries Common Name & \bfseries Systematic Name \\
+			\midrule
+			baking soda & sodium bicarbonate \\
+			table salt & sodium chloride \\
+			\bottomrule
+		\end{tabular}
 	\end{center}
+
+	\note{Similar to the ionic formula, we write the cation \alert{first}.}
+
 \end{frame}
 
-\vspace{\stretch{-1}}
-
-\begin{frame}{Naming Binary Ionic Compounds with Metals that Form a Single Ion}
+\begin{frame}{Binary Ionic Compounds with Metals of Invariant
+	Charge}
 	\alert{Binary compounds} contain only two different elements.
 	\begin{center}
 		\includegraphics[scale=0.2]{binary-nomen.jpg}
 	\end{center}
 
-	\begin{center}
+	\begin{example}
+		Name the following compounds:
+		\begin{itemize}
+			\item \ch{NaCl}
+			\item \ch{K2S}
+			\item \ch{MgO}
+			\item \ch{CaI2}
+			\item \ch{AlN}
+		\end{itemize}
+	\end{example}
+
+	\note{%
 		\begin{tabular} {l c c l}
 			\toprule
 			\bfseries Formula & \bfseries Cation & \bfseries Anion &
@@ -417,43 +366,61 @@
 			nitride \\
 			\bottomrule
 		\end{tabular}
-	\end{center}
+	}
 \end{frame}
 
-\begin{inclass}
-	What are the names of the following compounds?
+\begin{frame}[plain]
+	\includegraphics[width=\linewidth]{invariant-cations.jpg}
+\end{frame}
 
-	\begin{enumerate}
-		\item \ch{CaO}
-		\item \ch{KBr}
-		\item \ch{Al2O3}
-		\item \ch{Mg3P2}
-	\end{enumerate}
-\end{inclass}
+%\begin{inclass}
+%	What are the names of the following compounds?
+%
+%	\begin{enumerate}
+%		\item \ch{CaO}
+%		\item \ch{KBr}
+%		\item \ch{Al2O3}
+%		\item \ch{Mg3P2}
+%	\end{enumerate}
+%\end{inclass}
+%
+%\begin{onyourown}
+%	Write the names for the compounds in \textbf{On Your Own
+%	\ref{oyo:ionicformula}}.
+%\end{onyourown}
 
-\begin{onyourown}
-	Write the names for the compounds in \textbf{On Your Own
-	\ref{oyo:ionicformula}}.
-\end{onyourown}
-
-\begin{frame}[t]{Naming Binary Ionic Compounds with Metals that Form More Than One Ion}
+\begin{frame}[t,allowframebreaks]{Binary Ionic Compounds with Metals of Variant Charge}
 	The names of metals with two or more positive ions use \alert{Roman
 	numerals} after the name of the metal to identify ionic charge.
 
-	\only<+>{%
+	\begin{itemize}
+		\item Most \alert{transition metals} and \alert{Group 14 metals}
+			form 2 or more positive ions.
+		\item \ch{Zn^{2+}}, \ch{Ag+}, and \ch{Cd^{2+}} form only one
+			ion.
+	\end{itemize}
+
+	\begin{center}
+		\includegraphics[scale=0.4]{binary-multivalent-nomen.jpg}
+	\end{center}
+
+	\framebreak
+
+	\null
+	\bigskip
+
+	\begin{example}
+		Name the following compounds:
 		\begin{itemize}
-			\item Most \alert{transition metals} and \alert{Group 14 metals}
-				form 2 or more positive ions.
-			\item \ch{Zn^{2+}}, \ch{Ag+}, and \ch{Cd^{2+}} form only one
-				ion.
+			\item \ch{FeCl2}
+			\item \ch{PbS2}
+			\item \ch{Cu3P}
+			\item \ch{CuBr2}
+			\item \ch{SnCl2}
 		\end{itemize}
+	\end{example}
 
-		\begin{center}
-			\includegraphics[scale=0.4]{binary-multivalent-nomen.jpg}
-		\end{center}
-	}
-
-	\only<+>{%
+	\note{%
 	\begin{center}
 		\begin{tabular} {l c c l}
 			\toprule
@@ -476,119 +443,117 @@
 }
 \end{frame}
 
-\begin{inclass}
-	What are the names of the following compounds?
+%\begin{inclass}
+%	What are the names of the following compounds?
+%
+%	\begin{enumerate}
+%		\item \ch{Cr2O3}
+%		\item \ch{AuCl3}
+%		\item \ch{CuO}
+%		\item \ch{Cu2S}
+%	\end{enumerate}
+%\end{inclass}
+%
+%\begin{onyourown}[4em]
+%	What are the names of the following compounds?
+%
+%	\begin{enumerate}
+%		\item \ch{WO2}
+%		\item \ch{PdCl2}
+%		\item \ch{AuN}
+%	\end{enumerate}
+%\end{onyourown}
 
-	\begin{enumerate}
-		\item \ch{Cr2O3}
-		\item \ch{AuCl3}
-		\item \ch{CuO}
-		\item \ch{Cu2S}
-	\end{enumerate}
-\end{inclass}
-
-\begin{onyourown}[4em]
-	What are the names of the following compounds?
-
-	\begin{enumerate}
-		\item \ch{WO2}
-		\item \ch{PdCl2}
-		\item \ch{AuN}
-	\end{enumerate}
-\end{onyourown}
-
-\begin{frame}[c]{Naming Ionic Compounds with Polyatomic Ions}
-	\only<+>{%
-		\begin{block}{Polyatomic Ion}
-			A cation or anion made up of several elements.
-			\begin{itemize}
-				\item Shares electrons only within the group.
-				\item Has an overall ionic charge.
-			\end{itemize}
-		\end{block}
-	
-		\bigskip
-	
+\begin{frame}[c]{Ionic Compounds with Polyatomic Ions}
+	\note{%
 		When naming ionic compounds with a polyatomic ion, we incorporate the
 		name of the polyatomic ion whenever it occurs.
+	}
+
+	\begin{block}{Polyatomic Ion}
+		A cation or anion made up of several elements.
+		\begin{itemize}
+			\item Shares electrons only within the group.
+			\item Has an overall ionic charge.
+		\end{itemize}
+	\end{block}
+
+	\begin{example}
+		Name the following compounds:
+		\begin{itemize}
+			\item \ch{NaNO2}
+			\item \ch{FeSO4}
+			\item \ch{NH4NO3}
+		\end{itemize}
+	\end{example}
+
+	\note{%
 		\begin{align*}
 			\ch{NaNO2} &\qquad \text{sodium nitrite} \\
 			\ch{FeSO4} &\qquad \text{iron(II) sulfate} \\
 			\ch{NH4NO3} &\qquad \text{ammonium nitrate}
 		\end{align*}
 	}
-
-	\mode<article>{\clearpage}
-
-	\only<+>{%
-		\begin{center}
-			\mode<presentation>{\footnotesize}
-			\begin{tabular} {@{}lE@{\qquad\quad}lE}
-				\toprule
-				\textbf{Name} & \textbf{Formula} & \textbf{Name} & \textbf{Formula} \\ \midrule
-				Acetate              & C2H3O2-    & Hypochlorite     & ClO-     \\
-				Carbonate            & CO3^{2-}   & Chlorite         & ClO2-    \\
-				Hydrogen carbonate\textsuperscript{a}   & HCO3-      & Chlorate         & ClO3-    \\
-				Hydroxide            & OH-        & Perchlorate      & ClO4-    \\
-				Nitrite              & NO2-       & Permanganate     & MnO4-    \\
-				Nitrate              & NO3-       & Sulfite          & SO3^{2-} \\
-				Chromate             & CrO4^{2-}  & Hydrogen
-				sulfite\textsuperscript{b} & HSO3-    \\
-				Dichromate           & Cr2O7^{2-} & Sulfate          & SO4^{2-} \\
-				Phosphate            & PO4^{3-}   & Hydrogen sulfate & HSO4-    \\
-				Hydrogen phosphate   & HPO4^{2-}  & Cyanide          & CN-      \\
-				Dihydrogen phosphate & H2PO4-     & Peroxide         & O2^{2-}  \\
-				Ammonium             & NH4+ \\
-				\bottomrule
-				\multicolumn{4}{l}{\footnotesize \textsuperscript{a}or bicarbonate
-					\qquad \textsuperscript{b}or bisulfite}
-			\end{tabular}
-		\end{center}
-	}
-
-	\only<+>{%
-		\begin{itemize}
-			\item The names of most polyatomic anions end in \alert{-ite} or
-				\alert{-ate}.
-			\item Several ions for a series of \alert{oxoanions}.
-				\begin{itemize}
-					\item Only two oxoanions: fewer oxygens ends in
-						\alert{-ite}, more ends in \alert{-ate}.
-					\item More than two oxoanions: \alert{hypo-} has
-						fewest oxygens, \alert{per-} has most
-						oxygens.
-				\end{itemize}
-			\item Several ions are related to the presence or absence of
-				hydrogen: \alert{bi-} has an additional hydrogen.
-		\end{itemize}
-	}
-
-
-	\only<+>{%
-		\begin{itemize}
-			\item The charge balance must still equal zero (0) for ionic
-				compounds with polyatomic ions.
-	
-				\begin{center}
-					\ch{Na+} and \ch{NO3-} \qquad \ch{NaNO3}
-				\end{center}
-	
-			\item With two or more polyatomic ions, the polyatomic ion goes
-				in parenthesis.
-	
-				\begin{center}
-					\ch{Mg^{2+}} and \ch{2 NO3-} \qquad
-					\ch{Mg(NO3)2}
-				\end{center}
-		\end{itemize}
-	}
 \end{frame}
 
-\mode<article>{\clearpage}
-
-\begin{frame}{Common Compounds that Contain Polyatomic Ions}
+\begin{frame}[shrink=10]{Some Common Polyatomic Ions}
 	\begin{center}
-		\mode<presentation>{\footnotesize}
+		\begin{tabular} {lE@{\qquad\quad}lE}
+			\toprule
+			\textbf{Name} & \textbf{Formula} & \textbf{Name} & \textbf{Formula} \\ \midrule
+			Acetate              & C2H3O2-    & Hypochlorite     & ClO-     \\
+			Carbonate            & CO3^{2-}   & Chlorite         & ClO2-    \\
+			Hydrogen carbonate\textsuperscript{a}   & HCO3-      & Chlorate         & ClO3-    \\
+			Hydroxide            & OH-        & Perchlorate      & ClO4-    \\
+			Nitrite              & NO2-       & Permanganate     & MnO4-    \\
+			Nitrate              & NO3-       & Sulfite          & SO3^{2-} \\
+			Chromate             & CrO4^{2-}  & Hydrogen
+			sulfite\textsuperscript{b} & HSO3-    \\
+			Dichromate           & Cr2O7^{2-} & Sulfate          & SO4^{2-} \\
+			Phosphate            & PO4^{3-}   & Hydrogen sulfate & HSO4-    \\
+			Hydrogen phosphate   & HPO4^{2-}  & Cyanide          & CN-      \\
+			Dihydrogen phosphate & H2PO4-     & Peroxide         & O2^{2-}  \\
+			Ammonium             & NH4+ \\
+			\bottomrule
+			\multicolumn{4}{l}{\footnotesize \textsuperscript{a}or bicarbonate
+				\qquad \textsuperscript{b}or bisulfite}
+		\end{tabular}
+	\end{center}
+\end{frame}
+
+\begin{frame}{Some Trends in Polyatomic Ions}
+	\begin{itemize}
+		\item The names of most polyatomic anions end in \alert{-ite} or
+			\alert{-ate}.
+		\item Several ions for a series of \alert{oxoanions}.
+			\begin{itemize}
+				\item Only two oxoanions: fewer oxygens ends in
+					\alert{-ite}, more ends in \alert{-ate}.
+				\item More than two oxoanions: \alert{hypo-} has
+					fewest oxygens, \alert{per-} has most
+					oxygens.
+			\end{itemize}
+		\item Several ions are related to the presence or absence of
+			hydrogen: \alert{bi-} has an additional hydrogen.
+		\item The charge balance must still equal zero (0) for ionic
+			compounds with polyatomic ions.
+
+			\begin{center}
+				\ch{Na+} and \ch{NO3-} \qquad \ch{NaNO3}
+			\end{center}
+
+		\item With two or more polyatomic ions, the polyatomic ion goes
+			in parenthesis.
+
+			\begin{center}
+				\ch{Mg^{2+}} and \ch{2 NO3-} \qquad
+				\ch{Mg(NO3)2}
+			\end{center}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[shrink=10]{Common Compounds that Contain Polyatomic Ions}
+	\begin{center}
 		\begin{tabular} {l l l}
 			\toprule
 			\bfseries Formula & \bfseries Name & \bfseries Use \\ \midrule
@@ -610,7 +575,7 @@
 	\end{center}
 \end{frame}
 
-\begin{inclass}
+\begin{frame}[t]{Polyatomic Ion Example}
 	Name each of the following compounds:
 
 	\begin{enumerate}
@@ -619,20 +584,18 @@
 		\item \ch{Fe2(SO4)3}
 		\item \ch{Ca3(PO3)2}
 	\end{enumerate}
-\end{inclass}
+\end{frame}
 
-\begin{onyourown}[4em]
-	Name each of the following compounds:
-
-	\begin{enumerate}
-		\item \ch{CsClO4}
-		\item \ch{Li2Cr2O7}
-		\item \ch{Ru2(SO3)3}
-		\item \ch{Mo(OH)4}
-	\end{enumerate}
-\end{onyourown}
-
-\mode<article>{\clearpage}
+%\begin{onyourown}[4em]
+%	Name each of the following compounds:
+%
+%	\begin{enumerate}
+%		\item \ch{CsClO4}
+%		\item \ch{Li2Cr2O7}
+%		\item \ch{Ru2(SO3)3}
+%		\item \ch{Mo(OH)4}
+%	\end{enumerate}
+%\end{onyourown}
 
 \begin{frame}{Hydrated Ionic Compounds}
 	\begin{itemize}
@@ -663,8 +626,6 @@
 \end{center}
 \end{frame}
 
-\vspace{\stretch{-1}}
-
 \frame{\section{Representing Covalent Compounds}
 	\begin{learningobjectives}
 	\item Communicate the structure and composition of a covalent
@@ -678,36 +639,6 @@
 	\item Combine atoms in appropriate ratios to form stable compounds.
 	\end{learningobjectives}
 }
-
-\vspace{\stretch{-1}}
-
-\begin{frame}{Covalent Bonding}
-	\only<+>{%
-		On the path to fulfilling the octet rule, atoms sometimes \alert{share}
-		electrons to form \alert{covalent bonds}.
-	
-	%	\begin{center}
-	%		\includegraphics[scale=0.15]{octet-vs-duet.jpg}
-	%	\end{center}
-	
-		\begin{itemize}
-			\item Occurs between two non-metals.
-			\item Each provides an electron to the sharing relationship.
-			\item The electron pair spends time with both nuclei so each
-				feels like they have an octet.
-		\end{itemize}
-	
-		\begin{center}
-			\includegraphics[scale=0.225]{McMurray-covalent.jpg}
-		\end{center}
-	}
-	
-	\only<+>{%
-		\begin{center}
-			\includegraphics[scale=0.4]{McMurray-covalent2.jpg}
-		\end{center}
-	}
-\end{frame}
 
 \begin{frame}{Lewis Dot Structures and Covalent Bonds}
 	We write Lewis dot structures to show ownership of electrons in a
@@ -840,9 +771,6 @@
 	Because we can have many different bonds to nonmetals, we must use
 	\alert{prefixes} in the names of covalent compounds.
 
-%	\begin{columns}
-%		\column{0.35\linewidth}
-%		\begin{center}
 	\begin{tikzpicture}
 		\node(prefix) {
 			\begin{tabular} {c l}
@@ -858,13 +786,21 @@
 				9 & nona  \\
 				10 & deca
 		\end{tabular}};
-		%\end{center}
-		%\column{0.55\linewidth}
-	\node[right = of prefix,text width=0.55\linewidth] {
-		\alt<2>{
-		\begin{block}{Examples:}
-		\begin{center}
-			\renewcommand\arraystretch{1.25}
+	\node[right = of prefix,text width=0.55\linewidth] {%
+		\includegraphics[width=\linewidth]{naming-covalent.jpg}
+
+		\begin{example}
+			Name the following compounds:
+			\begin{itemize}
+				\item \ch{NO}
+				\item \ch{NO2}
+				\item \ch{N2O}
+				\item \ch{N2O4}
+				\item \ch{N2O5}
+			\end{itemize}
+		\end{example}
+
+		\note{%
 			\begin{tabular} {l l}
 				\ch{NO  } & nitrogen oxide \\
 				\ch{NO2 } & nitrogen \alert{di}oxide \\
@@ -872,17 +808,14 @@
 				\ch{N2O4} & \alert{di}nitrogen \alert{tetr}oxide \\
 				\ch{N2O5} & \alert{di}nitrogen \alert{pent}oxide
 			\end{tabular}
-			\end{center}
-		\end{block}}
-	{\includegraphics[scale=0.25]{naming-covalent.jpg}}};
-			\end{tikzpicture}
-	%\end{columns}
+		}};
+	\end{tikzpicture}
 \end{frame}
 
 \begin{frame}[t]{Covalent Nomenclature Examples}
 	\begin{enumerate}[<+->]
 		\item What is the name of \ch{SO3}?
-			\note{%
+			\note<1>{%
 		\begin{itemize}
 			\item The first nonmetal is S \textrightarrow{} sulfur.
 			\item The second nonmetal is O \textrightarrow{} \alert{ide}.
@@ -899,7 +832,7 @@
 	\vspace{\stretch{1}}
 
 	\item What is the name of \ch{P4S3}?
-		\note{%
+		\note<2>{%
 	\begin{itemize}
 		\item The first nonmetal is P \textrightarrow{} phosphorus.
 		\item The second nonmetal is S \textrightarrow{} sulf\alert{ide}.
@@ -916,9 +849,7 @@
 \end{enumerate}
 \end{frame}
 
-\clearpage
-
-\begin{inclass}
+\begin{frame}[t]{Some More Covalent Naming}
 	Name the following compounds:
 	\begin{multicols}{2}
 		\begin{enumerate}
@@ -938,17 +869,17 @@
 			\item \ch{I4O9}
 		\end{enumerate}
 	\end{multicols}
-\end{inclass}
+\end{frame}
 
-\begin{onyourown}[4em]
-	Write the systematic name of the following compounds:
-
-	\begin{enumerate}
-		\item \ch{TeO2}
-		\item \ch{SbCl5}
-		\item \ch{Si3Br8}
-	\end{enumerate}
-\end{onyourown}
+%\begin{onyourown}[4em]
+%	Write the systematic name of the following compounds:
+%
+%	\begin{enumerate}
+%		\item \ch{TeO2}
+%		\item \ch{SbCl5}
+%		\item \ch{Si3Br8}
+%	\end{enumerate}
+%\end{onyourown}
 
 \frame{\section{Compound Stoichiometry}
 	\begin{learningobjectives}
@@ -1018,56 +949,20 @@
 %				\end{tabular}}
 \end{frame}
 
-\clearpage
-
-\begin{onyourown}
-	Calculate the molar mass for the following compounds:
-
-	\begin{enumerate}
-		\item \ch{Ca(NO3)2}
-			
-			\vspace{10em}
-
-		\item \ch{MgBr2 * 6 H2O}
-	\end{enumerate}
-\end{onyourown}
-	
-\begin{frame}[t]{Counting Molecules by Mass}
-	How many molecules are there in \SI{2.104}{\gram} \ch{CuSO4}?
-
-	\mode<article>{\vspace*{10em}}
-
-%	\note{
-%		\begin{tabular} { r c c l >{(}S[table-format=2.3]<{ \si{\gram})} c S[table-format=3.3]<{ \si{\gram}}}
-%			  & 1 & $\times$ & \ch{Cu} & 63.546 & $=$ & 63.546 \\
-%			  & 1 & $\times$ & \ch{S} & 32.066 & $=$ & 32.066 \\
-%			${} +$ & 4 & $\times$ & \ch{O} & 15.999 & $=$ & 63.996
-%			\\ \midrule
-%			\multicolumn{6}{c}{} & 159.602 \\
-%			\multicolumn{6}{c}{} & 159.60
-%		\end{tabular}
+%\clearpage
 %
-%		\begin{align*}
-%			\frac{\SI{2.104}{\gram}}{1} \times
-%			\frac{\SI{1}{\mole}}{\SI{159.602}{\gram}} \times
-%			\frac{\SI{6.022e23}{molecules}}{\SI{1}{\mole}} &=
-%			\SI{7.93868e21}{molecules} \\
-%			&= \boxed{\SI{7.939e21}{molecules}}
-%		\end{align*}}
-\end{frame}
-
-\begin{onyourown}
-	How many molecules are there in\ldots
-	\begin{enumerate}
-		\item \SI{4.019}{\gram}~\ch{Ca(NO3)2}
-
-			\vspace*{10em}
-			\clearpage
-
-		\item \SI{0.223}{\gram}~\ch{MgBr2 * 6 H2O}
-	\end{enumerate}
-\end{onyourown}
-
+%\begin{onyourown}
+%	Calculate the molar mass for the following compounds:
+%
+%	\begin{enumerate}
+%		\item \ch{Ca(NO3)2}
+%			
+%			\vspace{10em}
+%
+%		\item \ch{MgBr2 * 6 H2O}
+%	\end{enumerate}
+%\end{onyourown}
+	
 \begin{frame}{Composition by Mass Percent}
 	\begin{block}{Mass Percent}
 		Percent of one element (by mass) in a compound or molecule.
@@ -1099,19 +994,25 @@
 		\end{align*}}
 \end{frame}
 
-\begin{onyourown}
-	What is the mass percent of chlorine in \ch{SOCl2}?
-\end{onyourown}
+%\begin{onyourown}
+%	What is the mass percent of chlorine in \ch{SOCl2}?
+%\end{onyourown}
 
-\begin{frame}[<+->]{Mass Percent as a Conversion Factor}
-	\begin{itemize}
-		\item If we know that the mass percent of \ch{O} in \ch{CuSO4}
-			is 40.10\%, we can determine the mass of \ch{O} in a
-			sample of \ch{CuSO4}:
-			\begin{equation*}
-				\SI{40.10}{\percent} \times \text{mass of
-				\ch{CuSO4}} = \text{mass of \ch{O}}\tikzmark{masspercent:start}
-			\end{equation*}
+\begin{frame}[t]{Mass Percent as a Conversion Factor}
+	If we know that the mass percent of \ch{O} in \ch{CuSO4}
+	is 40.10\%, we can determine the mass of \ch{O} in a
+	sample of \ch{CuSO4}:
+	\begin{equation*}
+		\SI{40.10}{\percent} \times \text{mass of
+		\ch{CuSO4}} = \text{mass of \ch{O}}
+	\end{equation*}
+
+	\begin{example}
+		What is the mass of \ch{O} in a \SI{5.000}{\gram} sample of
+		\ch{CuSO4}?
+	\end{example}
+	\note{%
+		\begin{itemize}
 		\item Note that percent = ``per cent'' = ``per 100'', thus
 			\begin{equation*}
 				\SI{40.10}{\percent} = \frac{40.10}{100} =
@@ -1123,12 +1024,6 @@
 				\frac{\SI{40.10}{\gram}~\ch{O}}{\SI{100}{\gram}~\ch{CuSO4}}\tikzmark{cuso4:end} \times \SI{5.000}{\gram}~\ch{CuSO4} &= \boxed{\SI{2.005}{\gram}~\ch{O}}\tikzmark{masspercent:end} \\
 			\end{align*}
 	\end{itemize}
-
-	\mode<presentation>{%
-	\begin{tikzpicture}[remember picture, overlay]
-		\draw<.->[thick,->,shorten <=0.5em,shorten >=0.5em] (pic cs:masspercent:start) to [bend left]($(pic cs:masspercent:end) + (0,1em)$);
-		\draw<.->[thick,->,shorten <=0.5em,shorten >=0.5em] ($(pic cs:cuso4:start) + (-2em,-1em)$) to [out=270,in=30]($(pic cs:cuso4:end) + (0,1em)$);
-	\end{tikzpicture}
 }
 \end{frame}
 
@@ -1163,38 +1058,35 @@
 	\SI{302}{\milli\gram} of pure gold?
 \end{onyourown}
 	
-\begin{frame}{Chemical Formulas as a Conversion Factor}
-	\begin{itemize}[<+->]
-		\item Recall the law of multiple proportions.
-			\smallskip
-			\begin{quote}
-	%			\begin{minipage}{0.9\linewidth}
-	%				\begin{beamercolorbox}[sep=1em]{block body}
-						When two elements (A and B) form two different compounds,
-						the mass of B that reacts with A can be
-						expressed as a \alert{whole number ratio}.
-	%				\end{beamercolorbox}
-	%			\end{minipage}
-			\end{quote}
-		\item For 1 \alt<.(1)->{mole}{equivalent} of \ch{CuSO4}, we need
-			\begin{description}[<1->]
-				\item[1] \alt<.(1)->{mole}{equivalent} \ch{Cu}
-				\item[1] \alt<.(1)->{mole}{equivalent} \ch{S}
-				\item[4] \alt<.(1)->{moles}{equivalents} \ch{O}
-			\end{description}
-		\item In chemistry, we consider ``equivalents'' in terms of \alert{moles}.
-		\item For \SI{2.0}{\milli\mole} \ch{CuSO4}, we have
-			\begin{align*}
-				\frac{\SI{2.0e-3}{\mole}}{1} \times
-				\frac{\SI{4}{\mole}~\ch{O}}{\SI{1}{\mole}~\ch{CuSO4}}
-				= \boxed{\SI{8.0e-3}{\mole}~\ch{O}} 
-			\end{align*}
-	\end{itemize}
+\begin{frame}<1-2>{Chemical Formulas as a Conversion Factor}
+	\begin{block}{Recall: Law of Multiple Proportions}
+		When two elements (A and B) form two different compounds, the
+		mass of B that reacts with A can be expressed as a \alert{whole
+		number ratio}.
+	\end{block}
+
+	For 1 \alt<2>{mole}{equivalent} of \ch{CuSO4}, we need
+	  \begin{description}[<1->]
+	  	\item[1] \alt<2>{mole}{equivalent} \ch{Cu}
+	  	\item[1] \alt<2>{mole}{equivalent} \ch{S}
+	  	\item[4] \alt<2>{moles}{equivalents} \ch{O}
+	  \end{description}
+	In chemistry, we consider ``equivalents'' in terms of \alert{moles}.
+
+	\begin{example}
+		How many \si{\mole} of \ch{O} are in \SI{2.0}{\milli\mole} of
+		\ch{CuSO4}?
+		\note<2>{%
+		\begin{align*}
+			\frac{\SI{2.0e-3}{\mole}}{1} \times
+			\frac{\SI{4}{\mole}~\ch{O}}{\SI{1}{\mole}~\ch{CuSO4}}
+			= \boxed{\SI{8.0e-3}{\mole}~\ch{O}} 
+		\end{align*}
+	}
+	\end{example}
 \end{frame}
 
-\begin{inclass}
-	\textbf{Chapter 4, Question 96}
-
+\begin{frame}[t]{Example: Chapter 4, Question 96}
 	Calculate the mass of chlorine in \SI{25}{\gram} of
 	\ch{CF2Cl2} (\SI{120.91}{\gram\per\mole}).
 
@@ -1231,12 +1123,12 @@
 			&= \boxed{\SI{15}{\gram}~\ch{Cl}}
 		\end{align*}
 	}
-\end{inclass}
+\end{frame}
 
-\begin{onyourown}
-	Calculate the mass of arsenic in \SI{11}{\gram} of \ch{As(OH)3}
-	(\SI{125.94}{\gram\per\mole}).
-\end{onyourown}
+%\begin{onyourown}
+%	Calculate the mass of arsenic in \SI{11}{\gram} of \ch{As(OH)3}
+%	(\SI{125.94}{\gram\per\mole}).
+%\end{onyourown}
 
 \begin{frame}{Determining Chemical Composition Experimentally}
 %	\begin{itemize}[<+->]
@@ -1291,7 +1183,7 @@
 	\end{center}
 \end{frame}
 
-\begin{inclass}
+\begin{frame}[t]{Combustion Example}
 	Caproic acid contains only \ch{C}, \ch{H}, and \ch{O}. Combustion of
 	\SI{0.450}{\gram} caproic acid gave \SI{0.418}{\gram} \ch{H2O} and
 	\SI{1.02}{\gram} \ch{CO2}. What is the empirical formula of caproic
@@ -1330,7 +1222,7 @@
 	\SI{116.160}{\gram\per\mole?}
 
 	\vspace{\stretch{1}}
-\end{inclass}
+\end{frame}
 
 \note{ \tiny
 	\begin{tabular} {c c@{ $\times$ } c @{ @ }
@@ -1350,24 +1242,21 @@
 	\end{align*}
 	}
 
-\clearpage
+%\begin{onyourown}
+%	Find the molecular formula of a \SI{1.50}{\gram} sample of an unknown
+%	hydrocarbon if it produces \SI{4.40}{\gram}~\ch{CO2} and
+%	\SI{2.70}{\gram}~\ch{H2O} after combustion. Assume the molar mass of
+%	this sample is \SI{64.17}{\gram\per\mole}.
+%\end{onyourown}
 
-\begin{onyourown}
-	Find the molecular formula of a \SI{1.50}{\gram} sample of an unknown
-	hydrocarbon if it produces \SI{4.40}{\gram}~\ch{CO2} and
-	\SI{2.70}{\gram}~\ch{H2O} after combustion. Assume the molar mass of
-	this sample is \SI{64.17}{\gram\per\mole}.
-\end{onyourown}
-
-\begin{frame}{A Quick Intro to Organic Molecules}
-	\only<+>{%
+	\begin{frame}[allowframebreaks]{A Quick Intro to Organic Molecules}
 	\begin{description}
 		\item[Organic:] Composed predominantly of carbon and hydrogen
 		\item[Inorganic:] Everything else\ldots
 	\end{description}
-	}
 
-	\only<+>{%
+	\framebreak
+
 	Carbon is very versatile:
 	\begin{itemize}
 		\item C can bond to itself to form various structures:
@@ -1380,20 +1269,15 @@
 			\end{center}
 	\end{itemize}
 	Compounds containing \alert{only} carbon and hydrogen are called \alert{hydrocarbons}.
-}
+\end{frame}
 
-\mode<article>{\clearpage}
-
-\only<+>{%
+\begin{frame}[plain]
 	\begin{center}
 		\includegraphics[scale=0.45]{hydrocarbons.jpg}
 	\end{center}
-}
 \end{frame}
 
-\begin{frame}[t]{Another ``Combustion'' Example}
-	\textbf{Chapter 4, Question 144}
-
+\begin{frame}[t]{Combustion Example: Chapter 4, Question 144}
 	A particular coal contains \SI{2.55}{\percent} sulfur by mass. When the
 	coal is burned, it produces \ch{SO2} emissions, which combine with
 	rainwater to produce sulfuric acid. Use the formula of sulfuric acid to
