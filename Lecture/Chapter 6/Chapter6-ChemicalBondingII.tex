@@ -1,0 +1,740 @@
+% !TEX program = xelatex
+%\documentclass[notes=onlyslideswithnotes,notes=hide]{beamer}
+%\documentclass[notes=hide]{beamer}
+%\documentclass[notes=only]{beamer}
+%\documentclass[notes=show]{beamer}
+\documentclass[handout]{beamer}
+
+\usepackage{newtxtext}
+\usepackage{bucolors}
+\usepackage{genchem}
+\usepackage{lecture}
+\usepackage{tabularx}
+\usepackage{import}
+\usepackage{tikz}
+\usepackage{multicol}
+\usetikzlibrary{tikzmark}
+
+\title{Chemical Bonding II}
+\subtitle{Chapter 6}
+\institute{CHEM115 --- Chemistry for the Sciences I \\ Bloomsburg University}
+\author{D.A. McCurry}
+\date{Fall 2021}
+
+\chemsetup{chemformula/frac-style=nicefrac}
+
+\newcommand{\electron}[2]{{
+	\def\+{\underline{\upharpoonleft}}
+	\def\-{\underline{\downharpoonright}}
+	\def\0{\underline{\phantom{\downharpoonright}}}
+	\setlength\tabcolsep{0pt}
+	\begin{tabular}{c}$#2$\\[2pt]#1\end{tabular}
+}}
+
+\begin{document}
+
+\maketitle
+\mode<article>{\thispagestyle{fancy}}
+
+\frame{\section{Valence Bond Theory}
+	\begin{learningobjectives}
+	\item Describe how covalent bonds form using valence bond theory.
+	\item Relate the formation of chemical bonds to the wave nature of
+		electrons.
+	\end{learningobjectives}
+}
+
+\begin{frame}[c]{Valence Bond Theory}
+	\begin{quote}
+		A quantum mechanical model that shows how electron pairs are
+		shared in a covalent bond.
+	\end{quote}
+
+	\bigskip
+	Each of the bonded atoms maintains its own atomic orbitals, but the
+	electron pair in the \alert{overlapping} orbitals is shared by both atoms.
+		
+	\begin{center}
+		\includegraphics[scale=0.6]{h2.png}
+	\end{center}
+\end{frame}
+
+\begin{frame}{A Local Minimum in Energy}
+	\begin{center}
+		\includegraphics[scale=0.4]{06_01_Figure.jpg}
+	\end{center}
+\end{frame}
+	
+\begin{frame}{Wavefunctions Sum to Form Bonds}
+	The two overlapping lobes must be of the \alert{same phase}.  Recall
+	\alert{wavefunctions}!
+	\begin{center}
+		\includegraphics[scale=0.55]{sigmabond.png}
+	\end{center}
+
+	\begin{center}
+		\bfseries
+		The greater the amount of overlap, the stronger the bond
+	\end{center}
+\end{frame}
+
+\begin{frame}[t]
+	\frametitle{Bonding Within Heteronuclear Compounds}
+	How does a bond form between hydrogen and chlorine in \ch{HCl}?
+
+	\vfill
+
+	\note<1>{%
+		\begin{center}
+		\begin{tabular}{r l l}
+			\textbf{H:} & $1s^1$ & \electron{$1s$}{\+\0} \\
+			\textbf{Cl:} & [Ne]$3s^23p^5$ & \electron{$3s$}{\+\-}\qquad
+			\electron{$3p$}{\+\-\ \+\-\ \+\0}
+		\end{tabular}
+		\end{center}
+	
+		\begin{center}
+			\includegraphics[scale=0.5]{HClsigma.png}
+		\end{center}
+	}
+
+	\pause
+
+	How does a bond form between sulfur and hydrogen in \ch{SH6}?
+
+	\vfill
+
+	\note<2>{%
+		\begin{center}
+			\bfseries
+			As long as orbitals can overlap, a $\boldsymbol{\sigma}$ bond
+			can form.
+
+			\bigskip
+
+			\includegraphics[scale=0.3]{06_Pg253_UnFigure_2.jpg}
+		\end{center}
+	}
+
+	\pause
+
+	How does a bond form between carbon and hydrogen in \ch{CH4}?
+
+	\vfill
+
+	\note<3>{%
+	\begin{center}
+	\includegraphics[scale=0.4]{06_Pg254_UnFigure_2.jpg}
+	
+	\begin{tabular}{r l l}
+		\textbf{C:} & [He]$2s^22p^2$ & \electron{$2s$}{\+\-}\qquad
+		\electron{$2p$}{\+\0\ \+\0\ \0\0} \\
+		\textbf{H:} & $1s^1$ & \electron{$1s$}{\+\0}
+	\end{tabular}
+	\end{center}
+}
+\null
+\end{frame}
+
+
+%\begin{frame}{VBT Summary}
+%	\begin{itemize}
+%		\item The orbitals can be the standard $s$, $p$,
+%			$d$, and $f$ orbitals, or they may be a
+%			\alert{hybrid} combination of these.
+%		\item A chemical bond results from the overlap
+%			of two \alert{half-filled} orbitals and
+%			spin-pairing of the two \alert{valence}
+%			electrons.
+%			\begin{itemize}
+%				\item There are also cases where
+%					a completely filled
+%					orbital overlaps with an
+%					empty orbital.
+%			\end{itemize}
+%		\item The geometry of the overlapping orbitals
+%			determines the shape of the molecule.
+%	\end{itemize}
+%\end{frame}
+
+\frame{\section{Hybridization}
+	\begin{learningobjectives}
+	\item Identify limitations of using the valence shell electron-pair
+		repulsion model.
+	\item Explain how carbon-centered molecules (and other tetrahedral
+		molecules) have a \SI{109.5}{\degree} bond angle.
+	\item Identify when orbital hybridization is required.
+	\end{learningobjectives}
+}
+
+\begin{frame}{Formation of Hybrid Orbitals}
+	\begin{center}
+		\includegraphics[scale=0.4]{carbon-ground-state.png}
+		\visible<2->{\includegraphics[scale=0.4]{carbon-excited-state.png}}
+	\end{center}
+
+	\begin{itemize}[<+->]
+		\item With only \alert{2} unpaired electrons, we should only be
+			able to form \alert{2} covalent bonds.
+		\item Promoting one electron from the $2s$ orbital to the $2p$
+			orbital creates \alert{4} unpaired electrons so we can
+			now make \alert{4} covalent bonds.
+		\item Orbitals need to be the \alert{same energy} (degenerate)
+			for appropriate distancing.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[allowframebreaks]
+	\frametitle{$sp^3$ Hybrid Orbitals}
+
+	\begin{center}
+		\includegraphics[scale=0.4,trim={0 0 0 70pt},clip]{06_03_Figure.jpg}
+	\end{center}
+
+	\framebreak
+
+	\begin{center}
+		\includegraphics[scale=0.55]{methane-sp3-overlap.png}
+		
+	\end{center}
+
+	Each C $sp^3$ orbital can now form a \textsigma{} bond with the H $1s$
+	orbitals
+
+	\framebreak
+
+	\begin{center}
+		\includegraphics[scale=0.5]{sp3-tetrahedral.png}
+	\end{center}
+	
+	\bigskip
+	
+	\begin{center}
+		\bfseries
+		All tetrahedral geometries will have $\boldsymbol{sp^3}$
+		hybridization
+	\end{center}
+\end{frame}
+
+\begin{frame}[allowframebreaks]
+	\frametitle{$sp^2$ Hybrid Orbitals}
+
+	We can consider other geometries from VSEPR theory in
+	terms of orbital hybridization
+	
+	\begin{itemize}
+		\item The three charge cloud geometries require \alert{3} bonds
+			-- we must have \alert{3} overlapping orbitals
+	\end{itemize}
+	
+	\begin{columns}[c]
+		\column{0.30\textwidth}
+		\begin{center}
+			\includegraphics[scale=0.4]{formaldehyde.png}
+		\end{center}
+		\column{0.70\textwidth}
+		\begin{center}
+			\includegraphics[scale=0.3]{06_Pg257_UnFigure_2.jpg}
+		\end{center}
+	\end{columns}
+	
+	\begin{center}
+		\bfseries
+		Note the additional $\boldsymbol{p}$ orbital!
+	\end{center}
+
+	\framebreak
+
+	\begin{center}
+		\includegraphics[scale=0.4,trim={0 0 0 70pt},clip]{06_04_Figure.jpg}
+	\end{center}
+\end{frame}
+
+\begin{frame}[allowframebreaks]
+	\frametitle{$sp$ Hybrid Orbitals}
+
+	Recall that $p$ orbitals have 2 ``lobes''.
+	\begin{itemize}
+		\item Each \alert{orbital} is composed of 2 lobes.
+		\item We can \alert{only} put a total of 2 electrons in each
+			\alert{orbital}.
+		\item Linear molecules must therefore also hybridize!
+	\end{itemize}
+
+	\bigskip
+
+	\begin{center}
+		\includegraphics[scale=0.35]{06_Pg261_UnFigure_1.jpg}
+	\end{center}
+
+	\framebreak
+
+	\begin{center}
+		\includegraphics[width=\linewidth,trim={0 0 0 50pt},clip]{06_06_Figure.jpg}
+	\end{center}
+\end{frame}
+
+
+\frame{\section{Higher Bond Orders}
+	\begin{learningobjectives}
+	\item Explain the difference between \textsigma{} and \textpi{} bonds.
+	\item Explain why double and triple bonds are unable to rotate.
+	\item Identify $sp$ hybridization.
+	\end{learningobjectives}
+}
+
+\begin{frame}[c]
+	\frametitle{Types of Bonds}
+	\begin{itemize}[<+->]
+		\item A \alert{sigma} (\textsigma) bond results when the
+			interacting atomic orbitals point along the axis
+			connecting the two bonding nuclei.
+			\begin{center}
+				\includegraphics[scale=0.3,trim={0 0 0
+				2.5in},clip]{06_05_Figure.jpg}
+			\end{center}
+		\item A \alert{pi} (\textpi) bond results when the bonding
+			atomic orbitals are \alert{parallel} to each other and
+			\alert{perpendicular} to the axis connecting the two
+			bonding nuclei.
+			\begin{center}
+				\includegraphics[scale=0.3,trim={0 2in 0 0},
+				clip]{06_05_Figure.jpg}
+			\end{center}
+		\item The interaction between parallel orbitals is not as strong
+			as between orbitals that point at each other.
+			\begin{itemize}
+				\item \textsigma{} bonds are \alert{stronger}
+					than \textpi{} bonds.
+			\end{itemize}
+	\end{itemize}
+\end{frame}
+
+	
+\begin{frame}
+	\frametitle{Double Bond Formation}
+
+	\begin{center}
+		\includegraphics[scale=0.3]{06_Pg258_UnFigure_3.jpg}
+	\end{center}
+
+	\begin{itemize}
+		\item The \textpi{} bond has \alert{two} regions of overlap
+		\item The combined overlap of the $sp^2$ and $p$
+			orbitals leads to a \alert{double bond}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[t]
+	\frametitle{Bond Rotation}
+		\begin{itemize}[<+->]
+			\item \textsigma{} bonds can rotate freely around the
+				bond axis.
+			\item \textpi{} bonds must break in order to rotate
+				around the double bond axis.
+		\end{itemize}
+
+		\bigskip
+
+		\begin{center}
+			\includegraphics[scale=0.4,trim={0 0 5in 0},clip]{06_Pg259_UnFigure_2.jpg}
+			\visible<2->{\includegraphics[scale=0.4,trim={4.5in 0 0
+			0},clip]{06_Pg259_UnFigure_2.jpg}}
+		\end{center}
+\note<2>{%
+	\begin{center}
+		\includegraphics[scale=0.35]{06_Pg260_UnFigure_2.jpg}
+	\end{center}
+}
+\end{frame}
+
+\begin{frame}{Triple Bonds}
+	\begin{center}
+		\includegraphics[width=\linewidth]{06_Pg262_UnFigure_1.jpg}
+	\end{center}
+\end{frame}
+
+
+\frame{\section{Further Hybridization}
+	\begin{learningobjectives}
+	\item Relate all of the different VSEPR geometries to orbital hybridization.
+	\item Draw Lewis structures for molecules and identify \textsigma{} and
+		\textpi{} bonds.
+	\end{learningobjectives}
+}
+
+\begin{frame}[allowframebreaks]{$sp^3d$ Hybrid Orbitals}
+	Trigonal bipyramidal geometries require a $d$ orbital to hybridize.
+
+	\begin{center}
+		\includegraphics[width=\linewidth]{06_07_Figure.jpg}
+	\end{center}
+
+	\framebreak
+
+	\begin{center}
+		\includegraphics[scale=0.4]{06_Pg262_UnFigure_2.jpg}
+	\end{center}
+\end{frame}
+
+\begin{frame}[c]{$sp^3d^2$ Hybrid Orbitals}
+	\begin{center}
+		\includegraphics[width=\linewidth]{06_08_Figure.jpg}
+	\end{center}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Hybrid Orbitals and Their Geometry}
+
+	\begin{center}
+	\begin{tabular}{c l l}
+		\toprule
+		\textbf{Electron Groups} & \textbf{Geometry} &
+		\textbf{Hybridization} \\ \midrule
+		2 & Linear & $sp$ \\
+		3 & Trigonal planar & $sp^2$ \\
+		4 & Tetrahedral & $sp^3$ \\
+		5 & Trigonal bipyramidal & $sp^3d$ \\
+		6 & Octahedral & $sp^3d^2$ \\
+		\bottomrule
+	\end{tabular}
+	\end{center}
+
+	\begin{itemize}
+		\item VSEPR theory describes the geometric arrangement of atoms
+			in a molecule
+		\item Valence bond theory describes how the valence shell
+			electrons interact in a bond
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[t]
+	\frametitle{Hybridization and Bonding Scheme}
+	Draw the Lewis structure for each of the following, describe the
+	molecular geometry and hybridization of each central atom, and label all
+	\textsigma{} and \textpi{} bonds using appropriate notation.
+	\begin{enumerate}
+		\item \ch{ICl2}
+		\vfill
+		\item \ch{NO2+}
+		\vfill
+		\item \ch{CH3CO2H}
+		\vfill
+		\item \ch{N2F2   }
+		\vfill
+	\end{enumerate}
+\end{frame}
+
+
+%\begin{onyourown}
+%	Draw the Lewis structure for each of the following, describe the
+%	molecular geometry and hybridization of each central atom, and label all
+%	\textsigma{} and \textpi{} bonds using appropriate notation.
+%	\begin{enumerate}
+%		\item \ch{PCl5}
+%			\vspace{10em}
+%		\item \ch{NO2-}
+%			\vspace{10em}
+%		\item \ch{CH3CN  }
+%			\vspace{10em}
+%		\item \ch{N2F2   }
+%	\end{enumerate}
+%\end{onyourown}
+
+
+\frame{\section{Molecular Orbital Theory}
+	\begin{learningobjectives}
+	\item Identify the limitations of Valence Bond Theory
+	\item Explain electron delocalization in molecules.
+	\item Draw molecular orbital diagrams to determine the bond order,
+		magnetic properties, and stability of molecules.
+	\end{learningobjectives}
+}
+
+\clearpage
+
+\begin{frame}[t]
+	\frametitle{Problems with Valence Bond Theory}
+	\begin{itemize}[<+->]
+		\item Most properties are predicted better with VB theory than
+			with Lewis theory:
+			\begin{itemize}[<1->]
+				\item Bonding schemes
+				\item Bond strengths
+				\item Bond lengths
+				\item Bond rigidity
+			\end{itemize}
+		\item Many properties still don't have predictions that align
+			with observed values, however:
+			\begin{itemize}[<1->]
+				\item Magnetic behavior not always correct
+				\item Electrons not equally shared across the
+					entire molecule
+			\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[t]
+	\frametitle{Molecular Orbital Theory}
+	Schrödinger's wave equation is solved (approximately) to calculate a set
+	of \alert{molecular} orbitals.
+	\begin{itemize}[<+->]
+		\item Recall that solving wave equations is only possible for
+			the hydrogen atom.
+		\item The solution is estimated until the energy of the orbital
+			is \alert{minimized}.
+	\end{itemize}
+
+	\onslide<+->
+	\bigskip
+
+	\begin{block}{Delocalization}
+		The electrons belong to the \alert{whole} molecule, so orbitals
+		are shared across the \alert{entire} molecule.
+	\end{block}
+\end{frame}
+
+\begin{frame}[t]
+	\frametitle{Linear Combination of Atomic Orbitals}
+	\begin{itemize}[<+->]
+		\item The \alert{simplest} solution stats with adding atomic
+			orbitals together -- the \alert{linear combination of
+			atomic orbitals} (LCAO) method.
+			\begin{center}
+				\includegraphics[scale=0.25]{06_Pg267_UnFigure.jpg}
+			\end{center}
+		\item Recall \alert{constructive} and \alert{destructive}
+			interference.
+			\begin{center}
+				\includegraphics[scale=0.25]{06_Pg268_UnFigure_1.jpg}
+			\end{center}
+			Orbitals that are out of phase cancel each other out!
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[c]
+	\frametitle{Interaction of 1\textit{s} Orbitals}
+	\begin{center}
+		\includegraphics[scale=0.4]{06_09_Figure.jpg}
+	\end{center}
+\end{frame}
+
+\begin{frame}[c]
+	\frametitle{Key Terms and Properties}
+	\alert{Bond order} describes the number of electrons
+		involved in a bond.
+		\begin{itemize}
+			\item Generally, what we consider to be single
+				(BO = 1)
+				double (BO = 2), and triple bonds (BO =
+				3).
+			\item Only takes \alert{valence} electrons into
+				account.
+			\item Due to \alert{delocalization}, the bond
+				order may be a fraction.
+			\item Higher bond orders are \alert{stronger} and
+				\alert{shorter}.
+			\item A bond order of 0 means \alert{no} bond
+				will form!
+		\end{itemize}
+		\begin{equation*}
+			\boxed{
+			\text{bond order} = \frac{1}{2}\left(\text{\#
+				bonding \el{}} - \text{\# antibonding
+			\el{}}\right)}
+	\end{equation*}
+	\pause
+	\null
+	\bigskip
+	\alert{Magnetism} is the result of \alert{unpaired}
+	electrons.
+\end{frame}
+
+\begin{frame}[c]
+	\frametitle{H\textsubscript{2} MO Diagram}
+	\begin{center}
+		\includegraphics[scale=0.4]{06_Pg268_UnFigure_2.jpg}
+	\end{center}
+\end{frame}
+
+\begin{frame}[t,allowframebreaks]
+	\frametitle{Building MO Diagrams}
+	Draw the MO diagram for \ch{He2}. Is this molecule
+	stable?
+
+	\framebreak
+
+	Draw the MO diagram for \ch{He2+}. Is this molecule
+	stable?
+
+	\framebreak
+
+	Draw the MO diagram for \ch{H2-}. Is this molecule
+	stable?
+
+	\framebreak
+
+	Draw the MO diagram for \ch{Li2}. Is this molecule
+	stable?
+\end{frame}
+
+\clearpage
+
+\begin{frame}[c,allowframebreaks]
+	\frametitle{Interaction of 2\textit{p} Orbitals}
+	\begin{center}
+		\includegraphics[scale=0.4]{06_Pg271_UnFigure_3.jpg}
+	\end{center}
+
+	\framebreak
+
+	\begin{center}
+		\includegraphics[scale=0.4]{06_Pg272_UnFigure_1.jpg}
+	\end{center}
+
+	\framebreak
+
+	\begin{center}
+		\includegraphics[scale=0.4]{06_Pg272_UnFigure_2.jpg}
+	\end{center}
+\end{frame}
+
+\begin{frame}[c,allowframebreaks]
+	\frametitle{Molecular Orbital Energy Ordering}
+	\begin{center}
+		\includegraphics[scale=0.35]{06_10_Figure.jpg}
+	\end{center}
+
+	\framebreak
+
+	\begin{center}
+		\includegraphics[scale=0.45]{06_12_Figure.jpg}
+	\end{center}
+\end{frame}
+
+\begin{frame}[t,allowframebreaks]
+	\frametitle{Building MO Diagrams with \textit{p} Orbitals}
+	Draw the MO diagram for \ch{N2}. What is the bond order?
+
+	\framebreak
+
+	Draw the MO diagram for \ch{O2}. What is the bond order?
+
+\end{frame}
+
+\begin{frame}{Paramagnetism in Molecular Compounds}
+	\begin{center}
+		\includegraphics[width=\linewidth]{06_Pg274_UnFigure_1.jpg}
+	\end{center}
+\end{frame}
+
+%\begin{onyourown}[0em]
+%	% Ebbing 10.55
+%	Describe the electronic structure of each of the following using
+%	molecular orbital theory. Calculate the bond order of each and decide
+%	whether it should be stable. For each, state whether the substance is
+%	diamagnetic or paramagnetic.
+%	\begin{enumerate}
+%		\item \ch{B2} \vspace{10em}
+%		\item \ch{B2+} \vspace{10em}
+%		\item \ch{O2-} \vspace{10em}
+%	\end{enumerate}
+%\end{onyourown}
+
+
+\begin{frame}[c,allowframebreaks]
+	\frametitle{Heteronuclear Diatomic Molecules and Ions}
+	\begin{columns}
+		\column{0.5\textwidth}
+		\begin{itemize}
+			\item When the combining atomic orbitals are idential and of
+				equal energy (\alert{homonuclear} diatomic molecules),
+				the contribution of each is equal.
+			\item If the atomic orbitals are different in type and energy,
+				the atomic orbital \alert{closest} in energy to the
+				molecular orbital contributes more to the molecular
+				orbital.
+		\end{itemize}
+
+		\column{0.5\textwidth}
+
+		\begin{center}
+			\includegraphics[scale=0.3]{06_Pg276_UnFigure_1.jpg}
+		\end{center}
+	\end{columns}
+
+	\framebreak
+
+	\begin{columns}
+		\column{0.5\textwidth}
+		\begin{itemize}
+			\item More electronegative atoms have lower
+			        energy orbitals.
+			\item Lower energy atomic orbitals contribute
+			        more to the \alert{bonding} MOs.
+			\item Higher energy atomic orbitals contribute
+			        more to the \alert{antibonding} MOs.
+			\item \alert{Nonbonding} MOs remain localized on
+				the atom donating its atomic orbitals.
+		\end{itemize}
+		\column{0.5\textwidth}
+		\begin{center}
+			\includegraphics[scale=0.25]{06_Pg276_UnFigure_2.jpg}
+		\end{center}
+	\end{columns}
+\end{frame}
+
+\begin{frame}[t] % Ebbing 10.57
+	\frametitle{Building Heteronuclear MO Diagrams}
+	Write the molecular orbital diagram and bond order of \ch{CN-}. Is this ion
+	diamagnetic or paramagnetic?
+\end{frame}
+
+
+%\begin{onyourown}[14em] % Ebbing 10.58
+%	Write the molecular orbital diagram of \ch{BN}. What is the bond
+%	order of BN? Is the substance diamagnetic or paramagnetic?
+%\end{onyourown}
+
+\clearpage
+
+\begin{frame}[c,allowframebreaks]
+	\frametitle{Polyatomic Molecules}
+	\begin{itemize}
+		\item When many atoms are combined together, the electrons are
+			\alert{delocalized} over the entire molecules.
+		\item Predictions match MO theory much more than Lewis or VB
+			theories.
+	\end{itemize}
+
+	\bigskip
+
+	Ozone (\ch{O3}) according to Lewis theory:
+
+	\begin{center}	
+		\includegraphics[scale=0.3]{06_Pg278_UnFigure_1.jpg}
+	\end{center}
+
+	\framebreak
+
+	Ozone (\ch{O3}) according to MO theory:
+	\begin{center}	
+		\includegraphics[scale=0.2]{06_Pg278_UnFigure_2.jpg}
+	\end{center}
+
+	\framebreak
+
+	Benzene (\ch{C6H6}) according to Lewis theory:
+	\begin{center}
+		\includegraphics[scale=0.4]{06_Pg278_UnFigure_3.jpg}
+	\end{center}
+
+	\framebreak
+
+	Benzene (\ch{C6H6}) according to MO theory:
+	\begin{center}
+		\includegraphics[scale=0.2]{06_Pg278_UnFigure_4.jpg}
+	\end{center}
+\end{frame}
+
+\end{document}
