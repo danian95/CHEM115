@@ -1,10 +1,8 @@
 % !TEX program = xelatex
-%\documentclass[notes=onlyslideswithnotes,notes=hide]{beamer}
-%\documentclass[notes=only]{beamer}
+\documentclass[notes=only]{beamer}
 %\documentclass[notes=hide]{beamer}
-\documentclass[notes=show]{beamer}
-%\documentclass[11pt,letterpaper]{article}
-%\usepackage{beamerarticle}
+%\documentclass[notes=show]{beamer}
+%\documentclass[handout]{beamer}
 
 \usepackage{bucolors}
 \usepackage{newtxtext}
@@ -15,22 +13,6 @@
 \usepackage{collcell}
 \usepackage{chemfig}
 \usetikzlibrary{tikzmark}
-
-% Some scaling, probably delete this
-%\usepackage{environ}
-%
-%\makeatletter
-%\newsavebox{\measure@tikzpicture}
-%\NewEnviron{scaletikzpicturetowidth}[1]{%
-%	\def\tikz@width{#1}%
-%	\def\tikzscale{1}\begin{lrbox}{\measure@tikzpicture}%
-%		\BODY
-%	\end{lrbox}%
-%	\pgfmathparse{#1/\wd\measure@tikzpicture}%
-%	\edef\tikzscale{\pgfmathresult}%
-%	\BODY
-%}
-%\makeatother
 
 \renewcommand*\printangularmomentum[1]{#1}
 
