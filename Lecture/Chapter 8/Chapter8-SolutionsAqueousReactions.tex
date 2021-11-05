@@ -1,11 +1,11 @@
 % !TEX program = xelatex
-%\documentclass[notes=onlyslideswithnotes,notes=hide]{beamer}
+\documentclass[notes=hide]{beamer}
 %\documentclass[notes=only]{beamer}
-%\documentclass[notes=hide]{beamer}
+%\documentclass[handout]{beamer}
 %\documentclass[notes=show]{beamer}
-\documentclass[11pt,letterpaper]{article}
-\usepackage{beamerarticle}
 
+\usepackage{newtxtext}
+\usepackage{bucolors}
 \usepackage{genchem}
 \usepackage{lecture}
 \usepackage{multicol}
@@ -20,7 +20,7 @@
 \subtitle{Chapter 8}
 \institute[CHEM115 Bloomsburg University]{CHEM115 --- Chemistry for the Sciences I \\ Bloomsburg University}
 \author{D.A. McCurry}
-\date{Spring 2020}
+\date{Fall 2021}
 
 \begin{document}
 
@@ -41,23 +41,22 @@
 
 \begin{frame}{Solution Terminology}
 	\begin{columns}
-		\column{0.6\textwidth}
+		\column{0.45\textwidth}
 		\begin{block}{Solution}
 			A homogeneous mixture of two (or more) substances.
-			\begin{description}
-				\item[Solvent:] The major component of the mixture.
-				\item[Solute:] The minor component of the mixture.
-			\end{description}
 		\end{block}
+
+		\bigskip
+
 		An \alert{aqueous solution} is one in which water acts as the
 		solvent.
 		\begin{reactions*}
 			NaNO3\sld{} &->[ H2O ] NaNO3\aq{} \\
 			CuSO4\sld{} &->[ H2O ] CuSO4\aq{}
 		\end{reactions*}
-		\column{0.4\textwidth}
+		\column{0.45\textwidth}
 		\begin{center}
-			\includegraphics[scale=0.45]{Borland-Solute-Solvent.jpg}
+			\includegraphics[width=0.9\linewidth]{Borland-Solute-Solvent.jpg}
 		\end{center}
 	\end{columns}
 
@@ -91,27 +90,33 @@
 	particles of the solute and solvent.
 
 	\begin{center}
+		\begin{tikzpicture}
+			\node[align = center, fill = green!10](will) {%
+				\textbf{Solutions Will Form} \\ \\
+
 		\begin{tabular} {l l}
 			\toprule
-			\multicolumn{2}{c}{\bfseries Solutions Will
-			Form} \\ \midrule
 			\bfseries Solute & \bfseries Solvent \\ \midrule
 			Polar & Polar \\
 			Nonpolar & Nonpolar \\
 			\bottomrule
 		\end{tabular}
-		\qquad
+	};
+	\node[right = of will, align = center, fill = red!10](not) {%
+			\textbf{Solutions Will Not Form} \\ \\
+
 		\begin{tabular} {l l}
 			\toprule
-			\multicolumn{2}{c}{\bfseries Solutions Will
-			Not Form} \\ \midrule
 			\bfseries Solute & \bfseries Solvent \\ \midrule
 			Polar & Nonpolar \\
 			Nonpolar & Polar \\
 			\bottomrule
 		\end{tabular}
+	};
+\end{tikzpicture}
 	\end{center}
 
+	\note{%
 	\begin{itemize}
 		\item \alert{Polar} solvents (such as water) dissolve
 			\alert{polar} solutes (such as sugar) and/or \alert{ionic}
@@ -120,6 +125,7 @@
 			dissolve \alert{nonpolar} solutes (such as oil or
 			grease).
 	\end{itemize}
+}
 \end{frame}
 
 \begin{frame}{Quantifying Solution Concentrations}
@@ -216,27 +222,30 @@
 \clearpage
 
 \begin{frame}{Diluting Solutions}
-	\only<1>{%
-		In a \alert{dilution},
-		\begin{itemize}
-			\item solvent is added.
-			\item volume increases.
-			\item concentration of solute \alert{decreases}.
-		\end{itemize}
-		
-		\bigskip
-		
-		\begin{center}
-			\includegraphics[scale=0.4]{Borland-dilution.jpg}
-		\end{center}
+	\begin{columns}
+		\column{0.45\textwidth}
+	In a \alert{dilution},
+	\begin{itemize}
+		\item solvent is added.
+		\item volume increases.
+		\item concentration of solute \alert{decreases}.
+	\end{itemize}
+	\column{0.45\textwidth}
+	\visible<2>{%
+	\begin{block}{Key Point}
+		In both the initial and diluted solution, the moles of solute
+		are the \alert{same}!
+	\end{block}
 	}
-
-	\only<2->{%
-		\begin{block}{Key Point}
-			In both the initial and diluted solution, the moles of solute
-			are the \alert{same}!
-		\end{block}
+	\end{columns}
 	
+	\bigskip
+	
+	\begin{center}
+		\includegraphics[scale=0.4]{Borland-dilution.jpg}
+	\end{center}
+
+	\note<2>{%
 		This allows us to use the following equation:
 		\begin{align*}
 			M_1V_1 &= M_2V_2
@@ -244,9 +253,8 @@
 			\frac{\si{\mole}_1}{\si{\liter}} \times \si{\liter}_1 &=
 			\frac{\si{\mole}_2}{\si{\liter}} \times \si{\liter}_2 \\
 			\si{\mole}_1 &= \si{\mole}_2
-			\uncover<3>{\intertext{But this actually applies to \alert{any} units of
-			concentration or volume, so}
-			C_1V_1 &= C_2V_2}
+			\intertext{But this actually applies to
+	\alert{any} units of concentration or volume, so} C_1V_1 &= C_2V_2
 		\end{align*}
 	}
 \end{frame}
@@ -342,25 +350,17 @@
 		3 Ba(NO3)2\aq{} + 2 Na3PO4\aq{} -> Ba3(PO4)2\sld{} + 6
 		NaNO3\aq{}
 	\end{reaction*}
+	Did \emph{all} of the \ch{Ba(NO3)2} and \ch{Na3PO4} react?
 
-	\begin{overprint}
-		\onslide<1-3>
-		Did \alert{all} of the \ch{Ba(NO3)2} and \ch{Na3PO4} react?
-		\begin{itemize}[<+(1)->]
-			\item We would need \alert{exactly} the correct amount of
-				\ch{Ba(NO3)2} and \ch{Na3PO4}.
-			\item What is the correct amount?
-		\end{itemize}
+	\pause
 
-		\onslide<4->
+	\bigskip
+
+	What volume (in \si{\milli\liter}) of a \SI{0.200}{\Molar} \ch{Na3PO4}
+	solution is required to completely react with \SI{10.00}{\milli\liter}
+	of a \SI{0.025}{\Molar} solution of \ch{Ba(NO3)2}?
 	
-		What volume (in \si{\milli\liter}) of a \SI{0.200}{\Molar} \ch{Na3PO4} solution
-		is required to completely react with \SI{10.00}{\milli\liter} of a
-		\SI{0.025}{\Molar} solution of \ch{Ba(NO3)2}?
-	
-		\vfill
-
-		\note<1>{\footnotesize
+	\note<2>{\footnotesize
 			\begin{enumerate}
 				\item How much \ch{Na3PO4} reacts with \ch{Ba(NO3)2}?
 					\boxed{\frac{\SI{2}{\mole}~\ch{Na3PO4}}{\SI{3}{\mole}~\ch{Ba(NO3)2}}}
@@ -389,8 +389,7 @@
 						&= \boxed{\SI{0.83}{\milli\liter}}
 					\end{align*}
 			\end{enumerate}
-			}
-	\end{overprint}
+		}
 \end{frame}
 
 \clearpage
@@ -452,7 +451,7 @@
 		\bfseries Generally \underline{Insoluble} & \bfseries Exceptions
 		\\ \midrule
 		\ch{OH-} & \ch{Ca^{2+}}, \ch{Sr^{2+}}, and \ch{Ba^{2+}} are
-		\alert{slightly} soluble \\
+		\emph{slightly} soluble \\
 		& \ch{Li+}, \ch{Na+}, \ch{K+}, and \ch{NH4+} are soluble \\
 		\ch{S^{2-}} & \ch{Li+}, \ch{Na+}, \ch{K+}, \ch{NH4+},
 		\ch{Ca^{2+}}, \ch{Sr^{2+}}, and \ch{Ba^{2+}} \\
@@ -470,7 +469,7 @@
 	\end{quote}
 	\begin{reaction*}
 		!(soluble)( 3 Ba(NO3)2\aq{} ) + !(soluble)( 2 Na3PO4\aq{} ) ->
-		!(\alert{insoluble})( Ba3(PO4)2\sld{} ) + !(soluble)( 6
+		!(insoluble)( Ba3(PO4)2\sld{} ) + !(soluble)( 6
 		NaNO3\aq{} )
 	\end{reaction*}
 
@@ -499,25 +498,31 @@
 		electricity. The dissolved ions are \alert{charge carriers}.
 	\end{block}
 
-	\begin{itemize}[<+(1)->]
-		\item \alert{Strong} electrolytes conduct electricity \alert{very
-			well}.
-			\begin{reaction*}
-				!( table~salt )( NaCl\sld{} ) -> Na^{+}\aq{} +
-				Cl^{-}\aq{}
-			\end{reaction*}
-		\item \alert{Weak} electrolytes conduct electricity
-			\alert{poorly}.
-			\begin{reaction*}
-				!( acetic~acid )( HC2H3O2\aq{} ) <=> H^{+}\aq{}
-				+ C2H3O2^{-}\aq{}
-			\end{reaction*}
-		\item \alert{Nonelectrolytes} do not conduct electricity.
-			\begin{reaction*}
-				!( sugar )( C12H22O11\sld{} ) ->
-				C12H22O11\aq{}
-			\end{reaction*}
-	\end{itemize}
+	\pause
+
+	\alert{Strong} electrolytes conduct electricity \alert{very
+	  well}.
+	  \begin{reaction*}
+	  	!( table~salt )( NaCl\sld{} ) -> Na^{+}\aq{} +
+	  	Cl^{-}\aq{}
+	  \end{reaction*}
+
+	  \pause
+
+	\alert{Weak} electrolytes conduct electricity
+	  \alert{poorly}.
+	  \begin{reaction*}
+	  	!( acetic~acid )( HC2H3O2\aq{} ) <=> H^{+}\aq{}
+	  	+ C2H3O2^{-}\aq{}
+	  \end{reaction*}
+
+	  \pause
+
+	\alert{Nonelectrolytes} do not conduct electricity.
+	\begin{reaction*}
+		!( sugar )( C12H22O11\sld{} ) ->
+		C12H22O11\aq{}
+	\end{reaction*}
 \end{frame}
 
 \begin{frame}
@@ -745,32 +750,32 @@
 	\end{itemize}
 \end{frame}
 
-\begin{frame}[t]{Acid-Base Nomenclature Practice}
-	Name the following acids or bases:
-
-	\begin{enumerate}
-		\item \ch{HI} \note[item]{hydroiodic acid}
-		\item \ch{KOH} \note[item]{potassium hydroxide}
-		\item \ch{HClO} \note[item]{hypochlorous acid}
-		\item \ch{HClO2} \note[item]{chlorous acid}
-		\item \ch{HClO3} \note[item]{chloric acid}
-		\item \ch{HClO4} \note[item]{perchloric acid}
-		\item \ch{Sr(OH)2} \note[item]{strontium hydroxide}
-	\end{enumerate}
-\end{frame}
-
-\begin{onyourown}[0em]
-	Name the following acids or bases:
-	
-	\begin{enumerate}
-		\item \ch{H2S}
-		\item \ch{HBr}
-		\item \ch{CsOH}
-		\item \ch{H2SO3} (This one is a bit of a challenge)
-		\item \ch{Cu(OH)2}
-		\item \ch{HC2H3O2}
-	\end{enumerate}
-\end{onyourown}
+%\begin{frame}[t]{Acid-Base Nomenclature Practice}
+%	Name the following acids or bases:
+%
+%	\begin{enumerate}
+%		\item \ch{HI} \note[item]{hydroiodic acid}
+%		\item \ch{KOH} \note[item]{potassium hydroxide}
+%		\item \ch{HClO} \note[item]{hypochlorous acid}
+%		\item \ch{HClO2} \note[item]{chlorous acid}
+%		\item \ch{HClO3} \note[item]{chloric acid}
+%		\item \ch{HClO4} \note[item]{perchloric acid}
+%		\item \ch{Sr(OH)2} \note[item]{strontium hydroxide}
+%	\end{enumerate}
+%\end{frame}
+%
+%\begin{onyourown}[0em]
+%	Name the following acids or bases:
+%	
+%	\begin{enumerate}
+%		\item \ch{H2S}
+%		\item \ch{HBr}
+%		\item \ch{CsOH}
+%		\item \ch{H2SO3} (This one is a bit of a challenge)
+%		\item \ch{Cu(OH)2}
+%		\item \ch{HC2H3O2}
+%	\end{enumerate}
+%\end{onyourown}
 
 \begin{frame}{Acid-Base Reactions}
 	\begin{itemize}
@@ -798,22 +803,20 @@
 
 \vspace{\stretch{-1}}
 
-\begin{frame}{Guide to Balancing Acid-Base Reactions}
-	\begin{block}{Problem}
-		Balance the reaction when aqueous solutions of \ch{HNO3} with
-		\ch{Mg(OH)2} are mixed.
-	\end{block}
+\begin{frame}[t]{Guide to Balancing Acid-Base Reactions}
+	Balance the reaction when aqueous solutions of \ch{HNO3} with
+	\ch{Mg(OH)2} are mixed.
 
 	\bigskip
 
-	\begin{description}[<+(1)->]
-		\item[Step 1] Write the base and acid formulas.
-		\item[Step 2] Balance \Hyd\ and \ch{H^{+}}.
-		\item[Step 3] Balance with \water.
-		\item[Step 4] Write the salt from remaining ions.
-	\end{description}
+	\begin{enumerate}[<+(1)->]
+		\item Write the base and acid formulas.
+		\item Balance \Hyd\ and \ch{H^{+}}.
+		\item Balance with \water.
+		\item Write the salt from remaining ions.
+	\end{enumerate}
 
-	\note<.>{
+	\note<.(1)>{%
 		\begin{enumerate}
 			\item \ch{Mg(OH)2\aq{} + HNO3\aq{}}
 			\item \ch{Mg(OH)2\aq{} + "\alert{2}" HNO3\aq{}}
@@ -829,7 +832,6 @@
 
 \begin{frame}[t]{Balancing Acid-Base Reaction Practice}
 	Balance the following reaction:
-
 	\begin{reaction*}
 		HCl\aq{} + Al(OH)3\aq{} -> AlCl3\aq{} + H2O\lqd
 	\end{reaction*}
@@ -849,13 +851,13 @@
 		another substance in a solution of unknown concentration.
 	\end{block}
 
-	\begin{overlayarea}{\linewidth}{18em}
 	\begin{center}
-		\only<1>{\includegraphics[scale=0.35,trim={0 0 0 30pt},clip]{08_18_Figure.jpg}}
-		\mode<article>{\clearpage}
-		\only<2>{\includegraphics[scale=0.4]{08_19_Figure.jpg}}
+		\includegraphics[scale=0.35,trim={0 0 0 30pt},clip]{08_18_Figure.jpg}
 	\end{center}
-	\end{overlayarea}
+\end{frame}
+
+\begin{frame}
+	\includegraphics[width=\linewidth]{08_19_Figure.jpg}
 \end{frame}
 
 \vspace{\stretch{-1}}
@@ -1050,7 +1052,7 @@
 	\begin{center}
 		Why? How do we know?
 		\pause
-		There \alert{must} be a change in charge!
+		There \emph{must} be a change in charge!
 	\end{center}
 
 	\begin{block}{Oxidation State/Number}
@@ -1065,7 +1067,7 @@
 	\begin{enumerate}[<+->]
 		\item The oxidation state of an atom in a free element
 			is 0.
-			\only<.>{
+			\note<.>{
 				\begin{reaction*}
 					!(0~ox~state)( Cu ) 
 					\qquad\qquad 
@@ -1074,7 +1076,7 @@
 				}
 		\item The oxidation state of a monatomic ion is equal to
 			its charge.
-			\only<.>{
+			\note<.>{
 				\begin{reaction*}
 					!(\num{+2}~ox~state)( Ca^{2+} )
 					\qquad\qquad
@@ -1086,7 +1088,7 @@
 			\begin{itemize}
 				\item A neutral molecule or formula unit
 					is 0.
-					\only<.>{
+					\note<.>{
 						\begin{reaction*}
 							!({$2 (\text{H~ox~state})
 							+ 1 (\text{O~ox~state})
@@ -1095,7 +1097,7 @@
 						}
 				\item An ion is equal to the charge of
 					the ion.
-					\only<.>{
+					\note<.>{
 						\begin{reaction*}
 							!({$1 (\text{N~ox~state})
 							+ 3 (\text{O~ox~state})
@@ -1104,15 +1106,16 @@
 						}
 			\end{itemize}
 		\item Metals always have positive oxidation states.
-			\only<.>{
+			\note<.>{
 				\begin{reaction*}
-					!(\num{+1}~ox~state)( \alert{Na}Cl )
+					!(\num{+1}~ox~state)(
+					\textbf{\usebeamercolor[fg]{alerted
+					text}Na}Cl )
 					\qquad\qquad
-					!(\num{+2}~ox~state)( \alert{Ca}F2 )
+					!(\num{+2}~ox~state)( \textbf{Ca}F2 )
 				\end{reaction*}
 				}
-		\item Nonmetals are assigned oxidation states according
-			to the table below.
+		\item Nonmetals are assigned oxidation states as follows:
 			\begin{center}
 				\small
 				\sisetup{table-format=-1}
@@ -1154,7 +1157,7 @@
 	\pause
 
 	\begin{block}{Identifying Redox Reactions}
-		At \alert{any} time in which we have a \alert{change} in oxidation
+		At \emph{any} time in which we have a \alert{change} in oxidation
 		number, we know we have a \alert{redox} reaction.
 	\end{block}
 \end{frame}
@@ -1180,7 +1183,7 @@
 
 	\pause
 
-	Note that an oxidation reaction \alert{must} occur for every reduction
+	Note that an oxidation reaction \emph{must} occur for every reduction
 	reaction (and vice versa), because we need a \alert{stoichiometric}
 	amount of electrons to \alert{transfer}!
 	\begin{itemize}
@@ -1248,13 +1251,13 @@
 \clearpage
 
 \begin{frame}[t]{Some Challenging Examples}
-	\begin{enumerate}[<only@+>]
+	\begin{enumerate}[<+->]
 		\item Write the balanced chemical equation for the reaction of
 			potassium with water.
 
 			\vfill
 
-			\note[item]{
+			\note<3>[item]{
 				\begin{reaction*}
 					2 K\sld{} + 2 H2O\lqd{} -> 2 KOH\aq{} +
 					H2\gas{}
@@ -1266,7 +1269,7 @@
 
 			\vfill
 
-			\note[item]{
+			\note<3>[item]{
 				\begin{reaction*}
 					2 Al\sld{} + 3 Br2\gas{} -> 2 AlBr3\aq{}
 				\end{reaction*}
@@ -1277,7 +1280,7 @@
 
 			\vfill
 
-			\note[item]{
+			\note<3>[item]{
 				\begin{reaction*}
 					C3H8\gas{} + 5 O2\gas{} -> 3 CO2\gas{}
 					+ 4 H2O\lqd{}

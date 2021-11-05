@@ -1,12 +1,10 @@
 % !TEX program = xelatex
-%\documentclass[notes=onlyslideswithnotes,notes=hide]{beamer}
 %\documentclass[notes=only]{beamer}
 %\documentclass[notes=show]{beamer}
 %\documentclass[notes=hide]{beamer}
-%\documentclass[notes]{beamer}
-\documentclass[11pt,letterpaper]{article}
-\usepackage{beamerarticle}
+\documentclass[handout]{beamer}
 
+\usepackage{newtxtext}
 \usepackage{genchem}
 \usepackage{lecture}
 \usepackage{multicol}
@@ -14,57 +12,36 @@
 \usepackage{collcell}
 \usetikzlibrary{tikzmark}
 
-\renewcommand*\printangularmomentum[1]{#1}
-
-\usepackage{orbitalfilling}[2019/02/14]
-
 \title{Chemical Reactions and Chemical Quantities}
 \subtitle{Chapter 7}
 \institute[CHEM115 Bloomsburg University]{CHEM115 --- Chemistry for the Sciences I \\ Bloomsburg University}
 \author{D.A. McCurry}
-\date{Fall 2020}
+\date{Fall 2021}
 
 \begin{document}
 
 \maketitle
 \mode<article>{\thispagestyle{fancy}}
 
-\begin{frame}{Chemical and Physical Change}
-	\begin{columns}
-		\column{0.5\textwidth}
-		\begin{itemize}[<+->]
-			\item \textbf{Chemical Change}\par
-			Atoms rearrange and the original
-			substances transform into different substances.
-			\begin{itemize}[<1->]
-				\item Iron rusting
-				\item Gasoline burning
-			\end{itemize}
-		\item \textbf{Physical Change}\par
-			The molecular structure or composition does not change.
-			\begin{itemize}[<1->]
-				\item Water boiling
-				\item Candle wax melting
-			\end{itemize}
-	\end{itemize}
-		\column{0.5\textwidth}
-		\centering
-		\only<1>{\includegraphics[scale=0.4]{07_04_Figure.jpg}}
-		\only<2>{\includegraphics[scale=0.27]{07_05_Figure.jpg}}
-	\end{columns}
-\end{frame}
+\begin{frame}[t]{Types of Change}
+	\begin{columns}[t]
+		\column{0.45\textwidth}
+		\begin{block}{Physical Change}
+		The molecular structure or composition does not change.
+		\end{block}
 
-\begin{frame}{Physical Changes}
+		\bigskip
+
+		\includegraphics[width=\linewidth]{07_05_Figure.jpg}
+
+		\note<1>{%
+	\textbf{Physical Changes}
 	\begin{itemize}
-		\item The identity and composition of the substance do not
-			change.
 		\item The state can change or the material can be torn into
 			smaller pieces.
 	\end{itemize}
 
-	\bigskip
-
-	\begin{small}
+	\resizebox{\linewidth}{!}{%
 	\begin{tabularx}{\linewidth}
 		{l
 		>{\raggedright\arraybackslash}X}
@@ -80,22 +57,18 @@
 		& Grinding pepper into smaller particles \\
 		\bottomrule
 	\end{tabularx}
-	\end{small}
-
-%	\framebreak
-%
-%	A substance
-%	\begin{description}
-%		\item[melts] when it changes from a solid to a liquid.
-%		\item[freezes] when it changes from a liquid to a solid.
-%		\item[sublimes] when it changes from a solid to a gas.
-%		\item[deposits] when it changes from a gas to a solid.
-%		\item[vaporizes] when it changes from a liquid to a gas.
-%		\item[condenses] when it changes from a gas to a liquid.
-%	\end{description}
+	}
+}
+		\column{0.45\textwidth}
+		\pause
+		\begin{block}{Chemical Change}
+			Atoms rearrange and the original
+			substances transform into different substances.
+		\end{block}
+		\centering
+		\includegraphics[scale=0.25]{07_04_Figure.jpg}
+	\end{columns}
 \end{frame}
-
-\vspace{\stretch{-1}}
 
 \frame{\section{Chemical Equations}
 	\begin{learningobjectives}
@@ -105,179 +78,152 @@
 	\end{learningobjectives}
 }
 
-\vspace{\stretch{-1}}
-
-\begin{frame}[allowframebreaks]{Chemical Changes}
-	\begin{itemize}
-		\item A \alert{chemical reaction} takes place where one or
-			more new substances are produced.
-			\begin{itemize}
-				\item Sometimes there is no visible evidence.
-				\item Old bonds are broken and new bonds formed.
-			\end{itemize}
-		\item A \alert{chemical equation} gives the chemical formulas of
-			the \alert{reactants} on the left of the arrow and the
-			\alert{products} on the right.
+\begin{frame}{Chemical Changes}
+	\begin{columns}
+		\column{0.45\textwidth}
+		A \alert{chemical reaction} takes place where one or more new
+		substances are produced.
+		\begin{itemize}
+			\item Sometimes there is no visible evidence.
+			\item Old bonds are broken and new bonds formed.
+		\end{itemize}
+		\column{0.45\textwidth}
+		\begin{block}{Chemical Equations}
 			\begin{reaction*}
 				\text{Reactants} -> \text{Products}
 			\end{reaction*}
-	\end{itemize}
-	
-	\framebreak
 
-	Symbols used in chemical equations show
+			\bigskip
+
+			\resizebox{\linewidth}{!}{%
+				\begin{tabular} {c l}
+					\toprule
+					\bfseries
+					Symbol & \bfseries Meaning \\
+					\midrule
+					\ch{+} & Separates two or more formula units \\
+					\ch{->} & Reacts to form products \\
+					\ch{->[$\Delta$]} & Reactants are heated \\
+					\ch{\sld} & Solid \\
+					\ch{\lqd} & Liquid \\
+					\ch{\gas} & Gas or vapor \\
+					\ch{\aq} & Aqueous (dissolved in \ch{H2O}) \\
+					\bottomrule
+				\end{tabular}
+			}
+		\end{block}
+		\end{columns}
+
+	\note{%
+		Symbols used in chemical equations show
+		\begin{itemize}
+			\item the states of the reactants.
+			\item the states of the products.
+			\item the reaction conditions.
+		\end{itemize}
+	}
+\end{frame}
+
+\begin{frame}[t]{Balancing Chemical Equations}
 	\begin{itemize}
-		\item the states of the reactants.
-		\item the states of the products.
-		\item the reaction conditions.
+		\item A \alert{balanced} chemical equation adheres to the
+			\alert{law of conservation of mass}.
+		\item In a balanced chemical equation, the numbers and kinds of
+			atoms must remain the same in both products and
+			reactants.
 	\end{itemize}
 
 	\bigskip
 
 	\begin{center}
-		\begin{tabular} {c l}
-			\toprule
-			\bfseries
-			Symbol & \bfseries Meaning \\
-			\midrule
-			\ch{+} & Separates two or more formula units \\
-			\ch{->} & Reacts to form products \\
-			\ch{->[$\Delta$]} & Reactants are heated \\
-			\ch{\sld} & Solid \\
-			\ch{\lqd} & Liquid \\
-			\ch{\gas} & Gas or vapor \\
-			\ch{\aq} & Aqueous (dissolved in \ch{H2O}) \\
-			\bottomrule
+		\begin{tabular}{E e E}
+			2 Na\sld{} + Cl2\gas\ & -> & 2 NaCl\sld \\ \midrule
+			2 Na & & 2 Na \\
+			2 Cl & & 2 Cl
 		\end{tabular}
 	\end{center}
 \end{frame}
 
-\begin{frame}[t]{Balancing Chemical Equations}
-	\only<1-2>{%
-		\begin{itemize}
-			\item A \alert{balanced} chemical equation adheres to the
-				\alert{law of conservation of mass}.
-			\item In a balanced chemical equation, the numbers and kinds of
-				atoms must remain the same in both products and
-				reactants.
-		\end{itemize}
-
-		\bigskip
-	}
-
+\begin{frame}
 	\begin{center}
-		\only<+>{%
-			\begin{tabular}{E e E}
-				2 Na\sld{} + Cl2\gas\ & -> & 2 NaCl\sld \\ \midrule
-				2 Na & & 2 Na \\
-				2 Cl & & 2 Cl
-			\end{tabular}
-		}
-		\only<+>{%
-			\begin{tabular}{E e E}
-				Hg(NO3)2\aq{} + 2 KI\aq & -> & HgI2\sld{} + 2 KNO3\aq
-				\\ \midrule
-				1 Hg & & 1 Hg \\
-				2 N & & 2 I \\
-				6 O & & 2 K \\
-				2 K & & 2 N \\
-				2 I & & 6 O
-			\end{tabular}
-		}
-		\only<+>{%
-			\includegraphics[scale=0.4]{h2o-balance.jpg}
-		}
+		\includegraphics[scale=0.4]{h2o-balance.jpg}
 	\end{center}
 \end{frame}
 
 \begin{frame}[t]{Guide to Balancing a Chemical Reaction}
-	\begin{overlayarea}{\linewidth}{12em}
-	\begin{enumerate}
-		\item<only@1-2> Write the unbalanced equation using the correct chemical
+	\begin{example}
+		\begin{reaction*}
+			CH4\gas{} + O2\gas{} -> CO2\gas{} + H2O\lqd{}
+		\end{reaction*}
+	\end{example}
+
+	\begin{enumerate}[<+->]
+		\item Write the unbalanced equation using the correct chemical
 			formula for each reactant and product.
-		\item<only@2> Count the atoms of each element in the reactants and
+		\item Count the atoms of each element in the reactants and
 			products.
-		\item<only@3-4> Find suitable \alert{coefficients} -- the numbers placed
+		\item Find suitable \alert{coefficients} -- the numbers placed
 			before formulas to indicate how many formula units of
 			each substance are required.
 			\begin{description}[<1->]
 				\item[Hint:] Start with the heavy atoms, end
 					with hydrogens.
 			\end{description}
-		\item<only@4> Check your answer by making sure that the numbers and
+		\item Check your answer by making sure that the numbers and
 			kinds of atoms are the same on both sides of the quation
 	\end{enumerate}
-	\end{overlayarea}
 
 	\bigskip
 
-	\begin{center}
-		\mode<presentation>{\only<1>{
+	\note<+>{%
 		\begin{tabular} {l c l}
 			\ch{CH4\gas{}} \ch{+}
-			\visible<3->{\alert{\ch{2}}}
+			\alert{\ch{2}}
 			\ch{O2\gas{}} & \ch{->} &
 			\ch{CO2\gas{}} \ch{+}
-			\visible<3->{\alert{\ch{2}}} \ch{H2O\lqd{}} \\
-		\end{tabular}
-		}}
-
-		\only<2->{\begin{tabular} {l c l}
-			\ch{CH4\gas{}} \ch{+}
-			\visible<3->{\alert{\ch{2}}}
-			\ch{O2\gas{}} & \ch{->} &
-			\ch{CO2\gas{}} \ch{+}
-			\visible<3->{\alert{\ch{2}}} \ch{H2O\lqd{}}
+			\alert{\ch{2}} \ch{H2O\lqd{}}
 			\\ \midrule
-			1 C & \visible<4->{$=$} & 1 C \\
-			4 H & \visible<4->{$=$} & \alt<4->{\alert{4}}{2}
-			H \mode<presentation>{\visible<3>{$\times$ 2}} \\
-			\alt<4->{\alert{4}}{2} O
-			\mode<presentation>{\visible<3>{$\times$ 2}} & \visible<4->{$=$} &
-			\alt<4->{\alert{4}}{3}\ O
-			\mode<presentation>{\visible<3>{$\times$ 2}}
-		\end{tabular}}
-	\end{center}
+			1 C & $=$ & 1 C \\
+			4 H & $=$ & \alert{4}
+			H $\times$ 2 \\
+			\alert{4} O
+			$\times$ 2 & $=$ &
+			\alert{4}\ O
+			$\times$ 2
+		\end{tabular}
+	}
 \end{frame}
 
-\begin{frame}[t]{Balance the following equation\ldots}
-	\begin{reaction*}
-		N2\gas{} + H2\gas{} -> NH3\gas{}
-	\end{reaction*}
 
-	\vfill
+\begin{frame}[t]{Balance the following equations\ldots}
+	\begin{enumerate}[1.\quad]
+		\item<+-> \ch{N2\gas{} + H2\gas{} -> NH3\gas{}}
+		\note<.>{
+			\begin{center}
+				\begin{tabular} {E e E}
+					N2\gas{} + H2\gas{} & -> & NH3\gas{} \\
+					\midrule
+					2 N & & 1 N \\
+					2 H & & 3 H
+				\end{tabular}
+			\end{center}
 	
-	\note{
-		\begin{center}
-			\begin{tabular} {E e E}
-				N2\gas{} + H2\gas{} & -> & NH3\gas{} \\
-				\midrule
-				2 N & & 1 N \\
-				2 H & & 3 H
-			\end{tabular}
-		\end{center}
+			We should balance the heaviest (N) first, then H:
+	
+			\begin{center}
+				\begin{tabular} {E e E}
+					N2\gas{} + 3 H2\gas{} & -> & 2 NH3\gas{} \\
+					\midrule
+					2 N & & 2 N \\
+					6 H & & 6 H
+				\end{tabular}
+			\end{center}
+			}
 
-		We should balance the heaviest (N) first, then H:
+			\vfill
 
-		\begin{center}
-			\begin{tabular} {E e E}
-				N2\gas{} + 3 H2\gas{} & -> & 2 NH3\gas{} \\
-				\midrule
-				2 N & & 2 N \\
-				6 H & & 6 H
-			\end{tabular}
-		\end{center}
-		}
-\end{frame}
-
-\begin{frame}[t]{Balance the following equation\ldots}
-	\begin{reaction*}
-		Fe3O4\sld{} + H2\gas{} -> Fe\sld{} + H2O\lqd{}
-	\end{reaction*}
-
-	\vfill
-
-	\note{
+		\item<+-> \ch{Fe3O4\sld{} + H2\gas{} -> Fe\sld{} + H2O\lqd{}}
+		\note<.>{
 		\begin{center}
 			\begin{tabular} {E e E}
 				Fe3O4\sld{} + H2\gas{} & -> & Fe\sld{} + H2O\lqd{} \\
@@ -300,30 +246,11 @@
 			\end{tabular}
 		\end{center}
 		}
-\end{frame}
 
-\begin{onyourown}[10em]
-	Balance the following equations:
+		\vfill
 
-	\begin{itemize}
-		\item \ch{Mg\sld{} + N2\gas{} -> Mg3N2\sld{}}
-
-			\vspace{10em}
-
-		\item \ch{C2H4\gas{} + H2O\lqd{} -> C2H5OH\lqd{}}
-	\end{itemize}
-\end{onyourown}
-
-\clearpage
-
-\begin{frame}[t]{Balance the following equation\ldots}
-	\begin{reaction*}
-		Na3PO4\aq{} + MgCl2\aq{} -> NaCl\aq{} + Mg3(PO4)2\sld{}
-	\end{reaction*}
-
-	\vspace{10em}
-	
-	\note{
+	\item<+-> \ch{Na3PO4\aq{} + MgCl2\aq{} -> NaCl\aq{} + Mg3(PO4)2\sld{}}
+	\note<.>{
 		\begin{center}
 			\begin{tabular} {E e E}
 				Na3PO4\aq{} + MgCl2\aq{} & -> & NaCl\aq{} +
@@ -348,7 +275,36 @@
 			\end{tabular}
 		\end{center}
 		}
+
+		\vfill
+
+	\end{enumerate}
 \end{frame}
+
+%\begin{onyourown}[10em]
+%	Balance the following equations:
+%
+%	\begin{itemize}
+%		\item \ch{Mg\sld{} + N2\gas{} -> Mg3N2\sld{}}
+%
+%			\vspace{10em}
+%
+%		\item \ch{C2H4\gas{} + H2O\lqd{} -> C2H5OH\lqd{}}
+%	\end{itemize}
+%\end{onyourown}
+
+%\begin{frame}
+%			\begin{tabular}{E e E}
+%				Hg(NO3)2\aq{} + 2 KI\aq & -> & HgI2\sld{} + 2 KNO3\aq
+%				\\ \midrule
+%				1 Hg & & 1 Hg \\
+%				2 N & & 2 I \\
+%				6 O & & 2 K \\
+%				2 K & & 2 N \\
+%				2 I & & 6 O
+%			\end{tabular}
+%\end{frame}
+
 
 \begin{frame}{What do chemical equations tell us?}
 	\begin{itemize}[<+(1)->]
@@ -468,7 +424,6 @@ minimum height=2em]
 \vspace{\stretch{-1}}
 
 \begin{frame}[t]{Translating Molar Ratios to Experimental Quantities}
-	\only<1-3>{%
 	\begin{itemize}[<+->]
 		\item We are unable to ``count'' moles directly.
 			\begin{itemize}[<1->]
@@ -508,18 +463,17 @@ minimum height=2em]
 				\end{tikzpicture}
 			\end{center}
 	\end{itemize}
-}
 
-%	\bigskip
-%
-%	\pause[\thebeamerpauses]
+	\bigskip
 
-	\only<4->{%
-	How many \emph{grams} of Fe are needed for the reaction of
-	\SI{12.0}{moles} of \ch{O2}?
-	}
+	\pause[\thebeamerpauses]
 
-	\note{
+	\begin{example}
+		How many \emph{grams} of Fe are needed for the reaction of
+		\SI{12.0}{moles} of \ch{O2}?
+	\end{example}
+
+	\note<+>{%
 		\begin{align*}
 			\SI{16.0}{\mole}~\ch{Fe} \times
 			\frac{\SI{55.845}{\gram}~\ch{Fe}}{\SI{1}{\mole}~\ch{Fe}}
@@ -678,32 +632,34 @@ minimum height=2em]
 
 	\bigskip
 
-	\only<2-3>{%
-		\begin{block}{Limiting Reactant}
-			The reactant that is completely consumed in a chemical reaction
-			and limits the amount of product.
-		\end{block}
+	\pause
+	\begin{block}{Limiting Reactant}
+		The reactant that is completely consumed in a chemical reaction
+		and limits the amount of product.
+	\end{block}
 	
-		\begin{block}{Reactant in Excess}
-			Any reactant that occurs in a quantity greater than is required
-			to completely react with the limiting reactant.
-		\end{block}
+	\begin{block}{Reactant in Excess}
+		Any reactant that occurs in a quantity greater than is required
+		to completely react with the limiting reactant.
+	\end{block}
 	
-		\bigskip
+	\bigskip
 
-		\visible<3->{%
-			For the last example, which is the \emph{limiting
-			reactant} and which is the \emph{reactant in excess}?
-		}
-	}
+	\pause
 
-	\mode<article>{\vspace{5em}}
+	For the last example, which is the \emph{limiting
+	reactant} and which is the \emph{reactant in excess}?
+\end{frame}
 
-	\only<4>{%
-		\begin{center}
-			\includegraphics[scale=0.4]{07_Pg300_UnFigure_1.jpg}
-		\end{center}
-	}
+\begin{frame}{Limits in Sandwiches}
+	\begin{center}
+		\includegraphics{CNX_Chem_04_04_sandwich.jpg}
+	\end{center}
+
+	\begin{footnotesize}
+		Theopold, P. F., Klaus; Richard Langley et al. Reaction Yields
+		\url{https://chem.libretexts.org/@go/page/78729} (accessed Oct 28, 2021).
+	\end{footnotesize}
 \end{frame}
 
 \begin{frame}[t]{Calculating the Reactant in Excess}
@@ -779,30 +735,20 @@ minimum height=2em]
 			beaker?)
 	\end{itemize}
 
-	\begin{overlayarea}{\linewidth}{12em}
-	\only<1-2>{%
-	\begin{block}{Theoretical Yield}
+	\begin{description}[<+(1)->]
+		\item[Theoretical Yield]
 		The amount of product that can be made in a chemical reaction
 		based on the amount of limiting reactant.
-	\end{block}
-	\visible<2>{%
-	\begin{block}{Actual Yield}
+		\item[Actual Yield]
 		The amount of product actually produced by a chemical reaction.
-	\end{block}
-	}
-	}
-
-	\only<3>{%
-	\begin{block}{Percent Yield}
+		\item[Percent Yield]
 		The ratio of what we actually produced to what we should
 		theoretically have produced.
 		\begin{equation*}
 			\frac{\text{actual yield}}{\text{theoretical yield}}
 			\times 100\%
 		\end{equation*}
-	\end{block}
-	}
-	\end{overlayarea}
+	\end{description}
 \end{frame}
 
 \begin{frame}[t]{Calculating a Percent Yield 1}
@@ -990,25 +936,26 @@ minimum height=2em]
 %actual yield = 232 grams}
 
 \begin{frame}{Types of Reactions}
-	\begin{itemize}
-		\item Combustion reactions
-			\begin{reaction*}
-				CH4\gas{} + 2 O2\gas{} -> CO2\gas{} + 2
-				H2O\gas{}
-			\end{reaction*}
-			
-		\item Alkali metal reactions
-			\begin{reaction*}
-				2 Na\sld{} + 2 H2O\lqd{} -> 2
-				Na^{+}\aq{} + 2 OH^{-}\aq{} + H2\gas{}
-			\end{reaction*}
+	\begin{block}{Combustion reactions}
+		\begin{reaction*}
+			CH4\gas{} + 2 O2\gas{} -> CO2\gas{} + 2
+			H2O\gas{}
+		\end{reaction*}
+	\end{block}
 
-		\item Halogen reactions
-			\begin{reaction*}
-				2 Fe\sld{} + 3 Cl2\gas{} -> 2
-				FeCl3\sld{}
-			\end{reaction*}
-	\end{itemize}
+	\begin{block}{Alkali metal reactions}
+		\begin{reaction*}
+			2 Na\sld{} + 2 H2O\lqd{} -> 2
+			Na^{+}\aq{} + 2 OH^{-}\aq{} + H2\gas{}
+		\end{reaction*}
+	\end{block}
+
+	\begin{block}{Halogen reactions}
+		\begin{reaction*}
+			2 Fe\sld{} + 3 Cl2\gas{} -> 2
+			FeCl3\sld{}
+		\end{reaction*}
+	\end{block}
 \end{frame}
 
 \end{document}
