@@ -1,11 +1,11 @@
 % !TEX program = xelatex
-%\documentclass[notes=onlyslideswithnotes,notes=hide]{beamer}
+\documentclass[handout]{beamer}
 %\documentclass[notes=hide]{beamer}
 %\documentclass[notes=only]{beamer}
 %\documentclass[notes=show]{beamer}
-\documentclass[11pt,letterpaper]{article}
-\usepackage{beamerarticle}
 
+\usepackage{newtxtext}
+\usepackage{bucolors}
 \usepackage{genchem}
 \usepackage{lecture}
 \usepackage{multicol}
@@ -18,7 +18,7 @@
 \subtitle{Chapter 9}
 \institute[CHEM115 Bloomsburg University]{CHEM115 --- Chemistry for the Sciences I \\ Bloomsburg University}
 \author{D.A. McCurry}
-\date{Fall 2020}
+\date{Fall 2021}
 
 \chemsetup{chemformula/frac-style=nicefrac}
 
@@ -37,66 +37,72 @@ system.
 \item Follow the direction of energy flow between the system and surroundings.
 \end{learningobjectives}}
 
-\begin{frame}{Thermochemistry}
-	\begin{quote}
+\begin{frame}{Key Terms}
+	\begin{block}{Thermochemistry}
 		The relationship between chemistry and energy.
-	\end{quote}
-	\textbf{Energy:} The ability to do \alert{work} (force acting over distance).
-	\begin{description}
-		\item[Potential Energy:] The energy of
-			position or composition.
-			\begin{itemize}
-				\item Energy stored for use at a
-					later time.
-			\end{itemize}
-		\item[Kinetic Energy:] The energy of
-			motion.
-	\end{description}
+	\end{block}
 
+	\begin{block}{Energy}
+		The ability to do \alert{work} (force acting over distance).
+	\end{block}
+
+	\begin{block}{Potential Energy}
+		The energy of position or composition. Energy stored for use at
+		a later time.
+		\note{%
+			\begin{itemize}
+				\item water behind a dam
+				\item a compressed spring
+				\item chemical bonds in food
+			\end{itemize} 
+		}
+	\end{block}           
+
+	\begin{block}{Kinetic Energy}
+		The energy of motion.
+		\note{%
+		\begin{itemize}
+			\item water flowing over a dam
+			\item a bobble head bobbling
+			\item food being metabolized
+		\end{itemize}
+	}
+	\end{block}
+\end{frame}
+
+\begin{frame}{Kinetic Energy in Chemistry}
+	\begin{columns}
+		\column{0.4\textwidth}
+		Molecules move faster when heated, thus \alert{thermal energy} is a form
+		of kinetic energy measured as the \alert{temperature} of an object.
+		\column{0.5\textwidth}
+		\begin{center}
+			\includegraphics[width=\linewidth]{frozen-pizza.jpg}
+		\end{center}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Potential Energy in Chemistry}
+	The relative positions of electrons and nuclei in atoms define the
+	\alert{chemical energy}, a form of potential energy, of the system.
 	\begin{center}
-		\begin{tabularx}{\linewidth} {>{\centering\arraybackslash}X
-			c >{\centering\arraybackslash}X}
-			\toprule
-			\bfseries Potential Energy & \bfseries vs & \bfseries Kinetic Energy \\
-			\midrule
-			water behind a dam && water flowing over a dam \\
-			a compressed spring && a bobble head bobbling \\
-			chemical bonds in food && food being metabolized \\
-			\bottomrule
-		\end{tabularx}
+		\includegraphics[width=0.8\linewidth]{McMurray-covalent2.jpg}
 	\end{center}
 \end{frame}
-
-\begin{frame}{In terms of chemistry\ldots}
-	\begin{description}[<+->]
-		\item[Thermal Energy:] The energy associated with the
-			\alert{temperature} of an object.
-			\begin{itemize}[<1->]
-				\item A form of \alert{kinetic energy}. 
-			\end{itemize}
-			\begin{center}
-				\includegraphics[scale=0.5]{frozen-pizza.jpg}
-			\end{center}
-
-		\item[Chemical Energy:] The energy associated with the
-			relative positions of electrons and nuclei in atoms.
-			\begin{itemize}[<1->]
-				\item A form of \alert{potential energy}.
-			\end{itemize}
-	\end{description}
-\end{frame}
-
+	
 \begin{frame}{Energy Transfer}
 	\begin{columns}
 		\column{0.525\textwidth}
 		Energy is \alert{exchanged} between a system and its surroundings through
 		either \alert{heat} ($q$) or \alert{work} ($w$).
 
-		\begin{description}
-			\item[System:] The focus of the study, as defined by the
-				investigator.
-			\item[Surroundings:] Everything other than the system.
-		\end{description}
+		\begin{block}{System}
+			The focus of the study, as defined by the investigator.
+		\end{block}
+
+		\begin{block}{Surroundings}
+			Everything other than the system.
+		\end{block}
 	
 		\column{0.475\textwidth}
 		\begin{center}
@@ -306,22 +312,14 @@ system.
 \vspace{\stretch{-1}}
 	
 \begin{frame}{State Functions}
-	\begin{quote}
-		The value only depends on the state of the system, not how the
-		system arrived at that state.
-	\end{quote}
-	\begin{itemize}
-		\item Only the present state matters, independent of the path.
-		\item Energy is a state function, as is pressure, volume, and
-			temperature.
-			\begin{align*}
-				\Delta E &= E_\text{final} - E_\text{initial} &
-				\Delta P &= P_\text{final} - P_\text{initial} \\
-				\Delta V &= V_\text{final} - V_\text{initial} &
-				\Delta T &= T_\text{final} - T_\text{initial} \\
-			\end{align*}
-	\end{itemize}
-
+	The value only depends on the state of the system, not how the
+	system arrived at that state.
+	\begin{align*}
+		\Delta E &= E_\text{final} - E_\text{initial} &
+		\Delta P &= P_\text{final} - P_\text{initial} \\
+		\Delta V &= V_\text{final} - V_\text{initial} &
+		\Delta T &= T_\text{final} - T_\text{initial} \\
+	\end{align*}
 	\begin{center}
 		\includegraphics[scale=0.25,trim={0 0 0
 		120pt},clip]{09_05_Figure.jpg}
@@ -345,12 +343,12 @@ system.
 %		}
 %\end{frame}
 
-\begin{frame}{Representing Chemical Equations in State Functions}
-	We often represent energy changes on a vertical axis, such that species
-	that are higher in energy are higher on the axis than those species of
-	lower energy.
-
-	\bigskip
+\begin{frame}[allowframebreaks]{Representing Chemical Equations in State Functions}
+	\note<1>{%
+		We often represent energy changes on a vertical axis, such that species
+		that are higher in energy are higher on the axis than those species of
+		lower energy.
+	}
 
 	For the reaction,
 	\begin{reaction*}
@@ -359,12 +357,21 @@ system.
 
 	\bigskip
 
-	\begin{overprint}
 	\begin{center}
-		\alt<2>{\includegraphics[scale=0.3]{09_Pg371_UnFigure_3.jpg}}
-		{\includegraphics[scale=0.3]{09_Pg371_UnFigure_1.jpg}}
+		\includegraphics[scale=0.3]{09_Pg371_UnFigure_1.jpg}
 	\end{center}
-	\end{overprint}
+
+	\framebreak
+	For the reaction,
+	\begin{reaction*}
+		C\sld[graphite]{} + O2\gas{} <- CO2\gas{}
+	\end{reaction*}
+
+	\bigskip
+	
+	\begin{center}
+		\includegraphics[scale=0.3]{09_Pg371_UnFigure_3.jpg}
+	\end{center}
 \end{frame}
 
 \begin{frame}{Quantifying Heat}
@@ -461,30 +468,30 @@ system.
 	\end{center}
 \end{frame}
 
-\begin{frame}[t]{Identifying General Trends in Specific Heat}
-	\begin{enumerate}
-		\item For the same amount of heat added, a substance with a
-			large specific heat\ldots
-			\begin{list}{\tikz{\draw (0,0) circle (0.4em)}}{}
-				\item has a smaller increase in temperature.
-				\item has a greater increase in temperature.
-			\end{list}
-		\item When ice melts in a drink, the drink\ldots
-			\begin{list}{\tikz{\draw (0,0) circle (0.4em)}}{}
-				\item cools.
-				\item warms.
-				\item stays the same.
-			\end{list}
-		\item Sand in the desert is hot in the day and cool at night.
-			Sand must have a\ldots
-			\begin{list}{\tikz{\draw (0,0) circle (0.4em)}}{}
-				\item high specific heat.
-				\item low specific heat.
-			\end{list}
-	\end{enumerate}
-\end{frame}
-
-\vspace{\stretch{-1}}
+%\begin{frame}[t]{Identifying General Trends in Specific Heat}
+%	\begin{enumerate}
+%		\item For the same amount of heat added, a substance with a
+%			large specific heat\ldots
+%			\begin{list}{\tikz{\draw (0,0) circle (0.4em)}}{}
+%				\item has a smaller increase in temperature.
+%				\item has a greater increase in temperature.
+%			\end{list}
+%		\item When ice melts in a drink, the drink\ldots
+%			\begin{list}{\tikz{\draw (0,0) circle (0.4em)}}{}
+%				\item cools.
+%				\item warms.
+%				\item stays the same.
+%			\end{list}
+%		\item Sand in the desert is hot in the day and cool at night.
+%			Sand must have a\ldots
+%			\begin{list}{\tikz{\draw (0,0) circle (0.4em)}}{}
+%				\item high specific heat.
+%				\item low specific heat.
+%			\end{list}
+%	\end{enumerate}
+%\end{frame}
+%
+%\vspace{\stretch{-1}}
 
 \begin{frame}[t]{Practicing Specific Heat Calculations}
 	Aluminum (\SI{5.00}{\gram}) has a specific heat of
@@ -568,36 +575,21 @@ system.
 
 	\begin{columns}
 		\column{0.55\textwidth}
-		\only<1>{%
-			In lab, we measured the heat released (or gained) from
-			the dissolution of salt and neutralization reactions
-			by calculating the heat transfer to/from
-			the \alert{water}.
-			\begin{align*}
-				q_{\ch{H2O}} &= -q_\text{rxn} \\
-				q_{\text{surr}} &= -q_\text{sys}
-			\end{align*}
-		}
-		\only<2>{%
-			\begin{align*}
-			\intertext{We could calculate the heat transfer
-			via specific heat:}
+		\begin{align*}
+			q_{\text{surr}} &= -q_\text{sys} \\
+			q_{\ch{H2O}} &= -q_\text{rxn} \\
 			q_{\ch{surr}} &= m \times
 			\underbrace{C_\text{s}}_{\mathclap{\text{or $s$}}}
 			\times \Delta T \\
-			\intertext{To determine this heat per amount of
-			\alert{reactant}, we needed to divide by the amount measured:}
+			\intertext{Normalized to amount of reactant used:}
 			\Delta H &= \frac{q_\text{sys}}{n}
 			\end{align*}
-		}
 		\column{0.45\textwidth}
 		\begin{center}
 			\includegraphics[scale=0.3]{09_08_Figure.jpg}
 		\end{center}
 	\end{columns}
 \end{frame}
-
-\vspace{\stretch{-1}}
 
 \frame{\section{Enthalpy}
 	\begin{learningobjectives}
@@ -606,8 +598,6 @@ system.
 	\item Use Hess's Law to calculate enthalpy of a reaction.
 	\end{learningobjectives}
 }
-
-\vspace{\stretch{-1}}
 
 \begin{frame}[t]{Enthalpy of Reactions}
 	What is this \enthalpy*[superscript=]{} term?
@@ -622,31 +612,25 @@ system.
 		\end{equation*}
 	\end{block}
 
-	\only<+(1)>{%
-		Enthalpy is a \alert{state function}, thus
-		\begin{align*}
-			\Delta H &= \Delta E + \Delta (PV)
-			\shortintertext{where}
-			\Delta E &= \text{change in internal energy} \\
-			\Delta (PV) &= \text{change in pressure and volume}
-		\end{align*}
-	}
-	\only<+(1)>{%
-		At constant pressure,
-		\begin{align*}
-			\Delta H &= \Delta E + P\Delta V
-			\shortintertext{where}
-			\Delta E &= \text{change in internal energy} \\
-			P &= \text{pressure} \\
-			\Delta V &= \text{change in volume}
-		\end{align*}
-	}
+	\onslide<+(1)>
+
+	Enthalpy is a \alert{state function}, thus
+	\begin{align*}
+		\Delta H &= \Delta E + \Delta (PV)
+		\shortintertext{where}
+		\Delta E &= \text{change in internal energy} \\
+		\Delta (PV) &= \text{change in pressure and volume}
+	\end{align*}
 \end{frame}
-
-\vspace{\stretch{-1}}
-
+	
 \begin{frame}{Why does heat = enthalpy at constant pressure?}
-	In other words, why does $\Delta H = \frac{q_\text{sys}}{n}$?
+	At constant pressure,
+	\begin{align*}
+		\Delta H &= \Delta E + P\Delta V
+		\shortintertext{and}
+		\Delta H &= \frac{q_\text{sys}}{n}
+	\end{align*}
+	\emph{Why?}
 
 	\pause
 
@@ -689,41 +673,36 @@ system.
 	\end{align*}
 \end{frame}
 
-\begin{frame}[t]{Calculating Pressure-Volume Work}
-	A gas expands in volume from \SIrange{3.0}{7.0}{\liter} at constant
-	temperature. How much work (in \si{\joule}) is done by the system if it
-	expands 
-	\begin{enumerate}[<only@+>] 
-		\item against a vacuum?
-			\mode<article>{\vfill}
-		\item against a constant external pressure of \SI{2.0}{\atm}?
-			\mode<article>{\vfill}
-	\end{enumerate}
-
-	\begin{description}
-		\item[Note:] $\SI{1}{\liter\atm} = \SI{101.3}{\joule}$
-	\end{description}
-
-	\note<.>{
-		\begin{enumerate}
-			\item \begin{align*}
-					w &= -P \Delta V \\
-					&= 0 \times \Delta V \\
-					&= \boxed{\SI{0}{\joule}}
-			\end{align*}
-			\item \begin{align*}
-					w &= -(\SI{2.0}{\atm})(\SI{7.0}{\liter}
-					- \SI{3.0}{\liter}) \\
-					&= \SI{-8.0}{\liter\atm} \times
-					\frac{\SI{101.3}{\joule}}{\SI{1}{\liter\atm}}
-					\\
-					&= \boxed{\SI{-810.4}{\joule}}
-			\end{align*}
-		\end{enumerate}
-		}
-\end{frame}
-
-\vspace{\stretch{-1}}
+%\begin{frame}[t]{Calculating Pressure-Volume Work}
+%	A gas expands in volume from \SIrange{3.0}{7.0}{\liter} at constant
+%	temperature. How much work (in \si{\joule}) is done by the system if it
+%	expands 
+%	\begin{enumerate}[<+->] 
+%		\item against a vacuum?
+%			\note<.>{%
+%				\begin{align*}
+%					w &= -P \Delta V \\
+%					&= 0 \times \Delta V \\
+%					&= \boxed{\SI{0}{\joule}}
+%				\end{align*}
+%			}
+%		\item against a constant external pressure of \SI{2.0}{\atm}?
+%			\note<.>{%
+%				\begin{align*}
+%					w &= -(\SI{2.0}{\atm})(\SI{7.0}{\liter}
+%					- \SI{3.0}{\liter}) \\
+%					&= \SI{-8.0}{\liter\atm} \times
+%					\frac{\SI{101.3}{\joule}}{\SI{1}{\liter\atm}}
+%					\\
+%					&= \boxed{\SI{-810.4}{\joule}}
+%				\end{align*}
+%			}
+%	\end{enumerate}
+%
+%	\begin{description}
+%		\item[Note:] $\SI{1}{\liter\atm} = \SI{101.3}{\joule}$
+%	\end{description}
+%\end{frame}
 
 \begin{frame}{Relating Work to Enthalpy}
 	Why does $\Delta H = \frac{q_\text{sys}}{n}$?
@@ -744,7 +723,7 @@ system.
 	\begin{columns}
 		\column{0.5\textwidth}
 		\enthalpy*[superscript=]{} (and $q$) can be
-		measured at \alert{constant pressure} using
+		measured at constant \emph{pressure} using
 		CCC (constant pressure
 		calorimetry).
 
@@ -752,7 +731,7 @@ system.
 		\vspace{\baselineskip}
 
 		\energy*[superscript=]{} can be measured at
-		\alert{constant volume} using \alert{bomb
+		constant \emph{volume} using \alert{bomb
 		calorimetry}.
 		\begin{align*}
 			\Delta E &= q + w \\
@@ -801,55 +780,50 @@ system.
 
 \clearpage
 
-\begin{frame}[t]{Relationships Involving ΔH\textsubscript{rxn}}
-	\enthalpy*[superscript=,subscript-right=rxn]{} is associated with a
-	\alert{particular reaction}.
-	\begin{enumerate}
-		\item<only@1-2> If a chemical equation is multiplied by some
-			factor, the
-			\enthalpy*[superscript=,subscript-right=rxn]{} is also
-			multiplied by the same factor.
-			\begin{align*}
-				\ch{A + 2 B &-> C} &\quad &\Delta H_1 \\
-				\ch{2 A + 4 B &-> 2 C} &\quad &\Delta H_2 = 2
-				\times \Delta H_1
-			\end{align*}
-		\item<only@2> If a chemical equation is reversed, then
-			\enthalpy*[superscript=,subscript-right=rxn]{}
-			changes sign.
-			\begin{align*}
-				\ch{A + 2 B &-> C} &\quad &\Delta H_1 \\
-				\ch{C &-> A + 2 B} &\quad &\Delta H_2 = -\Delta
-				H_1
-			\end{align*}
-		\item<only@3-> If a chemical equation can be expressed as the sum of a
-			series of steps, then
-			\enthalpy*[superscript=,subscript-right=rxn]{} for the
-			overall equation is the \alert{sum} of the heats of
-			reactions for each step.
-			\begin{center}
-				\begin{tabular}
-					{>{\collectcell\ch}r<{\endcollectcell} @{
-						\ch{->} } E L }
-						A + 2 B & C & \Delta H_1 \\
-						C & 2 D & \Delta H_2 \\ \midrule
-						A + 2 B & 2 D & \Delta H_3 =
-						\Delta H_1 + \Delta H_2
-				\end{tabular}
-			\end{center}
-	\end{enumerate}
+\begin{frame}[allowframebreaks,t]{Relationships Involving ΔH\textsubscript{rxn}}
+	If a chemical equation is multiplied by some factor, the
+	\enthalpy*[superscript=,subscript-right=rxn]{} is also multiplied by the
+	same factor.
+	\begin{align*}
+		\ch{A + 2 B &-> C} &\quad &\Delta H_1 \\
+		\ch{2 A + 4 B &-> 2 C} &\quad &\Delta H_2 = 2
+		\times \Delta H_1
+	\end{align*}
+
+	\framebreak
+
+	If a chemical equation is reversed, then
+	\enthalpy*[superscript=,subscript-right=rxn]{}
+	changes sign.
+	\begin{align*}
+		\ch{A + 2 B &-> C} &\quad &\Delta H_1 \\
+		\ch{C &-> A + 2 B} &\quad &\Delta H_2 = -\Delta
+		H_1
+	\end{align*}
+
+	\framebreak
+
+	If a chemical equation can be expressed as the sum of a series of steps,
+	then \enthalpy*[superscript=,subscript-right=rxn]{} for the overall
+	equation is the \alert{sum} of the heats of reactions for each step.
+	\begin{center}
+		\begin{tabular}
+			{>{\collectcell\ch}r<{\endcollectcell} @{
+				\ch{->} } E L }
+				A + 2 B & C & \Delta H_1 \\
+				C & 2 D & \Delta H_2 \\ \midrule
+				A + 2 B & 2 D & \Delta H_3 =
+				\Delta H_1 + \Delta H_2
+		\end{tabular}
+	\end{center}
 
 	\bigskip
-
-	\pause[4]
 
 	\begin{block}{Hess's Law}
 		The change in enthalpy for a stepwise process is the sum of the
 		enthalpy changes of the steps.
 	\end{block}
 \end{frame}
-
-\vspace{\stretch{-1}}
 
 \begin{frame}[t]{Practicing ΔH Stoichiometry}
 	In the reaction,
@@ -957,10 +931,7 @@ system.
 	\end{learningobjectives}
 }
 
-\vspace{\stretch{-1}}
-
 \begin{frame}{Where is all this energy coming from?}
-	\only<1>{%
 	\alert{Reaction conditions} for a chemical reaction require\ldots
 	\begin{itemize}
 		\item collisions between reacting molecules.
@@ -968,9 +939,10 @@ system.
 			the reactants.
 		\item the breaking of bonds between atoms of the reactants.
 		\item the forming of new bonds to give products.
-	\end{itemize}}
+	\end{itemize}
+\end{frame}
 
-	\only<2->{%
+\begin{frame}{Formation of Bonds}
 	In the reaction,
 	\begin{reaction*}
 		H2\gas{} + I2\gas{} -> 2 HI\gas{}
@@ -1028,7 +1000,6 @@ system.
 			\draw[arrow] (separate.east) to (bonding.west);
 		\end{tikzpicture}
 	\end{center}
-	}
 \end{frame}
 
 \begin{frame}{Calculating ΔH from Bond Energies}
@@ -1178,8 +1149,8 @@ system.
 
 \vspace{\stretch{-1.15}}
 
-\begin{frame}[t]{Calculating Standard Heat of Reaction using Heats of
-	Formation}
+\begin{frame}[t]{Calculating \enthalpy*[subscript-right=rxn]{} using
+	\enthalpy*[subscript-right=f]{}}
 	Determine \enthalpy*[subscript-right=rxn]{} for the metabolism of
 	glucose (\ch{C6H12O6}). \enthalpy*[subscript-right=f]{} values are
 	provided below each compound.
