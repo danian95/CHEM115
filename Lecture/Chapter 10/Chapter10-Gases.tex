@@ -1,11 +1,11 @@
 % !TEX program = xelatex
-%\documentclass[notes=onlyslideswithnotes,notes=hide]{beamer}
+\documentclass[handout]{beamer}
 %\documentclass[notes=only]{beamer}
-\documentclass[notes=hide]{beamer}
-%\documentclass[notes]{beamer}
-%\documentclass[11pt,letterpaper]{article}
-%\usepackage{beamerarticle}
+%\documentclass[notes=hide]{beamer}
+%\documentclass[notes=show]{beamer}
 
+\usepackage{bucolors}
+\usepackage{newtxtext}
 \usepackage{genchem}
 \usepackage{lecture}
 \usepackage{multicol}
@@ -18,7 +18,7 @@
 \subtitle{Chapter 10}
 \institute[CHEM115 Bloomsburg University]{CHEM115 --- Chemistry for the Sciences I \\ Bloomsburg University}
 \author{D.A. McCurry}
-\date{Fall 2020}
+\date{Fall 2021}
 
 \chemsetup{chemformula/frac-style=nicefrac}
 
@@ -63,8 +63,6 @@
 	\end{block}
 \end{frame}
 
-\mode<article>{\clearpage}
-
 \begin{frame}{Properties of Gases}
 	\begin{center}
 		\mode<presentation>{\small}
@@ -88,16 +86,12 @@
 \end{frame}
 
 \begin{frame}{Gas Pressure}
-	\only<1>{%
-	\begin{block}{Pressure}
-		The force acting on a specific area.
 		\begin{equation*}
 			\text{pressure ($P$)} =
 			\frac{\text{force}}{\text{area}} = \frac{F}{A}
 		\end{equation*}
-	\end{block}
 
-	\vspace{-2em}
+		\vspace{-2em}
 
 	\begin{center}
 		\begin{tikzpicture}
@@ -108,13 +102,12 @@
 				{\includegraphics[scale=0.18]{10_05_Figure.jpg}};
 		\end{tikzpicture}
 	\end{center}
-}
+\end{frame}
 
-\only<2|article:0>{%
+\begin{frame}
 	\begin{center}
-		\includegraphics[scale=0.4]{10_01_Table.jpg}
+		\includegraphics[width=\linewidth]{10_01_Table.jpg}
 	\end{center}
-}
 \end{frame}
 
 \begin{frame}{Atmospheric Pressure}
@@ -140,8 +133,7 @@
 	\end{columns}
 \end{frame}
 
-\begin{frame}{Methods of Measuring Pressure}
-	\only<1>{%
+\begin{frame}[allowframebreaks]{Methods of Measuring Pressure}
 	\begin{columns}
 		\column{0.5\textwidth}
 		A \alert{barometer}\ldots
@@ -156,11 +148,9 @@
 			\includegraphics[scale=0.4]{10_07_Figure.jpg}
 		\end{center}
 	\end{columns}
-}
 
-	\mode<article>{\clearpage}
-	
-	\only<2>{%
+	\framebreak
+
 	\begin{columns}
 		\column{0.4\textwidth}
 		A \alert{manometer}\ldots
@@ -175,12 +165,10 @@
 			\includegraphics[scale=0.25]{10_08_Figure.jpg}
 		\end{center}
 	\end{columns}
-}
 \end{frame}
 
-\begin{frame}[t]{Boyle's Law}
-	%\begin{overlayarea}{\linewidth}{25em}
-		\begin{itemize}[<+->]
+\begin{frame}[allowframebreaks]{Boyle's Law}
+		\begin{itemize}
 			\item The pressure ($P$) of a gas is \alert{inversely} related to
 				its volume ($V$) when temperature ($T$) and moles of
 				particles ($n$) are constant.
@@ -190,17 +178,14 @@
 				\end{equation*}
 				If the pressure ($P$) increases, then the volume ($V$)
 				decreases.
-				\only<.>{
 					\bigskip
 
 				\begin{center}
 					\includegraphics[scale=0.3,trim={0 100pt
 					0 0},clip]{10_09_Figure.jpg}
 				\end{center}
-			}
 			\item The product $P \times V$ is \alert{constant} as long as $T$
 				and $n$ \alert{do not change}.
-				\only<.>{%
 				\begin{align*}
 					P_1V_1 &= \SI{8.0}{\atm} \times \SI{2.0}{\liter}
 					= \SI{16}{\atm\liter} \\
@@ -208,20 +193,16 @@
 					= \SI{16}{\atm\liter} \\
 					P_3V_3 &= \SI{2.0}{\atm} \times \SI{8.0}{\liter}
 					= \SI{16}{\atm\liter}
-			\end{align*}}
+			\end{align*}
 			\item We can therefore write Boyle's Law to compare two
 				conditions as
 				\begin{equation*}
 					P_1V_1 = P_2V_2			
 				\end{equation*}
 		\end{itemize}
-	%\end{overlayarea}
 \end{frame}
 
-\mode<article>{\pagebreak}
-
-\begin{frame}{Boyle's Law -- A Diver's View}
-	\only<1>{%
+\begin{frame}{Boyle's Law --- A Diver's View}
 		\begin{center}
 			\includegraphics[scale=0.5]{breathing.png}
 		\end{center}
@@ -230,19 +211,16 @@
 		Image from Flowers, P.; Theopold, K.; Langley, R.; Neth, E. J.; Robinson, W. R.;
 		OpenStax College. Chemistry: Atoms First 2e; 2019.
 	}
-	}
-
-	\only<2|article:0>{%
-	\begin{center}
-		\includegraphics[scale=0.5]{10_12_Figure.jpg}
-	\end{center}
-}
 \end{frame}
 
-\vspace{\stretch{-1}}
+\begin{frame}
+	\begin{center}
+		\includegraphics[width=\linewidth]{10_12_Figure.jpg}
+	\end{center}
+\end{frame}
 
-\begin{frame}[t]{Charles's Law}
-		\begin{itemize}[<+->]
+\begin{frame}[allowframebreaks]{Charles's Law}
+		\begin{itemize}
 			\item The temperature ($T$ in \si{\kelvin}) of a gas is
 				\alert{directly} related to the volume ($V$) when
 				$P$ and $n$ are constant.
@@ -252,17 +230,14 @@
 				\end{equation*}
 				When the temperature ($T$) of a gas increases,
 				its volume ($V$) increases.
-				\only<.>{
 					\bigskip
 	
 					\begin{center}
 						\includegraphics[scale=0.3,trim={0 100pt
 						0 50pt},clip]{10_13_Figure.jpg}
 					\end{center}
-				}
 			\item 	The ratio $V \div T$ is \alert{constant} as long as $P$
 				and $n$ \alert{do not change}.
-				\only<.>{%
 				\begin{align*}
 					\frac{V_1}{T_1} &=
 					\frac{\SI{10.0}{\liter}}{\SI{250.0}{\kelvin}}
@@ -270,7 +245,7 @@
 					\frac{V_2}{T_2} &=
 					\frac{\SI{5.0}{\liter}}{\SI{125.0}{\kelvin}}
 					= \SI{0.04}{\liter\per\kelvin}
-			\end{align*}}
+			\end{align*}
 			\item We can therefore write Charles's Law to compare two
 				conditions as
 				\begin{equation*}
@@ -285,10 +260,8 @@
 	\end{center}
 \end{frame}
 
-\vspace{\stretch{-1}}
-
-\begin{frame}{Avogadro's Law}
-		\begin{itemize}[<+->]
+\begin{frame}[allowframebreaks]{Avogadro's Law}
+		\begin{itemize}
 			\item The amount ($n$) of a gas is \alert{directly}
 				related to the volume ($V$) when $P$ and $T$ are
 				constant.
@@ -298,17 +271,12 @@
 				\end{equation*}
 				When the amount ($n$) of a gas increases,
 				its volume ($V$) increases.
-				\only<.>{
-					\bigskip
-	
-					\begin{center}
-						\includegraphics[scale=0.5]
-						{Standard-balloon-sizes.jpg}
-					\end{center}
-				}
+				\begin{center}
+					\includegraphics[scale=0.4]
+					{Standard-balloon-sizes.jpg}
+				\end{center}
 			\item 	The ratio $V \div n$ is \alert{constant} as long as $P$
 				and $T$ \alert{do not change}.
-				\only<.>{%
 				\begin{align*}
 					\frac{V_1}{n_1} &=
 					\frac{\SI{10.0}{\liter}}{\SI{2.0}{\mole}}
@@ -316,7 +284,7 @@
 					\frac{V_2}{n_2} &=
 					\frac{\SI{20.0}{\liter}}{\SI{4.0}{\mole}}
 					= \SI{5.0}{\liter\per\mole}
-			\end{align*}}
+			\end{align*}
 			\item We can therefore write Avogadro's Law to compare
 				two conditions as
 				\begin{equation*}
@@ -388,8 +356,6 @@
 		\end{align*}
 	}
 \end{frame}
-
-\mode<article>{\clearpage}
 
 \frame{\section{The Ideal Gas Law}
 	\begin{learningobjectives}
@@ -475,8 +441,8 @@
 \end{frame}
 
 \begin{frame}[t]{Gas Law Trends}
-	Using gas laws, complete the following statements with \alert{increases}
-	or \alert{decreases}.
+	Using gas laws, complete the following statements with \emph{increases}
+	or \emph{decreases}.
 
 	\begin{enumerate}
 		\item Pressure \rule{6em}{0.4pt}, when $V$ decreases.
@@ -553,15 +519,13 @@
 	}
 \end{frame}
 
-\clearpage
-
-\begin{onyourown}
-	What mass of zinc would be needed to prepare \SI{2.5}{\liter} of \ch{H2}
-	gas collected at \SI{1.0}{\atm} and \SI{24}{\celsius}?
-	\begin{reaction*}
-		Zn\sld{} + 2 H^{+}\aq{} -> H2\gas{} + Zn^{2+}\aq{}
-	\end{reaction*}
-\end{onyourown}
+%\begin{onyourown}
+%	What mass of zinc would be needed to prepare \SI{2.5}{\liter} of \ch{H2}
+%	gas collected at \SI{1.0}{\atm} and \SI{24}{\celsius}?
+%	\begin{reaction*}
+%		Zn\sld{} + 2 H^{+}\aq{} -> H2\gas{} + Zn^{2+}\aq{}
+%	\end{reaction*}
+%\end{onyourown}
 
 \begin{frame}{The Molar Volume of a Gas at STP}
 	\begin{columns}
@@ -584,9 +548,6 @@
 		\end{itemize}
 	\end{columns}
 \end{frame}
-
-\vspace{\stretch{-1}}
-\clearpage
 
 \begin{frame}{The Density of a Gas at STP}
 	\begin{align*}
@@ -729,10 +690,6 @@
 	\end{learningobjectives}
 }
 
-\vspace{\stretch{-1}}
-
-\clearpage
-
 \begin{frame}{Partial Pressure}
 	From the kinetic molecular theory, the size of gas particles is
 	negligible and all collisions are elastic.
@@ -802,8 +759,6 @@
 	}
 \end{frame}
 
-\mode<article>{\clearpage}
-
 \begin{frame}[t]{Dalton's Law Practice 2}
 	What is the total pressure of a gaseous mixture containing
 	\SI{0.250}{\mole}~\ch{He}, \SI{0.992}{\mole}~\ch{H2}, and
@@ -856,14 +811,12 @@
 }
 \end{frame}
 
-\begin{onyourown}[15em]
-	What is the total pressure of a gaseous mixture containing
-	\SI{0.301}{\mole}~\ch{O2}, \SI{0.788}{\mole}~\ch{N2}, and
-	\SI{0.261}{\mole}~\ch{CH4} in a \SI{3.0}{\liter} container at
-	\SI{288}{\kelvin}? What is the pressure of just \ch{CH4} in the mixture?
-\end{onyourown}
-
-\mode<article>{\clearpage}
+%\begin{onyourown}[15em]
+%	What is the total pressure of a gaseous mixture containing
+%	\SI{0.301}{\mole}~\ch{O2}, \SI{0.788}{\mole}~\ch{N2}, and
+%	\SI{0.261}{\mole}~\ch{CH4} in a \SI{3.0}{\liter} container at
+%	\SI{288}{\kelvin}? What is the pressure of just \ch{CH4} in the mixture?
+%\end{onyourown}
 
 \begin{frame}{Mole Fractions and Partial Pressures}
 	If we consider the pressure of Gas A in a mixture, we have
@@ -927,18 +880,18 @@
 
 \vspace{\stretch{-1}}
 
-\begin{onyourown}
-	When a certain amount of \ch{Zn\sld{}} is reacted with an excess of
-	\ch{HCl\aq{}} at \SI{25}{\celsius}, a total of \SI{0.951}{\liter} of gas
-	was collected with a total pressure of \SI{748.0}{\mmHg}. What mass of
-	\ch{H2} gas was collected? The vapor pressure of water at this
-	temperature is \SI{23.78}{\mmHg}.
-
-	\vspace{15em}
-
-	What would be the minimum amount of \ch{Zn} that would needed to produce
-	the \ch{H2\gas{}} calculated above?
-\end{onyourown}
+%\begin{onyourown}
+%	When a certain amount of \ch{Zn\sld{}} is reacted with an excess of
+%	\ch{HCl\aq{}} at \SI{25}{\celsius}, a total of \SI{0.951}{\liter} of gas
+%	was collected with a total pressure of \SI{748.0}{\mmHg}. What mass of
+%	\ch{H2} gas was collected? The vapor pressure of water at this
+%	temperature is \SI{23.78}{\mmHg}.
+%
+%	\vspace{15em}
+%
+%	What would be the minimum amount of \ch{Zn} that would needed to produce
+%	the \ch{H2\gas{}} calculated above?
+%\end{onyourown}
 
 \frame{\section{Gas Velocity}
 	\begin{learningobjectives}
@@ -947,9 +900,6 @@
 	\item Describe how gas composition affects gas velocity.
 	\end{learningobjectives}
 }
-
-\vspace{\stretch{-1}}
-\clearpage
 
 \begin{frame}{Temperature and Molecular Velocities}
 	Recall from Kinetic Molecular Theory, that gases have \alert{kinetic
@@ -960,9 +910,9 @@
 
 	\pause
 
-	As such, the \alert{only} way that gases with different compositions (and
+	As such, the \emph{only} way that gases with different compositions (and
 	therefore different masses) can have the same kinetic energy is if the
-	gas particles have different \alert{velocities}
+	gas particles have different \alert{velocities}.
 	\begin{center}
 		\begin{tikzpicture}
 			\node(graph) {\includegraphics[scale=0.28,trim={0 0 0
@@ -997,11 +947,9 @@
 }
 \end{frame}
 
-\begin{onyourown}
-	What is the root mean square velocity of \ch{Cl2} at \SI{45}{\celsius}?
-\end{onyourown}
-
-\clearpage
+%\begin{onyourown}
+%	What is the root mean square velocity of \ch{Cl2} at \SI{45}{\celsius}?
+%\end{onyourown}
 
 \begin{frame}{Mean Free Path, Diffusion, and Effusion}
 	Gases travel in a straight line until they collide with something else
@@ -1069,17 +1017,11 @@
 	What is the gas?
 \end{frame}
 
-\vspace{\stretch{-1}}
-
-\clearpage
-
-\begin{onyourown}
-	An unknown gas effuses at a rate that is \num{1.689} times that of
-	bromine gas at the same temperature. Calculate the molar mass of the
-	unknown gas in \si{\gram\per\mole}. Identify the gas.
-\end{onyourown}
-
-\vspace{\stretch{0.4}}
+%\begin{onyourown}
+%	An unknown gas effuses at a rate that is \num{1.689} times that of
+%	bromine gas at the same temperature. Calculate the molar mass of the
+%	unknown gas in \si{\gram\per\mole}. Identify the gas.
+%\end{onyourown}
 
 \frame{\section{Practical Gas Calculations}
 	\begin{learningobjectives}
@@ -1100,8 +1042,6 @@
 		\includegraphics[scale=0.4]{10_Pg444_UnFigure_3.jpg}
 	\end{center}
 \end{frame}
-
-\clearpage
 
 \begin{frame}[t]{Gas Stoichiometry Practice}
 	What volume (in \si{\liter}) of hydrogen gas, at a temperature of
@@ -1144,15 +1084,15 @@
 	}
 \end{frame}
 
-\begin{onyourown}[10em]
-	What is the pressure (in \si{\atm}) of NO gas, at a temperature of
-	\SI{50.0}{\celsius} and in a \SI{2.0}{\liter} container, if
-	\SI{42.0}{\milli\liter}~\ch{H2O} ($d =
-	\SI{1.00}{\gram\per\milli\liter}$) are produced from the reaction below?
-	\begin{reaction*}
-		4 NH3\gas{} + 5 O2\gas{} -> 4 NO\gas{} + 6 H2O\lqd{}
-	\end{reaction*}
-\end{onyourown}
+%\begin{onyourown}[10em]
+%	What is the pressure (in \si{\atm}) of NO gas, at a temperature of
+%	\SI{50.0}{\celsius} and in a \SI{2.0}{\liter} container, if
+%	\SI{42.0}{\milli\liter}~\ch{H2O} ($d =
+%	\SI{1.00}{\gram\per\milli\liter}$) are produced from the reaction below?
+%	\begin{reaction*}
+%		4 NH3\gas{} + 5 O2\gas{} -> 4 NO\gas{} + 6 H2O\lqd{}
+%	\end{reaction*}
+%\end{onyourown}
 
 \begin{frame}{Real Gases}
 	So far, we have really only considered \alert{ideal} gases:
