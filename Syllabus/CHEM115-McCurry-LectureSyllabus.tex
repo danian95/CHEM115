@@ -1,6 +1,7 @@
 % !TeX program = lualatex
 \documentclass[11pt,letterpaper]{article}
 
+\usepackage{fontspec}
 \usepackage{tabularx}
 \usepackage{booktabs}
 \usepackage{bucolors}
@@ -8,18 +9,23 @@
 \usepackage{mathtools}
 \usepackage{mdframed}
 \usepackage{titling}
-\usepackage{newtxtext}
 \usepackage{fancyhdr}
 \usepackage{lastpage}
 \usepackage[english]{babel}
 \usepackage[sf,bf]{titlesec}
-\usepackage{enumitem}
+\usepackage[inline]{enumitem}
 \usepackage[margin=1in,letterpaper]{geometry}
 \usepackage{multicol}
+\usepackage{soul}
+\usepackage{nameref}
+
+\setmainfont{TeX Gyre Termes}[Ligatures=TeX]
+\setsansfont{TeX Gyre Heros}[Ligatures=TeX]
+\setmonofont{TeX Gyre Cursor}
 
 \title{Chemistry for the Sciences 1}
 \author{Dr.\ Daniel A.\ McCurry}
-\date{Fall 2021}
+\date{Fall 2022}
 
 \newcommand{\classnum}{CHEM115}
 
@@ -27,7 +33,7 @@
 \lhead{}
 \chead{}
 \rhead{}
-\lfoot{\footnotesize\sffamily McCurry --- \classnum\ --- FA21}
+\lfoot{\footnotesize\sffamily McCurry --- \classnum\ --- FA22}
 \cfoot{}
 \rfoot{\footnotesize\sffamily\thepage~of~\pageref{LastPage}}
 \renewcommand{\headrulewidth}{0pt}
@@ -35,7 +41,7 @@
 
 \pretitle{\noindent\color{bumaroon}
 	\sffamily\bfseries\Large
-	\classnum\newline
+	\classnum~Lecture\newline
 	\LARGE\expandafter\MakeUppercase\expandafter}
 \posttitle{\par\medskip}
 \preauthor{\noindent\sffamily}
@@ -46,7 +52,7 @@
 \setlength{\droptitle}{-2em}
 
 \setcounter{secnumdepth}{0}
-\setlist[description]{font=\sffamily\bfseries}
+\setlist[description]{font=\sffamily\bfseries\small}
 \urlstyle{same}
 
 \begin{document}
@@ -68,10 +74,9 @@
 		    & 	\href{https://bloomu.starfishsolutions.com/starfish-ops/dl/instructor/serviceCatalog.html?bookmark=connection/20001}{HuskySuccess
 		     	Profile} \\ \\
 	Office Hours: & \begin{minipage}[t]{\linewidth}
-		\begin{tabular}[t] {@{}lr@{\,--\,}l@{~@~}l}
-			Mon./Tues.  & 4:00 & 6:00\,p.m. & Andruss Library
-			(1\textsuperscript{st} floor) \\
-			Fri. & 9:00 & 10:00\,a.m. & HSC 240\\
+		\begin{tabular}[t] {@{}lr@{\,--\,}l}
+			Mon./Tue.  & 3:00 & 5:00\,p.m. \\
+			Thur. & 4:00 & 5:00\,p.m. \\
 				\end{tabular}
 			\end{minipage} \\
 		      &   In-Person or via Zoom Meeting ID
@@ -87,11 +92,11 @@
 	      \\ \\
 	Lab Text: & Faculty of the Department of Chemistry and
 	Biochemistry. \textit{Laboratory Exercises for Chemistry for
-			      the Sciences 1}, Fall 2021 Ed. \\
+			      the Sciences 1}, Fall 2022 Ed. \\
 	       	      & \footnotesize Available for purchase during the first
 		      week of laboratory. \\ \\
-	Materials: & Scientific or graphing calculator (simpler calculators
-	are not appropriate). \\
+	Materials: & Scientific calculator (simpler calculators
+	are not appropriate and graphing calculators not permitted on exams). \\
 		   & Scrap paper and a pen or pencil to work through problems.
 		   \\
 	\bottomrule
@@ -157,15 +162,14 @@ Pulse} app.
 \section{Evaluations and Grading}
 Unfortunately, we do need to include a metric for assessing your understanding
 of the material. This course will be operating on a 100\,\% scale according to
-the tables below. Note that there will be 7 homeworks worth 20\,points each and
-14 quizzes worth 5\,points each. The sum of the total will be divided by 200,
-allowing a little wiggle room for ``off'' quiz days --- we all have them!
+the tables below. 
 
 \begin{multicols}{2}
 	\subsection{Point Distribution}
 	\begin{tabular} {l r<{\,\%}}
-		Exams & 40 \\
-		Homework and Quizzes & 15 \\
+		Exams & 35 \\
+		Homework & 10 \\
+		Lecture Assignments & 10 \\
 		Final Exam & 25 \\
 		Laboratory & 20 \\ \midrule
 		& 100 \\
@@ -174,7 +178,7 @@ allowing a little wiggle room for ``off'' quiz days --- we all have them!
 	\subsection{Grade Assignment}%
 	\begin{tabular} {r@{\,--\,}l<{\,\%} l@{\hspace{0.5in}}r@{\,--\,}l<{\,\%} l}
 		\multicolumn{3}{c}{} & 75 & 77 & C+ \\
-		91 & 97 & A  & 71 & 74 & C  \\
+		91 & 100 & A  & 71 & 74 & C  \\
 		88 & 90 & A- & 68 & 70 & C- \\
 		\multicolumn{6}{c}{} \\
 		85 & 87 & B+ & 65 & 67 & D+ \\
@@ -183,28 +187,25 @@ allowing a little wiggle room for ``off'' quiz days --- we all have them!
 	\end{tabular}
 \end{multicols}
 
-\section{Graded Items}
+\subsection{Graded Items}
 \begin{description}
 	\item[Exams:] There will be three (3) 50 minute exams held during our
 		regularly scheduled lecture time. Tardiness will not extend your
 		exam time. If accommodations must be made, it is your
 		responsibility to alert the instructor at least 72 hours
 		\emph{before} the exam.
-	\item[Quizzes:] There will be a total of fourteen (14) quizzes
-		administered in lecture at least once \emph{every} week. Most
-		quizzes will be open note, but the instructor reserves the right
-		to declare a quiz close book.
-	\item[Homework:] There will be seven (7) homework assignments on BOLT
-		generally due on Wednesdays. These can be found under the
-		Assessments > Quizzes section on BOLT. You will have 10 attempts
-		to complete each homework, with the highest grade being taken
-		for final grade calculation. On each subsequent attempt, you
-		will only need to answer the questions you missed for credit.
-		The homework is designed to aid your learning, so use it as a
-		chance to test your knowledge before exams. Unless certain
-		questions require attention, the homeworks will not be hand
-		graded. It is imperative that you follow the instructions
-		carefully so BOLT does not score your answers incorrectly.
+	\item[Lecture Assignments:] It is impossible to learn by passively
+		absorbing information. Although I will run through examples and
+		practice with you, you will work in groups to solve some brief
+		assignments regularly. Work will be collected and graded, with
+		an emphasis placed on participation and attempts.
+	\item[Homework:] There will be regular homework assignments posted to
+		LON-CAPA (see the \nameref{homework} section below). You will have sufficient
+		opportunities to resubmit answers without penalty before the
+		deadline. Make sure to start early so you can come to office
+		hours with questions. Essentially, the only reason why you
+		should lose points on homework is because you did not turn it in
+		on time!
 	\item[Laboratory:] Laboratory attendance is mandatory. See the lab
 		syllabus for lab policies and specifics on how the labs will be
 		graded. Your laboratory grade is determined solely by your
@@ -212,17 +213,7 @@ allowing a little wiggle room for ``off'' quiz days --- we all have them!
 		your laboratory instructor, \emph{I will have no ability to
 		modify or adjust items graded by your laboratory instructor}.
 	\item[Final Exam:] There will be one (1) \emph{comprehensive} 110 minute
-		final exam during the final exam week. This will be a
-		standardized exam designed by the American Chemical Society in
-		order to ensure that you have learned the competencies expected
-		for a first-term undergraduate introductory chemistry course. In
-		general, the national average for this exam hovers around
-		50\,\% --- you are \emph{not} expected to know everything on
-		this exam! Your final grade will be adjusted to account for
-		topics that were emphasized a bit differently in our lecture.
-		Furthermore, each of the 50-minute exams throughout the semester
-		will have a small multiple choice portion to prepare you for
-		this final, all multiple choice examination.
+		final exam during the final exam week. 
 %	\item[Textbook Problems:] Homework problems are designed to help you
 %		keep current with the material.  Assigned problems in the
 %		textbook will \emph{usually} not be collected, but specific
@@ -230,6 +221,23 @@ allowing a little wiggle room for ``off'' quiz days --- we all have them!
 %		per chapter). Please note that the problems are useful only if
 %		you conscientiously work on them.
 \end{description}
+
+\subsection{Homework}\label{homework}
+This course is using LON-CAPA (\url{https://lon-capa.bloomu.edu}) for homework
+assignments. You will be sent an email with your initial username and password.
+Unfortunately, it is impossible for me to personally return timely feedback on
+homework in addition to grading lab reports, lecture assignments, exams and
+materials from other classes. LON-CAPA is able to automatically grade your
+answers and will provide you multiple opportunities without penalty to answer
+homework questions correctly. This will allow you ample time to seek extra help
+if needed. Feel free to work with others (in fact, I encourage it!), but do note
+that on most questions, everyone will have different answers.
+
+LON-CAPA may be very different than other homework systems you have used in the
+past. All content has been coded and tested by your instructor. If you are
+having any issues with any specific problems or the website itself, please reach
+out to me as soon as possible. I am using LON-CAPA for its incredible
+flexibility in designing problems as well as its cost to students --- free.
 
 \subsection{Grading Errors}
 Did I make a mistake? Let me know within 72 hours from the return of the graded
@@ -241,22 +249,22 @@ errors (e.g., I typed a grade incorrectly into BOLT) to my attention.
 \section{Important Dates}\label{importantdates}
 \begin{center}
 	\begin{tabular} {l l l}
-		September 6  & Monday    & Labor Day (No Class) \\
-		September 17 & Friday    & Exam 1 \\
-		October 15   & Friday    & Exam 2 \\
-		November 12  & Friday    & Exam 3 \\
-		November 24  & Wednesday & Thanksgiving Recess (No Class) \\
-		November 26  & Friday    & Thanksgiving Recess (No Class) \\
-		December 3   & Friday    & Last Day of Class \\
-		December 8   & Friday    & Final Examination (12:30 --
+		September 5  & Monday     & Labor Day (No Class) \\
+		September 16 & Friday     & Exam 1 \\
+		October 14   & Friday     & Exam 2 \\
+		November 11  & Friday     & Exam 3 \\
+		November 23  & Wednesday  & Thanksgiving Recess (No Class) \\
+		November 25  & Friday     & Thanksgiving Recess (No Class) \\
+		December 2   & Friday     & Last Day of Class \\
+		December 7   & Wednesday  & Final Examination (12:30 --
 		2:30\,p.m.)
 	\end{tabular}
 \end{center}
 
-Please note, if you are unable to take an examination or quiz at
+Please note, if you are unable to take an examination at
 its scheduled time due to some unavoidable circumstance, you are obligated to
 provide a documented valid excuse to your instructor. \emph{Failure to provide a
-valid excuse on these terms will result in a score of zero for the quiz or
+valid excuse on these terms will result in a score of zero for the 
 exam.}
 
 	\begin{center}
@@ -288,19 +296,20 @@ In order to maintain an atmosphere that is conducive to learning, all members
 of the class are expected to demonstrate common courtesy during the lecture,
 including but not exclusively:
 \begin{enumerate}
-	\item \textbf{Wear a mask that covers your nose and mouth.} Not all
-		students are vaccinated and other, more infectious variants pose
-		a health risk to all individuals. In order to ensure the
-		wellbeing of your fellow classmates, please wear a well-fitting
-		mask while inside.
+	\item \textbf{Following university protocol, when necessary, wear a mask
+		that covers your nose and mouth.} Not all students are
+		vaccinated and other, more infectious variants pose a health
+		risk to all individuals. In order to ensure the well-being of
+		your fellow classmates, please wear a well-fitting mask while
+		inside.
 	\item \textbf{Be on time for class.} If you are unavoidably late, enter
 		the room quietly and quickly choose a seat.  Tardiness will not
-		extend your exam or quiz time. We will not return to missed
-		quizzes.
+		extend your exam time. We will not return to any missed lecture
+		assignments.
 	\item \textbf{Once in class, stay for the duration.} If you must leave
-		early, give me advance warning. If you become ill during an exam
-		or quiz, the missed graded event policy will take effect with
-		the consent of the professor. In either case, you will not be
+		early, give me advance warning. If you become ill during an
+		exam, the missed graded event policy will take effect with the
+		consent of the professor. In either case, you will not be
 		allowed to return that day. Take care of your personal needs
 		\emph{before class}.
 	\item \textbf{Silence your cell phone and/or other electronic devices.}
@@ -315,12 +324,23 @@ including but not exclusively:
 Disruptive Behavior Policy} for further details regarding the consequences for
 disruptive behavior.}
 
+\subsection{Attendance and Participation}
+Physical presence is only part of going to class. Participation in class is
+expected. You will be called upon at random and are advised to be prepared.
+The best learning occurs in an active environment where everyone participates.
+In order to be prepared, you should read the textbook prior to coming to
+lecture.  You do not need to understand everything on the first perusal. Many
+of your questions will probably be answered by the lecture or as you work the
+problems.
+
 \section{Academic Dishonesty}
 \emph{Academic dishonesty is not tolerated.} If you are unclear about what is
 dishonest, please see 
-\href{https://www.bloomu.edu/prp-3512-academic-integrity-policy}{PRP 3512 
-Academic Integrity Policy} for clarification. If you are unsure about my
-specific instructions, ask me.
+\href{https://www.bloomu.edu/prp-3512-academic-integrity-policy}{PRP 3512
+Academic Integrity Policy} for clarification. All exam work must be your own.
+You are permitted to work with others on lecture assignments and homework. Do
+note that homework answers are randomized and you will most likely not have the
+same answers as your classmates.
 
 \begin{mdframed}
 	\centering\bfseries The minimum penalty for academic dishonesty is a
@@ -329,8 +349,8 @@ specific instructions, ask me.
 
 \section{Class Cancellation}
 If class is canceled on the day of an exam, it will be administered the next
-time class meets.  If class is canceled the period before an exam, it will
-still be administered on its scheduled day. If compression
+time class meets.  If class is canceled the period before an exam, anticipate
+that it will still be administered on its scheduled day. If compression
 (see \href{https://www.bloomu.edu/documents/prp5205}{PRP 5205 University Closing
 Policy})
 occurs on an exam day, the exam will be held as scheduled (with
@@ -370,6 +390,10 @@ Repeat}) policies of the
 University prior to that date as there are strict limits on the number of
 repeats one can have. 
 
+Note that withdrawal should be taken as a \emph{last resort}. Your instructor
+maintains 5 office hours per week and is willing to meet for additional
+appointments to help you succeed in this class. Do not wait until the last minute to seek help.
+
 \begin{mdframed}
 	\centering
 	All policies, rules, and procedures (PRP) are available at
@@ -377,30 +401,16 @@ repeats one can have.
 \end{mdframed}
 
 \section{Accommodations}
-Bloomsburg University provides reasonable accommodations to students who have
-documented disabilities. If you have a documented disability that requires
-academic accommodations and are not registered with 
+Reasonable accommodations may be made to students who have documented
+disabilities. If you have a documented disability that requires academic
+accommodations and are not registered with
 \href{https://bloomu.prod.acquia-sites.com/offices-directory/disability-services}{University
-Disability Services}
-please contact this office as soon as possible to establish your
-eligibility. Please also provide documentation to Dr.\ McCurry as promptly as
-possible.
-
-%\section{How to Succeed in CHEM115}
-%\begin{enumerate}
-%	\item Read the textbook materials \emph{before class}
-%	\item Attend lecture
-%	\item Work on the assigned problems in each chapter
-%	\item Create an \emph{equally contributing} study group that
-%		\emph{actually} studies/works problems
-%	\item Synthesize your own questions and answer them
-%	\item Use lab to connect lecture topics to the real world
-%\end{enumerate}
-%
-%Do not get behind! If you are not doing as well as you should, be sure to see
-%your professor as soon as possible. If you cannot make it to any of my listed
-%office hours, please contact me in person, or by phone, or by email to schedule
-%an appointment. I will respond to emails as promptly as possible.
+Disability Services}, it is recommended that you contact the Disability Services office during
+the \textit{first two weeks of classes} or immediately upon diagnosis to ensure
+accommodations are met in an efficient, appropriate, and timely manner.
+Note that you must contact the Disability Services office to renew accommodation
+letters at the start of each semester. Please also provide documentation to Dr.\
+McCurry as promptly as possible.
 
 \vfill
 
@@ -411,14 +421,14 @@ possible.
 	the above course/semester. These materials cannot be used without the
 	expressed written consent of Dr.\ McCurry.
 
+	\bigskip
+
 	\noindent
-	The source code for some material has been licensed under the Creative
-	Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC
-	BY-NC-SA 4.0) license to provide you with an opportunity to view the
+	The source code for some material has been licensed under the CC
+	BY-NC-SA 4.0 license to provide you with an opportunity to view the
 	original source materials and contribute to the content. If you would
 	like to view the material and suggest improvements, please visit
-	\url{https://git.damccurry.com/dan/CHEM115}. Ask Dr.\ McCurry for an
-	account!
+	\url{https://github.com/danian95/CHEM115}.
 \end{mdframed}
 
 \end{document}
