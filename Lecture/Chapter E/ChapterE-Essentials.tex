@@ -1,12 +1,13 @@
 % !TEX program = xelatex
 %\documentclass[notes=onlyslideswithnotes,notes=hide]{beamer}
 %\documentclass[handout,notes=hide]{beamer}
-\documentclass[notes=hide]{beamer}
+%\documentclass[notes=hide]{beamer}
 %\documentclass[notes=show]{beamer}
+\documentclass[notes=only]{beamer}
 %\documentclass[11pt,letterpaper]{article}
 %\usepackage{beamerarticle}
 
-\usepackage{newtxtext}
+%\usepackage{newtxtext}
 \usepackage{bucolors}
 \usepackage{genchem}
 \usepackage{lecture}
@@ -18,43 +19,49 @@
 \usepackage{media9}
 \colorlet{primary}{bumaroon}
 
+\usepackage{amsmath}
+\usepackage{mathspec}
+\setmainfont[Ligatures=TeX]{Georgia}
+\setsansfont[Ligatures=TeX]{Arial}
+
+
 \DeclareSIUnit\inch{in.}
 \DeclareSIUnit\mile{mi.}
+\DeclareSIUnit\foot{ft}
 \DeclareSIUnit\pound{lb}
 
+% Allow printing just prefixes by using a "noop" unit
+\DeclareSIUnit\noop{\relax}
+
 \title{Essentials}%: Units, Measurement, and Problem Solving}
-%\subtitle{Chapter E}
+\subtitle{Chapter E}
 \institute[CHEM115 Bloomsburg University]{CHEM115 --- Chemistry for the Sciences I \\ Bloomsburg University}
 \author{D.A. McCurry}
-\date{Fall 2021}
+\date{Spring 2023}
 
 \begin{document}
 
 \maketitle
 
 \begin{frame}
-	\section{What is Chemistry?}
+	\frametitle{Learning Objectives}
+
+	\begin{itemize}
+		\item Define chemistry
+		\item Represent numbers in scientific notation
+		\item Use numerical prefixes in numeric conversions
+		\item Use dimensional analysis to convert units
+		\item Report numbers to the correct significant digits
+		\item Perform simple math operations with significant digits
+		\item Apply dimensional analysis to word problems
+	\end{itemize}
 \end{frame}
 
-\mode<article>{%
-	\begin{multicols}{2}
-		\begin{enumerate}
-			\item[E.] Essentials
-			\item Atoms
-			\item Quantum Mechanics
-			\item Elements and Periodic Properties
-			\item Molecules \& Compounds
-			\item Chemical Bonding I
-			\item Chemical Bonding II
-			\item Chemical Reactions
-			\item Aqueous Reactions
-			\item Thermo
-			\item Gas Laws
-		\end{enumerate}
-	\end{multicols}
-}
+\part{Essentials Part 1}
 
-\begin{frame}[t]
+\section{What is Chemistry?}
+
+\begin{frame}
 	\frametitle{We Need to Know the Language}
 	\begin{itemize}
 		\item Qualitative vs Quantitative
@@ -65,69 +72,73 @@
 	\end{itemize}
 \end{frame}
 
-\mode<article>{%
-\section{Scientific Notation}
-\subsection{Why do we need a special notation?}
-	We normally aren't using numbers that are easy to work with.
-	\begin{mdframed}
-		Atoms are very small (about \SI{0.0000000001}{\meter}) and we work with a lot of them (over
-		\num{600000000000000000000000}).
-	\end{mdframed}
+\section{Representing Quantities}
 
-	Losing count of zeroes is easy. There should be
-	\tikzmarknode{zeroes}{23} zeroes in the example above after the 6.
+\note{%
+	\begin{itemize}
+		\item We normally aren't using numbers that are easy to work with.
+
+		\item Atoms are very small (about \qty{0.0000000001}{\meter}) and we
+	work with a lot of them (over \num{600000000000000000000000}).
+
+\item Losing count of zeroes is easy. There should be
+	%\tikzmarknode{zeroes}{23}
+	23 zeroes in the example above after the 6.
 	
-	Let's instead just say how many zeroes we want to use:
+\item 	Let's instead just say how many zeroes we want to use:
 	\begin{equation*}
 		\num{600000000000000000000000} =
-		6 \times 10^{\tikzmarknode{scinot}{23}}
+		6 \times 10^23
+		%{\tikzmarknode{scinot}{23}}
 	\end{equation*}
 
-	\begin{tikzpicture}[remember picture,overlay]
-		\draw[thick,->,shorten >=5pt,shorten <=5pt,primary]
-			(zeroes.south)
-			to[bend left=55] (scinot);
-	\end{tikzpicture}
+%	\begin{tikzpicture}[remember picture,overlay]
+%		\draw[thick,->,shorten >=5pt,shorten <=5pt,primary]
+%			(zeroes.south)
+%			to[bend left=55] (scinot);
+%	\end{tikzpicture}
+\end{itemize}
 }
 
-\begin{frame}[t]{Writing in Scientific Notation}
-	\begin{enumerate}[<+->]
+\subsection{Scientific Notation}
+
+\begin{frame}{Writing in Scientific Notation}
+	\begin{enumerate}
 		\item Rewrite the number so that only the \alert{ones}
 			place is occupied to the left of the decimal
 			point.
 		\item Count how many places your decimal point had to
 			move. This will be your exponent.
-		\item The sign of the exponent is \alert{very} important!
-			\begin{itemize}[<1->]
+			\note{%
+			The sign of the exponent is \alert{very} important!
+			\begin{itemize}
 				\item Positive ($+$) if the number is bigger than 1.
 				\item Negative ($-$) if the number is smaller than 1.
 			\end{itemize}
+		}
 	\end{enumerate}
+
+	\begin{example}
+		Write the following in scientific notation:
+		\begin{itemize}
+			\item \num{371039}
+			\item \num{82909}
+			\item \num{40}
+			\item \num{0.0003319}
+		\end{itemize}
+	\end{example}
 \end{frame}
 
-\begin{frame}[t]{Let's try a few examples}
-	\begin{enumerate}[<+->]
-		\renewcommand\arraystretch{1.9}
-		\item Write the following in scientific notation:
-
-			\begin{tabularx}{\linewidth} {X X}
-				\num{371039}     &
-				\num{82909}       \\
-				\num{40}         & 
-				\num{0.0003319} \\
-			\end{tabularx}
-
-			\bigskip
-
-		\item Write the following in standard notation:
-
-			\begin{tabularx}{\linewidth} {X X}
-				\num{3.001e-4} &
-				\num{7.19e9} \\
-				\num{1e-1} &
-				\num{8.00e7} \\
-			\end{tabularx}
-	\end{enumerate}
+\begin{frame}{Converting Scientific to Standard Notation}
+	\begin{example}
+		Write the following in standard notation:
+		\begin{itemize}
+			\item \num{3.001e-4}
+			\item \num{7.19e9}
+			\item \num{1e-1}
+			\item \num{8.00e7}
+		\end{itemize}
+	\end{example}
 \end{frame}
 
 %\begin{onyourown}%[0em]
@@ -136,79 +147,87 @@
 %		\item Write the following in scientific notation:
 %
 %			\begin{tabularx}{\linewidth} {X X}
-%				\SI{201}{\gram}     & \\
-%				\SI{4330}{\milli\liter}       & \\
-%				\SI{0.00100}{\second}         & \\
+%				\qty{201}{\gram}     & \\
+%				\qty{4330}{\milli\liter}       & \\
+%				\qty{0.00100}{\second}         & \\
 %			\end{tabularx}
 %
 %		\item Write the following in standard notation:
 %
 %			\begin{tabularx}{\linewidth} {X X}
-%				\SI{3.107e2}{\liter} & \\
-%				\SI{6.0e-2}{\gram}    & \\
-%				\SI{9.0002e6}{\second}    & \\
+%				\qty{3.107e2}{\liter} & \\
+%				\qty{6.0e-2}{\gram}    & \\
+%				\qty{9.0002e6}{\second}    & \\
 %			\end{tabularx}
 %	\end{enumerate}
 %\end{onyourown}
 
-\mode<article>{%
-\subsection{Multiplication with Scientific Notation}
-Solve the following:
-\begin{align*}
-	\num{173800} \times \num{80300000} &=
-	\intertext{Instead of plugging this in right away, let's
-	convert each number to scientific notation:}
-	\num{1.738e5} \times \num{8.03e7} &=
-	\intertext{Some rearrangement:}
-	\underbrace{1.738 \times 8.03}_{13.95614} \times
-	\underbrace{10^{5} \times 10^{7}}_{10^{5+7}=10^{12}} &=
-	\num{13.95614e12} \\
-	&= \boxed{\num{1.395614e13}}
-\end{align*}
+%\mode<article>{%
+%Solve the following:
+%\begin{align*}
+%	\num{173800} \times \num{80300000} &=
+%	\intertext{Instead of plugging this in right away, let's
+%	convert each number to scientific notation:}
+%	\num{1.738e5} \times \num{8.03e7} &=
+%	\intertext{Some rearrangement:}
+%	\underbrace{1.738 \times 8.03}_{13.95614} \times
+%	\underbrace{10^{5} \times 10^{7}}_{10^{5+7}=10^{12}} &=
+%	\num{13.95614e12} \\
+%	&= \boxed{\num{1.395614e13}}
+%\end{align*}
+%
+%\subsection{Division with Scientific Notation}
+%Solve the following:
+%\begin{align*}
+%	\frac{\num{173800}}{\num{80300000}} =
+%	\frac{\num{1.738e5}}{\num{8.03e7}} &=
+%	\intertext{We can separate the like terms as in
+%	multiplication!}
+%	\underbrace{\frac{1.738}{8.03}}_{0.216438356} \times
+%	\underbrace{\frac{10^5}{10^7}}_{10^{5-7}=10^{-2}} &=
+%	\num{0.216438356e-2} \\
+%	&= \boxed{\num{2.16438356e-3}}
+%\end{align*}
 
-\subsection{Division with Scientific Notation}
-Solve the following:
-\begin{align*}
-	\frac{\num{173800}}{\num{80300000}} =
-	\frac{\num{1.738e5}}{\num{8.03e7}} &=
-	\intertext{We can separate the like terms as in
-	multiplication!}
-	\underbrace{\frac{1.738}{8.03}}_{0.216438356} \times
-	\underbrace{\frac{10^5}{10^7}}_{10^{5-7}=10^{-2}} &=
-	\num{0.216438356e-2} \\
-	&= \boxed{\num{2.16438356e-3}}
-\end{align*}
+%\subsection{The Big Advantage of Scientific Notation}
+%We can \emph{estimate} the order of magnitude of an answer. This lets us
+%quickly check if our calculation is set up correctly.
+%
+%\begin{mdframed}
+%	If we wanted to calculate the size of a gold atom, we might
+%	put together something that looks like this:
+%	\begin{equation*}
+%		\frac{19.3}{196.97} =
+%	\end{equation*}
+%	Will this give us a \emph{reasonable} answer?
+%
+%	\bigskip
+%	
+%	No, we get $\frac{\num{e1}}{\num{e2}} = \num{e-1}$ which is very
+%	far off from \num{e-10}.
+%\end{mdframed}
+%}
 
-\subsection{The Big Advantage of Scientific Notation}
-We can \emph{estimate} the order of magnitude of an answer. This lets us
-quickly check if our calculation is set up correctly.
+\begin{frame}
+	\frametitle{Scientific Notation Helps with Estimations!}
 
-\begin{mdframed}
-	If we wanted to calculate the size of a gold atom, we might
-	put together something that looks like this:
-	\begin{equation*}
-		\frac{19.3}{196.97} =
-	\end{equation*}
-	Will this give us a \emph{reasonable} answer?
+	We can \emph{estimate} the order of magnitude of an answer. This lets us
+	quickly check if our calculation is set up correctly.
 
 	\bigskip
-	
-	No, we get $\frac{\num{e1}}{\num{e2}} = \num{e-1}$ which is very
-	far off from \num{e-10}.
-\end{mdframed}
-}
 
-\begin{frame}[t]
-	\frametitle{Scientific Notation Helps with Estimations!}
+	\begin{example}
 	Solve the following:
-	\begin{enumerate}
-		\item $48013 \times 0.1391$
-			\vspace{\stretch{1}}
-			\mode<article>{$\approx\num{6.6786e3}$}
-		\item $0.43 \div 1002$
-			\vspace{\stretch{1}}
-			\mode<article>{\num{4.3086e2}}
-	\end{enumerate}
+		\begin{itemize}
+			\item $48013 \times 0.1391 =$
+				\note[item]{\num{6.6786e3}}
+
+				\bigskip
+
+			\item $0.43 \div 1002 =$
+				\note[item]{\num{4.2914e-4}}
+		\end{itemize}
+	\end{example}
 \end{frame}
 
 
@@ -221,10 +240,12 @@ quickly check if our calculation is set up correctly.
 %	\end{enumerate}
 %\end{onyourown}
 
-\begin{frame}[allowframebreaks]{Numerical Prefixes}
-		Some orders of magnitude are used more often than others. Rather than
-		express all values in terms of scientific notation, we can use
-		\alert{numerical prefixes} with our units.
+\subsection{Numerical Prefixes}
+
+\begin{frame}{Common Orders of Magnitude}
+%		Some orders of magnitude are used more often than others. Rather than
+%		express all values in terms of scientific notation, we can use
+%		\alert{numerical prefixes} with our units.
 	
 		\begin{center}
 		\begin{tabular} {l c S[table-format=13]
@@ -232,54 +253,62 @@ quickly check if our calculation is set up correctly.
 			\toprule
 			\bfseries Prefix & \bfseries Symbol &
 			\multicolumn{2}{c}{\bfseries Multiplier} \\ \midrule
-			tera  & \si{\tera } & 1000000000000        & 1e12 \\
-			giga  & \si{\giga } & 1000000000           & 1e9 \\
-			mega  & \si{\mega } & 1000000              & 1e6 \\
-			kilo  & \si{\kilo } & 1000                 & 1e3 \\
+			tera  & \unit{\tera\noop} & 1000000000000        & 1e12 \\
+			giga  & \unit{\giga\noop} & 1000000000           & 1e9 \\
+			mega  & \unit{\mega\noop} & 1000000              & 1e6 \\
+			kilo  & \unit{\kilo\noop} & 1000                 & 1e3 \\
 			\bottomrule
 		\end{tabular}
 		\end{center}
-	
-		\begin{math}
-			\textbf{\color{primary}Example:} \hfill
-			\SI{2000}{\meter} = 2 \times
-					\underbrace{10^3}_{\text{kilo, \si{\kilo}}}
-				\si{\meter} = \SI{2}{\kilo\meter} \hfill\null
-		\end{math}
 
-		\framebreak
+		\bigskip
 
-		There are prefixes for small numbers as well\ldots
-	
-		\begin{center}
+		\begin{example}
+			Represent \qty{2e3}{\meter} in \unit{\kilo\meter}
+		\end{example}
+\end{frame}
+
+%	\begin{math}
+	%		\textbf{\color{primary}Example:} \hfill
+	%		\qty{2000}{\meter} = 2 \times
+	%				\underbrace{10^3}_{\text{kilo,
+	%				\unit{\kilo\noop}}}
+	%			\unit{\meter} = \qty{2}{\kilo\meter} \hfill\null
+	%	\end{math}
+
+	%	\framebreak
+
+
+\begin{frame}{Common Orders of Magnitude in Chemistry}
+	\begin{center}
 		\begin{tabular} {l c
 			S[table-format=1.18]
 			S[retain-unity-mantissa=false,table-format=1e-2]}
 			\toprule
 			\bfseries Prefix & \bfseries Symbol &
-			\multicolumn{2}{c}{Multiplier} \\ \midrule
-			deci  & \si{\deci } & 0.1                  & 1e-1 \\
-			centi & \si{\centi} & 0.01                 & 1e-2 \\
-			milli & \si{\milli} & 0.001                & 1e-3 \\
-			micro & \si{\micro} & 0.000001             & 1e-6 \\
-			nano  & \si{\nano } & 0.000000001          & 1e-9 \\
-			pico  & \si{\pico } & 0.000000000001       & 1e-12 \\
-			femto & \si{\femto} & 0.000000000000001    & 1e-15 \\
-			atto  & \si{\atto } & 0.000000000000000001 & 1e-18 \\
+			\multicolumn{2}{c}{\bfseries Multiplier} \\ \midrule
+			deci  & \unit{\deci\noop} & 0.1                  & 1e-1 \\
+			centi & \unit{\centi\noop} & 0.01                 & 1e-2 \\
+			milli & \unit{\milli\noop} & 0.001                & 1e-3 \\
+			micro & \unit{\micro\noop} & 0.000001             & 1e-6 \\
+			nano  & \unit{\nano\noop} & 0.000000001          & 1e-9 \\
+			pico  & \unit{\pico\noop} & 0.000000000001       & 1e-12 \\
+			femto & \unit{\femto\noop} & 0.000000000000001    & 1e-15 \\
+			atto  & \unit{\atto\noop} & 0.000000000000000001 & 1e-18 \\
 			\bottomrule
 		\end{tabular}
-		\end{center}
+	\end{center}
 \end{frame}
 
 \begin{frame}[t]
 	\frametitle{Let's Practice}
 	Complete the following unit conversions:
 	\begin{enumerate}
-		\item \SI{23}{\pico\mole} to \si{\mole}
+		\item \qty{23}{\pico\mole} to \unit{\mole}
 			\vspace{\stretch{1}}
-		\item \SI{4e7}{\second} to \si{\mega\second}
+		\item \qty{4e7}{\second} to \unit{\mega\second}
 			\vspace{\stretch{1}}
-		\item \SI{23}{\milli\ampere} to \si{\giga\ampere}
+		\item \qty{23}{\milli\ampere} to \unit{\giga\ampere}
 			\vspace{\stretch{1}}
 	\end{enumerate}
 \end{frame}
@@ -289,18 +318,52 @@ quickly check if our calculation is set up correctly.
 %	prefixes for each value. Assume all of the numbers are values of length.
 %\end{onyourown}
 
-\mode<article>{%
-	\section{Problem Solving}
-	\begin{itemize}
-	\item Use conversion factors to find the solution to numerical problems.
-	\item Understand the utility of dimensional analysis in verifying answers.
-	\item Be familiar with the ``Give \textrightarrow\ Plan \textrightarrow\ Find'' method of problem solving.
-	\end{itemize}
-}
+\subsection{Percentages}
+
+\begin{frame}{Percentages Represent a Ratio}
+	Percentages provide a \alert{ratio} between the number of parts to the
+	whole.
+	\begin{equation*}
+		\unit{\percent} = \frac{\text{Parts}}{\text{Whole}} \times \qty{100}{\percent}
+	\end{equation*}
+	As such, they use the same units for both the parts and the whole.
+
+	\bigskip
+
+	\begin{example}
+		Ground beef in the grocery store is often labeled with the
+		percentage of fat content, e.g. 80/20. If you purchase
+		\qty{2}{\pound} of ground beef that contains \qty{20}{\percent}
+		fat, how much beef are you actually getting?
+	\end{example}
+
+	\note{%
+		\begin{equation*}
+			\frac{\qty{2}{\pound}}{1} \times
+			\frac{\qty{80}{\pound}}{\qty{100}{\pound}} =
+			\boxed{\qty{1.6}{\pound}}
+		\end{equation*}
+	}
+\end{frame}
+
+\section{Problem Solving}
+%	\begin{itemize}
+%	\item Use conversion factors to find the solution to numerical problems.
+%	\item Understand the utility of dimensional analysis in verifying answers.
+%	\item Be familiar with the ``Give \textrightarrow\ Plan \textrightarrow\ Find'' method of problem solving.
+%	\end{itemize}
 
 \begin{frame}[t]{Dimensional Analysis}
-	By 12:40 PM, there will only be \SI{600}{\second} left of lecture. How many
-	minutes is this?
+	By 9:00 AM, there will only be \qty{15}{\minute} left of lecture. How many
+	seconds is this?
+
+	\note{%
+		\begin{equation*}
+			\frac{\qty{15}{\minute}}{1} \times
+			\frac{\qty{60}{\second}}{\qty{1}{\minute}} =
+			\boxed{\qty{900}{\second}}
+		\end{equation*}
+	}
 \end{frame}
 
 \mode<article>{%
@@ -309,18 +372,18 @@ quickly check if our calculation is set up correctly.
 \end{mdframed}
 
 \begin{itemize}
-	\item We have \alert{\SI{600}{\second}}.
+	\item We have \alert{\qty{600}{\second}}.
 	\item We want \alert{time in minutes}.
 	\item We need \alert{a conversion factor}.
 \end{itemize}
 
 \begin{equation*}
-	\overbrace{\SI{60}{\second} =
-	\SI{1}{min}}^{\mathclap{\text{Equality}}}
+	\overbrace{\qty{60}{\second} =
+	\qty{1}{min}}^{\mathclap{\text{Equality}}}
 	\qquad\longrightarrow\qquad
-	\underbrace{\frac{\SI{60}{\second}}{\SI{1}{min}}}_{\mathclap{\text{Conversion
+	\underbrace{\frac{\qty{60}{\second}}{\qty{1}{min}}}_{\mathclap{\text{Conversion
 	factor}}} = 1 \qquad \text{\emph{or}} \qquad
-	\underbrace{\frac{\SI{1}{min}}{\SI{60}{\second}}}_{\mathclap{\text{Conversion
+	\underbrace{\frac{\qty{1}{min}}{\qty{60}{\second}}}_{\mathclap{\text{Conversion
 	factor}}} = 1
 \end{equation*}
 
@@ -336,14 +399,14 @@ quickly check if our calculation is set up correctly.
 \end{enumerate}
 
 \begin{equation*}
-	\frac{\SIunitcancel<3->{600}{\second}}{1} \visible<2->{\times
-	\frac{\SI{1}{min}}{\SIunitcancel<3->{60}{\second}}}
-	\visible<3->{=} \visible<4->{\num{10}}~\visible<3->{\si{min}}
+	\frac{\qtyunitcancel<3->{600}{\second}}{1} \visible<2->{\times
+	\frac{\qty{1}{min}}{\qtyunitcancel<3->{60}{\second}}}
+	\visible<3->{=} \visible<4->{\num{10}}~\visible<3->{\unit{min}}
 \end{equation*}
 }
 
 %\begin{onyourown}%[5em]
-%	A very tasty, yet incredibly unhealthy recipe requires \SI{42}{lbs} of
+%	A very tasty, yet incredibly unhealthy recipe requires \qty{42}{lbs} of
 %	butter. Your friend in the UK wants the recipe, but he needs the amount
 %	of butter expressed in terms of grams. How many grams of butter is this?
 %\end{onyourown}
@@ -355,36 +418,19 @@ quickly check if our calculation is set up correctly.
 %			}X[-1,l]}}
 %		\toprule\rowfont{\bfseries}
 %		Quantity & \multicolumn{4}{c}{U.S.} & \multicolumn{4}{c}{Metric	(SI)}                & \multicolumn{4}{c}{Metric - US}     \\ \midrule
-%		Length   & 1 & ft & 12 & in.        & 1 & \si{\kilo\meter} & 1000 & \si{\meter}      & 2.54 & \si{\centi\meter} & 1 & in.  \\
-%			 & 1 & yard & 3 & ft        & 1 & \si{\meter} & 1000 & \si{\milli\meter}     & 1 & \si{\meter} & 39.4 & in.        \\
-%			 & 1 & mile & 5280 & ft     & 1 & \si{\centi\meter} & 10 & \si{\milli\meter} & 1 & \si{\kilo\meter} & 0.621 & mile \\ \midrule
-%		Volume   & 1 & qt & 4 & cups        & 1 & \si{\liter} & 1000 & \si{\mL}              & 946 & \si{\mL} & 1 & qt             \\
-%		         & 1 & qt & 2 & pt          & 1 & \si{\deci\liter} & 100 & \si{\mL}          & 1 & \si{\liter} & 1.06 & qt         \\
-%			 & 1 & gal & 4 & qt         & 1 & \si{\mL} & 1 & \si{\centi\meter\cubed}     &                                     \\ \midrule
-%		Mass     & 1 & lb & 16 & oz         & 1 & \si{\kilo\gram} & 1000 & \si{\gram}        & 1 & \si{\kilo\gram} & 2.20 & lb     \\
-%			 & \multicolumn{4}{l}{}     & 1 & \si{\gram} & 1000 & \si{\milli\gram}       & 454 & \si{gram} & 1 & lb            \\ \midrule
+%		Length   & 1 & ft & 12 & in.        & 1 & \unit{\kilo\meter} & 1000 & \unit{\meter}      & 2.54 & \unit{\centi\meter} & 1 & in.  \\
+%			 & 1 & yard & 3 & ft        & 1 & \unit{\meter} & 1000 & \unit{\milli\meter}     & 1 & \unit{\meter} & 39.4 & in.        \\
+%			 & 1 & mile & 5280 & ft     & 1 & \unit{\centi\meter} & 10 & \unit{\milli\meter} & 1 & \unit{\kilo\meter} & 0.621 & mile \\ \midrule
+%		Volume   & 1 & qt & 4 & cups        & 1 & \unit{\liter} & 1000 & \unit{\mL}              & 946 & \unit{\mL} & 1 & qt             \\
+%		         & 1 & qt & 2 & pt          & 1 & \unit{\deci\liter} & 100 & \unit{\mL}          & 1 & \unit{\liter} & 1.06 & qt         \\
+%			 & 1 & gal & 4 & qt         & 1 & \unit{\mL} & 1 & \unit{\centi\meter\cubed}     &                                     \\ \midrule
+%		Mass     & 1 & lb & 16 & oz         & 1 & \unit{\kilo\gram} & 1000 & \unit{\gram}        & 1 & \unit{\kilo\gram} & 2.20 & lb     \\
+%			 & \multicolumn{4}{l}{}     & 1 & \unit{\gram} & 1000 & \unit{\milli\gram}       & 454 & \unit{gram} & 1 & lb            \\ \midrule
 %		Time     & \multicolumn{4}{l}{}     & 1 & h & 60 & min                               &                                     \\
-%		         & \multicolumn{4}{l}{}     & 1 & min & 60 & \si{\second}                    &                                     \\
+%		         & \multicolumn{4}{l}{}     & 1 & min & 60 & \unit{\second}                    &                                     \\
 %		\bottomrule
 %	\end{tabu}
 %\end{frame}
-
-\begin{frame}[t]{Percentages}
-	Percentages provide a \alert{ratio} between the number of parts to the
-	whole.
-
-	\begin{equation*}
-		\si{\percent} = \frac{\text{Parts}}{\text{Whole}} \times \SI{100}{\percent}
-	\end{equation*}
-
-	As such, they use the same units for both the parts and the whole.
-	\begin{example}
-		Ground beef in the grocery store is often labeled with the
-		percentage of fat content, e.g. 80/20. If you purchase
-		\SI{2}{\pound} of ground beef that contains \SI{20}{\percent}
-		fat, how much beef are you actually getting?
-	\end{example}
-\end{frame}
 
 \mode<article>{%
 It is often \alert{convenient} to assume the part is out of 100 parts of the
@@ -442,39 +488,25 @@ whole.
 	\end{center}
 }
 
-\begin{frame}[t]{Another Dimensional Analysis Example!}
-	Greg has been treating his headache with Ibuprofen. He has already had 6
-	pills today. The recommended maximum dose is \SI{100}{\milli\gram} every
-	\SI{1}{h} as needed in a single day. If each pill is
-	\SI{200}{\milli\gram}, can Greg have any more?\footnote{Please do not
-	refer to this lecture for medical advice.}
+\begin{frame}[t]
+	\frametitle{Using Dimensional Analysis for Unit Conversion}
+	How many centimeters are in \qty{6.51}{miles}?
+	\begin{center}
+		\qty{5280}{\foot} = \qty{1}{\mile} \qquad
+		\qty{12}{\inch} = \qty{1}{\foot} \qquad
+		\qty{2.54}{\centi\meter} = \qty{1}{\inch}
+	\end{center}
 
-	\mode<article>{%
-%	\begin{tabu} to \linewidth {>{\bfseries}X[-1,l] X}
-%		Given: & \SI{100}{\milli\gram\per\hour} \\
-%		       & \SI{200}{\milli\gram\per pill} \\
-%		Find:  & \# of pills in 1 day \\
-%		Plan:  & \SI{24}{h\per d} \\
-%		       & Is the max. \# of pills $\geq$ 6?
-%	\end{tabu}
-
-	\begin{equation*}
-		\frac{\SI{1}{pill}}{\SI{200}{\milli\gram}} \times
-		\frac{\SI{100}{\milli\gram}}{\SI{1}{\hour}} \times
-		\frac{\SI{24}{\hour}}{\SI{1}{\day}} =
-		\frac{\SI{12}{pills}}{\SI{1}{\day}}
-	\end{equation*}
-
-	\begin{enumerate}
-		\item We want units of pills per day, so pills must be in the
-			numerator.
-		\item Cancel out the \si{\milli\gram} using the conversion
-			factor.
-		\item Cancel out the \si{\hour} using the conversion factor.
-		\item Do all units cancel?
-		\item Does the answer make sense?
-	\end{enumerate}
+	\note{%
+		\begin{equation*}
+		\qty{6.51}{\mile} \times
+		\frac{\qty{5280}{\foot}}{\qty{1}{\mile}} \times
+		\frac{\qty{12}{\inch}}{\qty{1}{\foot}} \times
+		\frac{\qty{2.54}{\centi\meter}}{\qty{1}{\inch}} =
+		\boxed{\qty{1.05e6}{\centi\meter}}
+		\end{equation*}
 	}
+
 \end{frame}
 
 \begin{frame}[c]
@@ -485,13 +517,13 @@ whole.
 	\footnotetext{\tiny\url{https://web.archive.org/web/20200225013028/http://www.wadenelson.com/gimli.html}}
 \end{frame}
 
-\begin{frame}{The Reliability of Measurements}
-	There is often a degree of \alert{uncertainty} in our measurements.
+\part{Essentials Part 2}
 
-	\medskip
+\section{Error}
 
-	What temperature is it?
+\subsection{Uncertainty in Measurements}
 
+\begin{frame}{What temperature is it?}
 	\includegraphics[width=\linewidth]{thermometer.jpeg}
 
 	\bigskip
@@ -499,8 +531,8 @@ whole.
 	{\Large\sffamily\renewcommand\arraystretch{1.25}
 		\begin{tabularx}{\linewidth}
 			{*{3}{>{\centering\arraybackslash}X}}
-		\SI{102.9}{\celsius} & \SI{103.0}{\celsius} &
-		\SI{103.1}{\celsius} \\
+		\qty{102.9}{\celsius} & \qty{103.0}{\celsius} &
+		\qty{103.1}{\celsius} \\
 		\bfseries A & \bfseries B & \bfseries C
 	\end{tabularx}
 }
@@ -523,10 +555,25 @@ whole.
 %	\end{center}
 \end{frame}
 
-\begin{frame}{What defines ``good'' data?}
-	As important as units are to measurements, we must also make sure that
-	our measurements are accurate and precise!
+\begin{frame}[t]
+	\frametitle{What defines ``good'' data?}
+	\begin{description}
+		\item[Accuracy]
 
+		       \vfill
+
+	     \item[Precision]
+
+		       \vfill
+
+	     \item[Uncertainty]
+
+			\vfill
+	\end{description}
+
+	\null
+
+	\note{%
 	\begin{description}
 		\item[Accuracy:] How close to the true value a given measurement
 		  is.
@@ -535,51 +582,69 @@ whole.
 	  \item[Uncertainty:] The degree to which one is confident in the
 			measurement.
 	\end{description}
+}
 \end{frame}
 
 \begin{frame}{A Graphical Approach to Precision and Accuracy}
 	\centering
-	\mode<article>{includegraphics[scale=0.9]{dartboard.png}}
-
-	\includegraphics[scale=0.45]{accuracyprecision.jpeg}
+	\includegraphics[width=\linewidth,trim={0 0 0 40pt},clip]{accuracyprecision.jpeg}
 \end{frame}
 
-\begin{frame}{An Example\ldots}
-	Three students weigh the same unknown mass 3 times and record the
-	following values:
+%\begin{frame}{An Example\ldots}
+%	Three students weigh the same unknown mass 3 times and record the
+%	following values:
+%
+%	\begin{center}
+%		\sisetup{table-align-text-post=false}
+%		\begin{tabular}
+%			{>{\bfseries}l*{2}{S<{\,\unit{\kilo\gram}}}S[table-format=4.1]<{\,\unit{\kilo\gram}}}
+%			\toprule
+%			& \multicolumn{1}{c}{\bfseries Student A} &
+%			\multicolumn{1}{c}{\bfseries Student B} &
+%			\multicolumn{1}{c}{\bfseries Student C} \\ \midrule
+%			Trial 1 & 988.5 & 999.3 & 872.1 \\
+%			Trial 2 & 989.4 & 999.4 & 1150.3 \\
+%			Trial 3 & 987.0 & 999.6 & 976.5 \\ \midrule
+%			Average & 988.3 & 999.4 & 1000.3 \\
+%			\bottomrule
+%		\end{tabular}
+%	\end{center}
+%	\mode<article>{
+%		\begin{description}
+%			\item[Accuracy:] C > B > A
+%			\item[Precision:] B > A > C
+%		\end{description}
+%	}
+%
+%	Assuming the mass actually weighs \qty{1000.0}{\kilo\gram}, rank the students in terms of accuracy
+%	and precision.
+%\end{frame}
 
-	\begin{center}
-		\sisetup{table-align-text-post=false}
-		\begin{tabular}
-			{>{\bfseries}l*{2}{S<{\,\si{\kilo\gram}}}S[table-format=4.1]<{\,\si{\kilo\gram}}}
-			\toprule
-			& \multicolumn{1}{c}{\bfseries Student A} &
-			\multicolumn{1}{c}{\bfseries Student B} &
-			\multicolumn{1}{c}{\bfseries Student C} \\ \midrule
-			Trial 1 & 988.5 & 999.3 & 872.1 \\
-			Trial 2 & 989.4 & 999.4 & 1150.3 \\
-			Trial 3 & 987.0 & 999.6 & 976.5 \\ \midrule
-			Average & 988.3 & 999.4 & 1000.3 \\
-			\bottomrule
-		\end{tabular}
-	\end{center}
-	\mode<article>{
-		\begin{description}
-			\item[Accuracy:] C > B > A
-			\item[Precision:] B > A > C
-		\end{description}
-	}
-
-	Assuming the mass actually weighs \SI{1000.0}{\kilo\gram}, rank the students in terms of accuracy
-	and precision.
-\end{frame}
-
-\begin{frame}<presentation>[c]
+\begin{frame}[c]
 	\frametitle{Why is reliability important?}
-	\includegraphics[width=\textwidth,trim={0.75in 4.25in 0.75in 1.5in},clip]{COVIDsensor.pdf}
+	\centering
+	\includegraphics[width=0.85\linewidth,trim={0.75in 4.25in 0.75in 1.5in},clip]{COVIDsensor.pdf}
 \end{frame}
 
-\begin{frame}{Types of Error}
+\begin{frame}[t]
+	\frametitle{Types of Error}
+	\begin{description}
+		\item[Systematic]
+
+			\vfill
+
+		\item[Random]
+
+			\vfill
+
+		\item[Gross]
+
+			\vfill
+	\end{description}
+
+	\null
+
+	\note{%
 	\begin{description}
 		\item[Systematic:] Measurements that are \alert{consistently} too
 			high or too low.
@@ -587,20 +652,21 @@ whole.
 			too high or too low.
 		\item[Gross:] You did something very wrong\ldots
 	\end{description}
+}
+\end{frame}
 
-	\mode<presentation>{%
-		\begin{center}
-			\includemedia[%
-				width=0.6\linewidth,
-				activate=pageopen,
-				addresource=OJ.mp4,
-				flashvars={source=OJ.mp4&loop=true}
-			]{\includegraphics[width=\linewidth]{OJ.png}}{VPlayer.swf}
-		\end{center}
-	}
+\begin{frame}<presentation>[c]
+	\frametitle{An Example of Gross Error}
+	\begin{center}
+		\includegraphics[width=\linewidth]{OJ.png}
+	\end{center}
 \end{frame}
 
 % Ended here on 2020-08-19
+
+\section{Significant Figures}
+
+\subsection{Determining Significant Figures}
 
 \begin{frame}{How precise can we be with our measurements?}
 	\begin{block}{Significant Figures}
@@ -638,50 +704,6 @@ whole.
 	\end{enumerate}
 \end{frame}
 
-% Ended here on 1-24-2020
-
-\begin{frame}{Significant Figures in Calculations}
-	\begin{description}
-		\item<+->[Multiplication or Division:] The answer can't have more
-			\alert{significant figures} than either of the original numbers.
-			\mode<article>{
-				\begin{align*}
-					110.5 \times 0.048 = 5.304 &\approx \\
-					\frac{1008.02}{0.012} = 84001.667
-					&\approx
-				\end{align*}}
-
-			\mode<presentation>{\bigskip}
-		\item<+->[Addition or Subtraction:] The answer can't have more
-		digits to the \alert{right} of the \alert{decimal point} than
-			either of the original numbers.
-			\mode<article>{
-				\begin{center}
-				\begin{tabular} {c r@{.}l}
-					& 25 & 2 \\
-					+ & 1 & 34 \\ \midrule
-					& 26 & 54 \\
-					$\approx$
-				\end{tabular}
-					\qquad
-				\begin{tabular} {c r@{.}l}
-					& 235 & 05 \\
-					+ & 19 & 6 \\
-					+ & 2 \\ \midrule
-					& 256 & 65 \\
-					$\approx$
-				\end{tabular}
-				\end{center}}
-	\end{description}
-
-	\mode<presentation>{\bigskip}
-
-	\visible<+->{
-	\begin{center}
-		What happens to the non-significant figures?
-	\end{center}}
-\end{frame}
-
 \begin{frame}{Rounding Numbers}
 	\begin{enumerate}
 		\item<1-> If the first digit you remove is less than 5, round
@@ -707,6 +729,65 @@ whole.
 		}
 \end{frame}
 
+% Ended here on 1-24-2020
+\subsection{Using Significant Figures in Calculations}
+
+\begin{frame}[t]{SF in Multiplication or Division}
+	The answer can't have more \alert{significant figures} than either of
+	the original numbers.
+
+	\bigskip
+
+	\begin{example}
+		Solve the following:
+		\begin{itemize}
+			\item $110.5 \times 0.048 =$ \note[item]{$5.304 \approx
+				\boxed{5.3}$}
+
+				\bigskip
+
+			\item $1008.02 \div 0.012 =$
+				\note[item]{$84001.667 \approx
+				\boxed{\num{8.4e4}}$}
+		\end{itemize}
+	\end{example}
+\end{frame}
+
+\begin{frame}[t]{SF in Addition or Subtraction}
+	The answer can't have more digits to the \alert{right} of the
+	\alert{decimal point} than either of the original numbers.
+
+	\bigskip
+
+
+	\begin{example}
+		Solve the following:
+		\begin{itemize}
+			\item $25.2 + 1.34$
+
+				\bigskip
+
+			\item $235.05 + 19.6 - 2$
+		\end{itemize}
+		\note{%
+	\begin{tabular} {c r@{.}l}
+		& 25 & 2 \\
+		+ & 1 & 34 \\ \midrule
+		& 26 & 54 \\
+		$\approx$ & 26 & 5
+	\end{tabular}
+		\qquad
+	\begin{tabular} {c r@{.}l}
+		& 235 & 05 \\
+		+ & 19 & 6 \\
+		- & 2 \\ \midrule
+		& 252 & 65 \\
+		$\approx$ & 253 &
+	\end{tabular}
+}
+	\end{example}
+\end{frame}
+
 %\begin{onyourown}%{0em}
 %	What are each of the following numbers to 4 sig figs?
 %	\begin{center}
@@ -719,58 +800,58 @@ whole.
 %	\end{center}
 %\end{onyourown}
 
-\begin{frame}[allowframebreaks]{Additional Practice}
-	\begin{enumerate}
-		\item Write the following in scientific notation:
-			\begin{enumerate}[a.]
-				\item \SI{0.00000008}{\meter}
-				\item \SI{72000}{\liter}
-			\end{enumerate}
-		\item Write the following in standard notation:
-			\begin{enumerate}[a.]
-				\item \SI{2.0e-2}{\second}
-				\item \SI{1.8e5}{\gram}
-			\end{enumerate}
-		\item State the number of significant figures in each of the
-			following measurements:
-			\begin{enumerate}[a.]
-				\item \SI{0.030}{\meter}
-				\item \SI{4.050}{\liter}
-				\item \SI{0.0008}{\gram}
-				\item \SI{2.80}{\meter}
-			\end{enumerate}
-			\framebreak
-		\item Rank the following in order from greatest to least amount:
-			\begin{center}
-				\begin{tabular} {l>{\raggedleft\arraybackslash}p{0.7in}@{\,}l}
-					\toprule 
-					\bfseries Nutrient &
-					\multicolumn{2}{c}{\bfseries Recommended
-					Amount} \\ \midrule
-					Protein                     & 44   & \si{\gram      } \\
-					Vitamin C                   & 60   & \si{\milli\gram} \\
-					Vitamin B\textsubscript{12} & 6    & \si{\micro\gram} \\
-					Calcium                     & 1    & \si{\gram      } \\
-					Iron                        & 18   & \si{\milli\gram} \\
-					Iodine                      & 150  & \si{\micro\gram} \\
-					Sodium                      & 2400 & \si{\milli\gram} \\
-					Zinc                        & 15   & \si{\milli\gram} \\ \bottomrule
-				\end{tabular}
-			\end{center}
-
-			\mode<article>{%
-				\begin{enumerate}
-					\item Protein
-					\item Sodium
-					\item Calcium
-					\item Vitamin C
-					\item Iron
-					\item Zinc
-					\item Iodine
-					\item Vitamin B\textsubscript{12}
-				\end{enumerate}
-			}
-	\end{enumerate}
-\end{frame}
+%\begin{frame}[allowframebreaks]{Additional Practice}
+%	\begin{enumerate}
+%		\item Write the following in scientific notation:
+%			\begin{enumerate}[a.]
+%				\item \qty{0.00000008}{\meter}
+%				\item \qty{72000}{\liter}
+%			\end{enumerate}
+%		\item Write the following in standard notation:
+%			\begin{enumerate}[a.]
+%				\item \qty{2.0e-2}{\second}
+%				\item \qty{1.8e5}{\gram}
+%			\end{enumerate}
+%		\item State the number of significant figures in each of the
+%			following measurements:
+%			\begin{enumerate}[a.]
+%				\item \qty{0.030}{\meter}
+%				\item \qty{4.050}{\liter}
+%				\item \qty{0.0008}{\gram}
+%				\item \qty{2.80}{\meter}
+%			\end{enumerate}
+%			\framebreak
+%		\item Rank the following in order from greatest to least amount:
+%			\begin{center}
+%				\begin{tabular} {l>{\raggedleft\arraybackslash}p{0.7in}@{\,}l}
+%					\toprule 
+%					\bfseries Nutrient &
+%					\multicolumn{2}{c}{\bfseries Recommended
+%					Amount} \\ \midrule
+%					Protein                     & 44   & \unit{\gram      } \\
+%					Vitamin C                   & 60   & \unit{\milli\gram} \\
+%					Vitamin B\textsubscript{12} & 6    & \unit{\micro\gram} \\
+%					Calcium                     & 1    & \unit{\gram      } \\
+%					Iron                        & 18   & \unit{\milli\gram} \\
+%					Iodine                      & 150  & \unit{\micro\gram} \\
+%					Sodium                      & 2400 & \unit{\milli\gram} \\
+%					Zinc                        & 15   & \unit{\milli\gram} \\ \bottomrule
+%				\end{tabular}
+%			\end{center}
+%
+%			\mode<article>{%
+%				\begin{enumerate}
+%					\item Protein
+%					\item Sodium
+%					\item Calcium
+%					\item Vitamin C
+%					\item Iron
+%					\item Zinc
+%					\item Iodine
+%					\item Vitamin B\textsubscript{12}
+%				\end{enumerate}
+%			}
+%	\end{enumerate}
+%\end{frame}
 
 \end{document}
