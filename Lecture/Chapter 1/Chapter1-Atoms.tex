@@ -1,119 +1,120 @@
 % !TEX program = xelatex
 %\documentclass[notes=onlyslideswithnotes,notes=hide]{beamer}
-%\documentclass[notes=only]{beamer}
-\documentclass[notes=show]{beamer}
-%\documentclass[handout]{beamer}
-%\documentclass[10pt,letterpaper]{article}
+%\documentclass[handout,notes=hide]{beamer}
+%\documentclass[notes=hide]{beamer}
+%\documentclass[notes=show]{beamer}
+\documentclass[notes=only]{beamer}
+%\documentclass[11pt,letterpaper]{article}
 %\usepackage{beamerarticle}
 
-\usepackage{newtxtext}
+%\usepackage{newtxtext}
+\usepackage{bucolors}
 \usepackage{genchem}
 \usepackage{lecture}
 \usepackage{bucolors}
 \usepackage{ccicons}
+\usepackage{amsmath}
+\usepackage{mathspec}
+\setmainfont[Ligatures=TeX]{Georgia}
+\setsansfont[Ligatures=TeX]{Arial}
 
 \title{Atoms}
 \subtitle{Chapter 1}
 \institute[CHEM115 Bloomsburg University]{CHEM115 --- Chemistry for the Sciences I \\ Bloomsburg University}
 \author{D.A.\ McCurry}
-\date{Fall 2021}
+\date{Spring 2023}
 
 \begin{document}
 
 \maketitle
 
-\mode<presentation|handout:0>{%
-	{%
-		\usebackgroundtemplate{\includegraphics[scale=0.6]{amazon.jpg}}
-		\setbeamercolor{frametitle}{bg=bumaroon!10!black}
-		\setbeamercolor{normal text}{fg=white}
-		\usebeamercolor*{normal text}
-		\setbeamercolor{structure}{fg=white!80!black}
-		\begin{frame}[t,plain]{The Amazon is Burning}
-			What does this mean globally?
-			\begin{itemize}[<+(1)->]
-				\item Massive fires release significant amounts of
-					\ch{CO2} into the atmosphere.
-				\item The \emph{structure} of the \ch{CO2} molecule causes some infrared (IR) radiation
-					to be absorbed by the atmosphere.
-					\begin{center}
-						\includegraphics[width=0.55\linewidth]{co2-ir.png}
-					\end{center}
-			\end{itemize}
+\part{Atoms Part 1}
 
-			\begin{footnotesize} Andre Penner/AP \end{footnotesize}
-		\end{frame}
-	}
-}
+\section{Matter}
 
-\frame{%
-	\section{Substances and Compounds}
-	\begin{learningobjectives}
-		\item Know the definition of matter.
-		\item Qualitatively understand how states of material relate to atomic structure.
-		\item Classify materials based on their composition.
-		\end{learningobjectives}
-	}
+\begin{frame}
+	\frametitle{Learning Objectives}
 
-\mode<article>{%
-	\begin{block}{What is Chemistry?}
-		Chemistry is the science that seeks to understand the properties
-		of matter by studying the \alert{structure} of the particles that
-		compose it.
-	\end{block}
-
-	\begin{columns}
-		\column{0.45\linewidth}
-		\begin{itemize}[<+(1)->]
-		\item What is matter?
-			\mode<presentation>{
-				\begin{itemize}[<+(1)-|article:0>]
-				\item Anything that occupies space
-					and has mass.
-			\end{itemize}}
-		\item What particles compose matter?
-			\mode<presentation>{
-				\begin{itemize}[<+(1)-|article:0>]
-				\item Atoms
-			\end{itemize}}
-		\item What determines the structure?
+	\begin{itemize}
+		\item Explain the differences between solids, liquids, and gases
+		\item Explain the differences between mixtures and pure
+			substances
 	\end{itemize}
-		\column{0.35\linewidth}
-		\visible<5->{
-		\begin{center}
-		\includegraphics[scale=0.25]{watermol.jpeg}
-		\end{center}}
-	\end{columns}
-}
+\end{frame}
+
+
+%\mode<presentation|handout:0>{%
+%	{%
+%		\usebackgroundtemplate{\includegraphics[scale=0.6]{amazon.jpg}}
+%		\setbeamercolor{frametitle}{bg=bumaroon!10!black}
+%		\setbeamercolor{normal text}{fg=white}
+%		\usebeamercolor*{normal text}
+%		\setbeamercolor{structure}{fg=white!80!black}
+%		\begin{frame}[t,plain]{The Amazon is Burning}
+%			What does this mean globally?
+%			\begin{itemize}[<+(1)->]
+%				\item Massive fires release significant amounts of
+%					\ch{CO2} into the atmosphere.
+%				\item The \emph{structure} of the \ch{CO2} molecule causes some infrared (IR) radiation
+%					to be absorbed by the atmosphere.
+%					\begin{center}
+%						\includegraphics[width=0.55\linewidth]{co2-ir.png}
+%					\end{center}
+%			\end{itemize}
+%
+%			\begin{footnotesize} Andre Penner/AP \end{footnotesize}
+%		\end{frame}
+%	}
+%}
+
+%\mode<article>{%
+%\begin{frame}
+%	\begin{block}{What is Chemistry?}
+%		Chemistry is the science that seeks to understand the properties
+%		of matter by studying the \alert{structure} of the particles that
+%		compose it.
+%	\end{block}
+%
+%	\begin{columns}
+%		\column{0.45\linewidth}
+%		\begin{itemize}[<+(1)->]
+%		\item What is matter?
+%			\mode<presentation>{
+%				\begin{itemize}[<+(1)-|article:0>]
+%				\item Anything that occupies space
+%					and has mass.
+%			\end{itemize}}
+%		\item What particles compose matter?
+%			\mode<presentation>{
+%				\begin{itemize}[<+(1)-|article:0>]
+%				\item Atoms
+%			\end{itemize}}
+%		\item What determines the structure?
+%	\end{itemize}
+%		\column{0.35\linewidth}
+%		\visible<5->{
+%		\begin{center}
+%		\includegraphics[scale=0.25]{watermol.jpeg}
+%		\end{center}}
+%	\end{columns}
+%\end{frame}
 
 \begin{frame}{Properties Follow Structure}
 	\begin{center}
 		\includegraphics[scale=0.35]{carbonstructure.jpeg}
 	\end{center}
-
-	Both graphite and diamond are composed of only carbon, but their
-	\alert{structures} differ!
 \end{frame}
 
-\begin{frame}[t]{Classifying Matter: States}
-	\begin{block}{States of Matter}
+\begin{frame}{Classifying Matter: States}
+	\note{%
 		The \alert{state} is determined by the \alert{relative positions}
 		of the particles and \alert{how strongly they interact} with one
 		another.
-	\end{block}
+	}
 
-	\only<1>{\begin{center}
-		\includegraphics[scale=0.35,trim={0 90pt 0 0},clip]{matterstates.jpeg}
-\end{center}}
-
-\only<2>{%
 	\begin{center}
-		\includegraphics[scale=0.45]{compress.jpeg}
+		\includegraphics[scale=0.40,trim={0 90pt 0 0},clip]{matterstates.jpeg}
 	\end{center}
-
-	We can squeeze gas particles together and \alert{compress} them, but we
-	cannot do the same with a solid.
-}
 \end{frame}
 
 \begin{frame}{Classifying Matter: Composition}
@@ -151,47 +152,16 @@
 	compound) or a \alert{mixture} (heterogeneous or homogeneous):
 	
 	\begin{center}
-		\begin{minipage}[t]{0.3\linewidth}
-			\centering
-			\textbf{Neon} 
-
-			\medskip
-
-			\includegraphics[width=0.8\linewidth,height=5em,keepaspectratio]{NeTube.jpg}
-
-			\medskip
-			
-			\tiny{\ccbysa\ Pslawinski}
-		\end{minipage}
-		\qquad
-		\begin{minipage}[t]{0.3\linewidth}
-			\centering
-			\textbf{Gasoline}
-
-			\medskip
-
-			\includegraphics[width=0.8\linewidth,height=5em,keepaspectratio]{GasStationHiroshima.jpg}
-		\end{minipage}
-
-		\bigskip
-
-		\begin{minipage}[t]{0.3\linewidth}
-			\centering
-			\textbf{Oxygen}
-
-			\medskip
-
-			\includegraphics[width=0.8\linewidth,height=5em,keepaspectratio]{astronaut.jpg}
-		\end{minipage}
-		\qquad
-		\begin{minipage}[t]{0.3\linewidth}
-			\centering
-			\textbf{Cereal}
-
-			\medskip
-
-			\includegraphics[width=0.8\linewidth,height=5em,keepaspectratio]{cereal.jpg}
-		\end{minipage}
+		\begin{tikzpicture}[every label/.style={font=\bfseries}]
+			\node[label={left:Neon}](Ne) {\includegraphics[width=0.3\linewidth,height=5em,keepaspectratio]{NeTube.jpg}};
+			\node[below =0pt of Ne.south,anchor=north] {\tiny{\ccbysa\ Pslawinski}};
+			\node[label={right:Gasoline},right=of Ne](gas)
+				{\includegraphics[width=0.3\linewidth,height=5em,keepaspectratio]{GasStationHiroshima.jpg}};
+			\node[label={left:Oxygen},below=of Ne](oxygen)
+				{\includegraphics[width=0.3\linewidth,height=5em,keepaspectratio]{astronaut.jpg}};
+			\node[label={right:Cereal},right=of oxygen]
+				{\includegraphics[width=0.8\linewidth,height=5em,keepaspectratio]{cereal.jpg}};
+		\end{tikzpicture}
 	\end{center}
 	
 \end{frame}
@@ -208,13 +178,17 @@
 %	\end{tabularx}
 %\end{onyourown}
 
-\frame{\section{Atoms: The Building Blocks of Matter}
-	\begin{learningobjectives}
-		\item Explain how the atomic theory of matter guides chemical reactions.
-		\item Understand the charge distribution in an atom.
-		\item Draw and label an atom.
-		\end{learningobjectives}
-	}
+\section{Atomic Theory}
+
+\begin{frame}
+	\frametitle{Learning Objectives}
+
+	\begin{itemize}
+		\item Explain why atoms react in whole number ratios
+		\item List the key points of atomic theory
+	\end{itemize}
+\end{frame}
+
 
 %\begin{frame}{Early Atomic Theory}
 %	What is the smallest unit that we can actually break down?
@@ -315,6 +289,21 @@
 	\end{enumerate}
 \end{frame}
 
+\section{Atoms}
+
+\begin{frame}
+	\frametitle{Learning Objectives}
+
+	\begin{itemize}
+		\item Illustrate the structure of an atom
+		\item State the properties of subatomic particles
+		\item Describe atoms using appropriate notation
+		\item Calculate atomic mass from isotope ratios
+	\end{itemize}
+\end{frame}
+
+
+
 \begin{frame}{What is an atom?}
 	\centering
 
@@ -412,7 +401,7 @@
 	\end{itemize}
 }
 
-\begin{frame}{Subatomic Particles}
+\begin{frame}[t]{Subatomic Particles}
 	\begin{center}
 		\small
 		\begin{tabular} {@{}l S[table-format=1.5e-2]
@@ -430,34 +419,28 @@
 		\end{tabular}
 	\end{center}
 
-	\begin{itemize}
-		\item \alert{Protons}
-			\begin{itemize}
-				\item The number of protons defines the element
-					(\alert{Atomic Number}).
-			\end{itemize}
-		\item \alert{Neutrons}
-			\begin{itemize}
-				\item Usually close to or greater than the
-					number of protons.
-			\end{itemize}
-		\item \alert{Electrons}
-			\begin{itemize}
-				\item Same number of protons ($\# \ch{p^{+}} =
-					\# \ch{e^{-}}$)
-			\end{itemize}
-	\end{itemize}
+	\begin{description}
+		\item[Protons]
+			\note[item]{The number of protons defines the element
+			(\alert{Atomic Number}).}
+
+			\vfill
+
+		\item[Neutrons]
+			\note[item]{Usually close to or greater than the
+			number of protons.}
+
+			\vfill
+
+		\item[Electrons]
+			\note[item]{Same number of protons ($\# \ch{p^{+}} =
+			\# \ch{e^{-}}$)}
+
+			\vfill
+	\end{description}
 \end{frame}
 
 % Ended class here on 2020-08-24
-
-\frame{\section{Describing Atoms}
-	\begin{learningobjectives}
-		\item Read the periodic table to determine atomic structure.
-		\item Use atomic notation to describe a specific atom.
-		\item Calculate the mass and charge of atoms based on their atomic structure.
-	\end{learningobjectives}
-}
 
 \begin{frame}{The Number of Protons Defines the Element}
 	\centering
@@ -471,25 +454,32 @@
 		\null
 \end{frame}}}
 
-\begin{frame}{Atomic Notation}
+\begin{frame}[t]{Atomic Notation}
+	\begin{center}
+		\includegraphics[width=0.8\linewidth]{atomic-notation.jpeg}
+	\end{center}
+	\begin{description}[label width=2.1in]
+		\item[Atomic Number] \vfill
+		\item[Mass Number] \vfill
+		\item[Isotope] \vfill
+	\end{description}
+
+	\note{%
 	\begin{align*}
 		\text{\alert{Atomic Number} ($Z$)} &= \text{\# of protons in
 		the nucleus} \\
-		\text{\alert{Mass Number} ($A$)} &= \text{\# of protons} +
+		\text{\alert{Mass Number} ($A$)} &= \underbrace{\text{\# of
+		protons}}_{\text{Z}} {}+{}
 		\text{\# of neutrons} \\
-		&= Z + \text{\# of neutrons} \\
 	\end{align*}
-	\begin{center}
-		\includegraphics[scale=0.4]{atomic-notation.jpeg}
-	\end{center}
 
 	\begin{block}{Isotopes}
 		Atoms of the same element (X) with different numbers of neutrons in their nuclei.
 	\end{block}
+}
 \end{frame}
 
 \begin{frame}{Complete the table\ldots}
-	\mode<presentation>{%
 	\begin{tabularx}{\linewidth} {>{\qquad}r@{}l*{2}{>{\centering\arraybackslash}X}}
 		\toprule
 		\multicolumn{2}{>{\centering\arraybackslash}X}{\bfseries Chemical Symbol} & \bfseries \# Protons & \bfseries \# Neutrons \\
@@ -502,9 +492,8 @@
 		\ch{^{235}_92} &&&         \\      
 		\bottomrule
 	\end{tabularx}
-}
 
-	\mode<article>{%
+	\note{%
 		\begin{tabular} {r@{}l*{2}{c}}
 			\toprule \multicolumn{2}{c}{\bfseries Chemical
 			Symbol} & \# \bfseries Protons & \# \bfseries Neutrons \\ \midrule
@@ -537,7 +526,7 @@
 	Isotopes are generally referred to by their element name followed by the
 	mass:
 
-	\renewcommand\arraystretch{2}
+	\renewcommand\arraystretch{1.5}
 	\begin{center}
 		\begin{tabular} {@{}r@{}l@{\qquad} *{2}{c@{\qquad}}}
 		\ch{^{238}_{92}} & U  & U-238 & uranium-238 \\
@@ -564,8 +553,8 @@
 
 \begin{frame}{Calculating the Average Atomic Mass}
 	\begin{block}{Atomic Mass}
-		Mass of an ``average'' element in atomic mass units (amu) --
-		listed on the periodic table -- weighted according to the
+		Mass of an ``average'' element in atomic mass units (amu)
+		weighted according to the
 		natural abundance of each isotope.
 	\end{block}
 
@@ -661,9 +650,21 @@
 %	\end{center}
 %\end{onyourown}
 
-\begin{frame}[allowframebreaks]{What about the electrons?}{Ionization}
-	In order to keep atoms and molecules \alert{neutral}, the number of
-	electrons must be \alert{equal to} to the number of protons.
+\section{Ions}
+
+\begin{frame}
+	\frametitle{Learning Objectives}
+
+	\begin{itemize}
+		\item Indicate charge using appropriate ionic notation
+		\item Determine the number of subatomic particles in an ion
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Neutral Atoms Have Equal Protons and Electrons}
+	\note{In order to keep atoms and molecules \alert{neutral}, the number of
+	electrons must be \alert{equal to} to the number of protons.}
 
 	\begin{center}
 	\begin{tabular} {l *{4}{c}}
@@ -679,17 +680,18 @@
 		\bottomrule
 	\end{tabular}
 	\end{center}
+\end{frame}
 
-	\framebreak
-
+\begin{frame}{Ions Have Lost or Gained Electrons}
+	\note{%
 	Atoms (or molecules) can \alert{gain} or \alert{lose} electrons
-	in a process known as \alert{ionization} to become \alert{ions}.
+in a process known as \alert{ionization} to become \alert{ions}.}
 
 	\begin{center}
 		\begin{tabular} {l *{3}{c} S[table-format=-1]}
 		\toprule
 		\bfseries Ion & \bfseries Protons & \bfseries Neutrons &
-		\bfseries Electrons & \bfseries Charge     \\ \midrule
+		\bfseries Electrons & {\bfseries Charge}     \\ \midrule
 		\ch{H+}      & 1       & 0        & 0         & +1         \\
 		\ch{Li+}     & 3       & 4        & 2         & +1         \\
 		\ch{Be^{2+}} & 4       & 5        & 2         & +2         \\
@@ -700,6 +702,7 @@
 	\end{tabular}
 	\end{center}
 
+	\note{%
 	\begin{center}
 		\begin{minipage}{0.3\linewidth}
 		\begin{tabular} {c @{ \textrightarrow\ } l}
@@ -713,7 +716,7 @@
 			\usebeamercolor[fg]{alerted text}
 			Does the mass change?
 		\end{minipage}
-	\end{center}
+\end{center}}
 \end{frame}
 
 \begin{frame}{Interpreting Atomic Symbols}
@@ -722,16 +725,16 @@
 	\bigskip
 	
 	\noindent
-	{\mode<presentation>{\footnotesize}
-		\renewcommand\arraystretch{1.5}
-		\begin{tabularx}{\linewidth} {@{}*{7}{>{\centering\arraybackslash}X}}
+		\begin{tabularx}{\linewidth} {@{}c*{6}{>{\centering\arraybackslash}X}}
 		\toprule
-		\bfseries Atom /Ion & \bfseries Atomic \# & \bfseries Mass \# & \bfseries Charge & \bfseries \# Protons & \bfseries \# Neutrons & \bfseries \# Electrons \\ \midrule
-		\ch{^{23}_{11}Na+} \\
-		\ch{^{35}_{16}S^{2-}} \\
-		\ch{^{197}_{79}Au^{3+}} \\
+		& \bfseries At.\ \# & \bfseries Mass &
+		\bfseries Charge & \bfseries \# p\textsuperscript{+} & \bfseries
+		\# n\textsuperscript{0} & \bfseries \# e\textsuperscript{-} \\ \midrule
+		\ch{^{23}_{11}Na+} \\ \\
+		\ch{^{35}_{16}S^{2-}} \\\\
+		\ch{^{197}_{79}Au^{3+}} \\ \\
 		\ch{^{88}_{38}Sr} \\ \bottomrule
-	\end{tabularx}}
+	\end{tabularx}
 \end{frame}
 
 %\begin{onyourown}%{0em}
@@ -767,6 +770,7 @@
 	\end{minipage}
 \end{frame}
 
+\mode<presentation|handout:0>{%
 \begin{frame}{Graham Cooks: Purdue University}
 	\centering
 	\includegraphics[scale=0.35]{mini11-1.png}
@@ -776,15 +780,19 @@
 \begin{frame}
 		\frametitle{Bloomsburg University GC-MS}
 \end{frame}
-}
+}}
 
-\frame{\section{The Mole Concept}
-	\begin{learningobjectives}
-	\item Know the relation between moles and absolute amount.
-	\item Use appropriate conversions to switch between moles and mass.
-	\item Calculate the mass required for a specific number of moles and vice versa.
-	\end{learningobjectives}
-}
+\section{Quantifying Atoms and Ions}
+
+\begin{frame}
+	\frametitle{Learning Objectives}
+
+	\begin{itemize}
+		\item Define the mole
+		\item Calculate practical quantities of atoms
+	\end{itemize}
+\end{frame}
+
 
 \begin{frame}{The Mole Concept}
 	Often, we discuss things in terms of a \alert{collection}.
@@ -793,100 +801,59 @@
 		\text{1 ream of paper} &= \text{500 sheets of
 		paper} \\
 		\text{1 case} &= \text{24 cans} \\
-		\visible<2->{\intertext{This is also true in chemistry!}
 		\SI{1}{\mole} &=
 		\underbrace{\SI{6.02214e23}{particles}}_{\mathclap{\text{\alert{Avogadro's
-		number}}}}}
+		number}}}}
 	\end{align*}
 
-	\mode<article>{%
-	\begin{align*}
-		\intertext{This relationship arises from the number of atoms in
-		exactly \SI{12}{\gram} of pure carbon-12:}
+	\note{%
+	This relationship arises from the number of atoms in
+	exactly \SI{12}{\gram} of pure carbon-12:
+	\begin{equation*}
 		\SI{12}{\gram}~\text{C-12} = \SI{1}{\mole}~\text{C-12 atoms} =
-		\num{6.022e23}~\text{C-12 atoms} \\
-		\intertext{But it extends to \alert{anything}\ldots}
-	\end{align*}
+		\num{6.022e23}~\text{C-12 atoms}
+	\end{equation*}
+	}
 
-	\begin{center}
-	\begin{tabular} {>{1 mole of }l @{ = } l}
-		C & \num{6.022e23} C atoms \\
-		Na & \num{6.022e23} Na atoms \\
-		Au & \num{6.022e23} Au atoms \\
-		donut & \num{6.022e23} donuts \\
-	\end{tabular}
-	\end{center}}
-\end{frame}
+	\begin{example}
+		How many \ch{Cu} atoms are in \SI{0.50}{\mole} of \ch{Cu}?
+	\end{example}
 
-\begin{frame}{Moles as a Conversion Factor}
-	\begin{itemize}
-		\item Equality:
-			\begin{equation*}
-				\SI{1}{\mole} = \SI{6.022e23}{particles}
-			\end{equation*}
-		\item Conversion Factors:
-			\begin{align*}
-				\frac{\SI{6.022e23}{particles}}{\SI{1}{\mole}}
-				\qquad\text{and}\qquad
-				\frac{\SI{1}{\mole}}{\SI{6.022e23}{particles}}
-			\end{align*}
-	\end{itemize}
-
-	\pause
-	\bigskip
-
-	How many \ch{Cu} atoms are in \SI{0.50}{\mole} of \ch{Cu}?
-
-	\mode<article>{%
+	\note{%
 		\begin{equation*}
 			\SI{0.50}{\mole}~\ch{Cu} \times
 			\frac{\SI{6.022e23}{atoms}}{\SI{1}{\mole}~\ch{Cu}} =
 			\SI{3.0e23}{atoms}
-		\end{equation*}}
+		\end{equation*}
 
-	\bigskip
-
-	\begin{alertblock}{Warning}
-		This is the only type of question where Avogadro's number is
-		important! Do \textbf{not} automatically apply Avogadro's number
-		whenever you see moles!
-	\end{alertblock}
+		\begin{alertblock}{Warning}
+			This is the only type of question where Avogadro's number is
+			important! Do \textbf{not} automatically apply Avogadro's number
+			whenever you see moles!
+		\end{alertblock}
+	}
 \end{frame}
 
 %\begin{onyourown}%{10em}
 %	How many \ch{Hg} atoms are in \SI{1.20}{\mole} of \ch{Hg}?
 %\end{onyourown}
 
-\begin{frame}{The Utility of Moles}{AKA Why bother?}
+\begin{frame}[t]{The Utility of Moles}
 	When compounds react, they do so \alert{stoichiometrically}
-		-- there is a specific ratio in which they will combine.
-		\begin{itemize}[<+(1)->]
-			\item Consider the following reaction: %In lab, we looked at
-				%\ch{Ca(NO3)2} and \ch{Na2CO3}:
-				\begin{align*}
-					\ch{Ca(NO3)2\aq{} &+ Na2CO3\aq{} \\ 
-					&->
-					CaCO3\sld{} + 2 NaNO3\aq{}}
-				\end{align*}
-				\alert{\SI{1}{\mole}} \ch{Ca(NO3)2}
-				reacted with \alert{\SI{1}{\mole}}
-				\ch{Na2CO3}
-			\item This \alert{does not} mean that \SI{1}{\gram}
-				\ch{Ca(NO3)2} reacted with \SI{1}{\gram}
-				\ch{Na2CO3}!
-			\item Saying 1:1 is much easier than saying
-				164.09:84.99.
-			\item So how do we convert moles to mass of a compound?
-		\end{itemize}
+	--- there is a specific ratio in which they will combine.
+	\begin{reaction*}
+		NaCl\aq{} + AgNO3\aq{} -> AgCl\sld{} + NaNO3\aq{}
+	\end{reaction*}
 \end{frame}
 
-\begin{frame}{Moles to Mass}
+\begin{frame}[t]{Moles to Mass}
 	If \SI{1}{\mole} is defined to be the number of carbon-12 atoms in
-	\SI{12}{\gram} of carbon, can we create a conversion factor?
+	\SI{12}{\gram} of carbon, can we create any conversion factors?
 
+	\note{%
 	\begin{columns}
 		\column{0.45\linewidth}
-		\begin{itemize}[<+(1)->]
+		\begin{itemize}
 			\item Equality:
 				\begin{equation*}
 					\SI{1}{\mole}~\ch{C}~\text{atoms} = \SI{12}{\gram}
@@ -897,7 +864,7 @@
 				\end{equation*}
 		\end{itemize}
 		\column{0.45\linewidth}
-		\begin{itemize}[<+(1)->]
+		\begin{itemize}
 			\item Equality:
 				\begin{equation*}
 					\SI{1}{atom}~\ch{C} = \SI{12}{amu}
@@ -909,8 +876,6 @@
 		\end{itemize}
 	\end{columns}
 
-	\pause
-
 	\begin{equation*}
 		\boxed{\frac{\si{\gram}}{\si{\mole}} =
 		\frac{\si{amu}}{\si{atom}}}
@@ -918,14 +883,14 @@
 
 	The mass in atomic mass units is equivalent to the \alert{molar mass} of
 	the element.
+}
 \end{frame}
 
-\begin{frame}{Examples: Converting Moles and Mass}
+\begin{frame}{Example: Converting Moles and Mass}
 	Complete the table\ldots
 
 	\bigskip
 
-	\mode<presentation|article:0>{%
 	\begin{center}
 		\begin{tabular} {l S[table-format=1.3]
 			S[table-format=2.3]}
@@ -937,9 +902,8 @@
 			\ch{W}  &          & 0.014            \\ \bottomrule
 		\end{tabular}
 	\end{center}
-}
 
-	\mode<article>{%
+	\note{%
 	\begin{center}
 		\begin{tabular} {l S[table-format=1.3e-1]
 			S[table-format=2.3]}
