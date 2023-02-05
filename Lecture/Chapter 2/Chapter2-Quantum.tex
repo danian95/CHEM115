@@ -1,57 +1,72 @@
 % !TEX program = xelatex
 %\documentclass[notes=onlyslideswithnotes,notes=hide]{beamer}
+\documentclass[handout,notes=hide]{beamer}
+%\documentclass[notes=hide]{beamer}
 %\documentclass[notes=show]{beamer}
-%\documentclass[handout]{beamer}
-\documentclass[notes=hide]{beamer}
 %\documentclass[notes=only]{beamer}
-%\documentclass[10pt,letterpaper]{article}
-%\usepackage{beamerarticle}
 
-\usepackage{newtxtext}
+\usepackage{bucolors}
 \usepackage{genchem}
 \usepackage{lecture}
-\usepackage{ccicons}
 \usepackage{bucolors}
+\usepackage{ccicons}
+\usepackage{amsmath}
+\usepackage{mathspec}
+\setmainfont[Ligatures=TeX]{Georgia}
+\setsansfont[Ligatures=TeX]{Arial}
+
+% Allow printing just prefixes by using a "noop" unit
+\DeclareSIUnit\noop{\relax}
+\newcolumntype{s}{>{\collectcell\unit}l<{\endcollectcell}} % put units in column
 
 \title{The Quantum-Mechanical Model of the Atom}
 \subtitle{Chapter 2}
 \institute[CHEM115 Bloomsburg University]{CHEM115 --- Chemistry for the Sciences I \\ Bloomsburg University}
 \author{D.A.\ McCurry}
-\date{Fall 2021}
+\date{Spring 2023}
 
 \begin{document}
 
 \maketitle
-\mode<article>{\thispagestyle{fancy}}
 
-\mode<presentation>{%
+\part{Quantum Part 1}
+
+\section{The Nature of Light}
+\mode<presentation|handout:0>{%
 	{\usebackgroundtemplate{\includegraphics[width=\paperwidth]{solarpanels.png}}
 	\begin{frame}[plain]
 		\null
 	\end{frame}
 }}
 
-\frame{\section{The Nature of Light}
-	\begin{learningobjectives}
-	\item Understand the particle and wave nature of light.
-	\item Use equations to convert between energy, frequency, and wavelength.
-	\item Be aware of tricky unit conversions.
-	\end{learningobjectives}
-}
+\begin{frame}
+	\frametitle{Learning Objectives}
+	\begin{itemize}
+		\item List the regions of the electromagnetic spectrum in order
+			of increasing wavelength
+		\item Define wavelength, amplitude, and frequency
+		\item Convert between wavelength and energy
+	\end{itemize}
+\end{frame}
 
 \begin{frame}{Light is a Wave}
 	\begin{center}
 		\includegraphics[scale=0.4,trim={0 0 0 40pt},clip]{emrad.jpeg}
 	\end{center}
 
-	\begin{itemize}
-		\item All electromagnetic waves move through space (in a vacuum)
-			at the same, constant speed of
-			\alert{\SI{3.00e8}{\meter\per\second}}.
-	\end{itemize}
+	\bigskip
+
+	All electromagnetic waves move through space (in a vacuum) at the same,
+	constant speed of \alert{\SI{3.00e8}{\meter\per\second}}.
 \end{frame}
 
-\begin{frame}[allowframebreaks]{Properties of Waves}
+\begin{frame}{Wave Terminology}
+	\begin{center}
+		\begin{tikzpicture}[scale=0.25]
+			\draw[gray,thin] (0,0) grid (40,20);
+			\draw[black,thick] (0,10) to (40,10);
+		\end{tikzpicture}
+	\end{center}
 	\note{%
 	\begin{center}
 		\includegraphics[scale=0.4]{wave-props.jpeg}
@@ -66,16 +81,17 @@
 	\end{tabularx}
 }
 
+\end{frame}
+
+\begin{frame}{Properties of Waves}
 	\begin{center}
 		\includegraphics[scale=0.4]{wave-props2.jpeg}
 	\end{center}
 \end{frame}
 
 \begin{frame}[t]{Finding Relationships via Dimensional Analysis}
-	We have\ldots
-
 	\begin{center}
-		\begin{tabular} {>{\ldots~}l  c s l}
+		\begin{tabular} {l c s l}
 			wavelength     & $\lambda$ & \nano\meter       & length \\
 			frequency      & $\nu    $ & 1\per\second      & time \\
 			speed of light & $c      $ & \meter\per\second & length and time \\
@@ -153,15 +169,15 @@
 		}
 \end{frame}
 
-\begin{onyourown}%{15em}
-	A photon has a frequency of \SI{3.4e12}{\hertz}. Convert this frequency
-	into wavelength (\si{\nano\meter}). Does this frequency fall in the
-	visible region?
-\end{onyourown}
+%\begin{onyourown}%{15em}
+%	A photon has a frequency of \SI{3.4e12}{\hertz}. Convert this frequency
+%	into wavelength (\si{\nano\meter}). Does this frequency fall in the
+%	visible region?
+%\end{onyourown}
 
-\clearpage
+%\clearpage
 
-\begin{frame}{The Wave Nature of Light}{Interference}
+\begin{frame}{Interference Changes Amplitude}
 	\centering
 
 	\includegraphics[scale=0.4]{constructive-interference.jpeg}
@@ -171,35 +187,24 @@
 	\includegraphics[scale=0.4]{destructive-interference.jpeg}
 \end{frame}
 
-\begin{frame}[allowframebreaks]{The Wave Nature of Light}{Diffraction}
-	\begin{center}
-		\includegraphics[scale=0.38]{diffraction.jpeg}
-	\end{center}
-
-	\framebreak%
-
-	\begin{center}
-		\includegraphics[scale=0.38]{diffraction-interference.jpeg}
-	\end{center}
-\end{frame}
-
 \begin{frame}{The Particle Nature of Light}{The Photoelectric Effect}
 	\begin{center}
 		\includegraphics[scale=0.4,trim={0 20pt 0 40pt},clip]{photoelectric-effect.jpeg}
 	\end{center}
 
-	\begin{description}[<+->]
+	\note{%
+	\begin{description}
 		\item[Theory:] Energy from light would need to exceed binding
 			energy of electron.
-			\note{%
 			\begin{itemize}
 				\item Short $\lambda$, high energy light
 				\item Long $\lambda$, low energy light over
 					extended time
-			\end{itemize}}
+			\end{itemize}
 		\item[Observation:] No matter how long the low energy light was
 			used, electrons were not emitted.
 	\end{description}
+}
 \end{frame}
 
 \begin{frame}{The Quantum Nature of Light}
@@ -208,12 +213,12 @@
 	\end{block}
 
 	\begin{itemize}
-		\item Light is composed of photons -- ``packets'' of a specific
+		\item Light is composed of photons --- ``packets'' of a specific
 			energy (\alert{quantized})
 		\item Depend only on frequency, $E = h \nu$
 			\begin{itemize}
 				\item inversely proportional to $\lambda$
-				\item proportionality constant -- \alert{Planck's
+				\item proportionality constant --- \alert{Planck's
 					Constant ($h$)}
 
 					\begin{equation*}
@@ -289,33 +294,42 @@ A little rearrangement\ldots
 		\end{align*}}
 \end{frame}
 
-\begin{onyourown}%{14em}
-	Calculate the energy of a photon with a frequency of
-	\SI{3.42e15}{\per\second}. How much energy would \SI{0.5}{\mole} of
-	these photons contain?
-\end{onyourown}
+%\begin{onyourown}%{14em}
+%	Calculate the energy of a photon with a frequency of
+%	\SI{3.42e15}{\per\second}. How much energy would \SI{0.5}{\mole} of
+%	these photons contain?
+%\end{onyourown}
 
-\frame{\section{The Quantum Nature of the Atom}
-	\begin{learningobjectives}
-	\item Explain the similarities between electrons and photons.
-	\item Use the de Broglie equation to calculate the wavelength of particles.
-	\end{learningobjectives}
-}
+\section{The Quantum Nature of the Atom}
+%	\begin{learningobjectives}
+%	\item Explain the similarities between electrons and photons.
+%	\item Use the de Broglie equation to calculate the wavelength of particles.
+%	\end{learningobjectives}
 
-\begin{frame}[allowframebreaks]{Emission Spectra}
+\begin{frame}
+	\frametitle{Learning Objectives}
+
+	\begin{itemize}
+		\item Explain the Bohr model of the atom
+		\item Calculate differences in orbital energy level using the
+			Rydberg equation
+		\item Calculate the de Broglie wavelength of electrons and other
+			particles
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Excited Atoms Emit Specific Frequencies of Light}
 	\begin{center}
 		\includegraphics[scale=0.3,trim={0 30pt 0 0},clip]{lamp-emission.jpeg}
 	
 		\includegraphics[scale=0.3,trim={0 30pt 0 0},clip]{emission-spectra.jpeg}
 	\end{center}
 
-	\framebreak
-
-	\begin{center}
-		\includegraphics[scale=0.35]{emission-spectra2.jpg}
-	\end{center}
-\end{frame}
-
+%	\framebreak
+%
+%	\begin{center}
+%		\includegraphics[scale=0.35]{emission-spectra2.jpg}
+%	\end{center}
 \note{%
 Bohr's Model of the Atom (1913)
 	\begin{itemize}
@@ -339,6 +353,16 @@ Bohr's Model of the Atom (1913)
 			\end{itemize}
 	\end{itemize}
 }
+\end{frame}
+
+\begin{frame}{The Bohr Model of the Atom (1913)}
+\note{%
+ The Bohr Model and Emission Spectra
+ \begin{center}
+	\includegraphics[scale=0.35,trim={0 0 0 40pt},clip]{bohr-model.jpeg}
+\end{center}
+}
+\end{frame}
 
 %\begin{frame}{Orbitals?}
 %	\centering
@@ -350,13 +374,9 @@ Bohr's Model of the Atom (1913)
 %	\tiny\ccbysa\ Indolences
 %\end{frame}
 
-\note{%
- The Bohr Model and Emission Spectra
- \begin{center}
-	\includegraphics[scale=0.35,trim={0 0 0 40pt},clip]{bohr-model.jpeg}
-\end{center}
-}
-
+\begin{frame}{Hydrogen Energy Transitions and Radiation}
+	\centering
+	\includegraphics[scale=0.45,trim={0 0 0 30pt},clip]{H-transitions.jpeg}
 \note{%
 Electron Transitions
 	\begin{columns}
@@ -393,10 +413,6 @@ Electron Transitions
 		\end{center}
 	\end{columns}
 }
-
-\begin{frame}{Hydrogen Energy Transitions and Radiation}
-	\centering
-	\includegraphics[scale=0.45,trim={0 0 0 30pt},clip]{H-transitions.jpeg}
 \end{frame}
 
 \begin{frame}{Calculating Energy Differences}
@@ -442,17 +458,63 @@ Electron Transitions
 	\end{columns}
 \end{frame}
 
-\begin{onyourown}%{0em}
-	\begin{enumerate}
-		\item What is the energy (in \si{\joule}) a photon must
-			have in order to excite an electron from $E_1$
-			to $E_3$?
-		\item What is the wavelength of the photon \alert{absorbed} when
-			an electron goes from $E_1$ to $E_4$?
-	\end{enumerate}
-\end{onyourown}
+\begin{frame}[t]
+	\frametitle{Calculating E and \textlambda\ from Orbital Transitions}
+	\begin{block}{The Rydberg Equation}
+		\begin{align*}
+			E_n = -R_{\ch{H}}\bigg(\frac{Z^2}{n^2}\bigg)
+			=
+			\underbrace{-R_{\ch{H}}\bigg(\frac{1}{n^2}\bigg)}_{\mathclap{\text{for
+			hydrogen, where $R_{\ch{H}} = \SI{2.18e-18}{\joule}$ 
+}}}
+		\end{align*}
+	\end{block}
 
-\begin{frame}{Wave Behavior of Electrons}
+\end{frame}
+
+%\begin{onyourown}%{0em}
+%	\begin{enumerate}
+%		\item What is the energy (in \si{\joule}) a photon must
+%			have in order to excite an electron from $E_1$
+%			to $E_3$?
+%		\item What is the wavelength of the photon \alert{absorbed} when
+%			an electron goes from $E_1$ to $E_4$?
+%	\end{enumerate}
+%\end{onyourown}
+
+\begin{frame}{Can Electrons Also Be Considered Waves?}
+	\only<+|handout:0>{%
+	\begin{center}
+		\includegraphics[scale=0.38]{diffraction.jpeg}
+	\end{center}
+}
+
+\only<+|handout:0>{%
+	\begin{center}
+		\includegraphics[scale=0.38]{diffraction-interference.jpeg}
+	\end{center}
+}
+
+\only<+>{%
+	\begin{center}
+		\includegraphics[scale=0.5]{electron-interference-edit.jpeg}
+	\end{center}
+}
+\end{frame}
+
+\begin{frame}{The de Broglie Wavelength}
+	de Broglie predicted that the wavelength of a particle was
+	\alert{inversely proportional} to its \alert{momentum}:
+	\begin{align*}
+		\text{Momentum} &= mv \\
+		\intertext{where $m$ is mass and $v$ is velocity.}
+		\lambda &= \frac{h}{mv} \\
+	\end{align*}
+
+	\begin{alertenv}
+		If we know the velocity of an electron, we also know its
+		wavelength.
+	\end{alertenv}
 	\note{%
 		\begin{itemize} 
 			\item Louis de Broglie (1924) -- Particles of \alert{all} sizes
@@ -468,33 +530,44 @@ Electron Transitions
 %				wavelength of an electron?
 		\end{itemize}
 	}
-	\begin{center}
-		\includegraphics[scale=0.5]{electron-interference-edit.jpeg}
-	\end{center}
 \end{frame}
 
-\begin{frame}{The de Broglie Wavelength}
-	de Broglie predicted that the wavelength of a particle was
-	\alert{inversely proportional} to its \alert{momentum}:
+\begin{frame}[t]{Calculating the Wavelength of an Electron}
+	What is the de Broglie wavelength (in \si{\nano\meter}) associated with
+	an electron traveling at \SI{62}{\meter\per\second}?
 
-	\begin{align*}
-		\text{Momentum} &= mv \\
-		\intertext{where $m$ is mass and $v$ is velocity.}
-		\lambda &= \frac{h}{mv} \\
-	\end{align*}
+	$(\text{mass of an electron} = \SI{9.1e-31}{\kilo\gram})$
 
-	\begin{center}
-		\bfseries\usebeamercolor[fg]{alerted text} If we know the velocity of an electron, we also know its
-		wavelength.
-	\end{center}
+\note{%
+		\begin{tabularx}{\linewidth} {@{}*{3}{>{\centering\arraybackslash}X}}
+			\toprule\bfseries Given & \bfseries Plan & \bfseries Find \\
+			\midrule
+			$m = \SI{9.1e-31}{\kilo\gram}$ & $\lambda = \frac{h}{mv}$ &
+			\si{\nano\meter} \\
+			$v = \SI{62}{\meter\per\second}$ & $h =
+			\SI{6.626e-34}{\joule\second}$ \\ \bottomrule
+		\end{tabularx}
+
+		\begin{align*}
+			\lambda &= \frac{h}{mv} \\
+			&=
+			\frac{\SI{6.626e-34}{\joule\second}}{(\SI{9.1e-31}{\kilo\gram})(\SI{62}{\meter\per\second})}
+			\times
+			\frac{\SI{1}{\kilo\gram\meter\squared\per\second\squared}}{\SI{1}{\joule}}
+			\times \frac{\SI{e9}{\nano\meter}}{\SI{1}{\meter}} \\
+			&= \SI{11744}{\nano\meter} = \boxed{\SI{1.2e4}{\nano\meter}}
+		\end{align*}
+
+		Infrared region
+		}
+
+
 \end{frame}
 
-\begin{frame}[t]{Calculating the de Broglie Wavelength}
-	\onslide<+->
+
+\begin{frame}[t]{Calculating the Wavelength of Anything}
 	What is the de Broglie wavelength (in \si{\nano\meter}) associated with
 	a \SI{143}{\gram} baseball traveling at \SI{40.0}{\meter\per\second}?
-
-	\vspace{\stretch{1}}
 
 	\note{\footnotesize
 		\begin{tabularx}{\linewidth} {@{}*{3}{>{\centering\arraybackslash}X}}
@@ -523,40 +596,7 @@ Electron Transitions
 		\end{align*}
 
 		Way too small to ever measure.}
-
-
-	\onslide<+->
-	What is the de Broglie wavelength (in \si{\nano\meter}) associated with
-	an electron traveling at \SI{62}{\meter\per\second}?
-
-	$(\text{mass of an electron} = \SI{9.1e-31}{\kilo\gram})$
-
-	\vspace{\stretch{1}}
-
 \end{frame}
-
-\note{%
-		\begin{tabularx}{\linewidth} {@{}*{3}{>{\centering\arraybackslash}X}}
-			\toprule\bfseries Given & \bfseries Plan & \bfseries Find \\
-			\midrule
-			$m = \SI{9.1e-31}{\kilo\gram}$ & $\lambda = \frac{h}{mv}$ &
-			\si{\nano\meter} \\
-			$v = \SI{62}{\meter\per\second}$ & $h =
-			\SI{6.626e-34}{\joule\second}$ \\ \bottomrule
-		\end{tabularx}
-
-		\begin{align*}
-			\lambda &= \frac{h}{mv} \\
-			&=
-			\frac{\SI{6.626e-34}{\joule\second}}{(\SI{9.1e-31}{\kilo\gram})(\SI{62}{\meter\per\second})}
-			\times
-			\frac{\SI{1}{\kilo\gram\meter\squared\per\second\squared}}{\SI{1}{\joule}}
-			\times \frac{\SI{e9}{\nano\meter}}{\SI{1}{\meter}} \\
-			&= \SI{11744}{\nano\meter} = \boxed{\SI{1.2e4}{\nano\meter}}
-		\end{align*}
-
-		Infrared region
-		}
 
 %\begin{onyourown}%{10em}
 %	If a \SI{1650}{\kilo\gram} car has a de Broglie wavelength of
@@ -571,20 +611,31 @@ Electron Transitions
 	
 		\pause
 	
-		\bfseries\usebeamercolor[fg]{alerted text} The more we know about the wave-like behavior, the less we
-		know about the particle-like behavior.
+		\begin{alertenv}
+			The more we know about the wave-like behavior, the less we
+			know about the particle-like behavior.
+		\end{alertenv}
 	\end{center}
 \end{frame}
 
-\clearpage
+\section{Uncertainty}
 
-\frame{\section{Uncertainty}
-	\begin{learningobjectives}
-	\item Understand that it is impossible to know the exact position of an electron.
-	\item Be familiar with the idea of probability distributions.
-	\item Identify every unique electron in an atom using quantum numbers.
-	\end{learningobjectives}
-}
+\begin{frame}
+	\frametitle{Learning Objectives}
+	\begin{itemize}
+		\item Identify the difference between classical and quantum
+			mechanics
+		\item Identify orbitals and electrons based on quantum numbers
+		\item Calculate the number of nodes present in an orbital
+		\item Draw the shapes of different orbitals
+	\end{itemize}
+\end{frame}
+
+%	\begin{learningobjectives}
+%	\item Understand that it is impossible to know the exact position of an electron.
+%	\item Be familiar with the idea of probability distributions.
+%	\item Identify every unique electron in an atom using quantum numbers.
+%	\end{learningobjectives}
 
 \begin{frame}{Uncertainty}
 	The wave nature and particle nature of electrons are
@@ -626,8 +677,8 @@ Electron Transitions
 %	\end{columns}
 %\end{frame}}
 
-\begin{frame}[allowframebreaks=1]{Indeterminacy}
-		Newton's law of motion are deterministic
+\begin{frame}{Classical Mechanics}
+	Newton's law of motion are \alert{deterministic}.
 			\begin{itemize}
 				\item Present determines future.
 				\item All things equal, you should get the same
@@ -635,12 +686,13 @@ Electron Transitions
 				\item We know velocity and position.
 			\end{itemize}
 			\begin{center}
-				\includegraphics[scale=0.4]{trajectory.jpeg}
+				\includegraphics[scale=0.35]{trajectory.jpeg}
 			\end{center}
+		\end{frame}
 
-			\framebreak
-
-		Electrons do not work this way
+\begin{frame}{Quantum Mechanics}
+	Quantum phenomenon are based in probability --- considered
+	\alert{indeterministic}.
 		\begin{itemize}
 			\item All things equal, you will \alert{never}
 				get the same result.
@@ -651,10 +703,10 @@ Electron Transitions
 			\includegraphics[scale=0.4]{indeterminacy.jpeg}
 		\end{center}
 
-		\begin{center}
-			\bfseries\usebeamercolor[fg]{alerted text} There is a likely place where electrons will be,
+		\begin{alertenv}
+			There is a likely place where electrons will be,
 			but we don't know the exact position.
-		\end{center}
+		\end{alertenv}
 \end{frame}
 
 \begin{frame}[t]{Probability and the Atom}
@@ -680,7 +732,8 @@ Electron Transitions
 		-\frac{\hbar^2}{2m} \frac{\partial^2 \Psi}{\partial x^2} + V
 		\Psi}
 	\end{equation*}
-		\visible<3>{So we won't worry about it. Take CHEM361.}}}
+		\visible<3>{Take Physical Chemistry
+for more info!}}}
 
 %\only<4->{\begin{itemize}
 %	\item This has only been solved exactly for the hydrogen atom.
@@ -688,163 +741,19 @@ Electron Transitions
 %	\end{itemize}}
 \end{frame}
 
-\begin{frame}{The Schrödinger Wave Equation}
+\begin{frame}[t]{The Schrödinger Wave Equation}
 	We can still use the equation for useful predictions:
 	\begin{itemize}
 		\item The probability distribution map showing where an electron is likely to be found is called an
 			\alert{orbital}.
-		\item Each orbital is specified by three interrelated quantum numbers and a fourth quantum number that
-			specifies the spin of the electron.
-			\begin{center}
-				\begin{tabular} {>{$}c<{$}@{\qquad} l}
-					n   & Principal quantum number        \\
-					l   & Angular Momentum quantum number \\
-					m_l & Magnetic quantum number         \\
-					m_s & Spin quantum number             
-				\end{tabular}
-			\end{center}
-	\end{itemize}
-\end{frame}
-
-\begin{frame}{Principal Quantum Number}
-	\begin{itemize}
-		\item Determines the overall \alert{size} and \alert{energy} of an orbital.
-		\item Orbitals with the same value of $n$ are in the \alert{same}
-			principal level/shell.
-	\end{itemize}
-
-	\begin{equation*}
-		n = 1, 2, 3, 4, \ldots
-	\end{equation*}
-
-	\begin{columns}
-		\column{0.45\linewidth}
-		\begin{center}
-		\includegraphics[scale=0.2]{rhydberg-h.jpeg}
-		\end{center}
-		\column{0.45\linewidth}
-		\begin{align*}
-			R_{\ch{H}} &= \SI{2.18e-18}{\joule} \\
-			E_n &= -R_{\ch{H}}\bigg(\frac{Z^2}{n^2}\bigg)
-			=
-			\underbrace{-R_{\ch{H}}\bigg(\frac{1}{n^2}\bigg)}_{\mathclap{\text{for
-			hydrogen}}}
-		\end{align*}
-
-		\pause
-
-		How does the distance between shells change as $n$ continues to
-		get larger?
-	\end{columns}
-\end{frame}
-
-\begin{frame}{Angular Momentum Quantum Number}
-	\begin{itemize}
-		\item Determines the \alert{shape} of an orbital.
-		\item Electrons all have the same relative energy within each
-			\alert{sublevel}.
-	\end{itemize}
-	\begin{equation*}
-		l = 0, 1, 2, 3, 4, 5, \ldots =
-		s, p, d, f, g, h, \ldots
-	\end{equation*}
-
-	Valid values for $l$ range from 0 to $n-1$, so
-	\begin{center}
-		\begin{tabular} {l l l}
-			\toprule\bfseries $\bm{n}$ &
-			\multicolumn{2}{l}{\bfseries Possible values
-			of $\bm{l}$} \\
-		\midrule
-			1 & 0          & $s$ \\
-			2 & 0, 1       & $s$, $p$ \\
-			3 & 0, 1, 2    & $s$, $p$, $d$ \\
-			4 & 0, 1, 2, 3 & $s$, $p$, $d$, $f$ \\
-			\ldots & \ldots & \ldots \\ \bottomrule
-	\end{tabular}
-	\end{center}
-\end{frame}
-
-\begin{frame}{Shape of an Orbital?}
-	\centering
-	\includegraphics[scale=0.2,trim={0 700pt 0 0},clip]{orbitalshape.jpg}
-
-	\footnotesize \url{https://chem.libretexts.org}
-\end{frame}
-
-\begin{frame}{Magnetic Quantum Number}
-	\begin{itemize}
-		\item Determines the \alert{orientation} of an orbital.
-	\end{itemize}
-	\begin{equation*}
-		m_l = \ldots, -3, -2, -1, 0, +1, +2, +3, \ldots
-	\end{equation*}
-
-	Valid values for $m_l$ range from $\pm l$, so
-
-	\begin{center}
-		\begin{tabularx}{2.5in} {c c >{\raggedleft\arraybackslash}X@{~0,~}X}
-			\toprule\bfseries $\bm{n}$ & $\bm{l}$ &
-			\multicolumn{2}{c}{\bfseries Possible values
-			of $\bm{m_l}$} \\
-		\midrule
-			1 & 0 &          &    \\
-			2 & 0 &          &    \\
-			  & 1 & -1,      & +1 \\
-			3 & 0 &          &    \\
-			  & 1 & -1,      & +1 \\
-			  & 2 & -2, -1,  & +1, +2 \\
-			\ldots & \ldots & \multicolumn{2}{c}{\ldots} \\ \bottomrule
-	\end{tabularx}
-	\end{center}
-\end{frame}
-
-\begin{frame}{Spin Quantum Number}
-	\begin{itemize}
-		\item Associated with the electron, not the orbital.
-		\item Describes the \alert{spin} of an electron.
-		\item All electrons have the same \alert{magnitude} of spin, just
-			a different \alert{direction}.
-	\end{itemize}
-	\begin{equation*}
-		m_s = +\frac{1}{2}, -\frac{1}{2}
-	\end{equation*}
-
-	\begin{center}
-		\includegraphics[scale=0.25]{spin-mcmurry.jpg}
-	\end{center}
-\end{frame}
-
-\begin{frame}{General Trends in Quantum Numbers}
-	\begin{columns}
-		\column{0.4\linewidth}
-	\begin{itemize}
-		\item Number of sublevels in any level is equal to $n$.
-		\item Number of orbitals in a sublevel is $2l + 1$.
-		\item Total number of orbitals in a level is $n^2$.
-	\end{itemize}
-		\column{0.6\linewidth}
-	\begin{center}
-		\includegraphics[scale=0.35]{sublevels.jpeg}
-	\end{center}
-	\end{columns}
-\end{frame}
-
-\begin{frame}{Probability and Radial Distribution Functions}
-	How do we get the \alert{shapes} of atomic orbitals?
-	\begin{itemize}
-		\item $\Psi^2$ is the \alert{probability density}.
-			\begin{itemize}
-				\item The probability of finding an electron at
+		\item $\Psi^2$ is the \alert{probability density} --- the probability of finding an electron at
 					a particular point in space.
-				\item Electrons are \alert{forbidden} and have a
-					\alert{0\% probability} of being found at
-					\alert{nodes}.
-			\end{itemize}
+		\item Electrons are \alert{forbidden} and have a
+			\alert{0\% probability} of being found at
+			\alert{nodes}.
 	\end{itemize}
 
-	\bigskip
-
+	\note{%
 	\begin{columns}
 		\column{0.45\linewidth}
 		Assume $\Psi$ is a sine wave:
@@ -865,7 +774,6 @@ Electron Transitions
 				xtick=\empty,
 				domain=-0.1:8.5,]
 				\addplot[color=bumaroon,samples=200,ultra thick] {sin(x*90)};
-				\only<2->{
 					\node[style=nodelabel](A) at (axis cs:3,0.5) {Nodes};
 				\draw[style=nodearrow] (A.south) to [in=30,out=270](axis
 				cs:2,0);
@@ -878,12 +786,11 @@ Electron Transitions
 				cs:8,0);
 				\node[style=nodelabel](C) at (axis cs:1,-0.5) {Node};
 				\draw[style=nodearrow] (C.north) to
-				[in=-30,out=90](axis cs:0,0);}
+				[in=-30,out=90](axis cs:0,0);
 			\end{axis}
 		\end{tikzpicture}
 		\end{center}
 		\column{0.45\linewidth}
-		\visible<3->{
 		If we square $\Psi$, we get $\Psi^2$:
 
 		\begin{center}
@@ -903,7 +810,6 @@ Electron Transitions
 				domain=-0.1:8.5,]
 				\addplot[color=bumaroon,samples=200,ultra thick]
 				{(sin(x*90))^2};
-				\only<4->{
 					\node[style=nodelabel](zero) at (axis cs:4.25,-0.75) {0\% Probability};
 					\draw[style=nodearrow] (zero.north) to [in=-30,out=150](axis cs:0,0);
 					\draw[style=nodearrow] (zero.north) to [in=-60,out=120](axis cs:2,0);
@@ -915,39 +821,93 @@ Electron Transitions
 					\draw[style=nodearrow] (high.south) to [in=0,out=-120](axis cs:3,1);
 					\draw[style=nodearrow] (high.south) to [in=180,out=-80](axis cs:5,1);
 					\draw[style=nodearrow] (high.south) to [in=140,out=-20](axis cs:7,1);
-					}
 			\end{axis}
 		\end{tikzpicture}
-		\end{center}}
+		\end{center}
 	\end{columns}
+}
 \end{frame}
 
-\begin{frame}{Translating Probability to 3D Orbitals}
+\begin{frame}{The Probability Distribution Function}
 	\centering
+	\begin{tikzpicture}
+		\node(density)
+			{\alt<2|handout:0>{\includegraphics[scale=0.25,trim={0 0
+			0 70pt},clip]{1sradialdist.jpeg}}{\includegraphics[scale=0.27,trim={0 40pt 360pt
+			0},clip]{1sprobability.jpeg}}};
+		\node[right =1em of density](1s) {\includegraphics[scale=0.27,trim={0 30pt 330pt
+			100pt},clip]{1sdotdensity.jpeg}};
+		\node[right =1em of 1s](surface)
+			{\includegraphics[scale=0.25,trim={0 0 0 150pt},clip]{1s3dshape.jpeg}};
+	\end{tikzpicture}
+\end{frame}
+
+\begin{frame}[s]
+	\frametitle{Simplifying Schrödinger: The Quantum Numbers}
+	Each orbital is specified by three interrelated quantum numbers and a
+	fourth quantum number that specifies the spin of the electron.
+			\note{%
+			\begin{center}
+				\begin{tabular} {>{$}c<{$}@{\qquad} l}
+					n   & Principal quantum number        \\
+					\ell   & Angular Momentum quantum number \\
+					m_\ell & Magnetic quantum number         \\
+					m_s & Spin quantum number             
+				\end{tabular}
+			\end{center}
+		}
+	\begin{description}
+	\item[$n$] \vfill
+	\item[$\ell$] \vfill
+	\item[$m_\ell$] \vfill
+	\item[$m_s$] \vfill
+	\end{description}
+\end{frame}
+
+\begin{frame}{Principal Quantum Number ($n$)}
 	\begin{columns}
-		\column{0.3\linewidth}
-		\begin{overlayarea}{\linewidth}{14em}
-		\alt<2|handout:0>{\includegraphics[scale=0.27]{1sradialdist.jpeg}}
-			{\includegraphics[scale=0.27,trim={0 40pt 360pt 0},clip]{1sprobability.jpeg}}
-		\end{overlayarea}
-			\column{0.3\linewidth}
-			\includegraphics[scale=0.27,trim={0 30pt 330pt 0},clip]{1sdotdensity.jpeg}
-			\column{0.3\linewidth}
-		\includegraphics[scale=0.25]{1s3dshape.jpeg}
-	\end{columns}
+		\column{0.45\textwidth}
+	\begin{itemize}
+		\item Determines the overall \alert{size} and \alert{energy} of an orbital.
+		\item Orbitals with the same value of $n$ are in the \alert{same}
+			principal level/shell.
+		\item Determines the number of \alert{total nodes} in an
+			orbital.
+	\end{itemize}
+
+	\note{%
+		\begin{equation*}
+			n = 1, 2, 3, 4, \ldots
+	\end{equation*}}
+
+	\column{0.45\textwidth}
+	\includegraphics[width=\linewidth]{rhydberg-h.jpeg}
+\end{columns}
+
+\note{%
+	\begin{align*}
+			R_{\ch{H}} &= \SI{2.18e-18}{\joule} \\
+			E_n &= -R_{\ch{H}}\bigg(\frac{Z^2}{n^2}\bigg)
+			=
+			\underbrace{-R_{\ch{H}}\bigg(\frac{1}{n^2}\bigg)}_{\mathclap{\text{for
+			hydrogen}}}
+		\end{align*}
+
+		How does the distance between shells change as $n$ continues to
+		get larger?
+	}
 \end{frame}
 
 \begin{frame}{Introducing Nodes to 3D Orbitals}
 	\begin{columns}
 		\column{0.4\linewidth}
-		Whereas the $1s$ orbital did not have any nodes (the probability
-		just trailed off), the $2s$, $3s$, etc. have \alert{at least} one
+		Whereas the $n = 1$ orbital did not have any nodes (the probability
+		just trailed off), the $n = 2$, $n = 3$, etc. have \alert{at least} one
 		node.
 
-		\visible<2->{
 			\begin{equation*}
-				\parbox{\widthof{nodes}}{\centering \# of \alert{radial} nodes} = n - l - 1
-			\end{equation*}}
+				\text{total nodes} = n - 1
+			\end{equation*}
 
 		\column{0.6\linewidth}
 		\centering
@@ -955,42 +915,146 @@ Electron Transitions
 	\end{columns}
 \end{frame}
 
-\begin{frame}{What about the other quantum numbers?}
+\begin{frame}[t]{Angular Momentum Quantum Number ($\ell$)}
+	\begin{itemize}
+		\item Determines the \alert{shape} of an orbital based on the
+			number of \alert{angular nodes}.
+		\item Electrons all have the same relative energy within each
+			\alert{sublevel}.
+	\end{itemize}
+	\note{%
+	\begin{equation*}
+		\ell = 0, 1, 2, 3, 4, 5, \ldots =
+		s, p, d, f, g, h, \ldots
+	\end{equation*}
+
+	Valid values for $\ell$ range from 0 to $n-1$, so
 	\begin{center}
-		\begin{tikzpicture}
-			\node(fig)
-			{\includegraphics[width=\linewidth]{p-orbitals.jpeg}};
-			\node[right,anchor=north west,align=left] at (fig.west)
-			{\begin{minipage}{0.6\linewidth}
-				\begin{itemize}
-				\item $l$ describes the overall \alert{shape}.
-					\begin{center}
-						$s$, $p$, $d$, \ldots
-					\end{center}
-					\begin{equation*}
-						l = \text{\# of \alert{angular}
-						nodes}
-					\end{equation*}
-				\item $m_l$ describes the \alert{direction} the
-					orbital is pointing.
-					\begin{center}
-						$p_{\bm{x}}$, $p_{\bm{y}}$,
-						$p_{\bm{z}}$
-					\end{center}
-			\end{itemize}
-			\end{minipage}};
-		\end{tikzpicture}
+		\begin{tabular} {l l l}
+			\toprule\bfseries $\bm{n}$ &
+			\multicolumn{2}{l}{\bfseries Possible values
+			of $\bm{\ell}$} \\
+		\midrule
+			1 & 0          & $s$ \\
+			2 & 0, 1       & $s$, $p$ \\
+			3 & 0, 1, 2    & $s$, $p$, $d$ \\
+			4 & 0, 1, 2, 3 & $s$, $p$, $d$, $f$ \\
+			\ldots & \ldots & \ldots \\ \bottomrule
+	\end{tabular}
+	\end{center}
+}
+\end{frame}
+
+\begin{frame}{Shape of an Orbital?}
+	\centering
+	\includegraphics[scale=0.2,trim={0 700pt 0 0},clip]{orbitalshape.jpg}
+
+	\footnotesize \url{https://chem.libretexts.org}
+\end{frame}
+
+\begin{frame}[s]{Magnetic Quantum Number ($m_\ell$)}
+	\begin{itemize}
+		\item Determines the \alert{orientation} of an orbital.
+	\end{itemize}
+
+	\vfill
+
+	\includegraphics[width=\linewidth,trim={0 250pt 80pt 0},clip]{p-orbitals.jpeg}
+
+	\note{%
+	\begin{equation*}
+		m_\ell = \ldots, -3, -2, -1, 0, +1, +2, +3, \ldots
+	\end{equation*}
+
+	Valid values for $m_\ell$ range from $\pm \ell$, so
+
+	\begin{center}
+		\begin{tabularx}{2.5in} {c c >{\raggedleft\arraybackslash}X@{~0,~}X}
+			\toprule\bfseries $\bm{n}$ & $\bm{\ell}$ &
+			\multicolumn{2}{c}{\bfseries Possible values
+			of $\bm{m_\ell}$} \\
+		\midrule
+			1 & 0 &          &    \\
+			2 & 0 &          &    \\
+			  & 1 & -1,      & +1 \\
+			3 & 0 &          &    \\
+			  & 1 & -1,      & +1 \\
+			  & 2 & -2, -1,  & +1, +2 \\
+			\ldots & \ldots & \multicolumn{2}{c}{\ldots} \\ \bottomrule
+	\end{tabularx}
+	\end{center}
+}
+\end{frame}
+
+\begin{frame}{Spin Quantum Number ($m_s$)}
+	\begin{itemize}
+		\item Associated with the electron, not the orbital.
+		\item Describes the \alert{spin} of an electron.
+		\item All electrons have the same \alert{magnitude} of spin, just
+			a different \alert{direction}.
+	\end{itemize}
+	\note{%
+	\begin{equation*}
+		m_s = +\frac{1}{2}, -\frac{1}{2}
+	\end{equation*}
+}
+
+	\begin{center}
+		\includegraphics[scale=0.25]{spin-mcmurry.jpg}
 	\end{center}
 \end{frame}
+
+\begin{frame}{General Trends in Quantum Numbers}
+	\begin{columns}
+		\column{0.4\linewidth}
+	\begin{itemize}
+		\item Number of sublevels in any level is equal to $n$.
+		\item Number of orbitals in a sublevel is $2\ell + 1$.
+		\item Total number of orbitals in a level is $n^2$.
+	\end{itemize}
+		\column{0.6\linewidth}
+	\begin{center}
+		\includegraphics[scale=0.3]{sublevels.jpeg}
+	\end{center}
+	\end{columns}
+	\begin{equation*}
+		\text{Total Nodes (N)} = n - 1 = \underbrace{n - \ell -
+		1}_{\mathclap{\text{\# radial}}} +
+		\underbrace{\ell}_{\mathclap{\text{\# angular}}}
+	\end{equation*}
+\end{frame}
+
+%\begin{frame}{What about the other quantum numbers?}
+%	\begin{center}
+%		\begin{tikzpicture}
+%			\node(fig)
+%			{\includegraphics[width=\linewidth]{p-orbitals.jpeg}};
+%			\node[right,anchor=north west,align=left] at (fig.west)
+%			{\begin{minipage}{0.6\linewidth}
+%				\begin{itemize}
+%				\item $l$ describes the overall \alert{shape}.
+%					\begin{center}
+%						$s$, $p$, $d$, \ldots
+%					\end{center}
+%					\begin{equation*}
+%						l = \text{\# of \alert{angular}
+%						nodes}
+%					\end{equation*}
+%				\item $m_l$ describes the \alert{direction} the
+%					orbital is pointing.
+%					\begin{center}
+%						$p_{\bm{x}}$, $p_{\bm{y}}$,
+%						$p_{\bm{z}}$
+%					\end{center}
+%			\end{itemize}
+%			\end{minipage}};
+%		\end{tikzpicture}
+%	\end{center}
+%\end{frame}
 
 \begin{frame}{The $d$ Orbitals\ldots}
 	\centering
 	\includegraphics[scale=0.45]{d-orbitals.jpeg}
-	\begin{equation*}
-		\text{Total \# Nodes (N)} = \underbrace{n - l -
-		1}_{\mathclap{\text{\# radial}}} +
-		\underbrace{l}_{\mathclap{\text{\# angular}}} = n - 1
-	\end{equation*}
 \end{frame}
 
 \begin{frame}{The $f$ Orbitals\ldots}
