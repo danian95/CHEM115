@@ -33,7 +33,10 @@
 }
 \newcounter{homeworknumber}
 \newcommand{\hw}{%
-	\ifthenelse{\isodd{\theweekcounter}}{}{\stepcounter{homeworknumber} \faCalculator~\textbf{HW Set \arabic{homeworknumber} Due}}
+	%\ifthenelse{\isodd{\theweekcounter}}{}{\stepcounter{homeworknumber}
+	\stepcounter{homeworknumber}\faCalculator~\textbf{HW Set
+	\arabic{homeworknumber} Due (10 \textsc{pm})}
+%}
 }
 
 \title{Chemistry for the Sciences 1 Lecture Schedule}
@@ -65,7 +68,7 @@ to change.}
 	% Description of the Week
 	%\calday[Monday]{\classday\stepcounter{weekcounter}}
 	\skipday
-	\calday[Tuesday]{\classday\stepcounter{weekcounter}}
+	\calday[Tuesday]{\classday\stepcounter{weekcounter}\weeklytext{\hw}}
 	%\calday[Tuesday]{\noclassday}%\weeklytext{\stepcounter{labnumber}
 	%\faFlask{} Expt~\arabic{labnumber} \\[1em] }}
 	%\calday[Tuesday]{\noclassday}
@@ -90,6 +93,17 @@ to change.}
 	\options{3/16/23}{\noclassday}
 	\caltext{3/14/23}{\em Spring Break --- No Class}
 	\caltext{3/16/23}{\em Spring Break --- No Class}
+
+	% Homework fixes
+	\options{1/24/23}{\weeklytext{}}
+	\options{1/31/23}{\weeklytext{}}
+	\caltext{2/2/23}{\hw}
+	\options{2/21/23}{\weeklytext{}}
+	\options{3/14/23}{\weeklytext{}}
+	\options{4/4/23}{\weeklytext{}}
+	\options{5/2/23}{\weeklytext{}}
+	\options{5/9/23}{\weeklytext{}}
+	\caltext{5/9/23}{\hw}
 
 	% Final Exam
 	\options{5/9/23}{\noclassday\weeklytext{}}
