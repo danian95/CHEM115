@@ -1,24 +1,22 @@
 % !TEX program=xelatex
-\documentclass[notes=show]{beamer}
 %\documentclass[notes=onlyslideswithnotes,notes=hide]{beamer}
+%\documentclass[handout,notes=hide]{beamer}
 %\documentclass[notes=hide]{beamer}
-%\documentclass[notes=only]{beamer}
-%\documentclass[handout]{beamer}
-%\documentclass[10pt,letterpaper]{article}
-%\usepackage{beamerarticle}
+%\documentclass[notes=show]{beamer}
+\documentclass[notes=only]{beamer}
 
-%\documentclass{beamer}
-%\usepackage{pgfpages}
-%\setbeameroption{show notes on second screen}
-
-\usepackage{newtxtext}
 \usepackage{bucolors}
 \usepackage{genchem}
 \usepackage{lecture}
+\usepackage{bucolors}
+\usepackage{ccicons}
+\usepackage{amsmath}
+\usepackage{mathspec}
+\setmainfont[Ligatures=TeX]{Georgia}
+\setsansfont[Ligatures=TeX]{Arial}
+
 \usepackage{multicol}
-%\usepackage{modiagram}
 \usepackage{elements}
-%\usepackage{ccicons}
 \usetikzlibrary{calc}
 
 \renewcommand*\printangularmomentum[1]{#1}
@@ -28,29 +26,29 @@
 \title{The Elements and the Periodic Table}
 \subtitle{Chapter 3}
 \institute[CHEM115 Bloomsburg University]{CHEM115 --- Chemistry for the Sciences I \\ Bloomsburg University}
-\author{D.A. McCurry}
-\date{Fall 2021}
+\author{D.A.\ McCurry}
+\date{Spring 2023}
 
 \begin{document}
 
 \maketitle
-\mode<article>{\thispagestyle{fancy}}
 
-%\mode<presentation>{\input{"../../Exams/Exam 1/Results/Exam1Summary"}}
+\part{Periodic Properties Part 1}
 
-\frame{\section{Organizing and Classifying Elements}
-	\begin{learningobjectives}
-		\item Explain how the periodic table is organized.
-		\item Connect the concept of quantum numbers with electron
-			location in an atomic orbital.
-		\item Fill electron orbitals appropriately using the Pauli
-			Exclusion Principle.
-	\end{learningobjectives}
-}
+\section{Organizing and Classifying Elements}
 
-\begin{frame}{Elemental Patterns}
+\begin{frame}
+	\frametitle{Learning Objectives}
 	\begin{itemize}
-		\item<1-> We are familiar with numerous \emph{physical}
+		\item Describe how the periodic table is organized.
+		\item Identify the general regions of the periodic table.
+		\item Identify the major properties that differ across regions of the
+			periodic table.
+	\end{itemize}
+
+	\note{%
+	\begin{itemize}
+		\item We are familiar with numerous \emph{physical}
 			and \emph{chemical} properties.%
 			\begin{multicols}{2}%
 				\begin{itemize}%
@@ -61,7 +59,7 @@
 				\end{itemize}
 			\end{multicols}
 
-		\item<2-> How do we go from $H\Psi = E\Psi$
+		\item How do we go from $H\Psi = E\Psi$
 			%\begin{tikzpicture}[baseline=(current bounding
 			%	box.west),scale=0.6]
 			%	\begin{axis}[axis x line=none,
@@ -77,23 +75,22 @@
 			%\end{tikzpicture}
 			to the \emph{properties} we observe in the \emph{macro}
 			world?
-		\item<3-> More importantly, is there an \alert{easy} way to
+		\item More importantly, is there an \alert{easy} way to
 			predict properties of elements?
 	\end{itemize}
+}
 \end{frame}
 
-\begin{frame}[allowframebreaks=1]{Dmitri Mendeleev (1869)}
+\begin{frame}{The Periodic Law}
+	When the elements are arranged in order of increasing mass,
+	certain sets of properties recur periodically.
+
 	\begin{center}
 		\includegraphics[scale=0.25]{density.jpg}
 	\end{center}
-	
-	\begin{block}{The Periodic Law}
-		When the elements are arranged in order of increasing mass,
-		certain sets of properties recur periodically.
-	\end{block}
+\end{frame}
 
-	\framebreak%
-
+\begin{frame}[allowframebreaks=1]{Dmitri Mendeleev (1869) and the Periodic Table}
 	Elements could be \alert{grouped} into columns based on their properties.
 
 	\begin{center}
@@ -104,8 +101,10 @@
 			{\includegraphics[scale=0.4]{mendeleev-wiki.jpg}};
 		\end{tikzpicture}
 	\end{center}
+\end{frame}
 
-	\framebreak%
+\begin{frame}
+	\frametitle{Predicting Properties with a Periodic Table}
 
 	Using Mendeleev's early periodic table, he could even predict properties
 	for elements that had yet to be discovered:
@@ -115,15 +114,8 @@
 	\includegraphics[width=\linewidth]{gallium-germanium.jpg}
 \end{frame}
 
-\begin{frame}[allowframebreaks=1]{The Modern Periodic Table}
-	\centering
-
+\begin{frame}{The Modern Periodic Table}
 	\includegraphics[width=\linewidth]{modern-ptable.jpg}
-
-	\framebreak
-
-	\includegraphics[width=\linewidth]{periodic-table-wide.pdf}
-\end{frame}
 
 \note{%
 	What determines these trends?
@@ -138,10 +130,86 @@
 	\end{itemize}
 }
 
+\end{frame}
+
+\begin{frame}{Metals}
+	\begin{columns}
+		\column{0.45\textwidth}
+		\begin{itemize}
+			\item Solids at room temperature
+			\item Conduct electricity
+			\item Luster (shiny when polished)
+			\item Malleable (can shape by pounding)
+			\item Ductile (can be drawn into wires)
+		\end{itemize}
+		\column{0.55\textwidth}
+		\centering
+		\input{ptable-metals}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Nonmetals}
+	\begin{columns}
+		\column{0.45\textwidth}
+		\begin{itemize}
+			\item \textbf{\usebeamercolor[fg]{alerted text}DO NOT} conduct electricity
+			\item \textbf{\usebeamercolor[fg]{alerted text}DO NOT} have luster
+			\item \textbf{\usebeamercolor[fg]{alerted text}ARE NOT} malleable or ductile
+			\item \textbf{\usebeamercolor[fg]{alerted text}ARE NOT ALL} solids at room temperature
+		\end{itemize}
+		\column{0.55\textwidth}
+		\centering
+		\input{ptable-nonmetals}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Metalloids}
+	\begin{columns}
+		\column{0.45\textwidth}
+		\begin{itemize}
+			\item In between metals and nonmetals
+			\item All solids at room temperature
+			\item Some are semiconductors
+		\end{itemize}
+		\column{0.55\textwidth} \centering
+		\input{ptable-metalloids}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Families of Elements}
+	\begin{columns}
+		\column{0.45\textwidth}
+		\begin{itemize}
+			\item[\tikz{\draw[black,fill=yellow!55] (0,0) rectangle (1em,1em);}] \alt<2>{\bfseries}{}Alkali Metals
+			\item[\tikz{\draw[black,fill=green!55] (0,0) rectangle (1em,1em);}] Alkaline Earth Metals
+			\item[\tikz{\draw[black,fill=orange!55] (0,0) rectangle (1em,1em);}] \normalfont Pnictogens
+			\item[\tikz{\draw[black,fill=blue!55] (0,0) rectangle (1em,1em);}] Chalcogens
+			\item[\tikz{\draw[black,fill=purple!55] (0,0) rectangle (1em,1em);}] \alt<2>{\bfseries}{}Halogens
+			\item[\tikz{\draw[black,fill=red!55] (0,0) rectangle (1em,1em);}] Noble Gases
+		\end{itemize}
+		\column{0.55\textwidth} \centering
+		\input{ptable-families}
+	\end{columns}
+\end{frame}
+
+\section{Electron Configurations}
+
+\begin{frame}
+	\frametitle{Learning Objectives}
+	\begin{itemize}
+		\item Describe how quantum numbers describe the location of an electron
+			in an atomic orbital.
+		\item Write electron configurations and draw associated orbital
+			filling diagrams following appropriate laws.
+		\item Explain how the periodic table is organized: the sequel!
+	\end{itemize}
+\end{frame}
+
+
 \begin{frame}[t]{Electron Configurations}
 	What is the electron configuration of hydrogen in the ground
 	state?
-	\begin{itemize}
+	\begin{itemize}[<+(1)->]
 			\item How many electrons does hydrogen have?
 			\item Where might this electron exist in the ground
 				state?
@@ -149,14 +217,13 @@
 				\vfill
 
 
-			\item<+-> Another method for indicating electron
+			\item Another method for indicating electron
 				location is via \alert{orbital diagrams}.
 
 				\vfill
 	\end{itemize}
-\end{frame}
 
-\note{%
+\note<+(1)->{%
 		\begin{itemize}
 				\item Principal quantum number ($n = 1$)
 				\item Angular momentum quantum number
@@ -164,14 +231,11 @@
 				\item Magnetic momentum quantum number
 					($m_l = 0$)
 			\end{itemize}
-
 		\begin{equation*}
 			1s^1
 		\end{equation*}
-	}
 
-\note{%
-	\textbf{Orbital Filling Diagrams}
+		\textbf{Orbital Filling Diagrams}
 		\begin{center}
 				\begin{tikzpicture}
 					\node[font=\Huge](up)
@@ -192,6 +256,7 @@
 				\end{tikzpicture}
 			\end{center}
 }
+\end{frame}
 
 \begin{frame}[t]{Adding an Electron: Helium}
 	What is the electron configuration of \ch{He}?
@@ -204,7 +269,7 @@
 
 	\pause%
 
-	\note<2>{%
+	\note<3>{%
 		\begin{center}
 			\electron{$\upharpoonleft\upharpoonright$}?
 			\qquad
@@ -258,29 +323,48 @@
 \end{center}}
 \end{frame}
 
-%\begin{onyourown}%{0em}
-%	\begin{tabularx}{\linewidth} {c >{\centering\arraybackslash}m{1in}
-%			>{\centering\arraybackslash}X}
-%		\toprule
-%		\bfseries Element & \bfseries \ch{e^{-}} Config & \bfseries Orbital
-%		Diagram \\ \midrule
-%		\parbox[c][4em][c]{0.5in}{\centering\ch{Na}} & \\
-%		\parbox[c][4em][c]{0.5in}{\centering\ch{F} }& \\
-%		\parbox[c][4em][c]{0.5in}{\centering\ch{Cl}} & \\
-%		\bottomrule
-%	\end{tabularx}
-%\end{onyourown}
-%
-%\vspace{\stretch{1}}
+\begin{frame}{The Aufbau Principle}
+	\begin{itemize}
+		\item Energy levels typically follow the order:
+			\begin{equation*}
+				E~(s \text{~orbital}) < E~(p \text{~orbital}) <
+				E~(d \text{~orbital}) < E~(f \text{~orbital})
+			\end{equation*}
+		\item We can therefore ``build up'' (\textit{aufbau} in German)
+			the electron configurations of atoms from the lowest
+			energy orbitals to the highest energy orbitals.
+		\item For B, this is why the $s$ orbitals were completed before
+			the $p$ orbitals:
 
-\frame{\section{Higher-Level Electron Configurations}
-	\begin{learningobjectives}
-	\item Explain why electrons fill orbitals in specific configurations.
-	\item Understand how energy level differences play a role in electron
-		configurations.
-	\item Use the periodic table to fill electron orbitals.
-	\end{learningobjectives}
-}
+			\begin{center}
+				\begin{tabularx}{\linewidth} {c c X}
+					\ch{B} & $1s^22s^22p^1$ &
+					\electronboth\quad \electronboth\quad
+					\electronup\electronnone\electronnone
+				\end{tabularx}
+			\end{center}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[t]{The Electron Configuration for Carbon}
+	Write the electron configuration for carbon.
+
+	\vfill
+
+	\pause
+
+	Write the orbital filling diagram for carbon.
+
+	\vfill
+
+	\pause
+
+	\begin{block}{Hund's Rule}
+	When filling \alert{degenerate} orbitals, we \emph{must} fill them with
+	parallel spins (all~$+\frac{1}{2}$ or all~$-\frac{1}{2}$) \alert{before}
+	pairing the electrons.
+\end{block}
+\end{frame}
 
 \begin{frame}{Electrons are Repulsive}
 	\begin{block}{Coulomb's Law}
@@ -307,56 +391,6 @@
 
 	For 1 electron systems, the sublevels are considered \alert{degenerate}
 	--- they have the same energy.
-\end{frame}
-
-\begin{frame}{The Aufbau Principle}
-	\begin{itemize}
-		\item Energy levels typically follow the order:
-			\begin{equation*}
-				E~(s \text{~orbital}) < E~(p \text{~orbital}) <
-				E~(d \text{~orbital}) < E~(f \text{~orbital})
-			\end{equation*}
-		\item We can therefore ``build up'' (\textit{aufbau} in German)
-			the electron configurations of atoms from the lowest
-			energy orbitals to the highest energy orbitals.
-		\item For B, this is why the $s$ orbitals were completed before
-			the $p$ orbitals:
-
-			\begin{center}
-				\begin{tabularx}{\linewidth} {c c X}
-					\ch{B} & $1s^22s^22p^1$ &
-					\electronboth\quad \electronboth\quad
-					\electronup\electronnone\electronnone
-				\end{tabularx}
-			\end{center}
-	\end{itemize}
-\end{frame}
-
-\begin{frame}{Hund's Rule}
-	What about carbon?
-
-	\begin{center}
-		\begin{tabular} {*{3}{c}}
-			\ch{C} & $1s^22s^22p^2$ & \electronboth\quad
-			\electronboth\quad
-			\electronboth\electronnone\electronnone \\
-			& & \textit{or} \\
-			& & \electronboth\quad \electronboth\quad
-			\electronup\electronup\electronnone \\
-		\end{tabular}
-	\end{center}
-
-	\pause
-
-	When filling \alert{degenerate} orbitals, we \emph{must} fill them with
-	parallel spins (all~$+\frac{1}{2}$ or all~$-\frac{1}{2}$) \alert{before}
-	pairing the electrons.
-
-	\pause
-
-	\begin{itemize}
-		\item It's all about \alert{lower energy}.
-	\end{itemize}
 \end{frame}
 
 \begin{frame}[c]{Some ``intermediate'' diagrams\ldots}
@@ -410,80 +444,65 @@
 
 \begin{frame}[t]{An Issue with Aufbau}
 	What is the electron configuration of vanadium (\ch{V})?
-			\note<1>{
-				\begin{enumerate}
-					\item How many electrons does vanadium
-						have?
-						
-						\alert{23}
-					\item What order does the configuration
-						fill in?
-						
-						\alert{\elconf{V}}
-				\end{enumerate}
-				}
-	\pause%
+			\note{%
+				\alert{23} electrons $\therefore$ \alert{\elconf{V}}
 	\begin{center}
 		\includegraphics[scale=0.35, trim={0 0 0
 		40pt}, clip]{energyordering.jpg}
 	\end{center}
-
-		\note<2>{
-				\begin{center}
-					\begin{tikzpicture}[x=2em,y=2em,
-						nodes={%
- 						  execute at begin node=$,%
- 						  execute at end node=$%
- 						 },
-						 every node/.style={anchor=base}]
-						\tikzstyle{aufbau}=[thick,bumaroon,->];
-						\node(1s) at (0,0) {1s};
-						\node(2s) at (0,-1) {2s};
-						\node(2p) at (1,-1) {2p};
-						\node(3s) at (0,-2) {3s};
-						\node(3p) at (1,-2) {3p};
-						\node(3d) at (2,-2) {3d};
-						\node(4s) at (0,-3) {4s};
-						\node(4p) at (1,-3) {4p};
-						\node(4d) at (2,-3) {4d};
-						\node(4f) at (3,-3) {4f};
-						\node(5s) at (0,-4) {5s};
-						\node(5p) at (1,-4) {5p};
-						\node(5d) at (2,-4) {5d};
-						\node(5f) at (3,-4) {5f};
-						\node(5g) at (4,-4) {5g};
-						\node(6s) at (0,-5) {6s};
-						\node(6p) at (1,-5) {6p};
-						\node(6d) at (2,-5) {6d};
-						\node(6f) at (3,-5) {6f};
-						\node(6g) at (4,-5) {6g};
-						\node(7s) at (0,-6) {7s};
-						\node(7p) at (1,-6) {7p};
-						\node(7d) at (2,-6) {7d};
-						\node(7f) at (3,-6) {7f};
-						\node(7g) at (4,-6) {7g};
-%						\mode<presentation>{
-%						\visible<4->{\draw[aufbau]  (1s.north east) -- (1s.south west);}
-%						\visible<5->{\draw[aufbau]  (2s.north east) -- (2s.south west);}
-%						\visible<6->{\draw[aufbau]  (2p.north east) -- (3s.south west);}
-%						\visible<7->{\draw[aufbau]  (3p.north east) -- (4s.south west);}
-%						\visible<8->{\draw[aufbau]  (3d.north east) -- (5s.south west);}
-%						\visible<9->{\draw[aufbau]  (4d.north east) -- (6s.south west);}
-%						\visible<10->{\draw[aufbau] (4f.north east) -- (7s.south west);}
-%						}
-					\end{tikzpicture}
-			\end{center}}
+				}
 \end{frame}
 
+%
+%		\note<2>{
+%				\begin{center}
+%					\begin{tikzpicture}[x=2em,y=2em,
+%						nodes={%
+% 						  execute at begin node=$,%
+% 						  execute at end node=$%
+% 						 },
+%						 every node/.style={anchor=base}]
+%						\tikzstyle{aufbau}=[thick,bumaroon,->];
+%						\node(1s) at (0,0) {1s};
+%						\node(2s) at (0,-1) {2s};
+%						\node(2p) at (1,-1) {2p};
+%						\node(3s) at (0,-2) {3s};
+%						\node(3p) at (1,-2) {3p};
+%						\node(3d) at (2,-2) {3d};
+%						\node(4s) at (0,-3) {4s};
+%						\node(4p) at (1,-3) {4p};
+%						\node(4d) at (2,-3) {4d};
+%						\node(4f) at (3,-3) {4f};
+%						\node(5s) at (0,-4) {5s};
+%						\node(5p) at (1,-4) {5p};
+%						\node(5d) at (2,-4) {5d};
+%						\node(5f) at (3,-4) {5f};
+%						\node(5g) at (4,-4) {5g};
+%						\node(6s) at (0,-5) {6s};
+%						\node(6p) at (1,-5) {6p};
+%						\node(6d) at (2,-5) {6d};
+%						\node(6f) at (3,-5) {6f};
+%						\node(6g) at (4,-5) {6g};
+%						\node(7s) at (0,-6) {7s};
+%						\node(7p) at (1,-6) {7p};
+%						\node(7d) at (2,-6) {7d};
+%						\node(7f) at (3,-6) {7f};
+%						\node(7g) at (4,-6) {7g};
+%%						\mode<presentation>{
+%%						\visible<4->{\draw[aufbau]  (1s.north east) -- (1s.south west);}
+%%						\visible<5->{\draw[aufbau]  (2s.north east) -- (2s.south west);}
+%%						\visible<6->{\draw[aufbau]  (2p.north east) -- (3s.south west);}
+%%						\visible<7->{\draw[aufbau]  (3p.north east) -- (4s.south west);}
+%%						\visible<8->{\draw[aufbau]  (3d.north east) -- (5s.south west);}
+%%						\visible<9->{\draw[aufbau]  (4d.north east) -- (6s.south west);}
+%%						\visible<10->{\draw[aufbau] (4f.north east) -- (7s.south west);}
+%%						}
+%					\end{tikzpicture}
+%			\end{center}}
+%\end{frame}
+
 \begin{frame}{Electron Configurations from the Periodic Table}
-	\centering
-	\only<1>{\includegraphics[width=\linewidth,trim={0 0 0 30pt},clip]{orbitalblocks.jpg}}
-
-	\only<2>{\includegraphics[width=\linewidth]{orbitalblocks-1.jpg}                     }
-
-	\mode<article>{\clearpage}
-
-	\only<3>{\includegraphics[width=\linewidth]{orbitalblocks-2.jpg}                     }
+	\only{\includegraphics[width=\linewidth,trim={0 0 0 30pt},clip]{orbitalblocks.jpg}}
 \end{frame}
 
 \begin{frame}{Some Exceptions to Electron Configurations}
@@ -550,84 +569,29 @@
 	configuration.
 \end{frame}
 
-\frame{\section{Periodic Trends}
-	\begin{learningobjectives}
-	\item Note the major properties that differ across regions of the
-		periodic table.
-	\item Be familiar with the terms ``atomic radius'', ``ionization energy'', ``electron
+\section{Periodic Trends}
+
+\begin{frame}
+	\frametitle{Learning Objectives}
+	\begin{itemize}
+		\item Explain how the electron configuration influences how
+			atoms can ionize.
+	\item Define effective nuclear charge and explain how it affects
+		periodic trends.
+	\item Define ``atomic radius'', ``ionic radius'', ``ionization energy'', ``electron
 		affinity'', and ``electronegativity''.
-	\item Understand \emph{why} certain trends exist across the periodic
-		table.
-	\end{learningobjectives}
-}
+	\end{itemize}
+\end{frame}
 
 \begin{frame}{General Trends in the Periodic Table}
+	\note{%
 	The electron configuration dictates some of the trends we observe in the
 	periodic table of the elements.
+}
 	\begin{center}
 		\includegraphics[scale=0.4,trim={0 0 0 30pt},
 		clip]{major-divisions-ptable.jpg}
 	\end{center}
-\end{frame}
-
-\begin{frame}{Metals}
-	\begin{columns}
-		\column{0.45\textwidth}
-		\begin{itemize}
-			\item Solids at room temperature
-			\item Conduct electricity
-			\item Luster (shiny when polished)
-			\item Malleable (can shape by pounding)
-			\item Ductile (can be drawn into wires)
-		\end{itemize}
-		\column{0.55\textwidth}
-		\centering
-		\input{ptable-metals}
-	\end{columns}
-\end{frame}
-
-\begin{frame}{Nonmetals}
-	\begin{columns}
-		\column{0.45\textwidth}
-		\begin{itemize}
-			\item \textbf{\usebeamercolor[fg]{alerted text}DO NOT} conduct electricity
-			\item \textbf{\usebeamercolor[fg]{alerted text}DO NOT} have luster
-			\item \textbf{\usebeamercolor[fg]{alerted text}ARE NOT} malleable or ductile
-			\item \textbf{\usebeamercolor[fg]{alerted text}ARE NOT ALL} solids at room temperature
-		\end{itemize}
-		\column{0.55\textwidth}
-		\centering
-		\input{ptable-nonmetals}
-	\end{columns}
-\end{frame}
-
-\begin{frame}{Metalloids}
-	\begin{columns}
-		\column{0.45\textwidth}
-		\begin{itemize}
-			\item In between metals and nonmetals
-			\item All solids at room temperature
-			\item Some are semiconductors
-		\end{itemize}
-		\column{0.55\textwidth} \centering
-		\input{ptable-metalloids}
-	\end{columns}
-\end{frame}
-
-\begin{frame}{Families of Elements}
-	\begin{columns}
-		\column{0.45\textwidth}
-		\begin{itemize}
-			\item[\tikz{\draw[black,fill=yellow!55] (0,0) rectangle (1em,1em);}] \alt<2>{\bfseries}{}Alkali Metals
-			\item[\tikz{\draw[black,fill=green!55] (0,0) rectangle (1em,1em);}] Alkaline Earth Metals
-			\item[\tikz{\draw[black,fill=orange!55] (0,0) rectangle (1em,1em);}] \normalfont Pnictogens
-			\item[\tikz{\draw[black,fill=blue!55] (0,0) rectangle (1em,1em);}] Chalcogens
-			\item[\tikz{\draw[black,fill=purple!55] (0,0) rectangle (1em,1em);}] \alt<2>{\bfseries}{}Halogens
-			\item[\tikz{\draw[black,fill=red!55] (0,0) rectangle (1em,1em);}] Noble Gases
-		\end{itemize}
-		\column{0.55\textwidth} \centering
-		\input{ptable-families}
-	\end{columns}
 \end{frame}
 
 \begin{frame}{Stable Electron Configurations}
@@ -650,28 +614,35 @@
 	\end{block}
 \end{frame}
 
-\begin{frame}{The Octet Rule}
+\begin{frame}[t]{The Octet Rule}
 	We can use the octet rule to make predictions about reactivity. Atoms
 	sometimes take or give electrons to become \alert{ions}.
-
 	\begin{description}
-		\item[Reduction:] Atoms \alert{gain} electrons to become
+		\item[Reduction:] \note[item]{%
+				Reduction: Atoms \alert{gain} electrons to become
 			\alert{negatively} charged.
 			\begin{reaction*}
 				A + \el{} -> A-
 			\end{reaction*}
+		}
 
-		\item[Oxidation:] Atoms \alert{lose} electrons to become
+		\vfill
+
+	\item[Oxidation:] \note[item]{%
+			Oxidation: Atoms \alert{lose} electrons to become
 			\alert{positively} charged.
 			\begin{reaction*}
 				B -> B+ + \el{}
 			\end{reaction*}
+		}
+
+		\vfill
+
+		\null
 	\end{description}
 \end{frame}
 
-\begin{frame}[allowframebreaks]{Stable Electron Configurations}
-	Sodium can \alert{lose} a \emph{valence} electron.
-
+\begin{frame}[t]{Sodium Can Be Oxidized}
 	\begin{center}
 		\includegraphics[scale=0.4]{na-losing-e.jpg}
 	\end{center}
@@ -680,15 +651,17 @@
 		\item What is its electron configuration \alert{before}
 			oxidation?
 
-			\bigskip
+			\vfill
 
 		\item What is its electron configuration \alert{after} oxidation?
+
+			\vfill
+
+			\null
 	\end{enumerate}
-	
-	\framebreak
+\end{frame}
 
-	Magnesium loses two electrons to fulfill the octet rule.
-
+\begin{frame}[t]{Magnesium Can Be Oxidized}
 	\begin{center}
 		\includegraphics[scale=0.4,trim={0 40pt 0 45pt},clip]{mg-losing-e.jpg}
 	\end{center}
@@ -697,15 +670,17 @@
 		\item What is its electron configuration \alert{before}
 			oxidation?
 
-			\bigskip
+			\vfill
 
 		\item What is its electron configuration \alert{after} oxidation?
-	\end{enumerate}
-	
-	\framebreak
-	
-	Chlorine can \alert{gain} an electron.
+			
+			\vfill
 
+			\null
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}[t]{Chlorine Can Be Reduced}
 	\begin{center}
 		\includegraphics[scale=0.4]{cl-gaining-e.jpg}
 	\end{center}
@@ -714,39 +689,46 @@
 		\item What is its electron configuration \alert{before}
 			reduction?
 
-			\bigskip
+			\vfill
 
 		\item What is its electron configuration \alert{after} reduction?
+
+			\vfill
+
+			\null
 	\end{enumerate}
 
-	\framebreak
+	%\framebreak
 
-	What is the electron configuration for the following?
+	%What is the electron configuration for the following?
 
-	\renewcommand\arraystretch{2}
-	\begin{tabular} {l l}
-		\ch{Ca}      & \\
-		\ch{Ca^{2+}} & \\
-		\ch{O}       & \\
-		\ch{O^{2-}}  & \\
-		\ch{In}      & \\
-		\ch{Mn}      & \\
-	\end{tabular}
+	%\renewcommand\arraystretch{2}
+	%\begin{tabular} {l l}
+	%	\ch{Ca}      & \\
+	%	\ch{Ca^{2+}} & \\
+	%	\ch{O}       & \\
+	%	\ch{O^{2-}}  & \\
+	%	\ch{In}      & \\
+	%	\ch{Mn}      & \\
+	%\end{tabular}
 
-	\note<.+>{
-		\renewcommand\arraystretch{1.5}
-		\begin{tabular} {l l}
-			\ch{Ca}      & \elconf{Ca} \\
-			\ch{Ca^{2+}} & \elconf{Ar} ([\ch{Ar}]) \\
-			\ch{O}       & \elconf{O} \\
-			\ch{O^{2-}}  & \elconf{Ne} ([\ch{Ne}]) \\
-			\ch{In}      & \elconf{In} \\
-			\ch{Mn}      & \elconf{Mn} \\
-		\end{tabular}
-		}
+	%\note<.+>{
+	%	\renewcommand\arraystretch{1.5}
+	%	\begin{tabular} {l l}
+	%		\ch{Ca}      & \elconf{Ca} \\
+	%		\ch{Ca^{2+}} & \elconf{Ar} ([\ch{Ar}]) \\
+	%		\ch{O}       & \elconf{O} \\
+	%		\ch{O^{2-}}  & \elconf{Ne} ([\ch{Ne}]) \\
+	%		\ch{In}      & \elconf{In} \\
+	%		\ch{Mn}      & \elconf{Mn} \\
+	%	\end{tabular}
+	%	}
 
-	\framebreak
+	%\framebreak
+\end{frame}
 
+\begin{frame}
+	\frametitle{Common Ions}
 	\noindent
 	\begin{center}
 		\includegraphics[scale=0.4]{predictable-ions.jpg}
@@ -760,17 +742,17 @@
 	\end{center}
 \end{frame}
 
-\begin{onyourown}%{0em}
-	What is the electron configuration for the following?
-
-	\renewcommand\arraystretch{2}
-	\begin{tabular} {l l}
-		\ch{Se}      & \\
-		\ch{Se^{2-}} & \\
-		\ch{Sr}       & \\
-		\ch{Sr^{2+}}  & \\
-	\end{tabular}
-\end{onyourown}
+%\begin{onyourown}%{0em}
+%	What is the electron configuration for the following?
+%
+%	\renewcommand\arraystretch{2}
+%	\begin{tabular} {l l}
+%		\ch{Se}      & \\
+%		\ch{Se^{2-}} & \\
+%		\ch{Sr}       & \\
+%		\ch{Sr^{2+}}  & \\
+%	\end{tabular}
+%\end{onyourown}
 
 \begin{frame}{Effective Nuclear Charge}
 	How do we add or remove electrons?
@@ -806,109 +788,111 @@
 	\end{center}
 \end{frame}
 
-\begin{frame}[allowframebreaks]{Consider the third period elements\ldots}
+\begin{frame}{Consider the third period elements\ldots}
 	\begin{center}
 		\input{ptable-3rdperiod.tex}
 	\end{center}
+
+	What is $Z_\text{eff}$ of each?
 
 %	\begin{tikzpicture}[remember picture,overlay]
 %		\path (Be.north east) -- (B.north west) node[midway,draw,text width=3in,align=center,font=\Huge] {All have \ch{[Ne]} ($1s^22s^22p^6$)!};
 %	\end{tikzpicture}	
 
-
-	\framebreak
-
-	\begin{tikzpicture}[scale=0.42]
-		\filldraw[green!60] (0,0) circle (6);
-		\filldraw[green!40] (0,0) circle (4);
-		\filldraw[red] (0,0) circle (2);
-		\node[fill=black,white,circle,font=\bfseries](nucleus)
-		at (0,0) {+};
-		\node at (0,1) {2\el};
-		\node at (0,3) {8\el};
-		\node at (0,5) {1\el};
-		\node[right] at (8,0) {
-			\begin{minipage}{0.5\linewidth}
-				\textbf{For Na\ldots}
-				\begin{align*}
-					Z_\text{eff} &\approx Z - \text{\# shielding electrons}
-					\\
-					&\approx 11 - 10 \\
-					&\approx +1
-				\end{align*}
-			\end{minipage}
-		};
-	\end{tikzpicture}
-
-	\framebreak
-
-	\begin{tikzpicture}[scale=0.42]
-		\filldraw[green!60] (0,0) circle (6);
-		\filldraw[green!40] (0,0) circle (4);
-		\filldraw[red] (0,0) circle (2);
-		\node[fill=black,white,circle,font=\bfseries](nucleus)
-		at (0,0) {+};
-		\node at (0,1) {2\el};
-		\node at (0,3) {8\el};
-		\node at (0,5) {2\el};
-		\node[right] at (8,0) {
-		\begin{minipage}{0.5\linewidth}
-			\textbf{For Mg\ldots}
-			\begin{align*}
-		Z_\text{eff} &\approx Z - \text{\# shielding electrons}
-		\\
-		&\approx 12 - 10 \\
-		&\approx +2
-			\end{align*}
-		\end{minipage}
-	};
-	\end{tikzpicture}
-
-	\framebreak
-	\mode<article>{\vfill}
-
-	\begin{tikzpicture}[scale=0.42]
-		\filldraw[green!60] (0,0) circle (6);
-		\filldraw[green!40] (0,0) circle (4);
-		\filldraw[red] (0,0) circle (2);
-		\node[fill=black,white,circle,font=\bfseries](nucleus)
-		at (0,0) {+};
-		\node at (0,1) {2\el};
-		\node at (0,3) {8\el};
-		\node at (0,5) {7\el};
-		\node[right] at (8,0) {\begin{minipage}{0.5\linewidth}
-			\textbf{For Cl\ldots}
-		\begin{align*}
-			Z_\text{eff} &\approx Z - \text{\# shielding electrons}
-			\\
-			&\approx 17 - 10 \\
-			&\approx +7
-		\end{align*}
-		\end{minipage}};
-	\end{tikzpicture}
-
-	\framebreak
-	\mode<article>{\vfill}
-
-		\begin{tikzpicture}[scale=0.42]
-			\filldraw[green!60] (0,0) circle (6);
-			\filldraw[green!40] (0,0) circle (4);
-			\filldraw[red] (0,0) circle (2);
-			\node[fill=black,white,circle,font=\bfseries](nucleus)
-			at (0,0) {+};
-			\node at (0,1) {2\el};
-			\node at (0,3) {8\el};
-			\node at (0,5) {8\el};
-			\node[right] at (8,0) {\begin{minipage}{0.5\linewidth}
-						\textbf{For Ar\ldots}
-		\begin{align*}
-			Z_\text{eff} &\approx Z - \text{\# shielding electrons}
-			\\
-			&\approx 18 - 10 \\
-			&\approx +8
-		\end{align*}
-	\end{minipage}};
-\end{tikzpicture}
+%
+%	\framebreak
+%
+%	\begin{tikzpicture}[scale=0.42]
+%		\filldraw[green!60] (0,0) circle (6);
+%		\filldraw[green!40] (0,0) circle (4);
+%		\filldraw[red] (0,0) circle (2);
+%		\node[fill=black,white,circle,font=\bfseries](nucleus)
+%		at (0,0) {+};
+%		\node at (0,1) {2\el};
+%		\node at (0,3) {8\el};
+%		\node at (0,5) {1\el};
+%		\node[right] at (8,0) {
+%			\begin{minipage}{0.5\linewidth}
+%				\textbf{For Na\ldots}
+%				\begin{align*}
+%					Z_\text{eff} &\approx Z - \text{\# shielding electrons}
+%					\\
+%					&\approx 11 - 10 \\
+%					&\approx +1
+%				\end{align*}
+%			\end{minipage}
+%		};
+%	\end{tikzpicture}
+%
+%	\framebreak
+%
+%	\begin{tikzpicture}[scale=0.42]
+%		\filldraw[green!60] (0,0) circle (6);
+%		\filldraw[green!40] (0,0) circle (4);
+%		\filldraw[red] (0,0) circle (2);
+%		\node[fill=black,white,circle,font=\bfseries](nucleus)
+%		at (0,0) {+};
+%		\node at (0,1) {2\el};
+%		\node at (0,3) {8\el};
+%		\node at (0,5) {2\el};
+%		\node[right] at (8,0) {
+%		\begin{minipage}{0.5\linewidth}
+%			\textbf{For Mg\ldots}
+%			\begin{align*}
+%		Z_\text{eff} &\approx Z - \text{\# shielding electrons}
+%		\\
+%		&\approx 12 - 10 \\
+%		&\approx +2
+%			\end{align*}
+%		\end{minipage}
+%	};
+%	\end{tikzpicture}
+%
+%	\framebreak
+%	\mode<article>{\vfill}
+%
+%	\begin{tikzpicture}[scale=0.42]
+%		\filldraw[green!60] (0,0) circle (6);
+%		\filldraw[green!40] (0,0) circle (4);
+%		\filldraw[red] (0,0) circle (2);
+%		\node[fill=black,white,circle,font=\bfseries](nucleus)
+%		at (0,0) {+};
+%		\node at (0,1) {2\el};
+%		\node at (0,3) {8\el};
+%		\node at (0,5) {7\el};
+%		\node[right] at (8,0) {\begin{minipage}{0.5\linewidth}
+%			\textbf{For Cl\ldots}
+%		\begin{align*}
+%			Z_\text{eff} &\approx Z - \text{\# shielding electrons}
+%			\\
+%			&\approx 17 - 10 \\
+%			&\approx +7
+%		\end{align*}
+%		\end{minipage}};
+%	\end{tikzpicture}
+%
+%	\framebreak
+%	\mode<article>{\vfill}
+%
+%		\begin{tikzpicture}[scale=0.42]
+%			\filldraw[green!60] (0,0) circle (6);
+%			\filldraw[green!40] (0,0) circle (4);
+%			\filldraw[red] (0,0) circle (2);
+%			\node[fill=black,white,circle,font=\bfseries](nucleus)
+%			at (0,0) {+};
+%			\node at (0,1) {2\el};
+%			\node at (0,3) {8\el};
+%			\node at (0,5) {8\el};
+%			\node[right] at (8,0) {\begin{minipage}{0.5\linewidth}
+%						\textbf{For Ar\ldots}
+%		\begin{align*}
+%			Z_\text{eff} &\approx Z - \text{\# shielding electrons}
+%			\\
+%			&\approx 18 - 10 \\
+%			&\approx +8
+%		\end{align*}
+%	\end{minipage}};
+%\end{tikzpicture}
 \end{frame}
 
 \begin{frame}{Higher Level Shielding}
@@ -1028,152 +1012,27 @@
 		\end{tabular}}
 \end{frame}
 
-\begin{onyourown}%{0em}
-	Rank the following ions in order of decreasing ionic radii by
-	filling in the table below:
-	
-	\begin{center}
-		\ch{K+} \hspace{2em} \ch{Ca^{2+}} \hspace{2em} \ch{Ga^{3+}}
-	\end{center}
-
-	\begin{center}
-		\begin{tabular} {>{\bfseries}l *{3}{c}}
-			\toprule
-			& \bfseries \ch{K+} & \bfseries \ch{Ca^{2+}} & \bfseries \ch{Ga^{3+}} \\
-			\midrule
-			\ch{e-} config \\
-			\# protons \\
-			\# electrons \\
-			$\bm{Z_\text{eff}}$ \\
-			\bottomrule
-		\end{tabular}
-	\end{center}
-\end{onyourown}
-
-\begin{frame}{Some notes on forming ions\ldots}
-	\begin{block}{Main Group Elements}
-		Electrons are removed in
-			the reverse order of filling.
-			\begin{center}
-				\begin{tabular} {l c l}
-					F = \elconf{F} & $\rightarrow$ & \ch{F-} =
-					$1s^22s^22p^{\color{red}6}$ \\
-					Li = \elconf{Li} & $\rightarrow$ &
-					\ch{Li+} = $1s^22s^{\color{red}0}$ or
-					\elconf{He} \\
-				\end{tabular}
-			\end{center}
-	\end{block}
-	\pause%
-
-	\begin{block}{Transition Elements}
-		Remove the electrons in
-		the highest $n$-value orbitals first, even if this does
-		not correspond to the reverse order of filling.
-
-		\begin{center}
-			\begin{tabular} {l c l}
-				V = [Ar]$4s^23d^3$ & $\rightarrow$ &
-				\ch{V^{2+}} =
-				[Ar]$4s^{\color{red}0}3d^3$ or
-				[Ar]$3d^3$
-			\end{tabular}
-		\end{center}
-
-		This deviation has been confirmed experimentally -- in
-		particular, this agrees well with the \alert{magnetic
-		properties} of the elements/ions.
-	\end{block}
-\end{frame}
-
-\begin{frame}[t]{The Magnetic Properties of Ions}
-	Recall $m_s$ -- What does it mean to have a spin of $\pm\frac{1}{2}$?
-\end{frame}
-
-\begin{frame}[t]{Paramagnetism}
-	The atom or ion is \alert{attracted} to a magnetic field.
-	\begin{itemize}
-		\item What is the orbital diagram for \ch{Ag}?
-
-			\vfill
-
-		\item What is the orbital diagram for \ch{Ag+}?
-
-			\vfill
-	\end{itemize}
-
-	\note{%
-		\begin{center}
-			\begin{tabular} {*{2}{l} *{2}{c}}
-				\ch{Ag} & [\ch{Kr}]$5s^14d^{10}$ &
-				\electronup & \electronboth \electronboth
-				\electronboth \electronboth \electronboth \\
-				& & $5s$ & $4d$
-			\end{tabular}
-		\end{center}
-	}
-\end{frame}
-
-\begin{frame}[t]{Diamagnetism}
-	The atom or ion is \alert{slightly repelled} by a magnetic field.
-	\begin{itemize}
-		\item What is the orbital diagram for \ch{Zn}?
-
-			\vfill
-
-		\item What is the orbital diagram for \ch{Zn^{2+}}?
-
-			\vfill
-	\end{itemize}
-
-
-	\note{%
-		\begin{center}
-			\begin{tabular} {*{2}{l} *{2}{c}}
-				\ch{Zn} & [\ch{Ar}]$4s^23d^{10}$ &
-				\electronboth & \electronboth \electronboth
-				\electronboth \electronboth \electronboth \\
-				& & $4s$ & $3d$ \\
-				\ch{Zn^{2+}} & [\ch{Ar}]$4s^03d^{10}$ &
-				\electronnone & \electronboth \electronboth
-				\electronboth \electronboth \electronboth \\
-				& & $4s$ & $3d$
-			\end{tabular}
-		\end{center}
-	}
-\end{frame}
-
-\begin{frame}[t]{Identifying Magnetism}
-	Write the electron configuration and orbital diagram for each ion and
-	determine whether each is diamagnetic or paramagnetic.
-
-	\renewcommand\arraystretch{3}
-	\begin{tabular} {l *{2}{c}}
-		\ch{Al^{3+}}  \\
-		\ch{Fe^{3+}}  \\
-		\ch{Fe^{2+}}  \\
-	\end{tabular}
-
-	\note{%
-		\renewcommand\arraystretch{2}
-	\begin{tabular} {l *{2}{c}}
-		\ch{Al^{3+}} & \elconf{Ne} & diamagnetic \\
-		\ch{Fe^{3+}} & [Ar]$3d^5$ & paramagnetic \\
-		\ch{Fe^{2+}} & [Ar]$3d^6$ & paramagnetic \\
-	\end{tabular}}
-\end{frame}
-
-\begin{onyourown}%{0em}
-	Write the electron configuration and orbital diagram for each ion and
-	determine whether each is diamagnetic or paramagnetic.
-
-	\renewcommand\arraystretch{2}
-	\begin{tabular} {l *{2}{c}}
-		\ch{Ni^{2+}}  \\
-		\ch{Ag^{+}}  \\
-		\ch{Ca^{2+}}  \\
-	\end{tabular}
-\end{onyourown}
+%\begin{onyourown}%{0em}
+%	Rank the following ions in order of decreasing ionic radii by
+%	filling in the table below:
+%	
+%	\begin{center}
+%		\ch{K+} \hspace{2em} \ch{Ca^{2+}} \hspace{2em} \ch{Ga^{3+}}
+%	\end{center}
+%
+%	\begin{center}
+%		\begin{tabular} {>{\bfseries}l *{3}{c}}
+%			\toprule
+%			& \bfseries \ch{K+} & \bfseries \ch{Ca^{2+}} & \bfseries \ch{Ga^{3+}} \\
+%			\midrule
+%			\ch{e-} config \\
+%			\# protons \\
+%			\# electrons \\
+%			$\bm{Z_\text{eff}}$ \\
+%			\bottomrule
+%		\end{tabular}
+%	\end{center}
+%\end{onyourown}
 
 \begin{frame}{How easy is it to remove an electron?}
 	\begin{columns}
@@ -1325,13 +1184,154 @@
 	\note{$\ch{Al} > \ch{Mg} > \ch{Na}$}
 \end{frame}
 
-\begin{onyourown}%{5em}
-	Arrange the following elements in order of \emph{increasing}
-	electronegativity:
-	
-	\begin{center}
-		\ch{C} \qquad \ch{Al} \qquad \ch{Si}
-	\end{center}
+%\begin{onyourown}%{5em}
+%	Arrange the following elements in order of \emph{increasing}
+%	electronegativity:
+%	
+%	\begin{center}
+%		\ch{C} \qquad \ch{Al} \qquad \ch{Si}
+%	\end{center}
+%\end{onyourown}
+
+\section{Magnetism}
+
+\begin{frame}
+	\frametitle{Learning Objectives}
+
+	\begin{itemize}
+		\item Write electron configurations for transition metal ions.
+		\item Define paramagnetic and diamagnetic.
+		\item Identify the magnetism of atoms or ions from their
+			electron configurations.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Some notes on forming ions\ldots}
+	\begin{block}{Main Group Elements}
+		Electrons are removed in
+			the reverse order of filling.
+			\begin{center}
+				\begin{tabular} {l c l}
+					F = \elconf{F} & $\rightarrow$ & \ch{F-} =
+					$1s^22s^22p^{\color{red}6}$ \\
+					Li = \elconf{Li} & $\rightarrow$ &
+					\ch{Li+} = $1s^22s^{\color{red}0}$ or
+					\elconf{He} \\
+				\end{tabular}
+			\end{center}
+	\end{block}
+	\pause%
+
+	\begin{block}{Transition Elements}
+		Remove the electrons in
+		the highest $n$-value orbitals first, even if this does
+		not correspond to the reverse order of filling.
+
+		\begin{center}
+			\begin{tabular} {l c l}
+				V = [Ar]$4s^23d^3$ & $\rightarrow$ &
+				\ch{V^{2+}} =
+				[Ar]$4s^{\color{red}0}3d^3$ or
+				[Ar]$3d^3$
+			\end{tabular}
+		\end{center}
+
+		\note<2>{%
+		This deviation has been confirmed experimentally -- in
+		particular, this agrees well with the \alert{magnetic
+		properties} of the elements/ions.
+}
+	\end{block}
+\end{frame}
+
+\begin{frame}[t]{The Magnetic Properties of Atoms and Ions}
+	Recall $m_s$ -- What does it mean to have a spin of $\pm\frac{1}{2}$?
+\end{frame}
+
+\begin{frame}[t]{Paramagnetism}
+	The atom or ion is \alert{attracted} to a magnetic field.
+	\begin{itemize}
+		\item What is the orbital diagram for \ch{Ag}?
+
+			\vfill
+
+		\item What is the orbital diagram for \ch{Ag+}?
+
+			\vfill
+	\end{itemize}
+
+	\note{%
+		\begin{center}
+			\begin{tabular} {*{2}{l} *{2}{c}}
+				\ch{Ag} & [\ch{Kr}]$5s^14d^{10}$ &
+				\electronup & \electronboth \electronboth
+				\electronboth \electronboth \electronboth \\
+				& & $5s$ & $4d$
+			\end{tabular}
+		\end{center}
+	}
+\end{frame}
+
+\begin{frame}[t]{Diamagnetism}
+	The atom or ion is \alert{slightly repelled} by a magnetic field.
+	\begin{itemize}
+		\item What is the orbital diagram for \ch{Zn}?
+
+			\vfill
+
+		\item What is the orbital diagram for \ch{Zn^{2+}}?
+
+			\vfill
+	\end{itemize}
+
+
+	\note{%
+		\begin{center}
+			\begin{tabular} {*{2}{l} *{2}{c}}
+				\ch{Zn} & [\ch{Ar}]$4s^23d^{10}$ &
+				\electronboth & \electronboth \electronboth
+				\electronboth \electronboth \electronboth \\
+				& & $4s$ & $3d$ \\
+				\ch{Zn^{2+}} & [\ch{Ar}]$4s^03d^{10}$ &
+				\electronnone & \electronboth \electronboth
+				\electronboth \electronboth \electronboth \\
+				& & $4s$ & $3d$
+			\end{tabular}
+		\end{center}
+	}
+\end{frame}
+
+\begin{frame}[t]{Identifying Magnetism}
+	Write the electron configuration and orbital diagram for each ion and
+	determine whether each is diamagnetic or paramagnetic.
+
+	\renewcommand\arraystretch{3}
+	\begin{tabular} {l *{2}{c}}
+		\ch{Al^{3+}}  \\
+		\ch{Fe^{3+}}  \\
+		\ch{Fe^{2+}}  \\
+	\end{tabular}
+
+	\note{%
+		\renewcommand\arraystretch{2}
+	\begin{tabular} {l *{2}{c}}
+		\ch{Al^{3+}} & \elconf{Ne} & diamagnetic \\
+		\ch{Fe^{3+}} & [Ar]$3d^5$ & paramagnetic \\
+		\ch{Fe^{2+}} & [Ar]$3d^6$ & paramagnetic \\
+	\end{tabular}}
+\end{frame}
+
+\begin{onyourown}%{0em}
+	Write the electron configuration and orbital diagram for each ion and
+	determine whether each is diamagnetic or paramagnetic.
+
+	\renewcommand\arraystretch{2}
+	\begin{tabular} {l *{2}{c}}
+		\ch{Ni^{2+}}  \\
+		\ch{Ag^{+}}  \\
+		\ch{Ca^{2+}}  \\
+	\end{tabular}
 \end{onyourown}
+
 
 \end{document}
