@@ -1,15 +1,20 @@
-% !TEX program = xelatex
+% !TEX program=xelatex
 %\documentclass[notes=onlyslideswithnotes,notes=hide]{beamer}
-%\documentclass[notes=only]{beamer}
+\documentclass[handout]{beamer}
 %\documentclass[notes=hide]{beamer}
-\documentclass[notes=show]{beamer}
-%\documentclass[handout]{beamer}
-%\documentclass[11pt,letterpaper]{article}
-%\usepackage{beamerarticle}
+%\documentclass[notes=show]{beamer}
+%\documentclass[notes=only]{beamer}
 
-\usepackage{newtxtext}
+\usepackage{bucolors}
 \usepackage{genchem}
 \usepackage{lecture}
+\usepackage{bucolors}
+\usepackage{ccicons}
+\usepackage{amsmath}
+\usepackage{mathspec}
+\setmainfont[Ligatures=TeX]{Georgia}
+\setsansfont[Ligatures=TeX]{Arial}
+
 \usepackage{multicol}
 \usepackage{elements}
 \usepackage{collcell}
@@ -25,19 +30,23 @@
 \subtitle{Chapter 4}
 \institute[CHEM115 Bloomsburg University]{CHEM115 --- Chemistry for the Sciences I \\ Bloomsburg University}
 \author{D.A.\ McCurry}
-\date{Fall 2021}
+\date{Spring 2023}
 
 \begin{document}
 
 \maketitle
-\mode<article>{\thispagestyle{fancy}}
 
-\frame{\section{The Concept of Bonding}
-	\begin{learningobjectives}
+\part{Ionic Compounds}
+
+\section{The Concept of Bonding}
+\begin{frame}
+	\frametitle{Learning Objectives}
+	\begin{itemize}
 	\item Explain how single atoms can become molecules.
-	\item Know the difference between ionic and covalent compounds.
-	\end{learningobjectives}
-}
+	\item Identify the differences between ionic and covalent compounds.
+	\end{itemize}
+\end{frame}
+
 
 \begin{frame}{From Elements to Molecules}
 	\begin{center}
@@ -87,7 +96,7 @@
 
 \begin{frame}{Ionic Bonds}
 	\begin{center}
-		\includegraphics[scale=0.4]{ionic-formation.jpg}
+		\includegraphics[scale=0.4,trim={0 0 0 30pt},clip]{ionic-formation.jpg}
 	\end{center}
 
 	\note{%
@@ -129,11 +138,12 @@
 
 \end{frame}
 
-\begin{frame}[plain]
+\begin{frame}{A Preview for Thermo (Ch. 9)}
 	\begin{center}
-		\includegraphics[width=\linewidth]{lattice-energy-cmpd.jpg}
+		\includegraphics[width=\linewidth,trim={0 50pt 0 40pt},clip]{lattice-energy-cmpd.jpg}
 	
-		What is the sign of $\Delta H$? Why is heat released?
+		%What is the sign of $\Delta H$?
+		Why is heat released?
 	\end{center}
 \end{frame}
 
@@ -155,13 +165,14 @@
 	electrons to form \alert{covalent bonds}.
 	\begin{itemize}
 		\item Occurs between two non-metals.
-		\item Each provides an electron to the sharing relationship.
-		\item The electron pair spends time with both nuclei so each
-			feels like they have an octet.
+			\note[item]{Each provides an electron to the sharing
+			relationship.}
+		\note[item]{The electron pair spends time with both nuclei so each
+		feels like they have an octet.}
 	\end{itemize}
 	
 	\begin{center}
-		\includegraphics[scale=0.225]{McMurray-covalent.jpg}
+		\includegraphics[width=\linewidth,trim={0 100pt 0 0},clip]{McMurray-covalent.jpg}
 	\end{center}
 \end{frame}
 
@@ -171,8 +182,11 @@
 	\end{center}
 \end{frame}
 
-\frame{\section{Representing Ionic Compounds}
-	\begin{learningobjectives}
+\section{Representing Ionic Compounds}
+
+\begin{frame}
+	\frametitle{Learning Objectives}
+	\begin{itemize}
 	\item Communicate the structure and composition of an ionic
 		compound\ldots
 
@@ -182,30 +196,41 @@
 			by 3D representation.
 		\end{tabular}
 	\item Combine ions in appropriate ratios to form stable compounds.
-	\end{learningobjectives}
-}
+	\end{itemize}
+\end{frame}
 
-\begin{frame}{Chemical Formulas and Models}
+\begin{frame}[t]{Chemical Formulas and Models}
 	A chemical formula indicates the type and number of each element present
 	in a compound.
-
-	\begin{description}[<+(1)->]
-		\item[Empirical formula:] Relative number of atoms of each
+	\begin{description}
+		\item[Empirical formula:] \null \note[item]{Relative number of atoms of each
 			element in a compound.
-			\begin{itemize}[<1->]
+			\begin{itemize}
 				\item Lowest whole numbers.
-			\end{itemize}
-		\item[Molecular formula:] Actual number of atoms of each element
+		\end{itemize}}
+
+		\vfill
+
+		\null
+
+	\item[Molecular formula:] \null \note[item]{Actual number of atoms of each element
 			in a compound.
-			\begin{itemize}[<1->]
+			\begin{itemize}
 				\item Does not show \alert{how} each of the atoms
 					are bonded to each other.
-			\end{itemize}
-		\item[Structural formula:] Uses lines to represent covalent
+		\end{itemize}}
+
+		\vfill
+		\null
+	\item[Structural formula:] \null \note[item]{Uses lines to represent covalent
 			bonds and shows the connectivity of atoms.
-			\begin{itemize}[<1->]
+			\begin{itemize}
 				\item A visual picture of the compound.
-			\end{itemize}
+		\end{itemize}}
+
+		\vfill
+
+		\null
 	\end{description}
 \end{frame}
 
@@ -332,11 +357,17 @@
 
 \end{frame}
 
-\begin{frame}{Binary Ionic Compounds with Metals of Invariant
+\begin{frame}{Ionic Compounds with Metals of Invariant
 	Charge}
 	\alert{Binary compounds} contain only two different elements.
 	\begin{center}
-		\includegraphics[scale=0.2]{binary-nomen.jpg}
+		\begin{tikzpicture}
+			\tikzstyle{box} = [draw,thick,minimum height=2em];
+			\node[box,fill=blue!20!white](cation) {name of cation};
+			\node[box,fill=green!20!white,right =0.5em of cation](anion) {base name of
+				anion};
+			\node[box,fill=yellow!20!white,anchor=west] at (anion.east) {ide};
+		\end{tikzpicture}
 	\end{center}
 
 	\begin{example}
@@ -389,35 +420,30 @@
 %	\ref{oyo:ionicformula}}.
 %\end{onyourown}
 
-\begin{frame}[t,allowframebreaks]{Binary Ionic Compounds with Metals of Variant Charge}
-	The names of metals with two or more positive ions use \alert{Roman
-	numerals} after the name of the metal to identify ionic charge.
-
-	\begin{itemize}
-		\item Most \alert{transition metals} and \alert{Group 14 metals}
-			form 2 or more positive ions.
-		\item \ch{Zn^{2+}}, \ch{Ag+}, and \ch{Cd^{2+}} form only one
-			ion.
-	\end{itemize}
-
+\begin{frame}{Ionic Compounds with Metals of Variant Charge}
+	Most \alert{transition metals} and \alert{Group 14 metals} form 2 or
+	more positive ions --- \alert{Roman numerals} after the name of the
+	metal identify ionic charge.
 	\begin{center}
-		\includegraphics[scale=0.4]{binary-multivalent-nomen.jpg}
+		\begin{tikzpicture}
+			\tikzstyle{box} = [draw,thick,minimum height=2em];
+			\node[box,fill=blue!20!white](cation) {name of cation};
+			\node[box,fill=red!20!white,anchor=west](charge) at (cation.east) {(charge)};
+			\node[box,fill=green!20!white,right =0.75em of charge](anion) {base name of anion};
+			\node[box,fill=yellow!20!white,anchor=west] at (anion.east) {ide};
+		\end{tikzpicture}
 	\end{center}
-
-	\framebreak
-
-	\null
-	\bigskip
 
 	\begin{example}
 		Name the following compounds:
-		\begin{itemize}
+		\begin{multicols}{2}
+			\begin{itemize}
 			\item \ch{FeCl2}
-			\item \ch{PbS2}
 			\item \ch{Cu3P}
-			\item \ch{CuBr2}
 			\item \ch{SnCl2}
+			\item \ch{Cu2S}
 		\end{itemize}
+	\end{multicols}
 	\end{example}
 
 	\note{%
@@ -519,9 +545,8 @@
 				\qquad \textsuperscript{b}or bisulfite}
 		\end{tabular}
 	\end{center}
-\end{frame}
 
-\begin{frame}{Some Trends in Polyatomic Ions}
+\note{
 	\begin{itemize}
 		\item The names of most polyatomic anions end in \alert{-ite} or
 			\alert{-ate}.
@@ -537,52 +562,45 @@
 			hydrogen: \alert{bi-} has an additional hydrogen.
 		\item The charge balance must still equal zero (0) for ionic
 			compounds with polyatomic ions.
-
-			\begin{center}
-				\ch{Na+} and \ch{NO3-} \qquad \ch{NaNO3}
-			\end{center}
-
 		\item With two or more polyatomic ions, the polyatomic ion goes
 			in parenthesis.
-
-			\begin{center}
-				\ch{Mg^{2+}} and \ch{2 NO3-} \qquad
-				\ch{Mg(NO3)2}
-			\end{center}
 	\end{itemize}
+}
 \end{frame}
 
-\begin{frame}[shrink=10]{Common Compounds that Contain Polyatomic Ions}
-	\begin{center}
-		\begin{tabular} {l l l}
-			\toprule
-			\bfseries Formula & \bfseries Name & \bfseries Use \\ \midrule
-			\ch{BaSO4} & barium sulfate & contrast medium for X-rays \\
-			\ch{CaCO3} & calcium carbonate & antacid, calcium supplement \\
-			\ch{Ca3(PO4)2} & calcium phosphate & calcium dietary supplement \\
-			\ch{CaSO3} & Calcium sulfite & Preservative in cider and fruit juices \\
-			\ch{CaSO4} & calcium sulfate & plaster casts \\
-			\ch{AgNO3} & silver nitrate & topical anti-infective \\
-			\ch{NaHCO3} & sodium bicarbonate & antacid \\
-			\ch{Zn3(PO4)2} & zinc phosphate & dental cement \\
-			\ch{FePO4} & iron(III) phosphate & food additive \\
-			\ch{K2CO3} & potassium carbonate & alkalizer, diuretic \\
-			\ch{Al2(SO4)3} & aluminum sulfate & antiperspirant, anti-infective \\
-			\ch{AlPO4} & aluminum phosphate & antacid \\
-			\ch{MgSO4} & magnesium sulfate & cathartic, Epsom salts \\
-			\bottomrule
-		\end{tabular}
-	\end{center}
-\end{frame}
+%\begin{frame}[shrink=10]{Common Compounds that Contain Polyatomic Ions}
+%	\begin{center}
+%		\begin{tabular} {l l l}
+%			\toprule
+%			\bfseries Formula & \bfseries Name & \bfseries Use \\ \midrule
+%			\ch{BaSO4} & barium sulfate & contrast medium for X-rays \\
+%			\ch{CaCO3} & calcium carbonate & antacid, calcium supplement \\
+%			\ch{Ca3(PO4)2} & calcium phosphate & calcium dietary supplement \\
+%			\ch{CaSO3} & Calcium sulfite & Preservative in cider and fruit juices \\
+%			\ch{CaSO4} & calcium sulfate & plaster casts \\
+%			\ch{AgNO3} & silver nitrate & topical anti-infective \\
+%			\ch{NaHCO3} & sodium bicarbonate & antacid \\
+%			\ch{Zn3(PO4)2} & zinc phosphate & dental cement \\
+%			\ch{FePO4} & iron(III) phosphate & food additive \\
+%			\ch{K2CO3} & potassium carbonate & alkalizer, diuretic \\
+%			\ch{Al2(SO4)3} & aluminum sulfate & antiperspirant, anti-infective \\
+%			\ch{AlPO4} & aluminum phosphate & antacid \\
+%			\ch{MgSO4} & magnesium sulfate & cathartic, Epsom salts \\
+%			\bottomrule
+%		\end{tabular}
+%	\end{center}
+%\end{frame}
 
-\begin{frame}[t]{Polyatomic Ion Example}
+\begin{frame}[s]{Additional Polyatomic Ion Examples}
 	Name each of the following compounds:
-
 	\begin{enumerate}
-		\item \ch{Mg(NO3)2}
-		\item \ch{Cu(CN)2}
-		\item \ch{Fe2(SO4)3}
-		\item \ch{Ca3(PO3)2}
+		\item \ch{Mg(NO3)2} \vfill
+
+		\item \ch{Cu(CN)2} \vfill
+
+		\item \ch{Fe2(SO4)3} \vfill
+
+		\item \ch{Ca3(PO3)2} \vfill
 	\end{enumerate}
 \end{frame}
 
@@ -598,16 +616,10 @@
 %\end{onyourown}
 
 \begin{frame}{Hydrated Ionic Compounds}
-	\begin{itemize}
-		\item Some salts are complexed with water molecules (hydrates).
-		\item Use ``common prefix hydrate'' after salt.
-	\end{itemize}
+	Some salts are complexed with water molecules (hydrates).
 
-%	\begin{columns}
-%		\column{0.25\linewidth}
-	\begin{center}
-	\begin{tikzpicture}
-		\node(prefix) {
+	\begin{columns}
+		\column{0.25\linewidth}
 		\begin{tabular} {c@{${} = {}$}l}
 			1 & mono \\
 			2 & di \\
@@ -619,15 +631,25 @@
 			8 & octa \\
 			9 & nona \\
 			10 & deca
-	\end{tabular}};
-\node[right = of prefix] {
-	\includegraphics[scale=0.26]{hydrate-vs-anhydrous.jpg}};
-\end{tikzpicture}
-\end{center}
+		\end{tabular}
+		\column{0.65\linewidth}
+		\begin{center}
+			\begin{tikzpicture}
+				\tikzstyle{box} = [draw,thick,minimum height=2em];
+				\node[box,fill=blue!20!white](salt) {name of salt};
+				\node[box,fill=green!20!white,right =0.5em of salt](prefix) {prefix};
+				\node[box,fill=red!20!white,anchor=west](hydrate) at (prefix.east) {hydrate};
+			\end{tikzpicture}
+		\end{center}
+		\includegraphics[width=\linewidth]{hydrate-vs-anhydrous.jpg}
+	\end{columns}
 \end{frame}
 
-\frame{\section{Representing Covalent Compounds}
-	\begin{learningobjectives}
+\section{Representing Covalent Compounds}
+
+\begin{frame}
+	\frametitle{Learning Objectives}
+	\begin{itemize}
 	\item Communicate the structure and composition of a covalent
 		compound\ldots
 
@@ -637,23 +659,27 @@
 			by 3D representation (Lewis structures).
 		\end{tabular}
 	\item Combine atoms in appropriate ratios to form stable compounds.
-	\end{learningobjectives}
-}
+	\end{itemize}
+\end{frame}
 
 \begin{frame}{Lewis Dot Structures and Covalent Bonds}
 	We write Lewis dot structures to show ownership of electrons in a
 	molecule.
 
+	\bigskip
+
 	\begin{center}
-		\includegraphics[scale=0.2]{bonding-vs-lone.jpg}
+		\includegraphics[width=0.7\linewidth]{bonding-vs-lone.jpg}
 	\end{center}
 
+	\note{%
 	\begin{itemize}
 		\item A shared pair of electrons is called a \alert{bonding
 			pair}.
 		\item Electrons that are not involved in the bond are called a
 			\alert{lone pair} or \alert{nonbonding electrons}.
 	\end{itemize}
+}
 \end{frame}
 
 \begin{frame}{Diatomic Molecules}
@@ -665,25 +691,25 @@
 	\end{center}
 \end{frame}
 
-\begin{frame}{Multiple Bonds}
-	If we examine \ch{O2} a bit closer, we see that each oxygen shares
-	\alert{two pairs} of electrons:
-
-	\begin{center}
-		\includegraphics[scale=0.2]{oxygen-doublebond.jpg}
-	\end{center}
-	
-	\begin{description}
-		\item[Single bond:] One pair of electrons is shared.
-		\item[Double bond:] Two pairs of electrons are shared.
-		\item[Triple bond:] Three pairs of electrons are shared.
-	\end{description}
-
-%	\pause
+%\begin{frame}{Multiple Bonds}
+%	If we examine \ch{O2} a bit closer, we see that each oxygen shares
+%	\alert{two pairs} of electrons:
 %
-%	\centering
-%	\alert{What is the lewis dot structure for \ch{N2}?}
-\end{frame}
+%	\begin{center}
+%		\includegraphics[scale=0.2]{oxygen-doublebond.jpg}
+%	\end{center}
+%	
+%	\begin{description}
+%		\item[Single bond:] One pair of electrons is shared.
+%		\item[Double bond:] Two pairs of electrons are shared.
+%		\item[Triple bond:] Three pairs of electrons are shared.
+%	\end{description}
+%
+%%	\pause
+%%
+%%	\centering
+%%	\alert{What is the lewis dot structure for \ch{N2}?}
+%\end{frame}
 
 \begin{frame}[t]{Lewis Structures}
 	\begin{enumerate}[<+->]
@@ -725,12 +751,10 @@
 
 	\medskip
 
-	\noindent
 	\begin{center}
-		\mode<presentation>{\footnotesize}
 		\chemsetup{chemformula/radical-radius=0.15ex,chemformula/lewis-distance=0.75ex}
 		\begin{tikzpicture}[x=5em,y=4em,node distance=0pt,
-			every node/.style={align=center, anchor=base}]
+			every node/.style={align=center, anchor=base},scale=0.8]
 			\tikzset{header/.style={font=\bfseries,align=center}}
 			\tikzset{label/.style={font=\footnotesize,align=center,}}
 		%	\node[header](1A) at (0,0) {1A (1)};
@@ -771,23 +795,31 @@
 	Because we can have many different bonds to nonmetals, we must use
 	\alert{prefixes} in the names of covalent compounds.
 
-	\begin{tikzpicture}
-		\node(prefix) {
-			\begin{tabular} {c l}
-				\bfseries Number & \bfseries Prefix \\ \midrule
-				1 & mono  \\ 
-				2 & di    \\ 
-				3 & tri   \\ 
-				4 & tetra \\ 
-				5 & penta \\ 
-				6 & hexa  \\
-				7 & hepta \\
-				8 & octa  \\
-				9 & nona  \\
-				10 & deca
-		\end{tabular}};
-	\node[right = of prefix,text width=0.55\linewidth] {%
-		\includegraphics[width=\linewidth]{naming-covalent.jpg}
+	\begin{columns}
+		\column{0.2\linewidth}
+		\begin{tabular} {c@{${} = {}$}l}
+			1 & mono \\
+			2 & di \\
+			3 & tri \\
+			4 & tetra \\
+			5 & penta \\
+			6 & hexa \\
+			7 & hepta \\
+			8 & octa \\
+			9 & nona \\
+			10 & deca
+		\end{tabular}
+		\column{0.7\linewidth}
+		\begin{center}
+			\begin{tikzpicture}
+				\tikzstyle{box} = [draw,thick,minimum height=2em];
+				\node[box,fill=green!20!white](prefix) {prefix};
+				\node[box,fill=blue!20!white,anchor=west](epositive) at (prefix.east) {name of +};
+				\node[box,fill=green!20!white,right =0.75em of epositive](prefix2) {prefix};
+				\node[box,fill=red!20!white,anchor=west](enegative) at (prefix2.east) {name of -};
+				\node[box,fill=yellow!20!white,anchor=west] at (enegative.east) {ide};
+			\end{tikzpicture}
+		\end{center}
 
 		\begin{example}
 			Name the following compounds:
@@ -808,8 +840,8 @@
 				\ch{N2O4} & \alert{di}nitrogen \alert{tetr}oxide \\
 				\ch{N2O5} & \alert{di}nitrogen \alert{pent}oxide
 			\end{tabular}
-		}};
-	\end{tikzpicture}
+		}
+	\end{columns}
 \end{frame}
 
 \begin{frame}[t]{Covalent Nomenclature Examples}
@@ -881,28 +913,27 @@
 %	\end{enumerate}
 %\end{onyourown}
 
-\frame{\section{Compound Stoichiometry}
-	\begin{learningobjectives}
+\section{Compound Stoichiometry}
+
+\begin{frame}
+	\frametitle{Learning Objectives}
+	\begin{itemize}
 	\item Calculate molar quantities of elemental species in molecular and ionic compounds.
 	\item Relate molar quantities to mass and mass percent.
 	\item Deduce empirical and molecular formulas given experimental data.
-	\end{learningobjectives}
-}
+	\end{itemize}
+\end{frame}
 
-\begin{frame}{Quantifying Compounds}
-	As we have seen in lab, we often need to measure specific amounts of
+\begin{frame}[t]{Quantifying Compounds}
+	We often need to measure specific amounts of
 	material in order to determine the chemical formula.
-
 	\begin{reactions*}
 		16 Cu\sld{} + S8\sld{} &->[heat] 8 Cu2S\sld{} \\
 %		6 H2O\lqd{} + MgHPO4\aq{} + NH3\aq{} &->[ \hphantom{heat} ] MgNH4PO4 . 6 H2O\sld{}
 	\end{reactions*}
-
+	\begin{example}
 	We know that the \alert{molar mass} of \ch{Cu} is
-	\SI{63.546}{\gram\per\mole}.
-	\begin{itemize}
-		\item What is the molar mass of \ch{Cu2S}?
-			\mode<article>{\vspace*{10em}}
+	\SI{63.546}{\gram\per\mole}, but what is the molar mass of \ch{Cu2S}?
 %			\note{
 %				\begin{tabular} { r c c l
 %					>{(}S[table-format=2.3]<{\,\si{\gram})}
@@ -924,7 +955,7 @@
 %					mass of Cu only had 5 SF! This changes
 %					the final answer\ldots};
 %	\end{tikzpicture}}
-	\end{itemize}
+	\end{example}
 \end{frame}
 
 \begin{frame}[t]{Molar Mass of Hydrated Compounds}
@@ -963,31 +994,26 @@
 %	\end{enumerate}
 %\end{onyourown}
 	
-\begin{frame}{Composition by Mass Percent}
+\begin{frame}[t]{Composition by Mass Percent}
 	\begin{block}{Mass Percent}
 		Percent of one element (by mass) in a compound or molecule.
 	\end{block}
 
-	\begin{align*}
-		\intertext{For example, the mass percent of oxygen in \ch{CuSO4}: \bigskip}
-		\text{Mass percent \ch{O}} = \frac{4\tikzmark{why4} \times \text{molar
-		mass \ch{O}}}{\text{molar mass \ch{CuSO4}\tikzmark{4o}}} \times
-		\SI{100}{\percent}
-	\end{align*}
-
-	\mode<presentation>{
-	\begin{tikzpicture}[remember picture,overlay]
-		\node<+(1)->[font=\footnotesize](why4ex) at ($(pic cs:why4) + (4em,2em)$) {Why 4?};
-		\draw<.(1)->[thick,<-] ($(pic cs:why4) + (0,1em)$) to [in=180,out=60](why4ex);
-		\node<+(1)->[font=\footnotesize](4oex) at ($(pic cs:4o) + (-5em,-1.5em)$) {We have 4 \ch{O}};
-		\draw<.(1)->[thick,<-] ($(pic cs:4o) + (-1em,-2pt)$) to [in=0,out=270] (4oex);
-	\end{tikzpicture}}
+	\begin{example}
+		Find the mass percent of oxygen in \ch{CuSO4}.
+	\end{example}
+%	For example, the mass percent of oxygen in \ch{CuSO4}:
+%	\begin{align*}
+%		\text{Mass percent \ch{O}} = \frac{4 \times \text{molar
+%		mass \ch{O}}}{\text{molar mass \ch{CuSO4}}} \times
+%		\SI{100}{\percent}
+%	\end{align*}
 
 	\note<1>{
 		\begin{align*}
-			\text{Mass percent \ch{O}} &= \frac{4\tikzmark{why4}
+			\text{Mass percent \ch{O}} &= \frac{4
 			\times \text{molar mass \ch{O}}}{\text{molar mass
-			\ch{CuSO4}\tikzmark{4o}}} \times \SI{100}{\percent} \\
+			\ch{CuSO4}}} \times \SI{100}{\percent} \\
 			&= \frac{4 \times \SI{15.999}{\gram}}{\SI{159.602}{\gram}} \times \SI{100}{\percent} \\
 			&= \SI{40.0972419}{\percent} \\
 			&= \boxed{\SI{40.097}{\percent}}
@@ -999,13 +1025,13 @@
 %\end{onyourown}
 
 \begin{frame}[t]{Mass Percent as a Conversion Factor}
-	If we know that the mass percent of \ch{O} in \ch{CuSO4}
-	is 40.10\%, we can determine the mass of \ch{O} in a
-	sample of \ch{CuSO4}:
-	\begin{equation*}
-		\SI{40.10}{\percent} \times \text{mass of
-		\ch{CuSO4}} = \text{mass of \ch{O}}
-	\end{equation*}
+%	If we know that the mass percent of \ch{O} in \ch{CuSO4}
+%	is 40.10\%, we can determine the mass of \ch{O} in a
+%	sample of \ch{CuSO4}:
+%	\begin{equation*}
+%		\SI{40.10}{\percent} \times \text{mass of
+%		\ch{CuSO4}} = \text{mass of \ch{O}}
+%	\end{equation*}
 
 	\begin{example}
 		What is the mass of \ch{O} in a \SI{5.000}{\gram} sample of
@@ -1058,25 +1084,31 @@
 	\SI{302}{\milli\gram} of pure gold?
 \end{onyourown}
 	
-\begin{frame}<1-2>{Chemical Formulas as a Conversion Factor}
+\begin{frame}[t]{Chemical Formulas as a Conversion Factor}
 	\begin{block}{Recall: Law of Multiple Proportions}
 		When two elements (A and B) form two different compounds, the
 		mass of B that reacts with A can be expressed as a \alert{whole
 		number ratio}.
 	\end{block}
 
-	For 1 \alt<2>{mole}{equivalent} of \ch{CuSO4}, we need
-	  \begin{description}[<1->]
-	  	\item[1] \alt<2>{mole}{equivalent} \ch{Cu}
-	  	\item[1] \alt<2>{mole}{equivalent} \ch{S}
-	  	\item[4] \alt<2>{moles}{equivalents} \ch{O}
-	  \end{description}
-	In chemistry, we consider ``equivalents'' in terms of \alert{moles}.
+%	For 1 \alt<2>{mole}{equivalent} of \ch{CuSO4}, we need
+%	  \begin{description}[<1->]
+%	  	\item[1] \alt<2>{mole}{equivalent} \ch{Cu}
+%	  	\item[1] \alt<2>{mole}{equivalent} \ch{S}
+%	  	\item[4] \alt<2>{moles}{equivalents} \ch{O}
+%	  \end{description}
+%	In chemistry, we consider ``equivalents'' in terms of \alert{moles}.
 
 	\begin{example}
-		How many \si{\mole} of \ch{O} are in \SI{2.0}{\milli\mole} of
+		How many \unit{\mole} of \ch{H} are in \ch{MgNH4PO4 . 6 H2O}?
+	\end{example}
+
+	\vfill
+
+	\begin{example}
+		How many \si{\mole} of \ch{O} are in \SI{3.4}{\milli\mole} of
 		\ch{CuSO4}?
-		\note<2>{%
+		\note{%
 		\begin{align*}
 			\frac{\SI{2.0e-3}{\mole}}{1} \times
 			\frac{\SI{4}{\mole}~\ch{O}}{\SI{1}{\mole}~\ch{CuSO4}}
@@ -1084,16 +1116,18 @@
 		\end{align*}
 	}
 	\end{example}
+
+	\vfill
+
+	\null
 \end{frame}
 
 \begin{frame}[t]{Example: Chapter 4, Question 96}
 	Calculate the mass of chlorine in \SI{25}{\gram} of
 	\ch{CF2Cl2} (\SI{120.91}{\gram\per\mole}).
 
-	\mode<article>{\vspace*{15em}}
-	\pause
-	\mode<presentation>{\vfill}
 
+	\note{%
 	\begin{center}
 		\begin{tikzpicture}[scale=0.70,every
 			node/.style={draw,align=center,text width=0.75in,thick}]
@@ -1104,7 +1138,6 @@
 		\end{tikzpicture}
 	\end{center}
 
-	\note<1>{
 		\begin{tabularx}{\linewidth} {X X X}
 			\bfseries Given & \bfseries Plan & \bfseries Find \\ \midrule
 			\SI{25}{\gram}~\ch{CF2Cl2} &
@@ -1133,8 +1166,8 @@
 \begin{frame}{Determining Chemical Composition Experimentally}
 %	\begin{itemize}[<+->]
 %		\item
-	Recall the ``Gravimetric Analysis of Phosphorus in Fertilizer'' Lab %``Investigation of a Hydrate'' lab.
-			\begin{itemize}
+	Recall ``Gravimetric Analysis of Phosphorus in Fertilizer'' %``Investigation of a Hydrate'' lab.
+			\begin{enumerate}
 %				\item Heating the \ch{CuSO4 * $n$ H2O} caused
 %					\ch{H2O} to evaporate:
 %					\begin{reaction*}
@@ -1144,15 +1177,15 @@
 %				\item The difference in mass could be used to
 %					calculate the \% water and value of $n$.
 				\item Addition of \ch{NH3} and \ch{Mg^{2+}} caused \ch{MgNH4PO4 * 6 H2O} to precipitate:
-					\begin{reaction*}
+					{\small\begin{reaction*}
 						6 H2O\lqd{} + MgHPO4\aq{} +
 						NH3\aq{} ->
 						MgNH4PO4 * 6 H2O\sld{}
-					\end{reaction*}
+					\end{reaction*}}
 				\item The mass of the product was proportional
 					to the mass of the phosphorus in the
 					fertilizer.
-			\end{itemize}
+			\end{enumerate}
 			\pause
 
 			\bigskip
@@ -1189,8 +1222,6 @@
 	\SI{1.02}{\gram} \ch{CO2}. What is the empirical formula of caproic
 	acid?
 
-	\vspace{\stretch{1}}
-
 	\note{ \tiny
 		\begin{tabularx}{\linewidth} {X X X}
 			\bfseries Given & \bfseries Plan & \bfseries Find \\ \midrule
@@ -1215,14 +1246,11 @@
 			= \ch{C}_{2.97}\ch{H}_{5.95}\ch{O}_{1} &= \boxed{\ch{C3H6O}}
 		\end{align*}
 	}
+\end{frame}
 
-	\pause
-
+\begin{frame}[t]{Molecular Formula from Empirical Formula}
 	What is the molecular formula if the molar mass of caproic acid is
 	\SI{116.160}{\gram\per\mole?}
-
-	\vspace{\stretch{1}}
-\end{frame}
 
 \note{ \tiny
 	\begin{tabular} {c c@{ $\times$ } c @{ @ }
@@ -1241,6 +1269,7 @@
 		\therefore \ch{C}_{2 \times 3}\ch{H}_{2 \times 6}\ch{O}_{2 \times 1} &= \boxed{\ch{C6H12O2}}
 	\end{align*}
 	}
+\end{frame}
 
 %\begin{onyourown}
 %	Find the molecular formula of a \SI{1.50}{\gram} sample of an unknown
@@ -1249,26 +1278,33 @@
 %	this sample is \SI{64.17}{\gram\per\mole}.
 %\end{onyourown}
 
-	\begin{frame}[allowframebreaks]{A Quick Intro to Organic Molecules}
-	\begin{description}
-		\item[Organic:] Composed predominantly of carbon and hydrogen
-		\item[Inorganic:] Everything else\ldots
-	\end{description}
+\section{Organic Compounds and Extra Practice}
 
-	\framebreak
+\begin{frame}{A Quick Intro to Organic Molecules}
+	\begin{block}{Organic}
+		Composed predominantly of carbon and hydrogen.
+	\end{block}
 
-	Carbon is very versatile:
-	\begin{itemize}
-		\item C can bond to itself to form various structures:
-			\begin{center}
-				\includegraphics[scale=0.275]{carbon-to-itself.jpg}
-			\end{center}
-		\item C can form multiple bonds (including to itself):
-			\begin{center}
-				\includegraphics[scale=0.275]{multibond-carbon.jpg}
-			\end{center}
-	\end{itemize}
-	Compounds containing \alert{only} carbon and hydrogen are called \alert{hydrocarbons}.
+	\medskip
+
+	\begin{columns}[t]
+		\column{0.45\textwidth}
+		C can bond to itself to form various structures:
+		\begin{center}
+			\includegraphics[width=\linewidth]{carbon-to-itself.jpg}
+		\end{center}
+		\column{0.45\textwidth}
+		C can form multiple bonds (including to itself):
+		\begin{center}
+			\includegraphics[width=\linewidth]{multibond-carbon.jpg}
+		\end{center}
+	\end{columns}
+
+	\medskip
+
+	\begin{block}{Hydrocarbon}
+		Composed \emph{only} of carbon and hydrogen.
+	\end{block}
 \end{frame}
 
 \begin{frame}[plain]
