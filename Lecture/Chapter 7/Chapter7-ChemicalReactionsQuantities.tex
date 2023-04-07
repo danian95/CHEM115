@@ -1,12 +1,22 @@
-% !TEX program = xelatex
-%\documentclass[notes=only]{beamer}
-\documentclass[notes=show]{beamer}
-%\documentclass[notes=hide]{beamer}
+% !TEX program=xelatex
+%\documentclass[notes=onlyslideswithnotes,notes=hide]{beamer}
 %\documentclass[handout]{beamer}
+%\documentclass[notes=hide]{beamer}
+%\documentclass[notes=show]{beamer}
+\documentclass[notes=only]{beamer}
 
-\usepackage{newtxtext}
+\usepackage{bucolors}
 \usepackage{genchem}
 \usepackage{lecture}
+\usepackage{bucolors}
+\usepackage{ccicons}
+\usepackage{amsmath}
+\usepackage{mathspec}
+\setmainfont[Ligatures=TeX]{Georgia}
+\setsansfont[Ligatures=TeX]{Arial}
+\usepackage{tabularx}
+\usepackage{import}
+\usepackage{tikz}
 \usepackage{multicol}
 \usepackage{elements}
 \usepackage{collcell}
@@ -14,86 +24,68 @@
 
 \title{Chemical Reactions and Chemical Quantities}
 \subtitle{Chapter 7}
-\institute[CHEM115 Bloomsburg University]{CHEM115 --- Chemistry for the Sciences I \\ Bloomsburg University}
+\institute{CHEM115 --- Chemistry for the Sciences I \\ Bloomsburg University}
 \author{D.A. McCurry}
-\date{Fall 2021}
+\date{Spring 2023}
 
 \begin{document}
 
 \maketitle
-\mode<article>{\thispagestyle{fancy}}
 
-\begin{frame}[t]{Types of Change}
-	\begin{columns}[t]
-		\column{0.45\textwidth}
-		\begin{block}{Physical Change}
-		The molecular structure or composition does not change.
-		\end{block}
+\section{Chemical Reactions}
 
-		\bigskip
-
-		\includegraphics[width=\linewidth]{07_05_Figure.jpg}
-
-		\note<1>{%
-	\textbf{Physical Changes}
+\begin{frame}{Learning Objectives}
 	\begin{itemize}
-		\item The state can change or the material can be torn into
-			smaller pieces.
+		\item Explain the difference between a physical change and a
+			chemical change.
+		\item Write chemical equations to show reaction conditions.
+		\item Balance chemical equations.
+		\item Calculate reactant and product amounts using stoichiometry.
 	\end{itemize}
+\end{frame}
 
-	\resizebox{\linewidth}{!}{%
-	\begin{tabularx}{\linewidth}
-		{l
-		>{\raggedright\arraybackslash}X}
-		\toprule
-		\bfseries Physical Change & \bfseries Example \\
-		\midrule
-		State & Water boiling \\
-		& Water freezing \\
-		Appearance & Dissolving sugar in water \\
-		Shape & Hammering a gold ingot into shiny gold leaf \\
-		& Drawing copper into a thin copper wire \\
-		Size & Cutting paper into tiny pieces for confetti \\
-		& Grinding pepper into smaller particles \\
-		\bottomrule
-	\end{tabularx}
-	}
-}
-		\column{0.45\textwidth}
-		\pause
-		\begin{block}{Chemical Change}
-			Atoms rearrange and the original
-			substances transform into different substances.
-		\end{block}
-		\centering
-		\includegraphics[scale=0.25]{07_04_Figure.jpg}
+\begin{frame}{Physical Change}
+	\begin{columns}
+		\column{0.3\textwidth}
+	The molecular structure or composition does not change.
+	\column{0.6\textwidth}
+	\begin{center}
+		\includegraphics[scale=0.3]{07_05_Figure.jpg}
+	\end{center}
 	\end{columns}
 \end{frame}
 
-\frame{\section{Chemical Equations}
-	\begin{learningobjectives}
-	\item Write chemical equations to show reaction conditions.
-	\item Balance chemical equations.
-	\item Calculate reactant and product amounts using stoichiometry.
-	\end{learningobjectives}
-}
-
-\begin{frame}{Chemical Changes}
+\begin{frame}{Chemical Change}
 	\begin{columns}
-		\column{0.45\textwidth}
-		A \alert{chemical reaction} takes place where one or more new
+		\column{0.4\textwidth}
+	Atoms rearrange and the original substances transform into
+	different substances.
+	\column{0.5\textwidth}
+	\begin{center}
+		\includegraphics[scale=0.3]{07_04_Figure.jpg}
+	\end{center}
+\end{columns}
+
+\end{frame}
+
+\begin{frame}{Chemical Reactions}
+	A \alert{chemical reaction} takes place where one or more new
 		substances are produced.
 		\begin{itemize}
 			\item Sometimes there is no visible evidence.
 			\item Old bonds are broken and new bonds formed.
 		\end{itemize}
-		\column{0.45\textwidth}
+
+		\bigskip
+
 		\begin{block}{Chemical Equations}
+	\begin{columns}
+		\column{0.45\textwidth}
 			\begin{reaction*}
 				\text{Reactants} -> \text{Products}
 			\end{reaction*}
 
-			\bigskip
+			\column{0.45\textwidth}
 
 			\resizebox{\linewidth}{!}{%
 				\begin{tabular} {c l}
@@ -111,8 +103,8 @@
 					\bottomrule
 				\end{tabular}
 			}
-		\end{block}
 		\end{columns}
+	\end{block}
 
 	\note{%
 		Symbols used in chemical equations show
@@ -124,17 +116,28 @@
 	}
 \end{frame}
 
-\begin{frame}[t]{Balancing Chemical Equations}
-	\begin{itemize}
-		\item A \alert{balanced} chemical equation adheres to the
+\begin{frame}{Balancing Chemical Equations}
+	\begin{columns}
+		\column{0.45\textwidth}
+	A \alert{balanced} chemical equation adheres to the
 			\alert{law of conservation of mass}.
-		\item In a balanced chemical equation, the numbers and kinds of
+	\begin{itemize}
+		\item The numbers and kinds of
 			atoms must remain the same in both products and
 			reactants.
 	\end{itemize}
 
-	\bigskip
+	\column{0.45\textwidth}
+	\includegraphics[width=\linewidth]{h2o-balance.jpg}
 
+\end{columns}
+
+\begin{example}
+	Balance \ch{Na \sld{} + Cl2 \gas{} -> NaCl\sld{}}
+	\end{example}
+
+
+	\note{%
 	\begin{center}
 		\begin{tabular}{E e E}
 			2 Na\sld{} + Cl2\gas\ & -> & 2 NaCl\sld \\ \midrule
@@ -142,12 +145,7 @@
 			2 Cl & & 2 Cl
 		\end{tabular}
 	\end{center}
-\end{frame}
-
-\begin{frame}
-	\begin{center}
-		\includegraphics[scale=0.4]{h2o-balance.jpg}
-	\end{center}
+}
 \end{frame}
 
 \begin{frame}[t]{Guide to Balancing a Chemical Reaction}
@@ -162,20 +160,15 @@
 			formula for each reactant and product.
 		\item Count the atoms of each element in the reactants and
 			products.
-		\item Find suitable \alert{coefficients} -- the numbers placed
-			before formulas to indicate how many formula units of
-			each substance are required.
-			\begin{description}[<1->]
-				\item[Hint:] Start with the heavy atoms, end
-					with hydrogens.
-			\end{description}
+		\item Find suitable \alert{coefficients} (start with the heavy
+			atoms, end with hydrogens).
 		\item Check your answer by making sure that the numbers and
-			kinds of atoms are the same on both sides of the quation
+			kinds of atoms are the same on both sides of the equation
 	\end{enumerate}
 
 	\bigskip
 
-	\note<+>{%
+	\note<.>{%
 		\begin{tabular} {l c l}
 			\ch{CH4\gas{}} \ch{+}
 			\alert{\ch{2}}
@@ -412,25 +405,38 @@ minimum height=2em]
 \tikzstyle{blockB} = [block,fill=green!10]
 \tikzstyle{line} = [draw,->]
 
-\frame{\section{Practical Use of Chemical Equations}
-	\begin{learningobjectives}
+
+\section{Practical Use of Chemical Equations}
+
+\begin{frame}{Learning Objectives}
+	\begin{itemize}
 	\item Calculate mass amounts of products and reactants based on a
 		chemical equation.
 	\item Determine which species limit the extent of a reaction.
 	\item Calculate the percent yield of a reaction.
-	\end{learningobjectives}
-}
-
-\vspace{\stretch{-1}}
+	\end{itemize}
+\end{frame}
 
 \begin{frame}[t]{Translating Molar Ratios to Experimental Quantities}
-	\begin{itemize}[<+->]
-		\item We are unable to ``count'' moles directly.
-			\begin{itemize}[<1->]
+		We are unable to ``count'' moles directly.
+			\begin{itemize}
 				\item How would we measure the moles of \ch{Fe}
 					required for the last example?
 			\end{itemize}
-		\item We must convert to and from units of mass!
+
+			\pause
+
+		We must convert to and from units of mass!
+
+		\bigskip
+
+	\begin{example}
+		How many \emph{grams} of Fe are needed for the reaction of
+		\SI{12.0}{moles} of \ch{O2}?
+	\end{example}
+
+
+		\note<.>{%
 			\begin{center}
 				\small
 				\begin{tikzpicture}[node distance = 2em, auto]
@@ -446,7 +452,8 @@ minimum height=2em]
 					\path[line] (molesB) -- (massB);
 				\end{tikzpicture}
 			\end{center}
-		\item In more generic terms,
+
+		In more generic terms,
 			\begin{center}
 				\small
 				\begin{tikzpicture}[node distance = 2em, auto]
@@ -462,18 +469,9 @@ minimum height=2em]
 					\path[line] (molesB) -- (massB);
 				\end{tikzpicture}
 			\end{center}
-	\end{itemize}
+		}
 
-	\bigskip
-
-	\pause[\thebeamerpauses]
-
-	\begin{example}
-		How many \emph{grams} of Fe are needed for the reaction of
-		\SI{12.0}{moles} of \ch{O2}?
-	\end{example}
-
-	\note<+>{%
+	\note<.>{%
 		\begin{align*}
 			\SI{16.0}{\mole}~\ch{Fe} \times
 			\frac{\SI{55.845}{\gram}~\ch{Fe}}{\SI{1}{\mole}~\ch{Fe}}
@@ -703,15 +701,15 @@ minimum height=2em]
 
 \begin{frame}{Guide to Calculating Product from a Limiting Reactant}
 	\begin{center}
-	\begin{tikzpicture}[node distance = 1.5em,auto]
+	\begin{tikzpicture}[node distance = 1.3em,auto]
 		\tikzstyle{blockC} = [block,fill=red!10,text width=10em];
 		\node [blockC] (small) {Smaller Moles of Product};
-		\node [blockB,above right = of small] (productB) {Moles of Product};
-		\node [blockB,above = of productB] (molesB) {Moles of Reactant B};
-		\node [blockB,above = of molesB] (gramsB) {Grams of Reactant B};
-		\node [blockA,above left = of small] (productA) {Moles of Product};
-		\node [blockA,above = of productA] (molesA) {Moles of Reactant A};
-		\node [blockA,above = of molesA] (gramsA) {Grams of Reactant A};
+		\node [blockB,text width=6em,above right = of small] (productB) {Moles of Product};
+		\node [blockB,text width=6em,above = of productB] (molesB) {Moles of Reactant B};
+		\node [blockB,text width=6em,above = of molesB] (gramsB) {Grams of Reactant B};
+		\node [blockA,text width=6em,above left = of small] (productA) {Moles of Product};
+		\node [blockA,text width=6em,above = of productA] (molesA) {Moles of Reactant A};
+		\node [blockA,text width=6em,above = of molesA] (gramsA) {Grams of Reactant A};
 		\node [blockC,below = of small] (finalprod) {Grams of
 		Product};
 		\path [line] (gramsB) -- (molesB);
@@ -726,7 +724,7 @@ minimum height=2em]
 \end{frame}
 
 \begin{frame}{Yields of Reaction}
-	Often, we don't always get \alert{exactly} the amount we planned to
+	We don't always get \alert{exactly} the amount we planned to
 	obtain.
 	\begin{itemize}
 		\item Side reactions (other things happening)
@@ -935,7 +933,7 @@ minimum height=2em]
 %
 %actual yield = 232 grams}
 
-\begin{frame}{Types of Reactions}
+\begin{frame}{Some Common Types of Reactions}
 	\begin{block}{Combustion reactions}
 		\begin{reaction*}
 			CH4\gas{} + 2 O2\gas{} -> CO2\gas{} + 2
