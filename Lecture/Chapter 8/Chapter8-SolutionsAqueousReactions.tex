@@ -1,47 +1,54 @@
-% !TEX program = xelatex
-\documentclass[notes=hide]{beamer}
-%\documentclass[notes=only]{beamer}
+% !TEX program=xelatex
+%\documentclass[notes=onlyslideswithnotes,notes=hide]{beamer}
 %\documentclass[handout]{beamer}
+%\documentclass[notes=hide]{beamer}
 %\documentclass[notes=show]{beamer}
+\documentclass[notes=only]{beamer}
 
-\usepackage{newtxtext}
 \usepackage{bucolors}
 \usepackage{genchem}
 \usepackage{lecture}
+\usepackage{bucolors}
+\usepackage{ccicons}
+\usepackage{amsmath}
+\usepackage{mathspec}
+\setmainfont[Ligatures=TeX]{Georgia}
+\setsansfont[Ligatures=TeX]{Arial}
+\usepackage{tabularx}
+\usepackage{import}
+\usepackage{tikz}
 \usepackage{multicol}
 \usepackage{elements}
 \usepackage{collcell}
 \usetikzlibrary{tikzmark}
-\usepackage{tabularx}
 
-\renewcommand*\printangularmomentum[1]{#1}
+\newcolumntype{s}{>{\collectcell\unit}l<{\endcollectcell}} % chem left column type
 
 \title{Introduction to Solutions and Aqueous Reactions}
 \subtitle{Chapter 8}
-\institute[CHEM115 Bloomsburg University]{CHEM115 --- Chemistry for the Sciences I \\ Bloomsburg University}
+\institute{CHEM115 --- Chemistry for the Sciences I \\ Bloomsburg University}
 \author{D.A. McCurry}
-\date{Fall 2021}
+\date{Spring 2023}
 
 \begin{document}
 
 \maketitle
-\mode<article>{\thispagestyle{fancy}}
 
-\frame{\section{Solutions}
-	\begin{learningobjectives}
+\section{Solutions}
+
+\begin{frame}{Learning Objectives}
+	\begin{itemize}
 	\item Explain the components of a solution.
 	\item Predict whether a solution will form or not depending on the
 		structure of the solvent and solute.
 	\item Quantify the amount of solute present in a solution even when the
 		amount of solvent changes.
-	\end{learningobjectives}
-}
-
-\vspace{\stretch{-1}}
+	\end{itemize}
+\end{frame}
 
 \begin{frame}{Solution Terminology}
 	\begin{columns}
-		\column{0.45\textwidth}
+		\column{0.5\textwidth}
 		\begin{block}{Solution}
 			A homogeneous mixture of two (or more) substances.
 		\end{block}
@@ -54,7 +61,7 @@
 			NaNO3\sld{} &->[ H2O ] NaNO3\aq{} \\
 			CuSO4\sld{} &->[ H2O ] CuSO4\aq{}
 		\end{reactions*}
-		\column{0.45\textwidth}
+		\column{0.4\textwidth}
 		\begin{center}
 			\includegraphics[width=0.9\linewidth]{Borland-Solute-Solvent.jpg}
 		\end{center}
@@ -69,7 +76,7 @@
 
 \begin{frame}{Some Notes on Solutes}
 	\begin{columns}
-		\column{0.5\textwidth}
+		\column{0.45\textwidth}
 		\begin{itemize}
 			\item Solutes spread \alert{evenly} throughout the
 				solution.
@@ -78,9 +85,9 @@
 			\item Solutes are not visible (homogeneous mixture), but
 				can give color to a solution.
 		\end{itemize}
-		\column{0.5\textwidth}
+		\column{0.45\textwidth}
 		\begin{center}
-			\includegraphics[scale=0.4]{Borland-Solutes.jpg}
+			\includegraphics[width=\linewidth]{Borland-Solutes.jpg}
 		\end{center}
 	\end{columns}
 \end{frame}
@@ -91,7 +98,8 @@
 
 	\begin{center}
 		\begin{tikzpicture}
-			\node[align = center, fill = green!10](will) {%
+			\node[align = center, fill = green!10, minimum
+		width=0.45\linewidth](will) {%
 				\textbf{Solutions Will Form} \\ \\
 
 		\begin{tabular} {l l}
@@ -102,7 +110,8 @@
 			\bottomrule
 		\end{tabular}
 	};
-	\node[right = of will, align = center, fill = red!10](not) {%
+	\node[right = of will, align = center, fill = red!10, minimum
+		width=0.45\linewidth](not) {%
 			\textbf{Solutions Will Not Form} \\ \\
 
 		\begin{tabular} {l l}
@@ -222,22 +231,12 @@
 \clearpage
 
 \begin{frame}{Diluting Solutions}
-	\begin{columns}
-		\column{0.45\textwidth}
 	In a \alert{dilution},
-	\begin{itemize}
-		\item solvent is added.
-		\item volume increases.
-		\item concentration of solute \alert{decreases}.
-	\end{itemize}
-	\column{0.45\textwidth}
-	\visible<2>{%
-	\begin{block}{Key Point}
-		In both the initial and diluted solution, the moles of solute
-		are the \alert{same}!
-	\end{block}
-	}
-	\end{columns}
+	\begin{tabular}[t] {@{~}l}
+		solvent is added. \\
+		volume increases. \\
+		concentration of solute \alert{decreases}. \\
+	\end{tabular}
 	
 	\bigskip
 	
@@ -245,7 +244,12 @@
 		\includegraphics[scale=0.4]{Borland-dilution.jpg}
 	\end{center}
 
-	\note<2>{%
+	\begin{alertblock}{Key Point}
+		In both the initial and diluted solution, the moles of solute
+		are the \alert{same}!
+	\end{alertblock}
+
+	\note{%
 		This allows us to use the following equation:
 		\begin{align*}
 			M_1V_1 &= M_2V_2
@@ -327,22 +331,17 @@
 	stock solution?
 \end{onyourown}
 
-\clearpage
+\section{Precipitation Reactions}
 
-\frame{\section{Predicting Reaction Products}
-	\begin{learningobjectives}
+\begin{frame}{Learning Objectives}
+	\begin{itemize}
 	\item Use stoichiometry to determine the amount of products that will be
 		produced or the amount of reactants required.
 	\item Predict the solubility of a resulting product based on solubility
 		rules.
-	\item Identify common acids and bases in order to determine the product
-		of a neutralization reaction.
-	\item Identify when a product will be in a different state (gas).
-	\item Follow the transfer of electrons in oxidation-reduction reactions.
-	\end{learningobjectives}
-}
-
-\vspace{\stretch{-1}}
+	\item Identify strong, weak, and nonelectrolytes.
+\end{itemize}
+\end{frame}
 
 \begin{frame}[t]{Solution Stoichiometry}
 	Consider one of the reactions from the Ionic Species Solubility Lab:
@@ -500,7 +499,8 @@
 
 	\pause
 
-	\alert{Strong} electrolytes conduct electricity \alert{very
+	\begin{description}
+		\item[Strong electrolytes] conduct electricity \alert{very
 	  well}.
 	  \begin{reaction*}
 	  	!( table~salt )( NaCl\sld{} ) -> Na^{+}\aq{} +
@@ -509,7 +509,7 @@
 
 	  \pause
 
-	\alert{Weak} electrolytes conduct electricity
+  \item[Weak electrolytes] conduct electricity
 	  \alert{poorly}.
 	  \begin{reaction*}
 	  	!( acetic~acid )( HC2H3O2\aq{} ) <=> H^{+}\aq{}
@@ -518,11 +518,12 @@
 
 	  \pause
 
-	\alert{Nonelectrolytes} do not conduct electricity.
+	\item[Nonelectrolytes] do not conduct electricity.
 	\begin{reaction*}
 		!( sugar )( C12H22O11\sld{} ) ->
 		C12H22O11\aq{}
 	\end{reaction*}
+\end{description}
 \end{frame}
 
 \begin{frame}
@@ -570,28 +571,42 @@
 			\note[item]{\ch{HF\aq{} <=>[ H2O ] H^{+}\aq{} +
 			F^{-}\aq{}}}
 			\vspace{2em}
-		\item \ch{C2H5OH\aq{} ->[ H2O ]}
-			\note[item]{\ch{C2H5OH\aq{} -/>[ H2O ]}}
+		\item \ch{C2H5OH\lqd{} ->[ H2O ]}
+			\note[item]{\ch{C2H5OH\lqd{} ->[ H2O ] C2H5OH\aq{}}}
 			\vspace{2em}
 	\end{enumerate}
 \end{frame}
 
-\begin{onyourown}[0em]
-	Complete each of the following equations:
+%\begin{onyourown}[0em]
+%	Complete each of the following equations:
+%
+%	\vspace{1em}
+%
+%	\begin{enumerate}
+%		\item \ch{Na2SO4\sld{} ->[ H2O ]}
+%			\vspace{2em}
+%		\item \ch{HCN\aq{} ->[ H2O ]}
+%			\vspace{2em}
+%		\item \ch{C3H8O3\aq{} ->[ H2O ]}
+%			\vspace{2em}
+%	\end{enumerate}
+%\end{onyourown}
 
-	\vspace{1em}
+\section{Acid-Base Reactions}
 
-	\begin{enumerate}
-		\item \ch{Na2SO4\sld{} ->[ H2O ]}
-			\vspace{2em}
-		\item \ch{HCN\aq{} ->[ H2O ]}
-			\vspace{2em}
-		\item \ch{C3H8O3\aq{} ->[ H2O ]}
-			\vspace{2em}
-	\end{enumerate}
-\end{onyourown}
+\begin{frame}{Learning Objectives}
+	\begin{itemize}
+		\item Identify common acids and bases in order to determine the product
+			of a neutralization reaction.
+		\item Balance acid-base reactions using \ch{H+} and \Hyd{}.
+		\item Write the net ionic equation for strong acid-strong base
+			reactions.
+		\item Calculate stoichiometry of acid-base reactions.
+	\end{itemize}
+\end{frame}
 
-\begin{frame}{Acid-Base Reactions}
+
+\begin{frame}[t]{Acid-Base Reactions}
 	We have a special name for reactions where \ch{H+} is one of the
 	electrolytes\footnote{According to Arrhenius acid-base theory (Chapter 16)}
 	--- \alert{acid-base} or \alert{neutralization}
@@ -610,8 +625,12 @@
 			\end{reaction*}
 	\end{description}
 
+	\begin{example}
+		Show the reaction of \ch{HCl} and \ch{NaOH}.
+	\end{example}
+
+	\note{%
 	When an acid and base react together, they \alert{neutralize} each other:
-	{\small
 	\begin{reactions*}
 		HCl\aq{} + NaOH\aq{} &-> NaCl\aq{} + H2O\lqd{} \\
 		H^{+}\aq{} + Cl^{-}\aq{} + Na^{+}\aq{} + OH^{-}\aq{} &->
@@ -622,8 +641,7 @@
 \end{frame}
 
 \begin{frame}{Some notes on acids\ldots}
-	\begin{itemize}[<+->]
-		\item \ch{H+} normally associates with water to form the
+	\ch{H+} normally associates with water to form the
 			\alert{hydronium ion}.
 			\begin{reaction*}
 				!(proton)( H^{+}\aq{} ) + !(water)( H2O\lqd{} )
@@ -632,14 +650,19 @@
 			
 			\bigskip
 
-		\item Acids have a sour taste. \hfill
+			\pause
+
+		Acids have a sour taste. \hfill
 			\parbox{0.5\linewidth}{
 				\centering
 				\includegraphics[scale=0.15]{Citrus_fruits.jpg}
 				}
 
 			\bigskip
-		\item \alert{Polyprotic} acids have more than one
+
+			\pause
+
+		\alert{Polyprotic} acids have more than one
 			\alert{ionizable} proton.
 			\begin{reactions*}
 				H2SO4\aq{} + \water\lqd{} &-> \Oxo\aq{} +
@@ -649,16 +672,16 @@
 			\end{reactions*}
 			The most common are \alert{diprotic} and
 			\alert{triprotic} acids.
-	\end{itemize}
 \end{frame}
 
 \begin{frame}{Some notes on bases\ldots}
-	\begin{itemize}[<+->]
-		\item Basic solutions are sometimes called ``alkaline''.
+		Basic solutions are sometimes called ``alkaline''.
 
 			\bigskip
 
-		\item Bases have a bitter taste.\hfill
+			\pause
+
+		Bases have a bitter taste.\hfill
 			\parbox{0.5\linewidth}{
 				\centering
 				\includegraphics[scale=0.5]{BakingSoda.jpg}
@@ -666,9 +689,10 @@
 
 			\bigskip
 
-		\item Can turn your fat into soap \textrightarrow\
+			\pause
+
+		Can turn your fat into soap \textrightarrow\
 			\alert{saponification}.
-	\end{itemize}
 \end{frame}
 
 \begin{frame}{Some Common Acids and Bases}
@@ -691,8 +715,7 @@
 \end{frame}
 
 \begin{frame}{Naming Acids}
-	\begin{itemize}
-		\item \alert{Binary acids} have just an \ch{H} and a nonmetal.
+		\alert{Binary acids} have just an \ch{H} and a nonmetal.
 			\begin{itemize}
 				\item They are named with the prefix ``hydro-''
 					and the suffix ``-ic acid''.
@@ -709,7 +732,7 @@
 			\bigskip
 
 			\pause
-		\item \alert{Oxyacids} contain \ch{H} and a polyatomic anion
+		\alert{Oxyacids} contain \ch{H} and a polyatomic anion
 			containing a nonmetal and oxygen.
 			\begin{itemize}
 				\item If the oxyanion ends in ``-ate'', we
@@ -731,13 +754,12 @@
 						\end{tabular}
 					\end{center}
 			\end{itemize}
-	\end{itemize}
 \end{frame}
 
 \begin{frame}{Naming Bases}
-	\begin{itemize}
-		\item Bases with \Hyd\ ions follow general ionic compound naming
+		Bases with \Hyd\ ions follow general ionic compound naming
 			conventions.
+
 			\begin{center}
 				\begin{tabular}{>{\collectcell\ch}p{5em}<{\endcollectcell}p{10em}}
 					NaOH    & sodium     \emph{hydroxide} \\
@@ -747,7 +769,6 @@
 					Fe(OH)3 & iron (III) \emph{hydroxide}
 				\end{tabular}
 			\end{center}
-	\end{itemize}
 \end{frame}
 
 %\begin{frame}[t]{Acid-Base Nomenclature Practice}
@@ -778,30 +799,25 @@
 %\end{onyourown}
 
 \begin{frame}{Acid-Base Reactions}
-	\begin{itemize}
-		\item In the equations for neutralization, an acid and a base
-			produce a salt and water.
+	In the equations for neutralization, an acid and a base produce a salt
+	and water.
 			\begin{reaction*}
 				!(acid)( HCl\aq{} ) + !(base)( NaOH\aq{} ) ->
 				!(salt)( NaCl\aq{} ) + !(water)( \water\lqd{} )
 			\end{reaction*}
 
-		\item For \alert{every} acid-base reaction, we should have the
-			general trend,
+	For \alert{every} acid-base reaction, we should have the general trend,
 			\begin{reaction*}
 				acid + base -> salt + water
 			\end{reaction*}
 
-		\item The \alert{salt} (the ionic compound produced) is often
-			still dissolved in solution. We therefore can prepare a
+	The \alert{salt} (the ionic compound produced) is often still dissolved
+	in solution. We therefore can prepare a
 			\alert{net ionic equation}:
 			\begin{reaction*}
 				H^{+}\aq{} + \Hyd\aq{} -> \water\lqd{}
 			\end{reaction*}
-	\end{itemize}
 \end{frame}
-
-\vspace{\stretch{-1}}
 
 \begin{frame}[t]{Guide to Balancing Acid-Base Reactions}
 	Balance the reaction when aqueous solutions of \ch{HNO3} with
@@ -828,8 +844,6 @@
 		}
 \end{frame}
 
-\clearpage
-
 \begin{frame}[t]{Balancing Acid-Base Reaction Practice}
 	Balance the following reaction:
 	\begin{reaction*}
@@ -837,30 +851,32 @@
 	\end{reaction*}
 \end{frame}
 
-\begin{onyourown}
-	Balance the following reaction:
-
-	\begin{reaction*}
-		Ba(OH)2\aq{} + H3PO4\aq{} -> Ba3(PO4)2\sld{} + H2O\lqd{}
-	\end{reaction*}
-\end{onyourown}
+%\begin{onyourown}
+%	Balance the following reaction:
+%
+%	\begin{reaction*}
+%		Ba(OH)2\aq{} + H3PO4\aq{} -> Ba3(PO4)2\sld{} + H2O\lqd{}
+%	\end{reaction*}
+%\end{onyourown}
 
 \begin{frame}{Practical Lab Skills: Titrations}
+	\begin{columns}
+		\column{0.4\textwidth}
 	\begin{block}{Titration}
 		A substance in a solution of known concentration is reacted with
 		another substance in a solution of unknown concentration.
 	\end{block}
 
+	\column{0.5\textwidth}
 	\begin{center}
 		\includegraphics[scale=0.35,trim={0 0 0 30pt},clip]{08_18_Figure.jpg}
 	\end{center}
+\end{columns}
 \end{frame}
 
 \begin{frame}
 	\includegraphics[width=\linewidth]{08_19_Figure.jpg}
 \end{frame}
-
-\vspace{\stretch{-1}}
 
 \begin{frame}[t]{Titration Calculations}
 	If \SI{32.7}{\milli\liter} of a \SI{0.5000}{\Molar} \ch{KOH} solution
@@ -930,6 +946,17 @@
 	When titrating, we want to use \alert{strong} acids or bases. Why? 
 \end{frame}
 
+\section{Gas Evolution Reactions}
+
+\begin{frame}{Learning Objectives}
+	\begin{itemize}
+		\item Identify when a product will be in a gaseous state.
+		\item Write net ionic equations for gas evolution reactions.
+		\item Define reaction intermediate.
+		\item Balance gas evolution reactions.
+	\end{itemize}
+\end{frame}
+
 \begin{frame}{Gas-Evolution Reactions}
 	In precipitation reactions, we see a solid form:
 	\begin{reaction*}
@@ -957,7 +984,7 @@
 	Can we write net ionic equations for gas evolution reactions?
 \end{frame}
 
-\begin{frame}{Intermediate Products Leading to Gas Evolution}
+\begin{frame}[t]{Intermediate Products Leading to Gas Evolution}
 	Occasionally, a product is not stable and \alert{decomposes} to form a
 	gas.
 	\begin{center}
@@ -974,10 +1001,12 @@
 	\end{tabular}
 	\end{center}
 
-	\pause
+	\begin{example}
+		What is the balanced reaction when \ch{HCl} reacts with
+		\ch{NaHCO3}?
+	\end{example}
 
-	\medskip
-
+	\note{%
 	\begin{center}
 		\begin{tabular} {L >{\collectcell\ch}r<{\endcollectcell} @{
 				\ch{->} } E}
@@ -988,6 +1017,7 @@
 			NaCl\aq{}
 		\end{tabular}
 	\end{center}
+}
 \end{frame}
 
 \vspace{\stretch{-1}}
@@ -1012,34 +1042,41 @@
 
 \vspace{\stretch{-1}}
 
-\begin{onyourown}
-	Write a balanced molecular equation for the following reactions:
+%\begin{onyourown}
+%	Write a balanced molecular equation for the following reactions:
+%
+%	\begin{enumerate}
+%		\item \ch{Fe\sld{} + HCl\aq{}}
+%			\vspace{5em}
+%		\item \ch{K2SO3\aq{} + HCl\aq{}}
+%			\vspace{5em}
+%	\end{enumerate}
+%
+%	Write the net ionic equations for the above reactions.
+%\end{onyourown}
 
-	\begin{enumerate}
-		\item \ch{Fe\sld{} + HCl\aq{}}
-			\vspace{5em}
-		\item \ch{K2SO3\aq{} + HCl\aq{}}
-			\vspace{5em}
-	\end{enumerate}
+\section{Oxidation-Reduction Reactions}
 
-	Write the net ionic equations for the above reactions.
-\end{onyourown}
-
-\clearpage
+\begin{frame}{Learning Objectives}
+	\begin{itemize}
+		\item Define oxidation and reduction.
+		\item Assign oxidation numbers to atoms.
+		\item Identify the transfer of electrons in oxidation-reduction reactions.
+		\item Identify the oxidizing and reducing agents in a redox
+			reaction.
+		\item Write balanced half-reactions.
+	\end{itemize}
+\end{frame}
 
 \begin{frame}{Oxidation-Reduction Reactions}
 	When electrons transfer from one reactant to another, we have an
 	\alert{oxidation-reduction} or \alert{redox} reaction.
-	\begin{center}
-		\begin{tabular} {>{\bfseries}r@{~}l}
-			Oxidation & is the \alert{loss} of electrons. \\
-			Reduction & is the \alert{gain} of electrons.
-		\end{tabular}
-	\end{center}
+	\begin{description}
+		\item[Oxidation] is the \alert{loss} of electrons.
+		\item[Reduction] is the \alert{gain} of electrons.
+	\end{description}
 
 	\pause
-
-	\medskip
 
 	The gas-evolution reactions just considered are examples of redox
 	reactions:
@@ -1240,15 +1277,15 @@
 		}
 \end{frame}
 
-\begin{onyourown}
-	Write the separate oxidation and reduction reactions for the following
-	equation:
-	\begin{reaction*}
-		2 Fe\sld{} + 3 CuBr2\aq{} -> 2 FeBr3\aq{} + 3 Cu\sld{}
-	\end{reaction*}
-\end{onyourown}
+%\begin{onyourown}
+%	Write the separate oxidation and reduction reactions for the following
+%	equation:
+%	\begin{reaction*}
+%		2 Fe\sld{} + 3 CuBr2\aq{} -> 2 FeBr3\aq{} + 3 Cu\sld{}
+%	\end{reaction*}
+%\end{onyourown}
 
-\clearpage
+\section{Extra Practice}
 
 \begin{frame}[t]{Some Challenging Examples}
 	\begin{enumerate}[<+->]
