@@ -1,41 +1,52 @@
-% !TEX program = xelatex
-\documentclass[handout]{beamer}
+% !TEX program=xelatex
+%\documentclass[notes=onlyslideswithnotes,notes=hide]{beamer}
+%\documentclass[handout]{beamer}
 %\documentclass[notes=hide]{beamer}
-%\documentclass[notes=only]{beamer}
 %\documentclass[notes=show]{beamer}
+\documentclass[notes=only]{beamer}
 
-\usepackage{newtxtext}
 \usepackage{bucolors}
 \usepackage{genchem}
 \usepackage{lecture}
+\usepackage{bucolors}
+\usepackage{ccicons}
+\usepackage{amsmath}
+\usepackage{mathspec}
+\setmainfont[Ligatures=TeX]{Georgia}
+\setsansfont[Ligatures=TeX]{Arial}
+\usepackage{tabularx}
+\usepackage{import}
+\usepackage{tikz}
 \usepackage{multicol}
 \usepackage{elements}
 \usepackage{collcell}
 \usetikzlibrary{tikzmark}
-\usepackage{tabularx}
+
+\sisetup{retain-explicit-plus=true}
+
+\newcolumntype{s}{>{\collectcell\unit}l<{\endcollectcell}} % chem left column type
+\NewChemState{\energy}{symbol = E, unit=\kilo\joule\per\mole}
 
 \title{Thermochemistry}
 \subtitle{Chapter 9}
-\institute[CHEM115 Bloomsburg University]{CHEM115 --- Chemistry for the Sciences I \\ Bloomsburg University}
+\institute{CHEM115 --- Chemistry for the Sciences I \\ Bloomsburg University}
 \author{D.A. McCurry}
-\date{Fall 2021}
-
-\chemsetup{chemformula/frac-style=nicefrac}
+\date{Spring 2023}
 
 \begin{document}
 
-\NewChemState{\energy}{symbol = E, unit=\kilo\joule\per\mole}
-
 \maketitle
-\mode<article>{\thispagestyle{fancy}}
 
-\frame{\section{Work and Energy}
-\begin{learningobjectives}
-\item Explain the difference between potential and kinetic energy.
-\item Explain where potential and kinetic energy are defined in a chemical
-system.
-\item Follow the direction of energy flow between the system and surroundings.
-\end{learningobjectives}}
+\section{Work and Energy}
+
+\begin{frame}{Learning Objectives}
+	\begin{itemize}
+	\item Explain the difference between potential and kinetic energy.
+	\item Explain where potential and kinetic energy are defined in a chemical
+	system.
+	\item Identify the direction of energy flow between the system and surroundings.
+	\end{itemize}
+\end{frame}
 
 \begin{frame}{Key Terms}
 	\begin{block}{Thermochemistry}
@@ -92,9 +103,11 @@ system.
 	
 \begin{frame}{Energy Transfer}
 	\begin{columns}
-		\column{0.525\textwidth}
+		\column{0.56\textwidth}
 		Energy is \alert{exchanged} between a system and its surroundings through
 		either \alert{heat} ($q$) or \alert{work} ($w$).
+
+		\bigskip
 
 		\begin{block}{System}
 			The focus of the study, as defined by the investigator.
@@ -104,7 +117,7 @@ system.
 			Everything other than the system.
 		\end{block}
 	
-		\column{0.475\textwidth}
+		\column{0.44\textwidth}
 		\begin{center}
 			\includegraphics[scale=0.2]{cccalorimeter.jpg}
 		\end{center}
@@ -131,16 +144,11 @@ system.
 \begin{frame}{Conservation of Energy}
 	The \alert{internal energy} ($E$) of a system must equal the total
 	potential (PE) and kinetic (KE) energies of the system.
-	\begin{itemize}
+	\begin{itemize}[<+->]
 		\item Can only transfer E with surroundings via
-			heat ($q$) or work ($w$), thus
-			\begin{align*}
-				\Delta E_\text{sys} &= q + w
-			\intertext{\item The energy of the universe is constant
-				(1\textsuperscript{st} Law), so}
-				\Delta E_\text{sys} &= -\Delta E_\text{surr} \\
-				\Delta E_\text{sys} + \Delta E_\text{surr} &= 0
-			\end{align*}
+			heat ($q$) or work ($w$)
+		\item The energy of the universe is constant
+				(1\textsuperscript{st} Law)
 		\item The exact amount of energy lost by the
 			system is gained by the surroundings
 			(and vice versa).
@@ -148,13 +156,17 @@ system.
 	Reactions that \alert{gain} heat are said to be \alert{endothermic}
 	whereas reactions that \alert{lose} heat are said to be
 	\alert{exothermic}.
+	\note[<+>]{%
+			\begin{align*}
+				\Delta E_\text{sys} &= q + w \\
+				\Delta E_\text{sys} &= -\Delta E_\text{surr} \\
+				\Delta E_\text{sys} + \Delta E_\text{surr} &= 0
+			\end{align*}
+		}
 \end{frame}
 
-\vspace{\stretch{-1}}
-
 \begin{frame}{Exothermic Reactions}
-	\begin{columns}
-		\column{0.45\linewidth}
+		\note{%
 		\begin{itemize}
 			\item Heat is released from the system to the
 				surroundings.
@@ -163,14 +175,10 @@ system.
 			\item $q = \text{negative}$
 			\item Heat is a \alert{product}.
 		\end{itemize}
-		\column{0.45\linewidth}
+	}
 		\begin{center}
-			\includegraphics[scale=0.4]{exothermicrxn.jpg}
+			\includegraphics[trim={0 0 0 20pt},clip,scale=0.6]{exothermicrxn.jpg}
 		\end{center}
-	\end{columns}
-
-	\bigskip
-
 	\begin{reaction*}
 		C\sld[graphite]{} + O2\gas{} -> CO2\gas{} +
 		"\SI{394}{\kilo\joule}"
@@ -181,11 +189,8 @@ system.
 	\end{equation*}
 \end{frame}
 
-\vspace{\stretch{-1}}
-
 \begin{frame}{Endothermic Reactions}
-	\begin{columns}
-		\column{0.45\linewidth}
+		\note{%
 		\begin{itemize}
 			\item Heat is absorbed to the system from the
 				surroundings.
@@ -194,25 +199,19 @@ system.
 			\item $q = \text{positive}$
 			\item Heat is a \alert{reactant}.
 		\end{itemize}
-		\column{0.45\linewidth}
+	}
 		\begin{center}
-			\includegraphics[scale=0.4]{endothermicrxn.jpg}
+			\includegraphics[trim={0 0 0 20pt},clip,scale=0.6]{endothermicrxn.jpg}
 		\end{center}
-	\end{columns}
-
-	\bigskip
-
 	\begin{reaction*}
 		N2\gas{} + O2\gas{} + "\SI{180}{\kilo\joule}" -> 2
 		NO\gas{}
 	\end{reaction*}
 	\begin{equation*}
-		\Delta H = \SI{180}{\kilo\joule\per\mole}~\text{(heat
+		\Delta H = \SI{+180}{\kilo\joule\per\mole}~\text{(heat
 		added)}
 	\end{equation*}
 \end{frame}
-
-\vspace{\stretch{-1}}
 
 \begin{frame}[t]{Identifying Exothermic and Endothermic Reactions}
 	Identify each of the following reactions as exothermic or endothermic.
@@ -243,7 +242,7 @@ system.
 
 \begin{frame}{A Summary of Energy, Work, and Heat}
 	\begin{center}
-		\begin{tabular} {>{\text{For~}}L<{\text{,}} L l L l}
+		\begin{tabular} {L L l L l}
 			\toprule
 			q & + & system gains heat & - & system loses heat \\
 			w & + & work done on system & - & work done by system \\
@@ -261,8 +260,6 @@ system.
 		\includegraphics[scale=0.5]{money.jpg}
 	\end{center}
 \end{frame}
-
-\vspace{\stretch{-1}}
 
 %\begin{frame}[t]{Calculating Energy Changes}
 %	Two gases, A and B, are confined to a cylinder (closed system) with a
@@ -301,16 +298,16 @@ system.
 %	the same time
 %\end{onyourown}
 
-\frame{\section{State Functions}
-	\begin{learningobjectives}
+\section{State Functions}
+
+\begin{frame}{Learning Objectives}
+	\begin{itemize}
 	\item Identify examples of state functions.
 	\item Use state functions to calculate the change in energy.
-	\item Define and use heat capacities.
-	\end{learningobjectives}
-}
+	\item Define and use heat capacities in calorimetry calculations.
+	\end{itemize}
+\end{frame}
 
-\vspace{\stretch{-1}}
-	
 \begin{frame}{State Functions}
 	The value only depends on the state of the system, not how the
 	system arrived at that state.
@@ -343,8 +340,8 @@ system.
 %		}
 %\end{frame}
 
-\begin{frame}[allowframebreaks]{Representing Chemical Equations in State Functions}
-	\note<1>{%
+\begin{frame}{Representing Chemical Equations in State Functions}
+	\note{%
 		We often represent energy changes on a vertical axis, such that species
 		that are higher in energy are higher on the axis than those species of
 		lower energy.
@@ -352,26 +349,25 @@ system.
 
 	For the reaction,
 	\begin{reaction*}
-		C\sld[graphite]{} + O2\gas{} -> CO2\gas{}
+		C\sld[graphite]{} + O2\gas{} <=> CO2\gas{}
 	\end{reaction*}
 
 	\bigskip
+
+	\begin{columns}
+
+		\column{0.45\textwidth}
 
 	\begin{center}
-		\includegraphics[scale=0.3]{09_Pg371_UnFigure_1.jpg}
+		\includegraphics[width=\linewidth]{09_Pg371_UnFigure_1.jpg}
 	\end{center}
 
-	\framebreak
-	For the reaction,
-	\begin{reaction*}
-		C\sld[graphite]{} + O2\gas{} <- CO2\gas{}
-	\end{reaction*}
-
-	\bigskip
+	\column{0.45\textwidth}
 	
 	\begin{center}
-		\includegraphics[scale=0.3]{09_Pg371_UnFigure_3.jpg}
+		\includegraphics[width=\linewidth]{09_Pg371_UnFigure_3.jpg}
 	\end{center}
+\end{columns}
 \end{frame}
 
 \begin{frame}{Quantifying Heat}
@@ -396,17 +392,15 @@ system.
 
 	\pause
 
-	\bigskip
-
-	The \alert{heat capacity} ($C$) is the heat required to change the
-	temperature of a substance by \SI{1}{\celsius}.
+	\begin{block}{Heat Capacity ($C$)}
+	The heat required to change the temp.\ of a substance by
+	\SI{1}{\celsius}.
 	\begin{equation*}
 		q = C \times \Delta T
 	\end{equation*}
 	Heat capacity is \alert{dependent} of the mass of the object.
-	\begin{itemize}
-		\item More mass requires more heat.
-	\end{itemize}
+	\note{More mass requires more heat.}
+\end{block}
 \end{frame}
 
 \begin{frame}{Specific Heat Capacity}
@@ -423,7 +417,7 @@ system.
 
 	\bigskip
 
-	\begin{block}{Specific Heat Capacity}
+	\begin{block}{Specific Heat Capacity ($C_\text{s}$)}
 		The amount of heat required to raise the temperature of
 		\alert{\SI{1}{\gram}} of the substance by \SI{1}{\celsius}.
 	\end{block}
@@ -445,8 +439,8 @@ system.
 		\sisetup{table-format=1.3}
 		\begin{tabular} {l E S}
 			\toprule
-			\multicolumn{2}{l}{\bfseries Substance} & \bfseries
-			Specific Heat (\si{\joule\per\gram\per\celsius}) \\
+			\multicolumn{2}{l}{\bfseries Substance} & {\bfseries
+			Specific Heat (\unit{\joule\per\gram\per\celsius})} \\
 			\midrule
 			Aluminum & Al\sld & 0.897 \\
 			Copper & Cu\sld & 0.385 \\
@@ -591,13 +585,15 @@ system.
 	\end{columns}
 \end{frame}
 
-\frame{\section{Enthalpy}
-	\begin{learningobjectives}
+\section{Enthalpy}
+
+\begin{frame}{Learning Objectives}
+	\begin{itemize}
 	\item Explain the source of enthalpy in a system.
 	\item Calculate enthalpy in the context of $PV$ work.
 	\item Use Hess's Law to calculate enthalpy of a reaction.
-	\end{learningobjectives}
-}
+	\end{itemize}
+\end{frame}
 
 \begin{frame}[t]{Enthalpy of Reactions}
 	What is this \enthalpy*[superscript=]{} term?
@@ -923,13 +919,15 @@ system.
 	\end{align*}
 \end{onyourown}
 
-\frame{\section{The Source of Energy}
-	\begin{learningobjectives}
-	\item Explain possible routes of energy loss (or gain) for a system.
+\section{The Source of Energy}
+
+\begin{frame}{Learning Objectives}
+	\begin{itemize}
+	\item Identify possible routes of energy loss (or gain) for a system.
 	\item Calculate reaction enthalpies from bond energies.
 	\item Calculate reaction enthalpies using standard heats of formation.
-	\end{learningobjectives}
-}
+	\end{itemize}
+\end{frame}
 
 \begin{frame}{Where is all this energy coming from?}
 	\alert{Reaction conditions} for a chemical reaction require\ldots
